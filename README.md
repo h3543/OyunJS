@@ -9,3 +9,5 @@
 - [Bilmeceler](https://bilmece-bulmaca.com/)
 - [Funtoma](https://funtoma.com/)
 - [JavaScript](https://js.web.tr/)
+- [Oyun Oyna](https://teleoyun.com/)
+- [HTML5 Oyunlar](https://html5oyun.com)
