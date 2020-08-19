@@ -1,0 +1,21 @@
+{
+  "name": "oyunjs",
+  "version": "1.0.0",
+  "description": "HTML5 Game Development Library",
+  "main": "oyun.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h3543/OyunJS.git"
+  },
+  "author": "OyunJS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h3543/OyunJS/issues"
+  },
+  "homepage": "https://oyunjs.com",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+
+}
