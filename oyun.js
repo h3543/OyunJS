@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("Phaser", [], factory);
+		define("Oyun", [], factory);
 	else if(typeof exports === 'object')
-		exports["Phaser"] = factory();
+		exports["Oyun"] = factory();
 	else
-		root["Phaser"] = factory();
+		root["Oyun"] = factory();
 })(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -254,12 +254,12 @@ function mixin (myClass, mixins)
  * You can also use `Extends` and `Mixins` to provide subclassing
  * and inheritance.
  *
- * @class Phaser.Class
+ * @class Oyun.Class
  * @constructor
  * @param {Object} definition a dictionary of functions for the class
  * @example
  *
- *      var MyClass = new Phaser.Class({
+ *      var MyClass = new Oyun.Class({
  *
  *          initialize: function() {
  *              this.foo = 2.0;
@@ -363,10 +363,10 @@ module.exports = Class;
 /**
  * A NOOP (No Operation) callback function.
  *
- * Used internally by Phaser when it's more expensive to determine if a callback exists
+ * Used internally by Oyun when it's more expensive to determine if a callback exists
  * than it is to just invoke an empty function.
  *
- * @function Phaser.Utils.NOOP
+ * @function Oyun.Utils.NOOP
  * @since 3.0.0
  */
 var NOOP = function ()
@@ -390,7 +390,7 @@ module.exports = NOOP;
 /**
  * Finds the key within the top level of the {@link source} object, or returns {@link defaultValue}
  *
- * @function Phaser.Utils.Objects.GetFastValue
+ * @function Oyun.Utils.Objects.GetFastValue
  * @since 3.0.0
  *
  * @param {object} source - The object to search
@@ -443,11 +443,11 @@ var FuzzyEqual = __webpack_require__(123);
  * A two-component vector.
  *
  * @class Vector2
- * @memberof Phaser.Math
+ * @memberof Oyun.Math
  * @constructor
  * @since 3.0.0
  *
- * @param {number|Phaser.Types.Math.Vector2Like} [x] - The x component, or an object with `x` and `y` properties.
+ * @param {number|Oyun.Types.Math.Vector2Like} [x] - The x component, or an object with `x` and `y` properties.
  * @param {number} [y] - The y component.
  */
 var Vector2 = new Class({
@@ -459,7 +459,7 @@ var Vector2 = new Class({
         /**
          * The x component of this Vector.
          *
-         * @name Phaser.Math.Vector2#x
+         * @name Oyun.Math.Vector2#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -469,7 +469,7 @@ var Vector2 = new Class({
         /**
          * The y component of this Vector.
          *
-         * @name Phaser.Math.Vector2#y
+         * @name Oyun.Math.Vector2#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -493,10 +493,10 @@ var Vector2 = new Class({
     /**
      * Make a clone of this Vector2.
      *
-     * @method Phaser.Math.Vector2#clone
+     * @method Oyun.Math.Vector2#clone
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector2} A clone of this Vector2.
+     * @return {Oyun.Math.Vector2} A clone of this Vector2.
      */
     clone: function ()
     {
@@ -506,12 +506,12 @@ var Vector2 = new Class({
     /**
      * Copy the components of a given Vector into this Vector.
      *
-     * @method Phaser.Math.Vector2#copy
+     * @method Oyun.Math.Vector2#copy
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector to copy the components from.
+     * @param {Oyun.Math.Vector2} src - The Vector to copy the components from.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     copy: function (src)
     {
@@ -524,12 +524,12 @@ var Vector2 = new Class({
     /**
      * Set the component values of this Vector from a given Vector2Like object.
      *
-     * @method Phaser.Math.Vector2#setFromObject
+     * @method Oyun.Math.Vector2#setFromObject
      * @since 3.0.0
      *
-     * @param {Phaser.Types.Math.Vector2Like} obj - The object containing the component values to set for this Vector.
+     * @param {Oyun.Types.Math.Vector2Like} obj - The object containing the component values to set for this Vector.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     setFromObject: function (obj)
     {
@@ -542,13 +542,13 @@ var Vector2 = new Class({
     /**
      * Set the `x` and `y` components of the this Vector to the given `x` and `y` values.
      *
-     * @method Phaser.Math.Vector2#set
+     * @method Oyun.Math.Vector2#set
      * @since 3.0.0
      *
      * @param {number} x - The x value to set for this Vector.
      * @param {number} [y=x] - The y value to set for this Vector.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     set: function (x, y)
     {
@@ -563,13 +563,13 @@ var Vector2 = new Class({
     /**
      * This method is an alias for `Vector2.set`.
      *
-     * @method Phaser.Math.Vector2#setTo
+     * @method Oyun.Math.Vector2#setTo
      * @since 3.4.0
      *
      * @param {number} x - The x value to set for this Vector.
      * @param {number} [y=x] - The y value to set for this Vector.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     setTo: function (x, y)
     {
@@ -579,13 +579,13 @@ var Vector2 = new Class({
     /**
      * Sets the `x` and `y` values of this object from a given polar coordinate.
      *
-     * @method Phaser.Math.Vector2#setToPolar
+     * @method Oyun.Math.Vector2#setToPolar
      * @since 3.0.0
      *
      * @param {number} azimuth - The angular coordinate, in radians.
      * @param {number} [radius=1] - The radial coordinate (length).
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     setToPolar: function (azimuth, radius)
     {
@@ -602,10 +602,10 @@ var Vector2 = new Class({
      *
      * Performs a strict equality check against each Vector's components.
      *
-     * @method Phaser.Math.Vector2#equals
+     * @method Oyun.Math.Vector2#equals
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} v - The vector to compare with this Vector.
+     * @param {Oyun.Math.Vector2} v - The vector to compare with this Vector.
      *
      * @return {boolean} Whether the given Vector is equal to this Vector.
      */
@@ -617,10 +617,10 @@ var Vector2 = new Class({
     /**
      * Check whether this Vector is approximately equal to a given Vector.
      *
-     * @method Phaser.Math.Vector2#fuzzyEquals
+     * @method Oyun.Math.Vector2#fuzzyEquals
      * @since 3.23.0
      *
-     * @param {Phaser.Math.Vector2} v - The vector to compare with this Vector.
+     * @param {Oyun.Math.Vector2} v - The vector to compare with this Vector.
      * @param {number} [epsilon=0.0001] - The tolerance value.
      *
      * @return {boolean} Whether both absolute differences of the x and y components are smaller than `epsilon`.
@@ -633,7 +633,7 @@ var Vector2 = new Class({
     /**
      * Calculate the angle between this Vector and the positive x-axis, in radians.
      *
-     * @method Phaser.Math.Vector2#angle
+     * @method Oyun.Math.Vector2#angle
      * @since 3.0.0
      *
      * @return {number} The angle between this Vector, and the positive x-axis, given in radians.
@@ -655,12 +655,12 @@ var Vector2 = new Class({
     /**
      * Set the angle of this Vector.
      *
-     * @method Phaser.Math.Vector2#setAngle
+     * @method Oyun.Math.Vector2#setAngle
      * @since 3.23.0
      *
      * @param {number} angle - The angle, in radians.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     setAngle: function (angle)
     {
@@ -670,12 +670,12 @@ var Vector2 = new Class({
     /**
      * Add a given Vector to this Vector. Addition is component-wise.
      *
-     * @method Phaser.Math.Vector2#add
+     * @method Oyun.Math.Vector2#add
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector to add to this Vector.
+     * @param {Oyun.Math.Vector2} src - The Vector to add to this Vector.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     add: function (src)
     {
@@ -688,12 +688,12 @@ var Vector2 = new Class({
     /**
      * Subtract the given Vector from this Vector. Subtraction is component-wise.
      *
-     * @method Phaser.Math.Vector2#subtract
+     * @method Oyun.Math.Vector2#subtract
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector to subtract from this Vector.
+     * @param {Oyun.Math.Vector2} src - The Vector to subtract from this Vector.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     subtract: function (src)
     {
@@ -708,12 +708,12 @@ var Vector2 = new Class({
      *
      * Multiplies this Vector by the given Vector.
      *
-     * @method Phaser.Math.Vector2#multiply
+     * @method Oyun.Math.Vector2#multiply
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector to multiply this Vector by.
+     * @param {Oyun.Math.Vector2} src - The Vector to multiply this Vector by.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     multiply: function (src)
     {
@@ -726,12 +726,12 @@ var Vector2 = new Class({
     /**
      * Scale this Vector by the given value.
      *
-     * @method Phaser.Math.Vector2#scale
+     * @method Oyun.Math.Vector2#scale
      * @since 3.0.0
      *
      * @param {number} value - The value to scale this Vector by.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     scale: function (value)
     {
@@ -754,12 +754,12 @@ var Vector2 = new Class({
      *
      * Divides this Vector by the given Vector.
      *
-     * @method Phaser.Math.Vector2#divide
+     * @method Oyun.Math.Vector2#divide
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector to divide this Vector by.
+     * @param {Oyun.Math.Vector2} src - The Vector to divide this Vector by.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     divide: function (src)
     {
@@ -772,10 +772,10 @@ var Vector2 = new Class({
     /**
      * Negate the `x` and `y` components of this Vector.
      *
-     * @method Phaser.Math.Vector2#negate
+     * @method Oyun.Math.Vector2#negate
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     negate: function ()
     {
@@ -788,10 +788,10 @@ var Vector2 = new Class({
     /**
      * Calculate the distance between this Vector and the given Vector.
      *
-     * @method Phaser.Math.Vector2#distance
+     * @method Oyun.Math.Vector2#distance
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector to calculate the distance to.
+     * @param {Oyun.Math.Vector2} src - The Vector to calculate the distance to.
      *
      * @return {number} The distance from this Vector to the given Vector.
      */
@@ -806,10 +806,10 @@ var Vector2 = new Class({
     /**
      * Calculate the distance between this Vector and the given Vector, squared.
      *
-     * @method Phaser.Math.Vector2#distanceSq
+     * @method Oyun.Math.Vector2#distanceSq
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector to calculate the distance to.
+     * @param {Oyun.Math.Vector2} src - The Vector to calculate the distance to.
      *
      * @return {number} The distance from this Vector to the given Vector, squared.
      */
@@ -824,7 +824,7 @@ var Vector2 = new Class({
     /**
      * Calculate the length (or magnitude) of this Vector.
      *
-     * @method Phaser.Math.Vector2#length
+     * @method Oyun.Math.Vector2#length
      * @since 3.0.0
      *
      * @return {number} The length of this Vector.
@@ -840,12 +840,12 @@ var Vector2 = new Class({
     /**
      * Set the length (or magnitude) of this Vector.
      *
-     * @method Phaser.Math.Vector2#setLength
+     * @method Oyun.Math.Vector2#setLength
      * @since 3.23.0
      *
      * @param {number} length
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     setLength: function (length)
     {
@@ -855,7 +855,7 @@ var Vector2 = new Class({
     /**
      * Calculate the length of this Vector squared.
      *
-     * @method Phaser.Math.Vector2#lengthSq
+     * @method Oyun.Math.Vector2#lengthSq
      * @since 3.0.0
      *
      * @return {number} The length of this Vector, squared.
@@ -873,10 +873,10 @@ var Vector2 = new Class({
      *
      * Makes the vector a unit length vector (magnitude of 1) in the same direction.
      *
-     * @method Phaser.Math.Vector2#normalize
+     * @method Oyun.Math.Vector2#normalize
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     normalize: function ()
     {
@@ -898,10 +898,10 @@ var Vector2 = new Class({
     /**
      * Rotate this Vector to its perpendicular, in the positive direction.
      *
-     * @method Phaser.Math.Vector2#normalizeRightHand
+     * @method Oyun.Math.Vector2#normalizeRightHand
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     normalizeRightHand: function ()
     {
@@ -916,10 +916,10 @@ var Vector2 = new Class({
     /**
      * Rotate this Vector to its perpendicular, in the negative direction.
      *
-     * @method Phaser.Math.Vector2#normalizeLeftHand
+     * @method Oyun.Math.Vector2#normalizeLeftHand
      * @since 3.23.0
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     normalizeLeftHand: function ()
     {
@@ -934,10 +934,10 @@ var Vector2 = new Class({
     /**
      * Calculate the dot product of this Vector and the given Vector.
      *
-     * @method Phaser.Math.Vector2#dot
+     * @method Oyun.Math.Vector2#dot
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector2 to dot product with this Vector2.
+     * @param {Oyun.Math.Vector2} src - The Vector2 to dot product with this Vector2.
      *
      * @return {number} The dot product of this Vector and the given Vector.
      */
@@ -949,10 +949,10 @@ var Vector2 = new Class({
     /**
      * Calculate the cross product of this Vector and the given Vector.
      *
-     * @method Phaser.Math.Vector2#cross
+     * @method Oyun.Math.Vector2#cross
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector2 to cross with this Vector2.
+     * @param {Oyun.Math.Vector2} src - The Vector2 to cross with this Vector2.
      *
      * @return {number} The cross product of this Vector and the given Vector.
      */
@@ -966,13 +966,13 @@ var Vector2 = new Class({
      *
      * Interpolates this Vector towards the given Vector.
      *
-     * @method Phaser.Math.Vector2#lerp
+     * @method Oyun.Math.Vector2#lerp
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} src - The Vector2 to interpolate towards.
+     * @param {Oyun.Math.Vector2} src - The Vector2 to interpolate towards.
      * @param {number} [t=0] - The interpolation percentage, between 0 and 1.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     lerp: function (src, t)
     {
@@ -990,12 +990,12 @@ var Vector2 = new Class({
     /**
      * Transform this Vector with the given Matrix.
      *
-     * @method Phaser.Math.Vector2#transformMat3
+     * @method Oyun.Math.Vector2#transformMat3
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix3} mat - The Matrix3 to transform this Vector2 with.
+     * @param {Oyun.Math.Matrix3} mat - The Matrix3 to transform this Vector2 with.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     transformMat3: function (mat)
     {
@@ -1012,12 +1012,12 @@ var Vector2 = new Class({
     /**
      * Transform this Vector with the given Matrix.
      *
-     * @method Phaser.Math.Vector2#transformMat4
+     * @method Oyun.Math.Vector2#transformMat4
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} mat - The Matrix4 to transform this Vector2 with.
+     * @param {Oyun.Math.Matrix4} mat - The Matrix4 to transform this Vector2 with.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     transformMat4: function (mat)
     {
@@ -1034,10 +1034,10 @@ var Vector2 = new Class({
     /**
      * Make this Vector the zero vector (0, 0).
      *
-     * @method Phaser.Math.Vector2#reset
+     * @method Oyun.Math.Vector2#reset
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     reset: function ()
     {
@@ -1050,12 +1050,12 @@ var Vector2 = new Class({
     /**
      * Limit the length (or magnitude) of this Vector.
      *
-     * @method Phaser.Math.Vector2#limit
+     * @method Oyun.Math.Vector2#limit
      * @since 3.23.0
      *
      * @param {number} max - The maximum length.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     limit: function (max)
     {
@@ -1072,12 +1072,12 @@ var Vector2 = new Class({
     /**
      * Reflect this Vector off a line defined by a normal.
      *
-     * @method Phaser.Math.Vector2#reflect
+     * @method Oyun.Math.Vector2#reflect
      * @since 3.23.0
      *
-     * @param {Phaser.Math.Vector2} normal - A vector perpendicular to the line.
+     * @param {Oyun.Math.Vector2} normal - A vector perpendicular to the line.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     reflect: function (normal)
     {
@@ -1089,12 +1089,12 @@ var Vector2 = new Class({
     /**
      * Reflect this Vector across another.
      *
-     * @method Phaser.Math.Vector2#mirror
+     * @method Oyun.Math.Vector2#mirror
      * @since 3.23.0
      *
-     * @param {Phaser.Math.Vector2} axis - A vector to reflect across.
+     * @param {Oyun.Math.Vector2} axis - A vector to reflect across.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     mirror: function (axis)
     {
@@ -1104,12 +1104,12 @@ var Vector2 = new Class({
     /**
      * Rotate this Vector by an angle amount.
      *
-     * @method Phaser.Math.Vector2#rotate
+     * @method Oyun.Math.Vector2#rotate
      * @since 3.23.0
      *
      * @param {number} delta - The angle to rotate by, in radians.
      *
-     * @return {Phaser.Math.Vector2} This Vector2.
+     * @return {Oyun.Math.Vector2} This Vector2.
      */
     rotate: function (delta)
     {
@@ -1127,8 +1127,8 @@ var Vector2 = new Class({
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector2.ZERO
- * @type {Phaser.Math.Vector2}
+ * @name Oyun.Math.Vector2.ZERO
+ * @type {Oyun.Math.Vector2}
  * @since 3.1.0
  */
 Vector2.ZERO = new Vector2();
@@ -1139,8 +1139,8 @@ Vector2.ZERO = new Vector2();
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector2.RIGHT
- * @type {Phaser.Math.Vector2}
+ * @name Oyun.Math.Vector2.RIGHT
+ * @type {Oyun.Math.Vector2}
  * @since 3.16.0
  */
 Vector2.RIGHT = new Vector2(1, 0);
@@ -1151,8 +1151,8 @@ Vector2.RIGHT = new Vector2(1, 0);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector2.LEFT
- * @type {Phaser.Math.Vector2}
+ * @name Oyun.Math.Vector2.LEFT
+ * @type {Oyun.Math.Vector2}
  * @since 3.16.0
  */
 Vector2.LEFT = new Vector2(-1, 0);
@@ -1163,8 +1163,8 @@ Vector2.LEFT = new Vector2(-1, 0);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector2.UP
- * @type {Phaser.Math.Vector2}
+ * @name Oyun.Math.Vector2.UP
+ * @type {Oyun.Math.Vector2}
  * @since 3.16.0
  */
 Vector2.UP = new Vector2(0, -1);
@@ -1175,8 +1175,8 @@ Vector2.UP = new Vector2(0, -1);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector2.DOWN
- * @type {Phaser.Math.Vector2}
+ * @name Oyun.Math.Vector2.DOWN
+ * @type {Oyun.Math.Vector2}
  * @since 3.16.0
  */
 Vector2.DOWN = new Vector2(0, 1);
@@ -1187,8 +1187,8 @@ Vector2.DOWN = new Vector2(0, 1);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector2.ONE
- * @type {Phaser.Math.Vector2}
+ * @name Oyun.Math.Vector2.ONE
+ * @type {Oyun.Math.Vector2}
  * @since 3.16.0
  */
 Vector2.ONE = new Vector2(1, 1);
@@ -1214,7 +1214,7 @@ var GEOM_CONST = __webpack_require__(55);
  * Defines a Point in 2D space, with an x and y component.
  *
  * @class Point
- * @memberof Phaser.Geom
+ * @memberof Oyun.Geom
  * @constructor
  * @since 3.0.0
  *
@@ -1234,7 +1234,7 @@ var Point = new Class({
          * The geometry constant type of this object: `GEOM_CONST.POINT`.
          * Used for fast type comparisons.
          *
-         * @name Phaser.Geom.Point#type
+         * @name Oyun.Geom.Point#type
          * @type {number}
          * @readonly
          * @since 3.19.0
@@ -1244,7 +1244,7 @@ var Point = new Class({
         /**
          * The x coordinate of this Point.
          *
-         * @name Phaser.Geom.Point#x
+         * @name Oyun.Geom.Point#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -1254,7 +1254,7 @@ var Point = new Class({
         /**
          * The y coordinate of this Point.
          *
-         * @name Phaser.Geom.Point#y
+         * @name Oyun.Geom.Point#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -1265,7 +1265,7 @@ var Point = new Class({
     /**
      * Set the x and y coordinates of the point to the given values.
      *
-     * @method Phaser.Geom.Point#setTo
+     * @method Oyun.Geom.Point#setTo
      * @since 3.0.0
      *
      * @param {number} [x=0] - The x coordinate of this Point.
@@ -1312,11 +1312,11 @@ var SceneEvents = __webpack_require__(21);
  * methods into the class.
  *
  * @class GameObjectFactory
- * @memberof Phaser.GameObjects
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object Factory belongs.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object Factory belongs.
  */
 var GameObjectFactory = new Class({
 
@@ -1327,8 +1327,8 @@ var GameObjectFactory = new Class({
         /**
          * The Scene to which this Game Object Factory belongs.
          *
-         * @name Phaser.GameObjects.GameObjectFactory#scene
-         * @type {Phaser.Scene}
+         * @name Oyun.GameObjects.GameObjectFactory#scene
+         * @type {Oyun.Scene}
          * @protected
          * @since 3.0.0
          */
@@ -1337,8 +1337,8 @@ var GameObjectFactory = new Class({
         /**
          * A reference to the Scene.Systems.
          *
-         * @name Phaser.GameObjects.GameObjectFactory#systems
-         * @type {Phaser.Scenes.Systems}
+         * @name Oyun.GameObjects.GameObjectFactory#systems
+         * @type {Oyun.Scenes.Systems}
          * @protected
          * @since 3.0.0
          */
@@ -1347,8 +1347,8 @@ var GameObjectFactory = new Class({
         /**
          * A reference to the Scene Event Emitter.
          *
-         * @name Phaser.GameObjects.GameObjectFactory#events
-         * @type {Phaser.Events.EventEmitter}
+         * @name Oyun.GameObjects.GameObjectFactory#events
+         * @type {Oyun.Events.EventEmitter}
          * @protected
          * @since 3.50.0
          */
@@ -1357,8 +1357,8 @@ var GameObjectFactory = new Class({
         /**
          * A reference to the Scene Display List.
          *
-         * @name Phaser.GameObjects.GameObjectFactory#displayList
-         * @type {Phaser.GameObjects.DisplayList}
+         * @name Oyun.GameObjects.GameObjectFactory#displayList
+         * @type {Oyun.GameObjects.DisplayList}
          * @protected
          * @since 3.0.0
          */
@@ -1367,8 +1367,8 @@ var GameObjectFactory = new Class({
         /**
          * A reference to the Scene Update List.
          *
-         * @name Phaser.GameObjects.GameObjectFactory#updateList
-         * @type {Phaser.GameObjects.UpdateList}
+         * @name Oyun.GameObjects.GameObjectFactory#updateList
+         * @type {Oyun.GameObjects.UpdateList}
          * @protected
          * @since 3.0.0
          */
@@ -1382,7 +1382,7 @@ var GameObjectFactory = new Class({
      * This method is called automatically, only once, when the Scene is first created.
      * Do not invoke it directly.
      *
-     * @method Phaser.GameObjects.GameObjectFactory#boot
+     * @method Oyun.GameObjects.GameObjectFactory#boot
      * @private
      * @since 3.5.1
      */
@@ -1399,7 +1399,7 @@ var GameObjectFactory = new Class({
      * It is responsible for creating local systems, properties and listening for Scene events.
      * Do not invoke it directly.
      *
-     * @method Phaser.GameObjects.GameObjectFactory#start
+     * @method Oyun.GameObjects.GameObjectFactory#start
      * @private
      * @since 3.5.0
      */
@@ -1414,14 +1414,14 @@ var GameObjectFactory = new Class({
      * If the Game Object renders, it will be added to the Display List.
      * If it has a `preUpdate` method, it will be added to the Update List.
      *
-     * @method Phaser.GameObjects.GameObjectFactory#existing
+     * @method Oyun.GameObjects.GameObjectFactory#existing
      * @since 3.0.0
      *
-     * @generic {Phaser.GameObjects.GameObject} G - [child,$return]
+     * @generic {Oyun.GameObjects.GameObject} G - [child,$return]
      *
-     * @param {(Phaser.GameObjects.GameObject|Phaser.GameObjects.Group)} child - The child to be added to this Scene.
+     * @param {(Oyun.GameObjects.GameObject|Oyun.GameObjects.Group)} child - The child to be added to this Scene.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that was added.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that was added.
      */
     existing: function (child)
     {
@@ -1444,7 +1444,7 @@ var GameObjectFactory = new Class({
      * The Scene that owns this plugin is shutting down.
      * We need to kill and reset all internal properties as well as stop listening to Scene events.
      *
-     * @method Phaser.GameObjects.GameObjectFactory#shutdown
+     * @method Oyun.GameObjects.GameObjectFactory#shutdown
      * @private
      * @since 3.0.0
      */
@@ -1457,7 +1457,7 @@ var GameObjectFactory = new Class({
      * The Scene that owns this plugin is being destroyed.
      * We need to shutdown and then kill off all external references.
      *
-     * @method Phaser.GameObjects.GameObjectFactory#destroy
+     * @method Oyun.GameObjects.GameObjectFactory#destroy
      * @private
      * @since 3.0.0
      */
@@ -1481,14 +1481,14 @@ var GameObjectFactory = new Class({
  * Static method called directly by the Game Object factory functions.
  * With this method you can register a custom GameObject factory in the GameObjectFactory,
  * providing a name (`factoryType`) and the constructor (`factoryFunction`) in order
- * to be called when you call to Phaser.Scene.add[ factoryType ] method.
+ * to be called when you call to Oyun.Scene.add[ factoryType ] method.
  *
- * @method Phaser.GameObjects.GameObjectFactory.register
+ * @method Oyun.GameObjects.GameObjectFactory.register
  * @static
  * @since 3.0.0
  *
- * @param {string} factoryType - The key of the factory that you will use to call to Phaser.Scene.add[ factoryType ] method.
- * @param {function} factoryFunction - The constructor function to be called when you invoke to the Phaser.Scene.add method.
+ * @param {string} factoryType - The key of the factory that you will use to call to Oyun.Scene.add[ factoryType ] method.
+ * @param {function} factoryFunction - The constructor function to be called when you invoke to the Oyun.Scene.add method.
  */
 GameObjectFactory.register = function (factoryType, factoryFunction)
 {
@@ -1503,7 +1503,7 @@ GameObjectFactory.register = function (factoryType, factoryFunction)
  * With this method you can remove a custom GameObject factory registered in the GameObjectFactory,
  * providing a its `factoryType`.
  *
- * @method Phaser.GameObjects.GameObjectFactory.remove
+ * @method Oyun.GameObjects.GameObjectFactory.remove
  * @static
  * @since 3.0.0
  *
@@ -1539,7 +1539,7 @@ module.exports = GameObjectFactory;
 /**
  * Retrieves a value from an object.
  *
- * @function Phaser.Utils.Objects.GetValue
+ * @function Oyun.Utils.Objects.GetValue
  * @since 3.0.0
  *
  * @param {object} source - The object to retrieve the value from.
@@ -1607,7 +1607,7 @@ module.exports = GetValue;
  * This is a slightly modified version of jQuery.isPlainObject.
  * A plain object is an object whose internal class property is [object Object].
  *
- * @function Phaser.Utils.Objects.IsPlainObject
+ * @function Oyun.Utils.Objects.IsPlainObject
  * @since 3.0.0
  *
  * @param {object} obj - The object to inspect.
@@ -1662,7 +1662,7 @@ module.exports = IsPlainObject;
 var types = {};
 
 /**
- * @namespace Phaser.Loader.FileTypesManager
+ * @namespace Oyun.Loader.FileTypesManager
  */
 
 var FileTypesManager = {
@@ -1673,10 +1673,10 @@ var FileTypesManager = {
      * Loops through the local types object and injects all of them as
      * properties into the LoaderPlugin instance.
      *
-     * @method Phaser.Loader.FileTypesManager.install
+     * @method Oyun.Loader.FileTypesManager.install
      * @since 3.0.0
      * 
-     * @param {Phaser.Loader.LoaderPlugin} loader - The LoaderPlugin to install the types into.
+     * @param {Oyun.Loader.LoaderPlugin} loader - The LoaderPlugin to install the types into.
      */
     install: function (loader)
     {
@@ -1691,7 +1691,7 @@ var FileTypesManager = {
      * 
      * The key is a reference to the function used to load the files via the Loader, i.e. `image`.
      *
-     * @method Phaser.Loader.FileTypesManager.register
+     * @method Oyun.Loader.FileTypesManager.register
      * @since 3.0.0
      * 
      * @param {string} key - The key that will be used as the method name in the LoaderPlugin.
@@ -1705,7 +1705,7 @@ var FileTypesManager = {
     /**
      * Removed all associated file types.
      *
-     * @method Phaser.Loader.FileTypesManager.destroy
+     * @method Oyun.Loader.FileTypesManager.destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -2084,7 +2084,7 @@ var Random = __webpack_require__(170);
  * Encapsulates a 2D rectangle defined by its corner point in the top-left and its extends in x (width) and y (height)
  *
  * @class Rectangle
- * @memberof Phaser.Geom
+ * @memberof Oyun.Geom
  * @constructor
  * @since 3.0.0
  *
@@ -2108,7 +2108,7 @@ var Rectangle = new Class({
          * The geometry constant type of this object: `GEOM_CONST.RECTANGLE`.
          * Used for fast type comparisons.
          *
-         * @name Phaser.Geom.Rectangle#type
+         * @name Oyun.Geom.Rectangle#type
          * @type {number}
          * @readonly
          * @since 3.19.0
@@ -2118,7 +2118,7 @@ var Rectangle = new Class({
         /**
          * The X coordinate of the top left corner of the Rectangle.
          *
-         * @name Phaser.Geom.Rectangle#x
+         * @name Oyun.Geom.Rectangle#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -2128,7 +2128,7 @@ var Rectangle = new Class({
         /**
          * The Y coordinate of the top left corner of the Rectangle.
          *
-         * @name Phaser.Geom.Rectangle#y
+         * @name Oyun.Geom.Rectangle#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -2138,7 +2138,7 @@ var Rectangle = new Class({
         /**
          * The width of the Rectangle, i.e. the distance between its left side (defined by `x`) and its right side.
          *
-         * @name Phaser.Geom.Rectangle#width
+         * @name Oyun.Geom.Rectangle#width
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -2148,7 +2148,7 @@ var Rectangle = new Class({
         /**
          * The height of the Rectangle, i.e. the distance between its top side (defined by `y`) and its bottom side.
          *
-         * @name Phaser.Geom.Rectangle#height
+         * @name Oyun.Geom.Rectangle#height
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -2159,7 +2159,7 @@ var Rectangle = new Class({
     /**
      * Checks if the given point is inside the Rectangle's bounds.
      *
-     * @method Phaser.Geom.Rectangle#contains
+     * @method Oyun.Geom.Rectangle#contains
      * @since 3.0.0
      *
      * @param {number} x - The X coordinate of the point to check.
@@ -2179,15 +2179,15 @@ var Rectangle = new Class({
      * 
      * A value of 0 or 1 returns the point at the top left corner of the rectangle, while a value of 0.5 returns the point at the bottom right corner of the rectangle. Values between 0 and 0.5 are on the top or the right side and values between 0.5 and 1 are on the bottom or the left side.
      *
-     * @method Phaser.Geom.Rectangle#getPoint
+     * @method Oyun.Geom.Rectangle#getPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [output,$return]
+     * @generic {Oyun.Geom.Point} O - [output,$return]
      *
      * @param {number} position - The normalized distance into the Rectangle's perimeter to return.
-     * @param {(Phaser.Geom.Point|object)} [output] - An object to update with the `x` and `y` coordinates of the point.
+     * @param {(Oyun.Geom.Point|object)} [output] - An object to update with the `x` and `y` coordinates of the point.
      *
-     * @return {(Phaser.Geom.Point|object)} The updated `output` object, or a new Point if no `output` object was given.
+     * @return {(Oyun.Geom.Point|object)} The updated `output` object, or a new Point if no `output` object was given.
      */
     getPoint: function (position, output)
     {
@@ -2197,16 +2197,16 @@ var Rectangle = new Class({
     /**
      * Returns an array of points from the perimeter of the Rectangle, each spaced out based on the quantity or step required.
      *
-     * @method Phaser.Geom.Rectangle#getPoints
+     * @method Oyun.Geom.Rectangle#getPoints
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point[]} O - [output,$return]
+     * @generic {Oyun.Geom.Point[]} O - [output,$return]
      *
      * @param {number} quantity - The number of points to return. Set to `false` or 0 to return an arbitrary number of points (`perimeter / stepRate`) evenly spaced around the Rectangle based on the `stepRate`.
      * @param {number} [stepRate] - If `quantity` is 0, determines the normalized distance between each returned point.
-     * @param {(array|Phaser.Geom.Point[])} [output] - An array to which to append the points.
+     * @param {(array|Oyun.Geom.Point[])} [output] - An array to which to append the points.
      *
-     * @return {(array|Phaser.Geom.Point[])} The modified `output` array, or a new array if none was provided.
+     * @return {(array|Oyun.Geom.Point[])} The modified `output` array, or a new array if none was provided.
      */
     getPoints: function (quantity, stepRate, output)
     {
@@ -2216,14 +2216,14 @@ var Rectangle = new Class({
     /**
      * Returns a random point within the Rectangle's bounds.
      *
-     * @method Phaser.Geom.Rectangle#getRandomPoint
+     * @method Oyun.Geom.Rectangle#getRandomPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [point,$return]
+     * @generic {Oyun.Geom.Point} O - [point,$return]
      *
-     * @param {Phaser.Geom.Point} [point] - The object in which to store the `x` and `y` coordinates of the point.
+     * @param {Oyun.Geom.Point} [point] - The object in which to store the `x` and `y` coordinates of the point.
      *
-     * @return {Phaser.Geom.Point} The updated `point`, or a new Point if none was provided.
+     * @return {Oyun.Geom.Point} The updated `point`, or a new Point if none was provided.
      */
     getRandomPoint: function (point)
     {
@@ -2233,7 +2233,7 @@ var Rectangle = new Class({
     /**
      * Sets the position, width, and height of the Rectangle.
      *
-     * @method Phaser.Geom.Rectangle#setTo
+     * @method Oyun.Geom.Rectangle#setTo
      * @since 3.0.0
      *
      * @param {number} x - The X coordinate of the top left corner of the Rectangle.
@@ -2256,7 +2256,7 @@ var Rectangle = new Class({
     /**
      * Resets the position, width, and height of the Rectangle to 0.
      *
-     * @method Phaser.Geom.Rectangle#setEmpty
+     * @method Oyun.Geom.Rectangle#setEmpty
      * @since 3.0.0
      *
      * @return {this} This Rectangle object.
@@ -2269,7 +2269,7 @@ var Rectangle = new Class({
     /**
      * Sets the position of the Rectangle.
      *
-     * @method Phaser.Geom.Rectangle#setPosition
+     * @method Oyun.Geom.Rectangle#setPosition
      * @since 3.0.0
      *
      * @param {number} x - The X coordinate of the top left corner of the Rectangle.
@@ -2290,7 +2290,7 @@ var Rectangle = new Class({
     /**
      * Sets the width and height of the Rectangle.
      *
-     * @method Phaser.Geom.Rectangle#setSize
+     * @method Oyun.Geom.Rectangle#setSize
      * @since 3.0.0
      *
      * @param {number} width - The width to set the Rectangle to.
@@ -2311,7 +2311,7 @@ var Rectangle = new Class({
     /**
      * Determines if the Rectangle is empty. A Rectangle is empty if its width or height is less than or equal to 0.
      *
-     * @method Phaser.Geom.Rectangle#isEmpty
+     * @method Oyun.Geom.Rectangle#isEmpty
      * @since 3.0.0
      *
      * @return {boolean} `true` if the Rectangle is empty. A Rectangle object is empty if its width or height is less than or equal to 0.
@@ -2324,14 +2324,14 @@ var Rectangle = new Class({
     /**
      * Returns a Line object that corresponds to the top of this Rectangle.
      *
-     * @method Phaser.Geom.Rectangle#getLineA
+     * @method Oyun.Geom.Rectangle#getLineA
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Line} O - [line,$return]
+     * @generic {Oyun.Geom.Line} O - [line,$return]
      *
-     * @param {Phaser.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
+     * @param {Oyun.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
      *
-     * @return {Phaser.Geom.Line} A Line object that corresponds to the top of this Rectangle.
+     * @return {Oyun.Geom.Line} A Line object that corresponds to the top of this Rectangle.
      */
     getLineA: function (line)
     {
@@ -2345,14 +2345,14 @@ var Rectangle = new Class({
     /**
      * Returns a Line object that corresponds to the right of this Rectangle.
      *
-     * @method Phaser.Geom.Rectangle#getLineB
+     * @method Oyun.Geom.Rectangle#getLineB
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Line} O - [line,$return]
+     * @generic {Oyun.Geom.Line} O - [line,$return]
      *
-     * @param {Phaser.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
+     * @param {Oyun.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
      *
-     * @return {Phaser.Geom.Line} A Line object that corresponds to the right of this Rectangle.
+     * @return {Oyun.Geom.Line} A Line object that corresponds to the right of this Rectangle.
      */
     getLineB: function (line)
     {
@@ -2366,14 +2366,14 @@ var Rectangle = new Class({
     /**
      * Returns a Line object that corresponds to the bottom of this Rectangle.
      *
-     * @method Phaser.Geom.Rectangle#getLineC
+     * @method Oyun.Geom.Rectangle#getLineC
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Line} O - [line,$return]
+     * @generic {Oyun.Geom.Line} O - [line,$return]
      *
-     * @param {Phaser.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
+     * @param {Oyun.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
      *
-     * @return {Phaser.Geom.Line} A Line object that corresponds to the bottom of this Rectangle.
+     * @return {Oyun.Geom.Line} A Line object that corresponds to the bottom of this Rectangle.
      */
     getLineC: function (line)
     {
@@ -2387,14 +2387,14 @@ var Rectangle = new Class({
     /**
      * Returns a Line object that corresponds to the left of this Rectangle.
      *
-     * @method Phaser.Geom.Rectangle#getLineD
+     * @method Oyun.Geom.Rectangle#getLineD
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Line} O - [line,$return]
+     * @generic {Oyun.Geom.Line} O - [line,$return]
      *
-     * @param {Phaser.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
+     * @param {Oyun.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
      *
-     * @return {Phaser.Geom.Line} A Line object that corresponds to the left of this Rectangle.
+     * @return {Oyun.Geom.Line} A Line object that corresponds to the left of this Rectangle.
      */
     getLineD: function (line)
     {
@@ -2409,7 +2409,7 @@ var Rectangle = new Class({
      * The x coordinate of the left of the Rectangle.
      * Changing the left property of a Rectangle object has no effect on the y and height properties. However it does affect the width property, whereas changing the x value does not affect the width property.
      *
-     * @name Phaser.Geom.Rectangle#left
+     * @name Oyun.Geom.Rectangle#left
      * @type {number}
      * @since 3.0.0
      */
@@ -2440,7 +2440,7 @@ var Rectangle = new Class({
      * The sum of the x and width properties.
      * Changing the right property of a Rectangle object has no effect on the x, y and height properties, however it does affect the width property.
      *
-     * @name Phaser.Geom.Rectangle#right
+     * @name Oyun.Geom.Rectangle#right
      * @type {number}
      * @since 3.0.0
      */
@@ -2469,7 +2469,7 @@ var Rectangle = new Class({
      * The y coordinate of the top of the Rectangle. Changing the top property of a Rectangle object has no effect on the x and width properties.
      * However it does affect the height property, whereas changing the y value does not affect the height property.
      *
-     * @name Phaser.Geom.Rectangle#top
+     * @name Oyun.Geom.Rectangle#top
      * @type {number}
      * @since 3.0.0
      */
@@ -2500,7 +2500,7 @@ var Rectangle = new Class({
      * The sum of the y and height properties.
      * Changing the bottom property of a Rectangle object has no effect on the x, y and width properties, but does change the height property.
      *
-     * @name Phaser.Geom.Rectangle#bottom
+     * @name Oyun.Geom.Rectangle#bottom
      * @type {number}
      * @since 3.0.0
      */
@@ -2528,7 +2528,7 @@ var Rectangle = new Class({
     /**
      * The x coordinate of the center of the Rectangle.
      *
-     * @name Phaser.Geom.Rectangle#centerX
+     * @name Oyun.Geom.Rectangle#centerX
      * @type {number}
      * @since 3.0.0
      */
@@ -2549,7 +2549,7 @@ var Rectangle = new Class({
     /**
      * The y coordinate of the center of the Rectangle.
      *
-     * @name Phaser.Geom.Rectangle#centerY
+     * @name Oyun.Geom.Rectangle#centerY
      * @type {number}
      * @since 3.0.0
      */
@@ -2583,7 +2583,7 @@ module.exports = Rectangle;
  */
 
 /**
- * @namespace Phaser.GameObjects.Components
+ * @namespace Oyun.GameObjects.Components
  */
 
 module.exports = {
@@ -2653,7 +2653,7 @@ function GenerateSrc (maxIfs)
 }
 
 /**
- * @namespace Phaser.Renderer.WebGL.Utils
+ * @namespace Oyun.Renderer.WebGL.Utils
  * @since 3.0.0
  */
 module.exports = {
@@ -2661,7 +2661,7 @@ module.exports = {
     /**
      * Packs four floats on a range from 0.0 to 1.0 into a single Uint32
      *
-     * @function Phaser.Renderer.WebGL.Utils.getTintFromFloats
+     * @function Oyun.Renderer.WebGL.Utils.getTintFromFloats
      * @since 3.0.0
      *
      * @param {number} r - Red component in a range from 0.0 to 1.0
@@ -2685,7 +2685,7 @@ module.exports = {
      * Packs a Uint24, representing RGB components, with a Float32, representing
      * the alpha component, with a range between 0.0 and 1.0 and return a Uint32
      *
-     * @function Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha
+     * @function Oyun.Renderer.WebGL.Utils.getTintAppendFloatAlpha
      * @since 3.0.0
      *
      * @param {number} rgb - Uint24 representing RGB components
@@ -2705,7 +2705,7 @@ module.exports = {
      * the alpha component, with a range between 0.0 and 1.0 and return a
      * swizzled Uint32
      *
-     * @function Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlphaAndSwap
+     * @function Oyun.Renderer.WebGL.Utils.getTintAppendFloatAlphaAndSwap
      * @since 3.0.0
      *
      * @param {number} rgb - Uint24 representing RGB components
@@ -2726,7 +2726,7 @@ module.exports = {
     /**
      * Unpacks a Uint24 RGB into an array of floats of ranges of 0.0 and 1.0
      *
-     * @function Phaser.Renderer.WebGL.Utils.getFloatsFromUintRGB
+     * @function Oyun.Renderer.WebGL.Utils.getFloatsFromUintRGB
      * @since 3.0.0
      *
      * @param {number} rgb - RGB packed as a Uint24
@@ -2746,7 +2746,7 @@ module.exports = {
      * Check to see how many texture units the GPU supports, based on the given config value.
      * Then tests this against the maximum number of iterations GLSL can support.
      *
-     * @function Phaser.Renderer.WebGL.Utils.checkShaderMax
+     * @function Oyun.Renderer.WebGL.Utils.checkShaderMax
      * @since 3.50.0
      *
      * @param {WebGLRenderingContext} gl - The WebGLContext used to create the shaders.
@@ -2798,7 +2798,7 @@ module.exports = {
      * Checks the given Fragment Shader Source for `%count%` and `%forloop%` declarations and
      * replaces those with GLSL code for setting `texture = texture2D(uMainSampler[i], outTexCoord)`.
      *
-     * @function Phaser.Renderer.WebGL.Utils.parseFragmentShaderMaxTextures
+     * @function Oyun.Renderer.WebGL.Utils.parseFragmentShaderMaxTextures
      * @since 3.50.0
      *
      * @param {string} fragmentShaderSource - The Fragment Shader source code to operate on.
@@ -2883,7 +2883,7 @@ var GetValue = __webpack_require__(6);
  * }
  * 
  *
- * @function Phaser.Utils.Objects.GetAdvancedValue
+ * @function Oyun.Utils.Objects.GetAdvancedValue
  * @since 3.0.0
  *
  * @param {object} source - The object to retrieve the value from.
@@ -2941,7 +2941,7 @@ var MATH_CONST = {
     /**
      * The value of PI * 2.
      * 
-     * @name Phaser.Math.PI2
+     * @name Oyun.Math.PI2
      * @type {number}
      * @since 3.0.0
      */
@@ -2950,7 +2950,7 @@ var MATH_CONST = {
     /**
      * The value of PI * 0.5.
      * 
-     * @name Phaser.Math.TAU
+     * @name Oyun.Math.TAU
      * @type {number}
      * @since 3.0.0
      */
@@ -2959,7 +2959,7 @@ var MATH_CONST = {
     /**
      * An epsilon value (1.0e-6)
      * 
-     * @name Phaser.Math.EPSILON
+     * @name Oyun.Math.EPSILON
      * @type {number}
      * @since 3.0.0
      */
@@ -2968,7 +2968,7 @@ var MATH_CONST = {
     /**
      * For converting degrees to radians (PI / 180)
      * 
-     * @name Phaser.Math.DEG_TO_RAD
+     * @name Oyun.Math.DEG_TO_RAD
      * @type {number}
      * @since 3.0.0
      */
@@ -2977,7 +2977,7 @@ var MATH_CONST = {
     /**
      * For converting radians to degrees (180 / PI)
      * 
-     * @name Phaser.Math.RAD_TO_DEG
+     * @name Oyun.Math.RAD_TO_DEG
      * @type {number}
      * @since 3.0.0
      */
@@ -2987,8 +2987,8 @@ var MATH_CONST = {
      * An instance of the Random Number Generator.
      * This is not set until the Game boots.
      * 
-     * @name Phaser.Math.RND
-     * @type {Phaser.Math.RandomDataGenerator}
+     * @name Oyun.Math.RND
+     * @type {Oyun.Math.RandomDataGenerator}
      * @since 3.0.0
      */
     RND: null,
@@ -2997,7 +2997,7 @@ var MATH_CONST = {
      * The minimum safe integer this browser supports.
      * We use a const for backward compatibility with Internet Explorer.
      * 
-     * @name Phaser.Math.MIN_SAFE_INTEGER
+     * @name Oyun.Math.MIN_SAFE_INTEGER
      * @type {number}
      * @since 3.21.0
      */
@@ -3007,7 +3007,7 @@ var MATH_CONST = {
      * The maximum safe integer this browser supports.
      * We use a const for backward compatibility with Internet Explorer.
      * 
-     * @name Phaser.Math.MAX_SAFE_INTEGER
+     * @name Oyun.Math.MAX_SAFE_INTEGER
      * @type {number}
      * @since 3.21.0
      */
@@ -3041,12 +3041,12 @@ var Events = __webpack_require__(75);
  * Instead, use them as the base for your own custom classes.
  *
  * @class GameObject
- * @memberof Phaser.GameObjects
- * @extends Phaser.Events.EventEmitter
+ * @memberof Oyun.GameObjects
+ * @extends Oyun.Events.EventEmitter
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object belongs.
  * @param {string} type - A textual representation of the type of Game Object, i.e. `sprite`.
  */
 var GameObject = new Class({
@@ -3067,8 +3067,8 @@ var GameObject = new Class({
          * You should consider this property as being read-only. You cannot move a
          * Game Object to another Scene by simply changing it.
          *
-         * @name Phaser.GameObjects.GameObject#scene
-         * @type {Phaser.Scene}
+         * @name Oyun.GameObjects.GameObject#scene
+         * @type {Oyun.Scene}
          * @since 3.0.0
          */
         this.scene = scene;
@@ -3080,8 +3080,8 @@ var GameObject = new Class({
          *
          * You should treat this property as being read-only.
          *
-         * @name Phaser.GameObjects.GameObject#displayList
-         * @type {(Phaser.GameObjects.DisplayList|Phaser.GameObjects.Layer)}
+         * @name Oyun.GameObjects.GameObject#displayList
+         * @type {(Oyun.GameObjects.DisplayList|Oyun.GameObjects.Layer)}
          * @default null
          * @since 3.50.0
          */
@@ -3089,9 +3089,9 @@ var GameObject = new Class({
 
         /**
          * A textual representation of this Game Object, i.e. `sprite`.
-         * Used internally by Phaser but is available for your own custom classes to populate.
+         * Used internally by Oyun but is available for your own custom classes to populate.
          *
-         * @name Phaser.GameObjects.GameObject#type
+         * @name Oyun.GameObjects.GameObject#type
          * @type {string}
          * @since 3.0.0
          */
@@ -3100,14 +3100,14 @@ var GameObject = new Class({
         /**
          * The current state of this Game Object.
          *
-         * Phaser itself will never modify this value, although plugins may do so.
+         * Oyun itself will never modify this value, although plugins may do so.
          *
          * Use this property to track the state of a Game Object during its lifetime. For example, it could change from
          * a state of 'moving', to 'attacking', to 'dead'. The state value should be an integer (ideally mapped to a constant
          * in your game code), or a string. These are recommended to keep it light and simple, with fast comparisons.
          * If you need to store complex data about your Game Object, look at using the Data Component instead.
          *
-         * @name Phaser.GameObjects.GameObject#state
+         * @name Oyun.GameObjects.GameObject#state
          * @type {(number|string)}
          * @since 3.16.0
          */
@@ -3116,17 +3116,17 @@ var GameObject = new Class({
         /**
          * The parent Container of this Game Object, if it has one.
          *
-         * @name Phaser.GameObjects.GameObject#parentContainer
-         * @type {Phaser.GameObjects.Container}
+         * @name Oyun.GameObjects.GameObject#parentContainer
+         * @type {Oyun.GameObjects.Container}
          * @since 3.4.0
          */
         this.parentContainer = null;
 
         /**
          * The name of this Game Object.
-         * Empty by default and never populated by Phaser, this is left for developers to use.
+         * Empty by default and never populated by Oyun, this is left for developers to use.
          *
-         * @name Phaser.GameObjects.GameObject#name
+         * @name Oyun.GameObjects.GameObject#name
          * @type {string}
          * @default ''
          * @since 3.0.0
@@ -3138,7 +3138,7 @@ var GameObject = new Class({
          * A Game Object with an active state of `true` is processed by the Scenes UpdateList, if added to it.
          * An active object is one which is having its logic and internal systems updated.
          *
-         * @name Phaser.GameObjects.GameObject#active
+         * @name Oyun.GameObjects.GameObject#active
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -3149,7 +3149,7 @@ var GameObject = new Class({
          * The Tab Index of the Game Object.
          * Reserved for future use by plugins and the Input Manager.
          *
-         * @name Phaser.GameObjects.GameObject#tabIndex
+         * @name Oyun.GameObjects.GameObject#tabIndex
          * @type {number}
          * @default -1
          * @since 3.0.0
@@ -3161,8 +3161,8 @@ var GameObject = new Class({
          * It allows you to store, query and get key/value paired information specific to this Game Object.
          * `null` by default. Automatically created if you use `getData` or `setData` or `setDataEnabled`.
          *
-         * @name Phaser.GameObjects.GameObject#data
-         * @type {Phaser.Data.DataManager}
+         * @name Oyun.GameObjects.GameObject#data
+         * @type {Oyun.Data.DataManager}
          * @default null
          * @since 3.0.0
          */
@@ -3173,7 +3173,7 @@ var GameObject = new Class({
          * The bits are 0001 | 0010 | 0100 | 1000 set by the components Visible, Alpha, Transform and Texture respectively.
          * If those components are not used by your custom class then you can use this bitmask as you wish.
          *
-         * @name Phaser.GameObjects.GameObject#renderFlags
+         * @name Oyun.GameObjects.GameObject#renderFlags
          * @type {number}
          * @default 15
          * @since 3.0.0
@@ -3188,7 +3188,7 @@ var GameObject = new Class({
          * @example
          * this.cameraFilter |= camera.id
          *
-         * @name Phaser.GameObjects.GameObject#cameraFilter
+         * @name Oyun.GameObjects.GameObject#cameraFilter
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -3199,8 +3199,8 @@ var GameObject = new Class({
          * If this Game Object is enabled for input then this property will contain an InteractiveObject instance.
          * Not usually set directly. Instead call `GameObject.setInteractive()`.
          *
-         * @name Phaser.GameObjects.GameObject#input
-         * @type {?Phaser.Types.Input.InteractiveObject}
+         * @name Oyun.GameObjects.GameObject#input
+         * @type {?Oyun.Types.Input.InteractiveObject}
          * @default null
          * @since 3.0.0
          */
@@ -3209,8 +3209,8 @@ var GameObject = new Class({
         /**
          * If this Game Object is enabled for Arcade or Matter Physics then this property will contain a reference to a Physics Body.
          *
-         * @name Phaser.GameObjects.GameObject#body
-         * @type {?(Phaser.Physics.Arcade.Body|Phaser.Physics.Arcade.StaticBody|MatterJS.BodyType)}
+         * @name Oyun.GameObjects.GameObject#body
+         * @type {?(Oyun.Physics.Arcade.Body|Oyun.Physics.Arcade.StaticBody|MatterJS.BodyType)}
          * @default null
          * @since 3.0.0
          */
@@ -3222,7 +3222,7 @@ var GameObject = new Class({
          * While it allows you to persist a Game Object across Scenes, please understand you are entirely
          * responsible for managing references to and from this Game Object.
          *
-         * @name Phaser.GameObjects.GameObject#ignoreDestroy
+         * @name Oyun.GameObjects.GameObject#ignoreDestroy
          * @type {boolean}
          * @default false
          * @since 3.5.0
@@ -3240,7 +3240,7 @@ var GameObject = new Class({
      * Sets the `active` property of this Game Object and returns this Game Object for further chaining.
      * A Game Object with its `active` property set to `true` will be updated by the Scenes UpdateList.
      *
-     * @method Phaser.GameObjects.GameObject#setActive
+     * @method Oyun.GameObjects.GameObject#setActive
      * @since 3.0.0
      *
      * @param {boolean} value - True if this Game Object should be set as active, false if not.
@@ -3256,9 +3256,9 @@ var GameObject = new Class({
 
     /**
      * Sets the `name` property of this Game Object and returns this Game Object for further chaining.
-     * The `name` property is not populated by Phaser and is presented for your own use.
+     * The `name` property is not populated by Oyun and is presented for your own use.
      *
-     * @method Phaser.GameObjects.GameObject#setName
+     * @method Oyun.GameObjects.GameObject#setName
      * @since 3.0.0
      *
      * @param {string} value - The name to be given to this Game Object.
@@ -3275,14 +3275,14 @@ var GameObject = new Class({
     /**
      * Sets the current state of this Game Object.
      *
-     * Phaser itself will never modify the State of a Game Object, although plugins may do so.
+     * Oyun itself will never modify the State of a Game Object, although plugins may do so.
      *
      * For example, a Game Object could change from a state of 'moving', to 'attacking', to 'dead'.
      * The state value should typically be an integer (ideally mapped to a constant
      * in your game code), but could also be a string. It is recommended to keep it light and simple.
      * If you need to store complex data about your Game Object, look at using the Data Component instead.
      *
-     * @method Phaser.GameObjects.GameObject#setState
+     * @method Oyun.GameObjects.GameObject#setState
      * @since 3.16.0
      *
      * @param {(number|string)} value - The state of the Game Object.
@@ -3299,9 +3299,9 @@ var GameObject = new Class({
     /**
      * Adds a Data Manager component to this Game Object.
      *
-     * @method Phaser.GameObjects.GameObject#setDataEnabled
+     * @method Oyun.GameObjects.GameObject#setDataEnabled
      * @since 3.0.0
-     * @see Phaser.Data.DataManager
+     * @see Oyun.Data.DataManager
      *
      * @return {this} This GameObject.
      */
@@ -3354,7 +3354,7 @@ var GameObject = new Class({
      * Please note that the data keys are case-sensitive and must be valid JavaScript Object property strings.
      * This means the keys `gold` and `Gold` are treated as two unique values within the Data Manager.
      *
-     * @method Phaser.GameObjects.GameObject#setData
+     * @method Oyun.GameObjects.GameObject#setData
      * @since 3.0.0
      *
      * @param {(string|object)} key - The key to set the value for. Or an object of key value pairs. If an object the `data` argument is ignored.
@@ -3384,7 +3384,7 @@ var GameObject = new Class({
      *
      * When the value is first set, a `setdata` event is emitted from this Game Object.
      *
-     * @method Phaser.GameObjects.GameObject#incData
+     * @method Oyun.GameObjects.GameObject#incData
      * @since 3.23.0
      *
      * @param {(string|object)} key - The key to increase the value for.
@@ -3414,7 +3414,7 @@ var GameObject = new Class({
      *
      * When the value is first set, a `setdata` event is emitted from this Game Object.
      *
-     * @method Phaser.GameObjects.GameObject#toggleData
+     * @method Oyun.GameObjects.GameObject#toggleData
      * @since 3.23.0
      *
      * @param {(string|object)} key - The key to toggle the value for.
@@ -3456,7 +3456,7 @@ var GameObject = new Class({
      *
      * This approach is useful for destructuring arrays in ES6.
      *
-     * @method Phaser.GameObjects.GameObject#getData
+     * @method Oyun.GameObjects.GameObject#getData
      * @since 3.0.0
      *
      * @param {(string|string[])} key - The key of the value to retrieve, or an array of keys.
@@ -3490,16 +3490,16 @@ var GameObject = new Class({
      * sprite.setInteractive();
      *
      * @example
-     * sprite.setInteractive(new Phaser.Geom.Circle(45, 46, 45), Phaser.Geom.Circle.Contains);
+     * sprite.setInteractive(new Oyun.Geom.Circle(45, 46, 45), Oyun.Geom.Circle.Contains);
      *
      * @example
-     * graphics.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+     * graphics.setInteractive(new Oyun.Geom.Rectangle(0, 0, 128, 128), Oyun.Geom.Rectangle.Contains);
      *
-     * @method Phaser.GameObjects.GameObject#setInteractive
+     * @method Oyun.GameObjects.GameObject#setInteractive
      * @since 3.0.0
      *
-     * @param {(Phaser.Types.Input.InputConfiguration|any)} [hitArea] - Either an input configuration object, or a geometric shape that defines the hit area for the Game Object. If not given it will try to create a Rectangle based on the texture frame.
-     * @param {Phaser.Types.Input.HitAreaCallback} [callback] - The callback that determines if the pointer is within the Hit Area shape or not. If you provide a shape you must also provide a callback.
+     * @param {(Oyun.Types.Input.InputConfiguration|any)} [hitArea] - Either an input configuration object, or a geometric shape that defines the hit area for the Game Object. If not given it will try to create a Rectangle based on the texture frame.
+     * @param {Oyun.Types.Input.HitAreaCallback} [callback] - The callback that determines if the pointer is within the Hit Area shape or not. If you provide a shape you must also provide a callback.
      * @param {boolean} [dropZone=false] - Should this Game Object be treated as a drop zone target?
      *
      * @return {this} This GameObject.
@@ -3520,7 +3520,7 @@ var GameObject = new Class({
      *
      * If want to completely remove interaction from this Game Object then use `removeInteractive` instead.
      *
-     * @method Phaser.GameObjects.GameObject#disableInteractive
+     * @method Oyun.GameObjects.GameObject#disableInteractive
      * @since 3.7.0
      *
      * @return {this} This GameObject.
@@ -3555,7 +3555,7 @@ var GameObject = new Class({
      * being used. I.e.: `sprite.input.hitArea.setSize(width, height)` (assuming the
      * shape is a Rectangle, which it is by default.)
      *
-     * @method Phaser.GameObjects.GameObject#removeInteractive
+     * @method Oyun.GameObjects.GameObject#removeInteractive
      * @since 3.7.0
      *
      * @return {this} This GameObject.
@@ -3577,7 +3577,7 @@ var GameObject = new Class({
      *
      * You can also listen for the `ADDED_TO_SCENE` event from this Game Object.
      *
-     * @method Phaser.GameObjects.GameObject#addedToScene
+     * @method Oyun.GameObjects.GameObject#addedToScene
      * @since 3.50.0
      */
     addedToScene: function ()
@@ -3592,7 +3592,7 @@ var GameObject = new Class({
      *
      * You can also listen for the `REMOVED_FROM_SCENE` event from this Game Object.
      *
-     * @method Phaser.GameObjects.GameObject#removedFromScene
+     * @method Oyun.GameObjects.GameObject#removedFromScene
      * @since 3.50.0
      */
     removedFromScene: function ()
@@ -3602,7 +3602,7 @@ var GameObject = new Class({
     /**
      * To be overridden by custom GameObjects. Allows base objects to be used in a Pool.
      *
-     * @method Phaser.GameObjects.GameObject#update
+     * @method Oyun.GameObjects.GameObject#update
      * @since 3.0.0
      *
      * @param {...*} [args] - args
@@ -3614,10 +3614,10 @@ var GameObject = new Class({
     /**
      * Returns a JSON representation of the Game Object.
      *
-     * @method Phaser.GameObjects.GameObject#toJSON
+     * @method Oyun.GameObjects.GameObject#toJSON
      * @since 3.0.0
      *
-     * @return {Phaser.Types.GameObjects.JSONGameObject} A JSON representation of the Game Object.
+     * @return {Oyun.Types.GameObjects.JSONGameObject} A JSON representation of the Game Object.
      */
     toJSON: function ()
     {
@@ -3628,10 +3628,10 @@ var GameObject = new Class({
      * Compares the renderMask with the renderFlags to see if this Game Object will render or not.
      * Also checks the Game Object against the given Cameras exclusion list.
      *
-     * @method Phaser.GameObjects.GameObject#willRender
+     * @method Oyun.GameObjects.GameObject#willRender
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} camera - The Camera to check against this Game Object.
+     * @param {Oyun.Cameras.Scene2D.Camera} camera - The Camera to check against this Game Object.
      *
      * @return {boolean} True if the Game Object should be rendered, otherwise false.
      */
@@ -3648,7 +3648,7 @@ var GameObject = new Class({
      * Used internally by the InputPlugin but also useful if you wish to find out the display depth of
      * this Game Object and all of its ancestors.
      *
-     * @method Phaser.GameObjects.GameObject#getIndexList
+     * @method Oyun.GameObjects.GameObject#getIndexList
      * @since 3.4.0
      *
      * @return {number[]} An array of display list position indexes.
@@ -3702,8 +3702,8 @@ var GameObject = new Class({
      * If you just want to temporarily disable an object then look at using the
      * Game Object Pool instead of destroying it, as destroyed objects cannot be resurrected.
      *
-     * @method Phaser.GameObjects.GameObject#destroy
-     * @fires Phaser.GameObjects.Events#DESTROY
+     * @method Oyun.GameObjects.GameObject#destroy
+     * @fires Oyun.GameObjects.Events#DESTROY
      * @since 3.0.0
      */
     destroy: function ()
@@ -3769,7 +3769,7 @@ var GameObject = new Class({
  * The bitmask that `GameObject.renderFlags` is compared against to determine if the Game Object will render or not.
  *
  * @constant {number} RENDER_MASK
- * @memberof Phaser.GameObjects.GameObject
+ * @memberof Oyun.GameObjects.GameObject
  * @default
  */
 GameObject.RENDER_MASK = 15;
@@ -3801,11 +3801,11 @@ var SceneEvents = __webpack_require__(21);
  * methods into the class.
  *
  * @class GameObjectCreator
- * @memberof Phaser.GameObjects
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object Factory belongs.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object Factory belongs.
  */
 var GameObjectCreator = new Class({
 
@@ -3816,8 +3816,8 @@ var GameObjectCreator = new Class({
         /**
          * The Scene to which this Game Object Creator belongs.
          *
-         * @name Phaser.GameObjects.GameObjectCreator#scene
-         * @type {Phaser.Scene}
+         * @name Oyun.GameObjects.GameObjectCreator#scene
+         * @type {Oyun.Scene}
          * @protected
          * @since 3.0.0
          */
@@ -3826,8 +3826,8 @@ var GameObjectCreator = new Class({
         /**
          * A reference to the Scene.Systems.
          *
-         * @name Phaser.GameObjects.GameObjectCreator#systems
-         * @type {Phaser.Scenes.Systems}
+         * @name Oyun.GameObjects.GameObjectCreator#systems
+         * @type {Oyun.Scenes.Systems}
          * @protected
          * @since 3.0.0
          */
@@ -3836,8 +3836,8 @@ var GameObjectCreator = new Class({
         /**
          * A reference to the Scene Event Emitter.
          *
-         * @name Phaser.GameObjects.GameObjectCreator#events
-         * @type {Phaser.Events.EventEmitter}
+         * @name Oyun.GameObjects.GameObjectCreator#events
+         * @type {Oyun.Events.EventEmitter}
          * @protected
          * @since 3.50.0
          */
@@ -3846,8 +3846,8 @@ var GameObjectCreator = new Class({
         /**
          * A reference to the Scene Display List.
          *
-         * @name Phaser.GameObjects.GameObjectCreator#displayList
-         * @type {Phaser.GameObjects.DisplayList}
+         * @name Oyun.GameObjects.GameObjectCreator#displayList
+         * @type {Oyun.GameObjects.DisplayList}
          * @protected
          * @since 3.0.0
          */
@@ -3856,8 +3856,8 @@ var GameObjectCreator = new Class({
         /**
          * A reference to the Scene Update List.
          *
-         * @name Phaser.GameObjects.GameObjectCreator#updateList
-         * @type {Phaser.GameObjects.UpdateList}
+         * @name Oyun.GameObjects.GameObjectCreator#updateList
+         * @type {Oyun.GameObjects.UpdateList}
          * @protected
          * @since 3.0.0
          */
@@ -3871,7 +3871,7 @@ var GameObjectCreator = new Class({
      * This method is called automatically, only once, when the Scene is first created.
      * Do not invoke it directly.
      *
-     * @method Phaser.GameObjects.GameObjectCreator#boot
+     * @method Oyun.GameObjects.GameObjectCreator#boot
      * @private
      * @since 3.5.1
      */
@@ -3888,7 +3888,7 @@ var GameObjectCreator = new Class({
      * It is responsible for creating local systems, properties and listening for Scene events.
      * Do not invoke it directly.
      *
-     * @method Phaser.GameObjects.GameObjectCreator#start
+     * @method Oyun.GameObjects.GameObjectCreator#start
      * @private
      * @since 3.5.0
      */
@@ -3901,7 +3901,7 @@ var GameObjectCreator = new Class({
      * The Scene that owns this plugin is shutting down.
      * We need to kill and reset all internal properties as well as stop listening to Scene events.
      *
-     * @method Phaser.GameObjects.GameObjectCreator#shutdown
+     * @method Oyun.GameObjects.GameObjectCreator#shutdown
      * @private
      * @since 3.0.0
      */
@@ -3914,7 +3914,7 @@ var GameObjectCreator = new Class({
      * The Scene that owns this plugin is being destroyed.
      * We need to shutdown and then kill off all external references.
      *
-     * @method Phaser.GameObjects.GameObjectCreator#destroy
+     * @method Oyun.GameObjects.GameObjectCreator#destroy
      * @private
      * @since 3.0.0
      */
@@ -3976,7 +3976,7 @@ var IsPlainObject = __webpack_require__(7);
 /**
  * This is a slightly modified version of http://api.jquery.com/jQuery.extend/
  *
- * @function Phaser.Utils.Objects.Extend
+ * @function Oyun.Utils.Objects.Extend
  * @since 3.0.0
  *
  * @param {...*} [args] - The objects that will be mixed.
@@ -4001,7 +4001,7 @@ var Extend = function ()
         i = 2;
     }
 
-    // extend Phaser if only one argument is passed
+    // extend Oyun if only one argument is passed
     if (length === i)
     {
         target = this;
@@ -4071,7 +4071,7 @@ module.exports = Extend;
 /**
  * Force a value within the boundaries by clamping it to the range `min`, `max`.
  *
- * @function Phaser.Math.Clamp
+ * @function Oyun.Math.Clamp
  * @since 3.0.0
  *
  * @param {number} value - The value to be clamped.
@@ -4115,15 +4115,15 @@ var result = { camera: tempMatrix1, sprite: tempMatrix2, calc: tempMatrix3 };
  * copy them to your own matrix, as they will be replaced as soon as another Game
  * Object is rendered.
  *
- * @function Phaser.GameObjects.GetCalcMatrix
- * @memberof Phaser.GameObjects
+ * @function Oyun.GameObjects.GetCalcMatrix
+ * @memberof Oyun.GameObjects
  * @since 3.50.0
  *
- * @param {Phaser.GameObjects.GameObject} src - The Game Object to calculate the transform matrix for.
- * @param {Phaser.Cameras.Scene2D.Camera} camera - The camera being used to render the Game Object.
- * @param {Phaser.GameObjects.Components.TransformMatrix} [parentMatrix] - The transform matrix of the parent container, if any.
+ * @param {Oyun.GameObjects.GameObject} src - The Game Object to calculate the transform matrix for.
+ * @param {Oyun.Cameras.Scene2D.Camera} camera - The camera being used to render the Game Object.
+ * @param {Oyun.GameObjects.Components.TransformMatrix} [parentMatrix] - The transform matrix of the parent container, if any.
  *
- * @return {Phaser.Types.GameObjects.GetCalcMatrixResults} The results object containing the updated transform matrices.
+ * @return {Oyun.Types.GameObjects.GetCalcMatrixResults} The results object containing the updated transform matrices.
  */
 var GetCalcMatrix = function (src, camera, parentMatrix)
 {
@@ -4174,7 +4174,7 @@ var FILE_CONST = {
     /**
      * The Loader is idle.
      * 
-     * @name Phaser.Loader.LOADER_IDLE
+     * @name Oyun.Loader.LOADER_IDLE
      * @type {number}
      * @since 3.0.0
      */
@@ -4183,7 +4183,7 @@ var FILE_CONST = {
     /**
      * The Loader is actively loading.
      * 
-     * @name Phaser.Loader.LOADER_LOADING
+     * @name Oyun.Loader.LOADER_LOADING
      * @type {number}
      * @since 3.0.0
      */
@@ -4192,7 +4192,7 @@ var FILE_CONST = {
     /**
      * The Loader is processing files is has loaded.
      * 
-     * @name Phaser.Loader.LOADER_PROCESSING
+     * @name Oyun.Loader.LOADER_PROCESSING
      * @type {number}
      * @since 3.0.0
      */
@@ -4201,7 +4201,7 @@ var FILE_CONST = {
     /**
      * The Loader has completed loading and processing.
      * 
-     * @name Phaser.Loader.LOADER_COMPLETE
+     * @name Oyun.Loader.LOADER_COMPLETE
      * @type {number}
      * @since 3.0.0
      */
@@ -4210,7 +4210,7 @@ var FILE_CONST = {
     /**
      * The Loader is shutting down.
      * 
-     * @name Phaser.Loader.LOADER_SHUTDOWN
+     * @name Oyun.Loader.LOADER_SHUTDOWN
      * @type {number}
      * @since 3.0.0
      */
@@ -4219,7 +4219,7 @@ var FILE_CONST = {
     /**
      * The Loader has been destroyed.
      * 
-     * @name Phaser.Loader.LOADER_DESTROYED
+     * @name Oyun.Loader.LOADER_DESTROYED
      * @type {number}
      * @since 3.0.0
      */
@@ -4228,7 +4228,7 @@ var FILE_CONST = {
     /**
      * File is in the load queue but not yet started
      * 
-     * @name Phaser.Loader.FILE_PENDING
+     * @name Oyun.Loader.FILE_PENDING
      * @type {number}
      * @since 3.0.0
      */
@@ -4237,7 +4237,7 @@ var FILE_CONST = {
     /**
      * File has been started to load by the loader (onLoad called)
      * 
-     * @name Phaser.Loader.FILE_LOADING
+     * @name Oyun.Loader.FILE_LOADING
      * @type {number}
      * @since 3.0.0
      */
@@ -4246,7 +4246,7 @@ var FILE_CONST = {
     /**
      * File has loaded successfully, awaiting processing    
      * 
-     * @name Phaser.Loader.FILE_LOADED
+     * @name Oyun.Loader.FILE_LOADED
      * @type {number}
      * @since 3.0.0
      */
@@ -4255,7 +4255,7 @@ var FILE_CONST = {
     /**
      * File failed to load
      * 
-     * @name Phaser.Loader.FILE_FAILED
+     * @name Oyun.Loader.FILE_FAILED
      * @type {number}
      * @since 3.0.0
      */
@@ -4264,7 +4264,7 @@ var FILE_CONST = {
     /**
      * File is being processed (onProcess callback)
      * 
-     * @name Phaser.Loader.FILE_PROCESSING
+     * @name Oyun.Loader.FILE_PROCESSING
      * @type {number}
      * @since 3.0.0
      */
@@ -4273,7 +4273,7 @@ var FILE_CONST = {
     /**
      * The File has errored somehow during processing.
      * 
-     * @name Phaser.Loader.FILE_ERRORED
+     * @name Oyun.Loader.FILE_ERRORED
      * @type {number}
      * @since 3.0.0
      */
@@ -4282,7 +4282,7 @@ var FILE_CONST = {
     /**
      * File has finished processing.
      * 
-     * @name Phaser.Loader.FILE_COMPLETE
+     * @name Oyun.Loader.FILE_COMPLETE
      * @type {number}
      * @since 3.0.0
      */
@@ -4291,7 +4291,7 @@ var FILE_CONST = {
     /**
      * File has been destroyed
      * 
-     * @name Phaser.Loader.FILE_DESTROYED
+     * @name Oyun.Loader.FILE_DESTROYED
      * @type {number}
      * @since 3.0.0
      */
@@ -4300,7 +4300,7 @@ var FILE_CONST = {
     /**
      * File was populated from local data and doesn't need an HTTP request
      * 
-     * @name Phaser.Loader.FILE_POPULATED
+     * @name Oyun.Loader.FILE_POPULATED
      * @type {number}
      * @since 3.0.0
      */
@@ -4322,7 +4322,7 @@ module.exports = FILE_CONST;
  */
 
 /**
- * @namespace Phaser.Scenes.Events
+ * @namespace Oyun.Scenes.Events
  */
 
 module.exports = {
@@ -4363,7 +4363,7 @@ module.exports = {
  */
 
 /**
- * @namespace Phaser.Core.Events
+ * @namespace Oyun.Core.Events
  */
 
 module.exports = {
@@ -4413,12 +4413,12 @@ var XHRSettings = __webpack_require__(154);
  * You shouldn't create an instance of a File directly, but should extend it with your own class, setting a custom type and processing methods.
  *
  * @class File
- * @memberof Phaser.Loader
+ * @memberof Oyun.Loader
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Loader.LoaderPlugin} loader - The Loader that is going to load this File.
- * @param {Phaser.Types.Loader.FileConfig} fileConfig - The file configuration object, as created by the file type.
+ * @param {Oyun.Loader.LoaderPlugin} loader - The Loader that is going to load this File.
+ * @param {Oyun.Types.Loader.FileConfig} fileConfig - The file configuration object, as created by the file type.
  */
 var File = new Class({
 
@@ -4429,8 +4429,8 @@ var File = new Class({
         /**
          * A reference to the Loader that is going to load this file.
          *
-         * @name Phaser.Loader.File#loader
-         * @type {Phaser.Loader.LoaderPlugin}
+         * @name Oyun.Loader.File#loader
+         * @type {Oyun.Loader.LoaderPlugin}
          * @since 3.0.0
          */
         this.loader = loader;
@@ -4438,8 +4438,8 @@ var File = new Class({
         /**
          * A reference to the Cache, or Texture Manager, that is going to store this file if it loads.
          *
-         * @name Phaser.Loader.File#cache
-         * @type {(Phaser.Cache.BaseCache|Phaser.Textures.TextureManager)}
+         * @name Oyun.Loader.File#cache
+         * @type {(Oyun.Cache.BaseCache|Oyun.Textures.TextureManager)}
          * @since 3.7.0
          */
         this.cache = GetFastValue(fileConfig, 'cache', false);
@@ -4447,7 +4447,7 @@ var File = new Class({
         /**
          * The file type string (image, json, etc) for sorting within the Loader.
          *
-         * @name Phaser.Loader.File#type
+         * @name Oyun.Loader.File#type
          * @type {string}
          * @since 3.0.0
          */
@@ -4456,7 +4456,7 @@ var File = new Class({
         /**
          * Unique cache key (unique within its file type)
          *
-         * @name Phaser.Loader.File#key
+         * @name Oyun.Loader.File#key
          * @type {string}
          * @since 3.0.0
          */
@@ -4492,7 +4492,7 @@ var File = new Class({
          *
          * Can also be a JavaScript Object, such as the results of parsing JSON data.
          *
-         * @name Phaser.Loader.File#url
+         * @name Oyun.Loader.File#url
          * @type {object|string}
          * @since 3.0.0
          */
@@ -4502,7 +4502,7 @@ var File = new Class({
          * The final URL this file will load from, including baseURL and path.
          * Set automatically when the Loader calls 'load' on this file.
          *
-         * @name Phaser.Loader.File#src
+         * @name Oyun.Loader.File#src
          * @type {string}
          * @since 3.0.0
          */
@@ -4511,8 +4511,8 @@ var File = new Class({
         /**
          * The merged XHRSettings for this file.
          *
-         * @name Phaser.Loader.File#xhrSettings
-         * @type {Phaser.Types.Loader.XHRSettingsObject}
+         * @name Oyun.Loader.File#xhrSettings
+         * @type {Oyun.Types.Loader.XHRSettingsObject}
          * @since 3.0.0
          */
         this.xhrSettings = XHRSettings(GetFastValue(fileConfig, 'responseType', undefined));
@@ -4525,7 +4525,7 @@ var File = new Class({
         /**
          * The XMLHttpRequest instance (as created by XHR Loader) that is loading this File.
          *
-         * @name Phaser.Loader.File#xhrLoader
+         * @name Oyun.Loader.File#xhrLoader
          * @type {?XMLHttpRequest}
          * @since 3.0.0
          */
@@ -4534,7 +4534,7 @@ var File = new Class({
         /**
          * The current state of the file. One of the FILE_CONST values.
          *
-         * @name Phaser.Loader.File#state
+         * @name Oyun.Loader.File#state
          * @type {number}
          * @since 3.0.0
          */
@@ -4544,7 +4544,7 @@ var File = new Class({
          * The total size of this file.
          * Set by onProgress and only if loading via XHR.
          *
-         * @name Phaser.Loader.File#bytesTotal
+         * @name Oyun.Loader.File#bytesTotal
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -4555,7 +4555,7 @@ var File = new Class({
          * Updated as the file loads.
          * Only set if loading via XHR.
          *
-         * @name Phaser.Loader.File#bytesLoaded
+         * @name Oyun.Loader.File#bytesLoaded
          * @type {number}
          * @default -1
          * @since 3.0.0
@@ -4566,7 +4566,7 @@ var File = new Class({
          * A percentage value between 0 and 1 indicating how much of this file has loaded.
          * Only set if loading via XHR.
          *
-         * @name Phaser.Loader.File#percentComplete
+         * @name Oyun.Loader.File#percentComplete
          * @type {number}
          * @default -1
          * @since 3.0.0
@@ -4577,7 +4577,7 @@ var File = new Class({
          * For CORs based loading.
          * If this is undefined then the File will check BaseLoader.crossOrigin and use that (if set)
          *
-         * @name Phaser.Loader.File#crossOrigin
+         * @name Oyun.Loader.File#crossOrigin
          * @type {(string|undefined)}
          * @since 3.0.0
          */
@@ -4586,7 +4586,7 @@ var File = new Class({
         /**
          * The processed file data, stored here after the file has loaded.
          *
-         * @name Phaser.Loader.File#data
+         * @name Oyun.Loader.File#data
          * @type {*}
          * @since 3.0.0
          */
@@ -4595,7 +4595,7 @@ var File = new Class({
         /**
          * A config object that can be used by file types to store transitional data.
          *
-         * @name Phaser.Loader.File#config
+         * @name Oyun.Loader.File#config
          * @type {*}
          * @since 3.0.0
          */
@@ -4605,8 +4605,8 @@ var File = new Class({
          * If this is a multipart file, i.e. an atlas and its json together, then this is a reference
          * to the parent MultiFile. Set and used internally by the Loader or specific file types.
          *
-         * @name Phaser.Loader.File#multiFile
-         * @type {?Phaser.Loader.MultiFile}
+         * @name Oyun.Loader.File#multiFile
+         * @type {?Oyun.Loader.MultiFile}
          * @since 3.7.0
          */
         this.multiFile;
@@ -4616,8 +4616,8 @@ var File = new Class({
          * Atlases and Bitmap Fonts use the multiFile, because those files need loading together but aren't
          * actually bound by data, where-as a linkFile is.
          *
-         * @name Phaser.Loader.File#linkFile
-         * @type {?Phaser.Loader.File}
+         * @name Oyun.Loader.File#linkFile
+         * @type {?Oyun.Loader.File}
          * @since 3.7.0
          */
         this.linkFile;
@@ -4626,10 +4626,10 @@ var File = new Class({
     /**
      * Links this File with another, so they depend upon each other for loading and processing.
      *
-     * @method Phaser.Loader.File#setLink
+     * @method Oyun.Loader.File#setLink
      * @since 3.7.0
      *
-     * @param {Phaser.Loader.File} fileB - The file to link to this one.
+     * @param {Oyun.Loader.File} fileB - The file to link to this one.
      */
     setLink: function (fileB)
     {
@@ -4641,7 +4641,7 @@ var File = new Class({
     /**
      * Resets the XHRLoader instance this file is using.
      *
-     * @method Phaser.Loader.File#resetXHR
+     * @method Oyun.Loader.File#resetXHR
      * @since 3.0.0
      */
     resetXHR: function ()
@@ -4659,7 +4659,7 @@ var File = new Class({
      * During the load the methods onLoad, onError and onProgress are called, based on the XHR events.
      * You shouldn't normally call this method directly, it's meant to be invoked by the Loader.
      *
-     * @method Phaser.Loader.File#load
+     * @method Oyun.Loader.File#load
      * @since 3.0.0
      */
     load: function ()
@@ -4696,7 +4696,7 @@ var File = new Class({
     /**
      * Called when the file finishes loading, is sent a DOM ProgressEvent.
      *
-     * @method Phaser.Loader.File#onLoad
+     * @method Oyun.Loader.File#onLoad
      * @since 3.0.0
      *
      * @param {XMLHttpRequest} xhr - The XMLHttpRequest that caused this onload event.
@@ -4724,7 +4724,7 @@ var File = new Class({
     /**
      * Called if the file errors while loading, is sent a DOM ProgressEvent.
      *
-     * @method Phaser.Loader.File#onError
+     * @method Oyun.Loader.File#onError
      * @since 3.0.0
      *
      * @param {XMLHttpRequest} xhr - The XMLHttpRequest that caused this onload event.
@@ -4740,8 +4740,8 @@ var File = new Class({
     /**
      * Called during the file load progress. Is sent a DOM ProgressEvent.
      *
-     * @method Phaser.Loader.File#onProgress
-     * @fires Phaser.Loader.Events#FILE_PROGRESS
+     * @method Oyun.Loader.File#onProgress
+     * @fires Oyun.Loader.Events#FILE_PROGRESS
      * @since 3.0.0
      *
      * @param {ProgressEvent} event - The DOM ProgressEvent.
@@ -4763,7 +4763,7 @@ var File = new Class({
      * Usually overridden by the FileTypes and is called by Loader.nextFile.
      * This method controls what extra work this File does with its loaded data, for example a JSON file will parse itself during this stage.
      *
-     * @method Phaser.Loader.File#onProcess
+     * @method Oyun.Loader.File#onProcess
      * @since 3.0.0
      */
     onProcess: function ()
@@ -4777,7 +4777,7 @@ var File = new Class({
      * Called when the File has completed processing.
      * Checks on the state of its multifile, if set.
      *
-     * @method Phaser.Loader.File#onProcessComplete
+     * @method Oyun.Loader.File#onProcessComplete
      * @since 3.7.0
      */
     onProcessComplete: function ()
@@ -4796,7 +4796,7 @@ var File = new Class({
      * Called when the File has completed processing but it generated an error.
      * Checks on the state of its multifile, if set.
      *
-     * @method Phaser.Loader.File#onProcessError
+     * @method Oyun.Loader.File#onProcessError
      * @since 3.7.0
      */
     onProcessError: function ()
@@ -4816,7 +4816,7 @@ var File = new Class({
      * This is called automatically by the LoaderPlugin to decide if the file can be safely
      * loaded or will conflict.
      *
-     * @method Phaser.Loader.File#hasCacheConflict
+     * @method Oyun.Loader.File#hasCacheConflict
      * @since 3.7.0
      *
      * @return {boolean} `true` if adding this file will cause a conflict, otherwise `false`.
@@ -4830,7 +4830,7 @@ var File = new Class({
      * Adds this file to its target cache upon successful loading and processing.
      * This method is often overridden by specific file types.
      *
-     * @method Phaser.Loader.File#addToCache
+     * @method Oyun.Loader.File#addToCache
      * @since 3.7.0
      */
     addToCache: function ()
@@ -4847,9 +4847,9 @@ var File = new Class({
      * Called once the file has been added to its cache and is now ready for deletion from the Loader.
      * It will emit a `filecomplete` event from the LoaderPlugin.
      *
-     * @method Phaser.Loader.File#pendingDestroy
-     * @fires Phaser.Loader.Events#FILE_COMPLETE
-     * @fires Phaser.Loader.Events#FILE_KEY_COMPLETE
+     * @method Oyun.Loader.File#pendingDestroy
+     * @fires Oyun.Loader.Events#FILE_COMPLETE
+     * @fires Oyun.Loader.Events#FILE_KEY_COMPLETE
      * @since 3.7.0
      */
     pendingDestroy: function (data)
@@ -4868,7 +4868,7 @@ var File = new Class({
     /**
      * Destroy this File and any references it holds.
      *
-     * @method Phaser.Loader.File#destroy
+     * @method Oyun.Loader.File#destroy
      * @since 3.7.0
      */
     destroy: function ()
@@ -4887,7 +4887,7 @@ var File = new Class({
  * Static method for creating object URL using URL API and setting it as image 'src' attribute.
  * If URL API is not supported (usually on old browsers) it falls back to creating Base64 encoded url using FileReader.
  *
- * @method Phaser.Loader.File.createObjectURL
+ * @method Oyun.Loader.File.createObjectURL
  * @static
  * @since 3.7.0
  *
@@ -4921,7 +4921,7 @@ File.createObjectURL = function (image, blob, defaultType)
  * Static method for releasing an existing object URL which was previously created
  * by calling {@link File#createObjectURL} method.
  *
- * @method Phaser.Loader.File.revokeObjectURL
+ * @method Oyun.Loader.File.revokeObjectURL
  * @static
  * @since 3.7.0
  *
@@ -4948,7 +4948,7 @@ module.exports = File;
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-//  Contains the plugins that Phaser uses globally and locally.
+//  Contains the plugins that Oyun uses globally and locally.
 //  These are the source objects, not instantiated.
 var corePlugins = {};
 
@@ -4959,7 +4959,7 @@ var customPlugins = {};
 var PluginCache = {};
 
 /**
- * @namespace Phaser.Plugins.PluginCache
+ * @namespace Oyun.Plugins.PluginCache
  */
 
 /**
@@ -4968,7 +4968,7 @@ var PluginCache = {};
  * Plugin is the object to instantiate to create the plugin
  * Mapping is what the plugin is injected into the Scene.Systems as (i.e. input)
  *
- * @method Phaser.Plugins.PluginCache.register
+ * @method Oyun.Plugins.PluginCache.register
  * @since 3.8.0
  * 
  * @param {string} key - A reference used to get this plugin from the plugin cache.
@@ -4987,7 +4987,7 @@ PluginCache.register = function (key, plugin, mapping, custom)
  * Stores a custom plugin in the global plugin cache.
  * The key must be unique, within the scope of the cache.
  *
- * @method Phaser.Plugins.PluginCache.registerCustom
+ * @method Oyun.Plugins.PluginCache.registerCustom
  * @since 3.8.0
  * 
  * @param {string} key - A reference used to get this plugin from the plugin cache.
@@ -5003,7 +5003,7 @@ PluginCache.registerCustom = function (key, plugin, mapping, data)
 /**
  * Checks if the given key is already being used in the core plugin cache.
  *
- * @method Phaser.Plugins.PluginCache.hasCore
+ * @method Oyun.Plugins.PluginCache.hasCore
  * @since 3.8.0
  * 
  * @param {string} key - The key to check for.
@@ -5018,7 +5018,7 @@ PluginCache.hasCore = function (key)
 /**
  * Checks if the given key is already being used in the custom plugin cache.
  *
- * @method Phaser.Plugins.PluginCache.hasCustom
+ * @method Oyun.Plugins.PluginCache.hasCustom
  * @since 3.8.0
  * 
  * @param {string} key - The key to check for.
@@ -5033,12 +5033,12 @@ PluginCache.hasCustom = function (key)
 /**
  * Returns the core plugin object from the cache based on the given key.
  *
- * @method Phaser.Plugins.PluginCache.getCore
+ * @method Oyun.Plugins.PluginCache.getCore
  * @since 3.8.0
  * 
  * @param {string} key - The key of the core plugin to get.
  *
- * @return {Phaser.Types.Plugins.CorePluginContainer} The core plugin object.
+ * @return {Oyun.Types.Plugins.CorePluginContainer} The core plugin object.
  */
 PluginCache.getCore = function (key)
 {
@@ -5048,12 +5048,12 @@ PluginCache.getCore = function (key)
 /**
  * Returns the custom plugin object from the cache based on the given key.
  *
- * @method Phaser.Plugins.PluginCache.getCustom
+ * @method Oyun.Plugins.PluginCache.getCustom
  * @since 3.8.0
  * 
  * @param {string} key - The key of the custom plugin to get.
  *
- * @return {Phaser.Types.Plugins.CustomPluginContainer} The custom plugin object.
+ * @return {Oyun.Types.Plugins.CustomPluginContainer} The custom plugin object.
  */
 PluginCache.getCustom = function (key)
 {
@@ -5063,7 +5063,7 @@ PluginCache.getCustom = function (key)
 /**
  * Returns an object from the custom cache based on the given key that can be instantiated.
  *
- * @method Phaser.Plugins.PluginCache.getCustomClass
+ * @method Oyun.Plugins.PluginCache.getCustomClass
  * @since 3.8.0
  * 
  * @param {string} key - The key of the custom plugin to get.
@@ -5078,7 +5078,7 @@ PluginCache.getCustomClass = function (key)
 /**
  * Removes a core plugin based on the given key.
  *
- * @method Phaser.Plugins.PluginCache.remove
+ * @method Oyun.Plugins.PluginCache.remove
  * @since 3.8.0
  * 
  * @param {string} key - The key of the core plugin to remove.
@@ -5094,7 +5094,7 @@ PluginCache.remove = function (key)
 /**
  * Removes a custom plugin based on the given key.
  *
- * @method Phaser.Plugins.PluginCache.removeCustom
+ * @method Oyun.Plugins.PluginCache.removeCustom
  * @since 3.8.0
  * 
  * @param {string} key - The key of the custom plugin to remove.
@@ -5110,10 +5110,10 @@ PluginCache.removeCustom = function (key)
 /**
  * Removes all Core Plugins.
  * 
- * This includes all of the internal system plugins that Phaser needs, like the Input Plugin and Loader Plugin.
- * So be sure you only call this if you do not wish to run Phaser again.
+ * This includes all of the internal system plugins that Oyun needs, like the Input Plugin and Loader Plugin.
+ * So be sure you only call this if you do not wish to run Oyun again.
  *
- * @method Phaser.Plugins.PluginCache.destroyCorePlugins
+ * @method Oyun.Plugins.PluginCache.destroyCorePlugins
  * @since 3.12.0
  */
 PluginCache.destroyCorePlugins = function ()
@@ -5130,7 +5130,7 @@ PluginCache.destroyCorePlugins = function ()
 /**
  * Removes all Custom Plugins.
  *
- * @method Phaser.Plugins.PluginCache.destroyCustomPlugins
+ * @method Oyun.Plugins.PluginCache.destroyCustomPlugins
  * @since 3.12.0
  */
 PluginCache.destroyCustomPlugins = function ()
@@ -5174,7 +5174,7 @@ var Vector2 = __webpack_require__(3);
  * ```
  *
  * @class TransformMatrix
- * @memberof Phaser.GameObjects.Components
+ * @memberof Oyun.GameObjects.Components
  * @constructor
  * @since 3.0.0
  *
@@ -5201,7 +5201,7 @@ var TransformMatrix = new Class({
         /**
          * The matrix values.
          *
-         * @name Phaser.GameObjects.Components.TransformMatrix#matrix
+         * @name Oyun.GameObjects.Components.TransformMatrix#matrix
          * @type {Float32Array}
          * @since 3.0.0
          */
@@ -5210,7 +5210,7 @@ var TransformMatrix = new Class({
         /**
          * The decomposed matrix.
          *
-         * @name Phaser.GameObjects.Components.TransformMatrix#decomposedMatrix
+         * @name Oyun.GameObjects.Components.TransformMatrix#decomposedMatrix
          * @type {object}
          * @since 3.0.0
          */
@@ -5226,7 +5226,7 @@ var TransformMatrix = new Class({
     /**
      * The Scale X value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#a
+     * @name Oyun.GameObjects.Components.TransformMatrix#a
      * @type {number}
      * @since 3.4.0
      */
@@ -5247,7 +5247,7 @@ var TransformMatrix = new Class({
     /**
      * The Skew Y value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#b
+     * @name Oyun.GameObjects.Components.TransformMatrix#b
      * @type {number}
      * @since 3.4.0
      */
@@ -5268,7 +5268,7 @@ var TransformMatrix = new Class({
     /**
      * The Skew X value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#c
+     * @name Oyun.GameObjects.Components.TransformMatrix#c
      * @type {number}
      * @since 3.4.0
      */
@@ -5289,7 +5289,7 @@ var TransformMatrix = new Class({
     /**
      * The Scale Y value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#d
+     * @name Oyun.GameObjects.Components.TransformMatrix#d
      * @type {number}
      * @since 3.4.0
      */
@@ -5310,7 +5310,7 @@ var TransformMatrix = new Class({
     /**
      * The Translate X value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#e
+     * @name Oyun.GameObjects.Components.TransformMatrix#e
      * @type {number}
      * @since 3.11.0
      */
@@ -5331,7 +5331,7 @@ var TransformMatrix = new Class({
     /**
      * The Translate Y value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#f
+     * @name Oyun.GameObjects.Components.TransformMatrix#f
      * @type {number}
      * @since 3.11.0
      */
@@ -5352,7 +5352,7 @@ var TransformMatrix = new Class({
     /**
      * The Translate X value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#tx
+     * @name Oyun.GameObjects.Components.TransformMatrix#tx
      * @type {number}
      * @since 3.4.0
      */
@@ -5373,7 +5373,7 @@ var TransformMatrix = new Class({
     /**
      * The Translate Y value.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#ty
+     * @name Oyun.GameObjects.Components.TransformMatrix#ty
      * @type {number}
      * @since 3.4.0
      */
@@ -5394,7 +5394,7 @@ var TransformMatrix = new Class({
     /**
      * The rotation of the Matrix. Value is in radians.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#rotation
+     * @name Oyun.GameObjects.Components.TransformMatrix#rotation
      * @type {number}
      * @readonly
      * @since 3.4.0
@@ -5409,10 +5409,10 @@ var TransformMatrix = new Class({
     },
 
     /**
-     * The rotation of the Matrix, normalized to be within the Phaser right-handed
+     * The rotation of the Matrix, normalized to be within the Oyun right-handed
      * clockwise rotation space. Value is in radians.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#rotationNormalized
+     * @name Oyun.GameObjects.Components.TransformMatrix#rotationNormalized
      * @type {number}
      * @readonly
      * @since 3.19.0
@@ -5451,7 +5451,7 @@ var TransformMatrix = new Class({
     /**
      * The decomposed horizontal scale of the Matrix. This value is always positive.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#scaleX
+     * @name Oyun.GameObjects.Components.TransformMatrix#scaleX
      * @type {number}
      * @readonly
      * @since 3.4.0
@@ -5468,7 +5468,7 @@ var TransformMatrix = new Class({
     /**
      * The decomposed vertical scale of the Matrix. This value is always positive.
      *
-     * @name Phaser.GameObjects.Components.TransformMatrix#scaleY
+     * @name Oyun.GameObjects.Components.TransformMatrix#scaleY
      * @type {number}
      * @readonly
      * @since 3.4.0
@@ -5485,7 +5485,7 @@ var TransformMatrix = new Class({
     /**
      * Reset the Matrix to an identity matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#loadIdentity
+     * @method Oyun.GameObjects.Components.TransformMatrix#loadIdentity
      * @since 3.0.0
      *
      * @return {this} This TransformMatrix.
@@ -5507,7 +5507,7 @@ var TransformMatrix = new Class({
     /**
      * Translate the Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#translate
+     * @method Oyun.GameObjects.Components.TransformMatrix#translate
      * @since 3.0.0
      *
      * @param {number} x - The horizontal translation value.
@@ -5528,7 +5528,7 @@ var TransformMatrix = new Class({
     /**
      * Scale the Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#scale
+     * @method Oyun.GameObjects.Components.TransformMatrix#scale
      * @since 3.0.0
      *
      * @param {number} x - The horizontal scale value.
@@ -5551,7 +5551,7 @@ var TransformMatrix = new Class({
     /**
      * Rotate the Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#rotate
+     * @method Oyun.GameObjects.Components.TransformMatrix#rotate
      * @since 3.0.0
      *
      * @param {number} angle - The angle of rotation in radians.
@@ -5585,13 +5585,13 @@ var TransformMatrix = new Class({
      * If it is not given, this matrix will be updated in place instead.
      * Use an `out` Matrix if you do not wish to mutate this matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#multiply
+     * @method Oyun.GameObjects.Components.TransformMatrix#multiply
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.Components.TransformMatrix} rhs - The Matrix to multiply by.
-     * @param {Phaser.GameObjects.Components.TransformMatrix} [out] - An optional Matrix to store the results in.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} rhs - The Matrix to multiply by.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} [out] - An optional Matrix to store the results in.
      *
-     * @return {(this|Phaser.GameObjects.Components.TransformMatrix)} Either this TransformMatrix, or the `out` Matrix, if given in the arguments.
+     * @return {(this|Oyun.GameObjects.Components.TransformMatrix)} Either this TransformMatrix, or the `out` Matrix, if given in the arguments.
      */
     multiply: function (rhs, out)
     {
@@ -5630,10 +5630,10 @@ var TransformMatrix = new Class({
      * The offsetX is added to the tx value: `offsetX * a + offsetY * c + tx`.
      * The offsetY is added to the ty value: `offsetY * b + offsetY * d + ty`.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#multiplyWithOffset
+     * @method Oyun.GameObjects.Components.TransformMatrix#multiplyWithOffset
      * @since 3.11.0
      *
-     * @param {Phaser.GameObjects.Components.TransformMatrix} src - The source Matrix to copy from.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} src - The source Matrix to copy from.
      * @param {number} offsetX - Horizontal offset to factor in to the multiplication.
      * @param {number} offsetY - Vertical offset to factor in to the multiplication.
      *
@@ -5674,7 +5674,7 @@ var TransformMatrix = new Class({
     /**
      * Transform the Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#transform
+     * @method Oyun.GameObjects.Components.TransformMatrix#transform
      * @since 3.0.0
      *
      * @param {number} a - The Scale X value.
@@ -5710,14 +5710,14 @@ var TransformMatrix = new Class({
     /**
      * Transform a point using this Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#transformPoint
+     * @method Oyun.GameObjects.Components.TransformMatrix#transformPoint
      * @since 3.0.0
      *
      * @param {number} x - The x coordinate of the point to transform.
      * @param {number} y - The y coordinate of the point to transform.
-     * @param {(Phaser.Geom.Point|Phaser.Math.Vector2|object)} point - The Point object to store the transformed coordinates.
+     * @param {(Oyun.Geom.Point|Oyun.Math.Vector2|object)} point - The Point object to store the transformed coordinates.
      *
-     * @return {(Phaser.Geom.Point|Phaser.Math.Vector2|object)} The Point containing the transformed coordinates.
+     * @return {(Oyun.Geom.Point|Oyun.Math.Vector2|object)} The Point containing the transformed coordinates.
      */
     transformPoint: function (x, y, point)
     {
@@ -5741,7 +5741,7 @@ var TransformMatrix = new Class({
     /**
      * Invert the Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#invert
+     * @method Oyun.GameObjects.Components.TransformMatrix#invert
      * @since 3.0.0
      *
      * @return {this} This TransformMatrix.
@@ -5772,10 +5772,10 @@ var TransformMatrix = new Class({
     /**
      * Set the values of this Matrix to copy those of the matrix given.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#copyFrom
+     * @method Oyun.GameObjects.Components.TransformMatrix#copyFrom
      * @since 3.11.0
      *
-     * @param {Phaser.GameObjects.Components.TransformMatrix} src - The source Matrix to copy from.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} src - The source Matrix to copy from.
      *
      * @return {this} This TransformMatrix.
      */
@@ -5797,7 +5797,7 @@ var TransformMatrix = new Class({
      * Set the values of this Matrix to copy those of the array given.
      * Where array indexes 0, 1, 2, 3, 4 and 5 are mapped to a, b, c, d, e and f.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#copyFromArray
+     * @method Oyun.GameObjects.Components.TransformMatrix#copyFromArray
      * @since 3.11.0
      *
      * @param {array} src - The array of values to set into this matrix.
@@ -5822,7 +5822,7 @@ var TransformMatrix = new Class({
      * Copy the values from this Matrix to the given Canvas Rendering Context.
      * This will use the Context.transform method.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#copyToContext
+     * @method Oyun.GameObjects.Components.TransformMatrix#copyToContext
      * @since 3.12.0
      *
      * @param {CanvasRenderingContext2D} ctx - The Canvas Rendering Context to copy the matrix values to.
@@ -5842,7 +5842,7 @@ var TransformMatrix = new Class({
      * Copy the values from this Matrix to the given Canvas Rendering Context.
      * This will use the Context.setTransform method.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#setToContext
+     * @method Oyun.GameObjects.Components.TransformMatrix#setToContext
      * @since 3.12.0
      *
      * @param {CanvasRenderingContext2D} ctx - The Canvas Rendering Context to copy the matrix values to.
@@ -5863,7 +5863,7 @@ var TransformMatrix = new Class({
      *
      * Where array indexes 0, 1, 2, 3, 4 and 5 are mapped to a, b, c, d, e and f.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#copyToArray
+     * @method Oyun.GameObjects.Components.TransformMatrix#copyToArray
      * @since 3.12.0
      *
      * @param {array} [out] - The array to copy the matrix values in to.
@@ -5894,7 +5894,7 @@ var TransformMatrix = new Class({
     /**
      * Set the values of this Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#setTransform
+     * @method Oyun.GameObjects.Components.TransformMatrix#setTransform
      * @since 3.0.0
      *
      * @param {number} a - The Scale X value.
@@ -5927,7 +5927,7 @@ var TransformMatrix = new Class({
      *
      * translate -> rotate -> scale
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#decomposeMatrix
+     * @method Oyun.GameObjects.Components.TransformMatrix#decomposeMatrix
      * @since 3.0.0
      *
      * @return {object} The decomposed Matrix.
@@ -5982,7 +5982,7 @@ var TransformMatrix = new Class({
     /**
      * Apply the identity, translate, rotate and scale operations on the Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#applyITRS
+     * @method Oyun.GameObjects.Components.TransformMatrix#applyITRS
      * @since 3.0.0
      *
      * @param {number} x - The horizontal translation.
@@ -6019,14 +6019,14 @@ var TransformMatrix = new Class({
      *
      * Can be used to translate points from world to local space.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#applyInverse
+     * @method Oyun.GameObjects.Components.TransformMatrix#applyInverse
      * @since 3.12.0
      *
      * @param {number} x - The x position to translate.
      * @param {number} y - The y position to translate.
-     * @param {Phaser.Math.Vector2} [output] - A Vector2, or point-like object, to store the results in.
+     * @param {Oyun.Math.Vector2} [output] - A Vector2, or point-like object, to store the results in.
      *
-     * @return {Phaser.Math.Vector2} The coordinates, inverse-transformed through this matrix.
+     * @return {Oyun.Math.Vector2} The coordinates, inverse-transformed through this matrix.
      */
     applyInverse: function (x, y, output)
     {
@@ -6053,7 +6053,7 @@ var TransformMatrix = new Class({
      * Returns the X component of this matrix multiplied by the given values.
      * This is the same as `x * a + y * c + e`.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#getX
+     * @method Oyun.GameObjects.Components.TransformMatrix#getX
      * @since 3.12.0
      *
      * @param {number} x - The x value.
@@ -6070,7 +6070,7 @@ var TransformMatrix = new Class({
      * Returns the Y component of this matrix multiplied by the given values.
      * This is the same as `x * b + y * d + f`.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#getY
+     * @method Oyun.GameObjects.Components.TransformMatrix#getY
      * @since 3.12.0
      *
      * @param {number} x - The x value.
@@ -6088,7 +6088,7 @@ var TransformMatrix = new Class({
      *
      * This is the same as `x * a + y * c + e`, optionally passing via `Math.round`.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#getXRound
+     * @method Oyun.GameObjects.Components.TransformMatrix#getXRound
      * @since 3.50.0
      *
      * @param {number} x - The x value.
@@ -6114,7 +6114,7 @@ var TransformMatrix = new Class({
      *
      * This is the same as `x * b + y * d + f`, optionally passing via `Math.round`.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#getYRound
+     * @method Oyun.GameObjects.Components.TransformMatrix#getYRound
      * @since 3.50.0
      *
      * @param {number} x - The x value.
@@ -6138,7 +6138,7 @@ var TransformMatrix = new Class({
     /**
      * Returns a string that can be used in a CSS Transform call as a `matrix` property.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#getCSSMatrix
+     * @method Oyun.GameObjects.Components.TransformMatrix#getCSSMatrix
      * @since 3.12.0
      *
      * @return {string} A string containing the CSS Transform matrix values.
@@ -6153,7 +6153,7 @@ var TransformMatrix = new Class({
     /**
      * Destroys this Transform Matrix.
      *
-     * @method Phaser.GameObjects.Components.TransformMatrix#destroy
+     * @method Oyun.GameObjects.Components.TransformMatrix#destroy
      * @since 3.4.0
      */
     destroy: function ()
@@ -6182,17 +6182,17 @@ var GetFastValue = __webpack_require__(2);
 /**
  * Gets the tiles in the given rectangular area (in tile coordinates) of the layer.
  *
- * @function Phaser.Tilemaps.Components.GetTilesWithin
+ * @function Oyun.Tilemaps.Components.GetTilesWithin
  * @since 3.0.0
  *
  * @param {number} tileX - The left most tile index (in tile coordinates) to use as the origin of the area.
  * @param {number} tileY - The top most tile index (in tile coordinates) to use as the origin of the area.
  * @param {number} width - How many tiles wide from the `tileX` index the area will be.
  * @param {number} height - How many tiles tall from the `tileY` index the area will be.
- * @param {Phaser.Types.Tilemaps.FilteringOptions} filteringOptions - Optional filters to apply when getting the tiles.
- * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
+ * @param {Oyun.Types.Tilemaps.FilteringOptions} filteringOptions - Optional filters to apply when getting the tiles.
+ * @param {Oyun.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
  *
- * @return {Phaser.Tilemaps.Tile[]} Array of Tile objects.
+ * @return {Oyun.Tilemaps.Tile[]} Array of Tile objects.
  */
 var GetTilesWithin = function (tileX, tileY, width, height, filteringOptions, layer)
 {
@@ -6284,19 +6284,19 @@ module.exports = GetTilesWithin;
  *
  * To use this with a Group: `PropertyValueSet(group.getChildren(), key, value, step)`
  *
- * @function Phaser.Actions.PropertyValueSet
+ * @function Oyun.Actions.PropertyValueSet
  * @since 3.3.0
  *
- * @generic {Phaser.GameObjects.GameObject[]} G - [items,$return]
+ * @generic {Oyun.GameObjects.GameObject[]} G - [items,$return]
  *
- * @param {(array|Phaser.GameObjects.GameObject[])} items - The array of items to be updated by this action.
+ * @param {(array|Oyun.GameObjects.GameObject[])} items - The array of items to be updated by this action.
  * @param {string} key - The property to be updated.
  * @param {number} value - The amount to set the property to.
  * @param {number} [step=0] - This is added to the `value` amount, multiplied by the iteration counter.
  * @param {number} [index=0] - An optional offset to start searching from within the items array.
  * @param {number} [direction=1] - The direction to iterate through the array. 1 is from beginning to end, -1 from end to beginning.
  *
- * @return {(array|Phaser.GameObjects.GameObject[])} The array of objects that were passed to this Action.
+ * @return {(array|Oyun.GameObjects.GameObject[])} The array of objects that were passed to this Action.
  */
 var PropertyValueSet = function (items, key, value, step, index, direction)
 {
@@ -6349,14 +6349,14 @@ var GetAdvancedValue = __webpack_require__(13);
 /**
  * Builds a Game Object using the provided configuration object.
  *
- * @function Phaser.GameObjects.BuildGameObject
+ * @function Oyun.GameObjects.BuildGameObject
  * @since 3.0.0
  *
- * @param {Phaser.Scene} scene - A reference to the Scene.
- * @param {Phaser.GameObjects.GameObject} gameObject - The initial GameObject.
- * @param {Phaser.Types.GameObjects.GameObjectConfig} config - The config to build the GameObject with.
+ * @param {Oyun.Scene} scene - A reference to the Scene.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The initial GameObject.
+ * @param {Oyun.Types.GameObjects.GameObjectConfig} config - The config to build the GameObject with.
  *
- * @return {Phaser.GameObjects.GameObject} The built Game Object.
+ * @return {Oyun.GameObjects.GameObject} The built Game Object.
  */
 var BuildGameObject = function (scene, gameObject, config)
 {
@@ -6472,20 +6472,20 @@ module.exports = BuildGameObject;
  */
 
 /**
- * Phaser Tilemap constants for orientation.
+ * Oyun Tilemap constants for orientation.
  * 
- * @namespace Phaser.Tilemaps.Orientation
- * @memberof Phaser.Tilemaps
+ * @namespace Oyun.Tilemaps.Orientation
+ * @memberof Oyun.Tilemaps
  * @since 3.50.0
  */
 
 /**
- * Phaser Tilemap constants for orientation.
+ * Oyun Tilemap constants for orientation.
  * 
- * To find out what each mode does please see [Phaser.Tilemaps.Orientation]{@link Phaser.Tilemaps.Orientation}.
+ * To find out what each mode does please see [Oyun.Tilemaps.Orientation]{@link Oyun.Tilemaps.Orientation}.
  * 
- * @typedef {Phaser.Tilemaps.Orientation} Phaser.Tilemaps.OrientationType
- * @memberof Phaser.Tilemaps
+ * @typedef {Oyun.Tilemaps.Orientation} Oyun.Tilemaps.OrientationType
+ * @memberof Oyun.Tilemaps
  * @since 3.50.0
  */
 
@@ -6494,7 +6494,7 @@ module.exports = {
     /**
      * Orthogonal Tilemap orientation constant.
      * 
-     * @name Phaser.Tilemaps.Orientation.ORTHOGONAL
+     * @name Oyun.Tilemaps.Orientation.ORTHOGONAL
      * @type {number}
      * @const
      * @since 3.50.0
@@ -6504,7 +6504,7 @@ module.exports = {
     /**
      * Isometric Tilemap orientation constant.
      *
-     * @name Phaser.Tilemaps.Orientation.ISOMETRIC
+     * @name Oyun.Tilemaps.Orientation.ISOMETRIC
      * @type {number}
      * @const
      * @since 3.50.0
@@ -6514,7 +6514,7 @@ module.exports = {
     /**
      * Staggered Tilemap orientation constant.
      *
-     * @name Phaser.Tilemaps.Orientation.STAGGERED
+     * @name Oyun.Tilemaps.Orientation.STAGGERED
      * @type {number}
      * @const
      * @since 3.50.0
@@ -6524,7 +6524,7 @@ module.exports = {
     /**
      * Hexagonal Tilemap orientation constant.
      *
-     * @name Phaser.Tilemaps.Orientation.HEXAGONAL
+     * @name Oyun.Tilemaps.Orientation.HEXAGONAL
      * @type {number}
      * @const
      * @since 3.50.0
@@ -6560,14 +6560,14 @@ var GetCalcMatrix = __webpack_require__(19);
  *
  * This function is only meant to be used internally. Most of the Canvas Renderer classes use it.
  *
- * @function Phaser.Renderer.Canvas.SetTransform
+ * @function Oyun.Renderer.Canvas.SetTransform
  * @since 3.12.0
  *
- * @param {Phaser.Renderer.Canvas.CanvasRenderer} renderer - A reference to the current active Canvas renderer.
+ * @param {Oyun.Renderer.Canvas.CanvasRenderer} renderer - A reference to the current active Canvas renderer.
  * @param {CanvasRenderingContext2D} ctx - The canvas context to set the transform on.
- * @param {Phaser.GameObjects.GameObject} src - The Game Object being rendered. Can be any type that extends the base class.
- * @param {Phaser.Cameras.Scene2D.Camera} camera - The Camera that is rendering the Game Object.
- * @param {Phaser.GameObjects.Components.TransformMatrix} [parentMatrix] - A parent transform matrix to apply to the Game Object before rendering.
+ * @param {Oyun.GameObjects.GameObject} src - The Game Object being rendered. Can be any type that extends the base class.
+ * @param {Oyun.Cameras.Scene2D.Camera} camera - The Camera that is rendering the Game Object.
+ * @param {Oyun.GameObjects.Components.TransformMatrix} [parentMatrix] - A parent transform matrix to apply to the Game Object before rendering.
  *
  * @return {boolean} `true` if the Game Object context was set, otherwise `false`.
  */
@@ -6621,14 +6621,14 @@ var pool = [];
 var _disableContextSmoothing = false;
 
 /**
- * The CanvasPool is a global static object, that allows Phaser to recycle and pool 2D Context Canvas DOM elements.
+ * The CanvasPool is a global static object, that allows Oyun to recycle and pool 2D Context Canvas DOM elements.
  * It does not pool WebGL Contexts, because once the context options are set they cannot be modified again, 
- * which is useless for some of the Phaser pipelines / renderer.
+ * which is useless for some of the Oyun pipelines / renderer.
  *
- * This singleton is instantiated as soon as Phaser loads, before a Phaser.Game instance has even been created.
- * Which means all instances of Phaser Games on the same page can share the one single pool.
+ * This singleton is instantiated as soon as Oyun loads, before a Oyun.Game instance has even been created.
+ * Which means all instances of Oyun Games on the same page can share the one single pool.
  *
- * @namespace Phaser.Display.Canvas.CanvasPool
+ * @namespace Oyun.Display.Canvas.CanvasPool
  * @since 3.0.0
  */
 var CanvasPool = function ()
@@ -6636,13 +6636,13 @@ var CanvasPool = function ()
     /**
      * Creates a new Canvas DOM element, or pulls one from the pool if free.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.create
+     * @function Oyun.Display.Canvas.CanvasPool.create
      * @since 3.0.0
      *
      * @param {*} parent - The parent of the Canvas object.
      * @param {number} [width=1] - The width of the Canvas.
      * @param {number} [height=1] - The height of the Canvas.
-     * @param {number} [canvasType=Phaser.CANVAS] - The type of the Canvas. Either `Phaser.CANVAS` or `Phaser.WEBGL`.
+     * @param {number} [canvasType=Oyun.CANVAS] - The type of the Canvas. Either `Oyun.CANVAS` or `Oyun.WEBGL`.
      * @param {boolean} [selfParent=false] - Use the generated Canvas element as the parent?
      *
      * @return {HTMLCanvasElement} The canvas element that was created or pulled from the pool
@@ -6698,7 +6698,7 @@ var CanvasPool = function ()
     /**
      * Creates a new Canvas DOM element, or pulls one from the pool if free.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.create2D
+     * @function Oyun.Display.Canvas.CanvasPool.create2D
      * @since 3.0.0
      *
      * @param {*} parent - The parent of the Canvas object.
@@ -6715,7 +6715,7 @@ var CanvasPool = function ()
     /**
      * Creates a new Canvas DOM element, or pulls one from the pool if free.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.createWebGL
+     * @function Oyun.Display.Canvas.CanvasPool.createWebGL
      * @since 3.0.0
      *
      * @param {*} parent - The parent of the Canvas object.
@@ -6732,10 +6732,10 @@ var CanvasPool = function ()
     /**
      * Gets the first free canvas index from the pool.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.first
+     * @function Oyun.Display.Canvas.CanvasPool.first
      * @since 3.0.0
      *
-     * @param {number} [canvasType=Phaser.CANVAS] - The type of the Canvas. Either `Phaser.CANVAS` or `Phaser.WEBGL`.
+     * @param {number} [canvasType=Oyun.CANVAS] - The type of the Canvas. Either `Oyun.CANVAS` or `Oyun.WEBGL`.
      *
      * @return {HTMLCanvasElement} The first free canvas, or `null` if a WebGL canvas was requested or if the pool doesn't have free canvases.
      */
@@ -6765,7 +6765,7 @@ var CanvasPool = function ()
      * Looks up a canvas based on its parent, and if found puts it back in the pool, freeing it up for re-use.
      * The canvas has its width and height set to 1, and its parent attribute nulled.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.remove
+     * @function Oyun.Display.Canvas.CanvasPool.remove
      * @since 3.0.0
      *
      * @param {*} parent - The canvas or the parent of the canvas to free.
@@ -6789,7 +6789,7 @@ var CanvasPool = function ()
     /**
      * Gets the total number of used canvas elements in the pool.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.total
+     * @function Oyun.Display.Canvas.CanvasPool.total
      * @since 3.0.0
      *
      * @return {number} The number of used canvases.
@@ -6812,7 +6812,7 @@ var CanvasPool = function ()
     /**
      * Gets the total number of free canvas elements in the pool.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.free
+     * @function Oyun.Display.Canvas.CanvasPool.free
      * @since 3.0.0
      *
      * @return {number} The number of free canvases.
@@ -6825,7 +6825,7 @@ var CanvasPool = function ()
     /**
      * Disable context smoothing on any new Canvas element created.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.disableSmoothing
+     * @function Oyun.Display.Canvas.CanvasPool.disableSmoothing
      * @since 3.0.0
      */
     var disableSmoothing = function ()
@@ -6836,7 +6836,7 @@ var CanvasPool = function ()
     /**
      * Enable context smoothing on any new Canvas element created.
      *
-     * @function Phaser.Display.Canvas.CanvasPool.enableSmoothing
+     * @function Oyun.Display.Canvas.CanvasPool.enableSmoothing
      * @since 3.0.0
      */
     var enableSmoothing = function ()
@@ -6881,9 +6881,9 @@ module.exports = CanvasPool();
 var CONST = {
 
     /**
-     * Phaser Release Version
+     * Oyun Release Version
      *
-     * @name Phaser.VERSION
+     * @name Oyun.VERSION
      * @const
      * @type {string}
      * @since 3.0.0
@@ -6898,7 +6898,7 @@ var CONST = {
      * This setting will auto-detect if the browser is capable of suppporting WebGL.
      * If it is, it will use the WebGL Renderer. If not, it will fall back to the Canvas Renderer.
      *
-     * @name Phaser.AUTO
+     * @name Oyun.AUTO
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6906,10 +6906,10 @@ var CONST = {
     AUTO: 0,
 
     /**
-     * Forces Phaser to only use the Canvas Renderer, regardless if the browser supports
+     * Forces Oyun to only use the Canvas Renderer, regardless if the browser supports
      * WebGL or not.
      *
-     * @name Phaser.CANVAS
+     * @name Oyun.CANVAS
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6917,11 +6917,11 @@ var CONST = {
     CANVAS: 1,
 
     /**
-     * Forces Phaser to use the WebGL Renderer. If the browser does not support it, there is
+     * Forces Oyun to use the WebGL Renderer. If the browser does not support it, there is
      * no fallback to Canvas with this setting, so you should trap it and display a suitable
      * message to the user.
      *
-     * @name Phaser.WEBGL
+     * @name Oyun.WEBGL
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6931,9 +6931,9 @@ var CONST = {
     /**
      * A Headless Renderer doesn't create either a Canvas or WebGL Renderer. However, it still
      * absolutely relies on the DOM being present and available. This mode is meant for unit testing,
-     * not for running Phaser on the server, which is something you really shouldn't do.
+     * not for running Oyun on the server, which is something you really shouldn't do.
      *
-     * @name Phaser.HEADLESS
+     * @name Oyun.HEADLESS
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6941,10 +6941,10 @@ var CONST = {
     HEADLESS: 3,
 
     /**
-     * In Phaser the value -1 means 'forever' in lots of cases, this const allows you to use it instead
+     * In Oyun the value -1 means 'forever' in lots of cases, this const allows you to use it instead
      * to help you remember what the value is doing in your code.
      *
-     * @name Phaser.FOREVER
+     * @name Oyun.FOREVER
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6954,7 +6954,7 @@ var CONST = {
     /**
      * Direction constant.
      *
-     * @name Phaser.NONE
+     * @name Oyun.NONE
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6964,7 +6964,7 @@ var CONST = {
     /**
      * Direction constant.
      *
-     * @name Phaser.UP
+     * @name Oyun.UP
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6974,7 +6974,7 @@ var CONST = {
     /**
      * Direction constant.
      *
-     * @name Phaser.DOWN
+     * @name Oyun.DOWN
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6984,7 +6984,7 @@ var CONST = {
     /**
      * Direction constant.
      *
-     * @name Phaser.LEFT
+     * @name Oyun.LEFT
      * @const
      * @type {number}
      * @since 3.0.0
@@ -6994,7 +6994,7 @@ var CONST = {
     /**
      * Direction constant.
      *
-     * @name Phaser.RIGHT
+     * @name Oyun.RIGHT
      * @const
      * @type {number}
      * @since 3.0.0
@@ -7028,23 +7028,23 @@ var PIPELINES_CONST = __webpack_require__(65);
  * You cannot add a Shape directly to your Scene, it is meant as a base for your own custom Shape classes.
  *
  * @class Shape
- * @extends Phaser.GameObjects.GameObject
- * @memberof Phaser.GameObjects
+ * @extends Oyun.GameObjects.GameObject
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.13.0
  *
- * @extends Phaser.GameObjects.Components.AlphaSingle
- * @extends Phaser.GameObjects.Components.BlendMode
-  * @extends Phaser.GameObjects.Components.Depth
- * @extends Phaser.GameObjects.Components.GetBounds
- * @extends Phaser.GameObjects.Components.Mask
- * @extends Phaser.GameObjects.Components.Origin
- * @extends Phaser.GameObjects.Components.Pipeline
- * @extends Phaser.GameObjects.Components.ScrollFactor
- * @extends Phaser.GameObjects.Components.Transform
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.GameObjects.Components.AlphaSingle
+ * @extends Oyun.GameObjects.Components.BlendMode
+  * @extends Oyun.GameObjects.Components.Depth
+ * @extends Oyun.GameObjects.Components.GetBounds
+ * @extends Oyun.GameObjects.Components.Mask
+ * @extends Oyun.GameObjects.Components.Origin
+ * @extends Oyun.GameObjects.Components.Pipeline
+ * @extends Oyun.GameObjects.Components.ScrollFactor
+ * @extends Oyun.GameObjects.Components.Transform
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
  * @param {string} [type] - The internal type of the Shape.
  * @param {any} [data] - The data of the source shape geometry, if any.
  */
@@ -7077,7 +7077,7 @@ var Shape = new Class({
          * The source Shape data. Typically a geometry object.
          * You should not manipulate this directly.
          *
-         * @name Phaser.GameObjects.Shape#geom
+         * @name Oyun.GameObjects.Shape#geom
          * @type {any}
          * @readonly
          * @since 3.13.0
@@ -7087,7 +7087,7 @@ var Shape = new Class({
         /**
          * Holds the polygon path data for filled rendering.
          *
-         * @name Phaser.GameObjects.Shape#pathData
+         * @name Oyun.GameObjects.Shape#pathData
          * @type {number[]}
          * @readonly
          * @since 3.13.0
@@ -7097,7 +7097,7 @@ var Shape = new Class({
         /**
          * Holds the earcut polygon path index data for filled rendering.
          *
-         * @name Phaser.GameObjects.Shape#pathIndexes
+         * @name Oyun.GameObjects.Shape#pathIndexes
          * @type {number[]}
          * @readonly
          * @since 3.13.0
@@ -7107,7 +7107,7 @@ var Shape = new Class({
         /**
          * The fill color used by this Shape.
          *
-         * @name Phaser.GameObjects.Shape#fillColor
+         * @name Oyun.GameObjects.Shape#fillColor
          * @type {number}
          * @since 3.13.0
          */
@@ -7116,7 +7116,7 @@ var Shape = new Class({
         /**
          * The fill alpha value used by this Shape.
          *
-         * @name Phaser.GameObjects.Shape#fillAlpha
+         * @name Oyun.GameObjects.Shape#fillAlpha
          * @type {number}
          * @since 3.13.0
          */
@@ -7125,7 +7125,7 @@ var Shape = new Class({
         /**
          * The stroke color used by this Shape.
          *
-         * @name Phaser.GameObjects.Shape#strokeColor
+         * @name Oyun.GameObjects.Shape#strokeColor
          * @type {number}
          * @since 3.13.0
          */
@@ -7134,7 +7134,7 @@ var Shape = new Class({
         /**
          * The stroke alpha value used by this Shape.
          *
-         * @name Phaser.GameObjects.Shape#strokeAlpha
+         * @name Oyun.GameObjects.Shape#strokeAlpha
          * @type {number}
          * @since 3.13.0
          */
@@ -7143,7 +7143,7 @@ var Shape = new Class({
         /**
          * The stroke line width used by this Shape.
          *
-         * @name Phaser.GameObjects.Shape#lineWidth
+         * @name Oyun.GameObjects.Shape#lineWidth
          * @type {number}
          * @since 3.13.0
          */
@@ -7153,7 +7153,7 @@ var Shape = new Class({
          * Controls if this Shape is filled or not.
          * Note that some Shapes do not support being filled (such as Line shapes)
          *
-         * @name Phaser.GameObjects.Shape#isFilled
+         * @name Oyun.GameObjects.Shape#isFilled
          * @type {boolean}
          * @since 3.13.0
          */
@@ -7163,7 +7163,7 @@ var Shape = new Class({
          * Controls if this Shape is stroked or not.
          * Note that some Shapes do not support being stroked (such as Iso Box shapes)
          *
-         * @name Phaser.GameObjects.Shape#isStroked
+         * @name Oyun.GameObjects.Shape#isStroked
          * @type {boolean}
          * @since 3.13.0
          */
@@ -7173,7 +7173,7 @@ var Shape = new Class({
          * Controls if this Shape path is closed during rendering when stroked.
          * Note that some Shapes are always closed when stroked (such as Ellipse shapes)
          *
-         * @name Phaser.GameObjects.Shape#closePath
+         * @name Oyun.GameObjects.Shape#closePath
          * @type {boolean}
          * @since 3.13.0
          */
@@ -7183,8 +7183,8 @@ var Shape = new Class({
          * Private internal value.
          * A Line used when parsing internal path data to avoid constant object re-creation.
          *
-         * @name Phaser.GameObjects.Shape#_tempLine
-         * @type {Phaser.Geom.Line}
+         * @name Oyun.GameObjects.Shape#_tempLine
+         * @type {Oyun.Geom.Line}
          * @private
          * @since 3.13.0
          */
@@ -7197,7 +7197,7 @@ var Shape = new Class({
          * For that you need to either set the scale of the Game Object (`setScale`) or use
          * the `displayWidth` property.
          *
-         * @name Phaser.GameObjects.Shape#width
+         * @name Oyun.GameObjects.Shape#width
          * @type {number}
          * @since 3.13.0
          */
@@ -7210,7 +7210,7 @@ var Shape = new Class({
          * For that you need to either set the scale of the Game Object (`setScale`) or use
          * the `displayHeight` property.
          *
-         * @name Phaser.GameObjects.Shape#height
+         * @name Oyun.GameObjects.Shape#height
          * @type {number}
          * @since 3.0.0
          */
@@ -7228,7 +7228,7 @@ var Shape = new Class({
      *
      * This call can be chained.
      *
-     * @method Phaser.GameObjects.Shape#setFillStyle
+     * @method Oyun.GameObjects.Shape#setFillStyle
      * @since 3.13.0
      *
      * @param {number} [color] - The color used to fill this shape. If not provided the Shape will not be filled.
@@ -7263,7 +7263,7 @@ var Shape = new Class({
      *
      * This call can be chained.
      *
-     * @method Phaser.GameObjects.Shape#setStrokeStyle
+     * @method Oyun.GameObjects.Shape#setStrokeStyle
      * @since 3.13.0
      *
      * @param {number} [lineWidth] - The width of line to stroke with. If not provided or undefined the Shape will not be stroked.
@@ -7297,7 +7297,7 @@ var Shape = new Class({
      *
      * This call can be chained.
      *
-     * @method Phaser.GameObjects.Shape#setClosePath
+     * @method Oyun.GameObjects.Shape#setClosePath
      * @since 3.13.0
      *
      * @param {boolean} value - Set to `true` if the Shape should be closed when stroked, otherwise `false`.
@@ -7322,7 +7322,7 @@ var Shape = new Class({
      * If you have enabled this Game Object for input, changing the size will _not_ change the
      * size of the hit area. To do this you should adjust the `input.hitArea` object directly.
      *
-     * @method Phaser.GameObjects.Shape#setSize
+     * @method Oyun.GameObjects.Shape#setSize
      * @private
      * @since 3.13.0
      *
@@ -7342,7 +7342,7 @@ var Shape = new Class({
     /**
      * Internal destroy handler, called as part of the destroy process.
      *
-     * @method Phaser.GameObjects.Shape#preDestroy
+     * @method Oyun.GameObjects.Shape#preDestroy
      * @protected
      * @since 3.13.0
      */
@@ -7361,7 +7361,7 @@ var Shape = new Class({
      *
      * Setting this value will adjust the Game Object's scale property.
      *
-     * @name Phaser.GameObjects.Shape#displayWidth
+     * @name Oyun.GameObjects.Shape#displayWidth
      * @type {number}
      * @since 3.13.0
      */
@@ -7386,7 +7386,7 @@ var Shape = new Class({
      *
      * Setting this value will adjust the Game Object's scale property.
      *
-     * @name Phaser.GameObjects.Shape#displayHeight
+     * @name Oyun.GameObjects.Shape#displayHeight
      * @type {number}
      * @since 3.13.0
      */
@@ -7420,9 +7420,9 @@ module.exports = Shape;
  */
 
 /**
- * Phaser Blend Modes.
+ * Oyun Blend Modes.
  * 
- * @namespace Phaser.BlendModes
+ * @namespace Oyun.BlendModes
  * @since 3.0.0
  */
 
@@ -7431,7 +7431,7 @@ module.exports = {
     /**
      * Skips the Blend Mode check in the renderer.
      * 
-     * @name Phaser.BlendModes.SKIP_CHECK
+     * @name Oyun.BlendModes.SKIP_CHECK
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7442,7 +7442,7 @@ module.exports = {
      * Normal blend mode. For Canvas and WebGL.
      * This is the default setting and draws new shapes on top of the existing canvas content.
      * 
-     * @name Phaser.BlendModes.NORMAL
+     * @name Oyun.BlendModes.NORMAL
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7453,7 +7453,7 @@ module.exports = {
      * Add blend mode. For Canvas and WebGL.
      * Where both shapes overlap the color is determined by adding color values.
      * 
-     * @name Phaser.BlendModes.ADD
+     * @name Oyun.BlendModes.ADD
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7464,7 +7464,7 @@ module.exports = {
      * Multiply blend mode. For Canvas and WebGL.
      * The pixels are of the top layer are multiplied with the corresponding pixel of the bottom layer. A darker picture is the result.
      * 
-     * @name Phaser.BlendModes.MULTIPLY
+     * @name Oyun.BlendModes.MULTIPLY
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7475,7 +7475,7 @@ module.exports = {
      * Screen blend mode. For Canvas and WebGL.
      * The pixels are inverted, multiplied, and inverted again. A lighter picture is the result (opposite of multiply)
      * 
-     * @name Phaser.BlendModes.SCREEN
+     * @name Oyun.BlendModes.SCREEN
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7486,7 +7486,7 @@ module.exports = {
      * Overlay blend mode. For Canvas only.
      * A combination of multiply and screen. Dark parts on the base layer become darker, and light parts become lighter.
      * 
-     * @name Phaser.BlendModes.OVERLAY
+     * @name Oyun.BlendModes.OVERLAY
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7497,7 +7497,7 @@ module.exports = {
      * Darken blend mode. For Canvas only.
      * Retains the darkest pixels of both layers.
      * 
-     * @name Phaser.BlendModes.DARKEN
+     * @name Oyun.BlendModes.DARKEN
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7508,7 +7508,7 @@ module.exports = {
      * Lighten blend mode. For Canvas only.
      * Retains the lightest pixels of both layers.
      * 
-     * @name Phaser.BlendModes.LIGHTEN
+     * @name Oyun.BlendModes.LIGHTEN
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7519,7 +7519,7 @@ module.exports = {
      * Color Dodge blend mode. For Canvas only.
      * Divides the bottom layer by the inverted top layer.
      * 
-     * @name Phaser.BlendModes.COLOR_DODGE
+     * @name Oyun.BlendModes.COLOR_DODGE
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7530,7 +7530,7 @@ module.exports = {
      * Color Burn blend mode. For Canvas only.
      * Divides the inverted bottom layer by the top layer, and then inverts the result.
      * 
-     * @name Phaser.BlendModes.COLOR_BURN
+     * @name Oyun.BlendModes.COLOR_BURN
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7541,7 +7541,7 @@ module.exports = {
      * Hard Light blend mode. For Canvas only.
      * A combination of multiply and screen like overlay, but with top and bottom layer swapped.
      * 
-     * @name Phaser.BlendModes.HARD_LIGHT
+     * @name Oyun.BlendModes.HARD_LIGHT
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7552,7 +7552,7 @@ module.exports = {
      * Soft Light blend mode. For Canvas only.
      * A softer version of hard-light. Pure black or white does not result in pure black or white.
      * 
-     * @name Phaser.BlendModes.SOFT_LIGHT
+     * @name Oyun.BlendModes.SOFT_LIGHT
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7563,7 +7563,7 @@ module.exports = {
      * Difference blend mode. For Canvas only.
      * Subtracts the bottom layer from the top layer or the other way round to always get a positive value.
      * 
-     * @name Phaser.BlendModes.DIFFERENCE
+     * @name Oyun.BlendModes.DIFFERENCE
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7574,7 +7574,7 @@ module.exports = {
      * Exclusion blend mode. For Canvas only.
      * Like difference, but with lower contrast.
      * 
-     * @name Phaser.BlendModes.EXCLUSION
+     * @name Oyun.BlendModes.EXCLUSION
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7585,7 +7585,7 @@ module.exports = {
      * Hue blend mode. For Canvas only.
      * Preserves the luma and chroma of the bottom layer, while adopting the hue of the top layer.
      * 
-     * @name Phaser.BlendModes.HUE
+     * @name Oyun.BlendModes.HUE
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7596,7 +7596,7 @@ module.exports = {
      * Saturation blend mode. For Canvas only.
      * Preserves the luma and hue of the bottom layer, while adopting the chroma of the top layer.
      * 
-     * @name Phaser.BlendModes.SATURATION
+     * @name Oyun.BlendModes.SATURATION
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7607,7 +7607,7 @@ module.exports = {
      * Color blend mode. For Canvas only.
      * Preserves the luma of the bottom layer, while adopting the hue and chroma of the top layer.
      * 
-     * @name Phaser.BlendModes.COLOR
+     * @name Oyun.BlendModes.COLOR
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7618,7 +7618,7 @@ module.exports = {
      * Luminosity blend mode. For Canvas only.
      * Preserves the hue and chroma of the bottom layer, while adopting the luma of the top layer.
      * 
-     * @name Phaser.BlendModes.LUMINOSITY
+     * @name Oyun.BlendModes.LUMINOSITY
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7628,7 +7628,7 @@ module.exports = {
     /**
      * Alpha erase blend mode. For Canvas and WebGL.
      * 
-     * @name Phaser.BlendModes.ERASE
+     * @name Oyun.BlendModes.ERASE
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7639,7 +7639,7 @@ module.exports = {
      * Source-in blend mode. For Canvas only.
      * The new shape is drawn only where both the new shape and the destination canvas overlap. Everything else is made transparent.
      * 
-     * @name Phaser.BlendModes.SOURCE_IN
+     * @name Oyun.BlendModes.SOURCE_IN
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7650,7 +7650,7 @@ module.exports = {
      * Source-out blend mode. For Canvas only.
      * The new shape is drawn where it doesn't overlap the existing canvas content.
      * 
-     * @name Phaser.BlendModes.SOURCE_OUT
+     * @name Oyun.BlendModes.SOURCE_OUT
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7661,7 +7661,7 @@ module.exports = {
      * Source-out blend mode. For Canvas only.
      * The new shape is only drawn where it overlaps the existing canvas content.
      * 
-     * @name Phaser.BlendModes.SOURCE_ATOP
+     * @name Oyun.BlendModes.SOURCE_ATOP
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7672,7 +7672,7 @@ module.exports = {
      * Destination-over blend mode. For Canvas only.
      * New shapes are drawn behind the existing canvas content.
      * 
-     * @name Phaser.BlendModes.DESTINATION_OVER
+     * @name Oyun.BlendModes.DESTINATION_OVER
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7683,7 +7683,7 @@ module.exports = {
      * Destination-in blend mode. For Canvas only.
      * The existing canvas content is kept where both the new shape and existing canvas content overlap. Everything else is made transparent.
      * 
-     * @name Phaser.BlendModes.DESTINATION_IN
+     * @name Oyun.BlendModes.DESTINATION_IN
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7694,7 +7694,7 @@ module.exports = {
      * Destination-out blend mode. For Canvas only.
      * The existing content is kept where it doesn't overlap the new shape.
      * 
-     * @name Phaser.BlendModes.DESTINATION_OUT
+     * @name Oyun.BlendModes.DESTINATION_OUT
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7705,7 +7705,7 @@ module.exports = {
      * Destination-out blend mode. For Canvas only.
      * The existing canvas is only kept where it overlaps the new shape. The new shape is drawn behind the canvas content.
      * 
-     * @name Phaser.BlendModes.DESTINATION_ATOP
+     * @name Oyun.BlendModes.DESTINATION_ATOP
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7716,7 +7716,7 @@ module.exports = {
      * Lighten blend mode. For Canvas only.
      * Where both shapes overlap the color is determined by adding color values.
      * 
-     * @name Phaser.BlendModes.LIGHTER
+     * @name Oyun.BlendModes.LIGHTER
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7727,7 +7727,7 @@ module.exports = {
      * Copy blend mode. For Canvas only.
      * Only the new shape is shown.
      * 
-     * @name Phaser.BlendModes.COPY
+     * @name Oyun.BlendModes.COPY
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7738,7 +7738,7 @@ module.exports = {
      * Xor blend mode. For Canvas only.
      * Shapes are made transparent where both overlap and drawn normal everywhere else.
      * 
-     * @name Phaser.BlendModes.XOR
+     * @name Oyun.BlendModes.XOR
      * @type {number}
      * @const
      * @since 3.0.0
@@ -7763,7 +7763,7 @@ var CONST = __webpack_require__(14);
 /**
  * Convert the given angle from degrees, to the equivalent angle in radians.
  *
- * @function Phaser.Math.DegToRad
+ * @function Oyun.Math.DegToRad
  * @since 3.0.0
  *
  * @param {number} degrees - The angle (in degrees) to convert to radians.
@@ -7789,7 +7789,7 @@ module.exports = DegToRad;
  */
 
 /**
- * @namespace Phaser.Cameras.Scene2D.Events
+ * @namespace Oyun.Cameras.Scene2D.Events
  */
 
 module.exports = {
@@ -7833,7 +7833,7 @@ var HSVToRGB = __webpack_require__(185);
 var RGBToHSV = __webpack_require__(323);
 
 /**
- * @namespace Phaser.Display.Color
+ * @namespace Oyun.Display.Color
  */
 
 /**
@@ -7841,7 +7841,7 @@ var RGBToHSV = __webpack_require__(323);
  * The Color class holds a single color value and allows for easy modification and reading of it.
  *
  * @class Color
- * @memberof Phaser.Display
+ * @memberof Oyun.Display
  * @constructor
  * @since 3.0.0
  *
@@ -7864,7 +7864,7 @@ var Color = new Class({
         /**
          * The internal red color value.
          *
-         * @name Phaser.Display.Color#r
+         * @name Oyun.Display.Color#r
          * @type {number}
          * @private
          * @default 0
@@ -7875,7 +7875,7 @@ var Color = new Class({
         /**
          * The internal green color value.
          *
-         * @name Phaser.Display.Color#g
+         * @name Oyun.Display.Color#g
          * @type {number}
          * @private
          * @default 0
@@ -7886,7 +7886,7 @@ var Color = new Class({
         /**
          * The internal blue color value.
          *
-         * @name Phaser.Display.Color#b
+         * @name Oyun.Display.Color#b
          * @type {number}
          * @private
          * @default 0
@@ -7897,7 +7897,7 @@ var Color = new Class({
         /**
          * The internal alpha color value.
          *
-         * @name Phaser.Display.Color#a
+         * @name Oyun.Display.Color#a
          * @type {number}
          * @private
          * @default 255
@@ -7909,7 +7909,7 @@ var Color = new Class({
          * The hue color value. A number between 0 and 1.
          * This is the base color.
          *
-         * @name Phaser.Display.Color#_h
+         * @name Oyun.Display.Color#_h
          * @type {number}
          * @default 0
          * @private
@@ -7921,7 +7921,7 @@ var Color = new Class({
          * The saturation color value. A number between 0 and 1.
          * This controls how much of the hue will be in the final color, where 1 is fully saturated and 0 will give you white.
          *
-         * @name Phaser.Display.Color#_s
+         * @name Oyun.Display.Color#_s
          * @type {number}
          * @default 0
          * @private
@@ -7933,7 +7933,7 @@ var Color = new Class({
          * The lightness color value. A number between 0 and 1.
          * This controls how dark the color is. Where 1 is as bright as possible and 0 is black.
          *
-         * @name Phaser.Display.Color#_v
+         * @name Oyun.Display.Color#_v
          * @type {number}
          * @default 0
          * @private
@@ -7944,7 +7944,7 @@ var Color = new Class({
         /**
          * Is this color update locked?
          *
-         * @name Phaser.Display.Color#_locked
+         * @name Oyun.Display.Color#_locked
          * @type {boolean}
          * @private
          * @since 3.13.0
@@ -7954,7 +7954,7 @@ var Color = new Class({
         /**
          * An array containing the calculated color values for WebGL use.
          *
-         * @name Phaser.Display.Color#gl
+         * @name Oyun.Display.Color#gl
          * @type {number[]}
          * @since 3.0.0
          */
@@ -7963,7 +7963,7 @@ var Color = new Class({
         /**
          * Pre-calculated internal color value.
          *
-         * @name Phaser.Display.Color#_color
+         * @name Oyun.Display.Color#_color
          * @type {number}
          * @private
          * @default 0
@@ -7974,7 +7974,7 @@ var Color = new Class({
         /**
          * Pre-calculated internal color32 value.
          *
-         * @name Phaser.Display.Color#_color32
+         * @name Oyun.Display.Color#_color32
          * @type {number}
          * @private
          * @default 0
@@ -7985,7 +7985,7 @@ var Color = new Class({
         /**
          * Pre-calculated internal color rgb string value.
          *
-         * @name Phaser.Display.Color#_rgba
+         * @name Oyun.Display.Color#_rgba
          * @type {string}
          * @private
          * @default ''
@@ -7999,10 +7999,10 @@ var Color = new Class({
     /**
      * Sets this color to be transparent. Sets all values to zero.
      *
-     * @method Phaser.Display.Color#transparent
+     * @method Oyun.Display.Color#transparent
      * @since 3.0.0
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     transparent: function ()
     {
@@ -8021,7 +8021,7 @@ var Color = new Class({
     /**
      * Sets the color of this Color component.
      *
-     * @method Phaser.Display.Color#setTo
+     * @method Oyun.Display.Color#setTo
      * @since 3.0.0
      *
      * @param {number} red - The red color value. A number between 0 and 255.
@@ -8030,7 +8030,7 @@ var Color = new Class({
      * @param {number} [alpha=255] - The alpha value. A number between 0 and 255.
      * @param {boolean} [updateHSV=true] - Update the HSV values after setting the RGB values?
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     setTo: function (red, green, blue, alpha, updateHSV)
     {
@@ -8052,7 +8052,7 @@ var Color = new Class({
     /**
      * Sets the red, green, blue and alpha GL values of this Color component.
      *
-     * @method Phaser.Display.Color#setGLTo
+     * @method Oyun.Display.Color#setGLTo
      * @since 3.0.0
      *
      * @param {number} red - The red color value. A number between 0 and 1.
@@ -8060,7 +8060,7 @@ var Color = new Class({
      * @param {number} blue - The blue color value. A number between 0 and 1.
      * @param {number} [alpha=1] - The alpha value. A number between 0 and 1.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     setGLTo: function (red, green, blue, alpha)
     {
@@ -8081,12 +8081,12 @@ var Color = new Class({
     /**
      * Sets the color based on the color object given.
      *
-     * @method Phaser.Display.Color#setFromRGB
+     * @method Oyun.Display.Color#setFromRGB
      * @since 3.0.0
      *
-     * @param {Phaser.Types.Display.InputColorObject} color - An object containing `r`, `g`, `b` and optionally `a` values in the range 0 to 255.
+     * @param {Oyun.Types.Display.InputColorObject} color - An object containing `r`, `g`, `b` and optionally `a` values in the range 0 to 255.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     setFromRGB: function (color)
     {
@@ -8109,14 +8109,14 @@ var Color = new Class({
     /**
      * Sets the color based on the hue, saturation and lightness values given.
      *
-     * @method Phaser.Display.Color#setFromHSV
+     * @method Oyun.Display.Color#setFromHSV
      * @since 3.13.0
      *
      * @param {number} h - The hue, in the range 0 - 1. This is the base color.
      * @param {number} s - The saturation, in the range 0 - 1. This controls how much of the hue will be in the final color, where 1 is fully saturated and 0 will give you white.
      * @param {number} v - The value, in the range 0 - 1. This controls how dark the color is. Where 1 is as bright as possible and 0 is black.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     setFromHSV: function (h, s, v)
     {
@@ -8126,11 +8126,11 @@ var Color = new Class({
     /**
      * Updates the internal cache values.
      *
-     * @method Phaser.Display.Color#update
+     * @method Oyun.Display.Color#update
      * @private
      * @since 3.0.0
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     update: function (updateHSV)
     {
@@ -8161,11 +8161,11 @@ var Color = new Class({
     /**
      * Updates the internal hsv cache values.
      *
-     * @method Phaser.Display.Color#updateHSV
+     * @method Oyun.Display.Color#updateHSV
      * @private
      * @since 3.13.0
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     updateHSV: function ()
     {
@@ -8181,10 +8181,10 @@ var Color = new Class({
     /**
      * Returns a new Color component using the values from this one.
      *
-     * @method Phaser.Display.Color#clone
+     * @method Oyun.Display.Color#clone
      * @since 3.0.0
      *
-     * @return {Phaser.Display.Color} A new Color object.
+     * @return {Oyun.Display.Color} A new Color object.
      */
     clone: function ()
     {
@@ -8194,12 +8194,12 @@ var Color = new Class({
     /**
      * Sets this Color object to be grayscaled based on the shade value given.
      *
-     * @method Phaser.Display.Color#gray
+     * @method Oyun.Display.Color#gray
      * @since 3.13.0
      * 
      * @param {number} shade - A value between 0 and 255.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     gray: function (shade)
     {
@@ -8209,13 +8209,13 @@ var Color = new Class({
     /**
      * Sets this Color object to be a random color between the `min` and `max` values given.
      *
-     * @method Phaser.Display.Color#random
+     * @method Oyun.Display.Color#random
      * @since 3.13.0
      * 
      * @param {number} [min=0] - The minimum random color value. Between 0 and 255.
      * @param {number} [max=255] - The maximum random color value. Between 0 and 255.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     random: function (min, max)
     {
@@ -8232,13 +8232,13 @@ var Color = new Class({
     /**
      * Sets this Color object to be a random grayscale color between the `min` and `max` values given.
      *
-     * @method Phaser.Display.Color#randomGray
+     * @method Oyun.Display.Color#randomGray
      * @since 3.13.0
      * 
      * @param {number} [min=0] - The minimum random color value. Between 0 and 255.
      * @param {number} [max=255] - The maximum random color value. Between 0 and 255.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     randomGray: function (min, max)
     {
@@ -8254,12 +8254,12 @@ var Color = new Class({
      * Increase the saturation of this Color by the percentage amount given.
      * The saturation is the amount of the base color in the hue.
      *
-     * @method Phaser.Display.Color#saturate
+     * @method Oyun.Display.Color#saturate
      * @since 3.13.0
      * 
      * @param {number} amount - The percentage amount to change this color by. A value between 0 and 100.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     saturate: function (amount)
     {
@@ -8272,12 +8272,12 @@ var Color = new Class({
      * Decrease the saturation of this Color by the percentage amount given.
      * The saturation is the amount of the base color in the hue.
      *
-     * @method Phaser.Display.Color#desaturate
+     * @method Oyun.Display.Color#desaturate
      * @since 3.13.0
      * 
      * @param {number} amount - The percentage amount to change this color by. A value between 0 and 100.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     desaturate: function (amount)
     {
@@ -8289,12 +8289,12 @@ var Color = new Class({
     /**
      * Increase the lightness of this Color by the percentage amount given.
      *
-     * @method Phaser.Display.Color#lighten
+     * @method Oyun.Display.Color#lighten
      * @since 3.13.0
      * 
      * @param {number} amount - The percentage amount to change this color by. A value between 0 and 100.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     lighten: function (amount)
     {
@@ -8306,12 +8306,12 @@ var Color = new Class({
     /**
      * Decrease the lightness of this Color by the percentage amount given.
      *
-     * @method Phaser.Display.Color#darken
+     * @method Oyun.Display.Color#darken
      * @since 3.13.0
      * 
      * @param {number} amount - The percentage amount to change this color by. A value between 0 and 100.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     darken: function (amount)
     {
@@ -8323,12 +8323,12 @@ var Color = new Class({
     /**
      * Brighten this Color by the percentage amount given.
      *
-     * @method Phaser.Display.Color#brighten
+     * @method Oyun.Display.Color#brighten
      * @since 3.13.0
      * 
      * @param {number} amount - The percentage amount to change this color by. A value between 0 and 100.
      *
-     * @return {Phaser.Display.Color} This Color object.
+     * @return {Oyun.Display.Color} This Color object.
      */
     brighten: function (amount)
     {
@@ -8346,7 +8346,7 @@ var Color = new Class({
     /**
      * The color of this Color component, not including the alpha channel.
      *
-     * @name Phaser.Display.Color#color
+     * @name Oyun.Display.Color#color
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -8363,7 +8363,7 @@ var Color = new Class({
     /**
      * The color of this Color component, including the alpha channel.
      *
-     * @name Phaser.Display.Color#color32
+     * @name Oyun.Display.Color#color32
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -8380,7 +8380,7 @@ var Color = new Class({
     /**
      * The color of this Color component as a string which can be used in CSS color values.
      *
-     * @name Phaser.Display.Color#rgba
+     * @name Oyun.Display.Color#rgba
      * @type {string}
      * @readonly
      * @since 3.0.0
@@ -8397,7 +8397,7 @@ var Color = new Class({
     /**
      * The red color value, normalized to the range 0 to 1.
      *
-     * @name Phaser.Display.Color#redGL
+     * @name Oyun.Display.Color#redGL
      * @type {number}
      * @since 3.0.0
      */
@@ -8422,7 +8422,7 @@ var Color = new Class({
     /**
      * The green color value, normalized to the range 0 to 1.
      *
-     * @name Phaser.Display.Color#greenGL
+     * @name Oyun.Display.Color#greenGL
      * @type {number}
      * @since 3.0.0
      */
@@ -8447,7 +8447,7 @@ var Color = new Class({
     /**
      * The blue color value, normalized to the range 0 to 1.
      *
-     * @name Phaser.Display.Color#blueGL
+     * @name Oyun.Display.Color#blueGL
      * @type {number}
      * @since 3.0.0
      */
@@ -8472,7 +8472,7 @@ var Color = new Class({
     /**
      * The alpha color value, normalized to the range 0 to 1.
      *
-     * @name Phaser.Display.Color#alphaGL
+     * @name Oyun.Display.Color#alphaGL
      * @type {number}
      * @since 3.0.0
      */
@@ -8497,7 +8497,7 @@ var Color = new Class({
     /**
      * The red color value, normalized to the range 0 to 255.
      *
-     * @name Phaser.Display.Color#red
+     * @name Oyun.Display.Color#red
      * @type {number}
      * @since 3.0.0
      */
@@ -8524,7 +8524,7 @@ var Color = new Class({
     /**
      * The green color value, normalized to the range 0 to 255.
      *
-     * @name Phaser.Display.Color#green
+     * @name Oyun.Display.Color#green
      * @type {number}
      * @since 3.0.0
      */
@@ -8551,7 +8551,7 @@ var Color = new Class({
     /**
      * The blue color value, normalized to the range 0 to 255.
      *
-     * @name Phaser.Display.Color#blue
+     * @name Oyun.Display.Color#blue
      * @type {number}
      * @since 3.0.0
      */
@@ -8578,7 +8578,7 @@ var Color = new Class({
     /**
      * The alpha color value, normalized to the range 0 to 255.
      *
-     * @name Phaser.Display.Color#alpha
+     * @name Oyun.Display.Color#alpha
      * @type {number}
      * @since 3.0.0
      */
@@ -8606,7 +8606,7 @@ var Color = new Class({
      * The hue color value. A number between 0 and 1.
      * This is the base color.
      *
-     * @name Phaser.Display.Color#h
+     * @name Oyun.Display.Color#h
      * @type {number}
      * @since 3.13.0
      */
@@ -8630,7 +8630,7 @@ var Color = new Class({
      * The saturation color value. A number between 0 and 1.
      * This controls how much of the hue will be in the final color, where 1 is fully saturated and 0 will give you white.
      *
-     * @name Phaser.Display.Color#s
+     * @name Oyun.Display.Color#s
      * @type {number}
      * @since 3.13.0
      */
@@ -8654,7 +8654,7 @@ var Color = new Class({
      * The lightness color value. A number between 0 and 1.
      * This controls how dark the color is. Where 1 is as bright as possible and 0 is black.
      *
-     * @name Phaser.Display.Color#v
+     * @name Oyun.Display.Color#v
      * @type {number}
      * @since 3.13.0
      */
@@ -8701,7 +8701,7 @@ var Class = __webpack_require__(0);
  * A three-component vector.
  *
  * @class Vector3
- * @memberof Phaser.Math
+ * @memberof Oyun.Math
  * @constructor
  * @since 3.0.0
  *
@@ -8718,7 +8718,7 @@ var Vector3 = new Class({
         /**
          * The x component of this Vector.
          *
-         * @name Phaser.Math.Vector3#x
+         * @name Oyun.Math.Vector3#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -8728,7 +8728,7 @@ var Vector3 = new Class({
         /**
          * The y component of this Vector.
          *
-         * @name Phaser.Math.Vector3#y
+         * @name Oyun.Math.Vector3#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -8738,7 +8738,7 @@ var Vector3 = new Class({
         /**
          * The z component of this Vector.
          *
-         * @name Phaser.Math.Vector3#z
+         * @name Oyun.Math.Vector3#z
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -8764,10 +8764,10 @@ var Vector3 = new Class({
      *
      * Sets the y component of the vector to 1, and the others to 0.
      *
-     * @method Phaser.Math.Vector3#up
+     * @method Oyun.Math.Vector3#up
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     up: function ()
     {
@@ -8781,12 +8781,12 @@ var Vector3 = new Class({
     /**
      * Sets the components of this Vector to be the `Math.min` result from the given vector.
      *
-     * @method Phaser.Math.Vector3#min
+     * @method Oyun.Math.Vector3#min
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Vector3} v - The Vector3 to check the minimum values against.
+     * @param {Oyun.Math.Vector3} v - The Vector3 to check the minimum values against.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     min: function (v)
     {
@@ -8800,12 +8800,12 @@ var Vector3 = new Class({
     /**
      * Sets the components of this Vector to be the `Math.max` result from the given vector.
      *
-     * @method Phaser.Math.Vector3#max
+     * @method Oyun.Math.Vector3#max
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Vector3} v - The Vector3 to check the maximum values against.
+     * @param {Oyun.Math.Vector3} v - The Vector3 to check the maximum values against.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     max: function (v)
     {
@@ -8819,10 +8819,10 @@ var Vector3 = new Class({
     /**
      * Make a clone of this Vector3.
      *
-     * @method Phaser.Math.Vector3#clone
+     * @method Oyun.Math.Vector3#clone
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector3} A new Vector3 object containing this Vectors values.
+     * @return {Oyun.Math.Vector3} A new Vector3 object containing this Vectors values.
      */
     clone: function ()
     {
@@ -8832,13 +8832,13 @@ var Vector3 = new Class({
     /**
      * Adds the two given Vector3s and sets the results into this Vector3.
      *
-     * @method Phaser.Math.Vector3#addVectors
+     * @method Oyun.Math.Vector3#addVectors
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Vector3} a - The first Vector to add.
-     * @param {Phaser.Math.Vector3} b - The second Vector to add.
+     * @param {Oyun.Math.Vector3} a - The first Vector to add.
+     * @param {Oyun.Math.Vector3} b - The second Vector to add.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     addVectors: function (a, b)
     {
@@ -8852,13 +8852,13 @@ var Vector3 = new Class({
     /**
      * Calculate the cross (vector) product of two given Vectors.
      *
-     * @method Phaser.Math.Vector3#crossVectors
+     * @method Oyun.Math.Vector3#crossVectors
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector3} a - The first Vector to multiply.
-     * @param {Phaser.Math.Vector3} b - The second Vector to multiply.
+     * @param {Oyun.Math.Vector3} a - The first Vector to multiply.
+     * @param {Oyun.Math.Vector3} b - The second Vector to multiply.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     crossVectors: function (a, b)
     {
@@ -8881,10 +8881,10 @@ var Vector3 = new Class({
      *
      * Performs a strict equality check against each Vector's components.
      *
-     * @method Phaser.Math.Vector3#equals
+     * @method Oyun.Math.Vector3#equals
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector3} v - The Vector3 to compare against.
+     * @param {Oyun.Math.Vector3} v - The Vector3 to compare against.
      *
      * @return {boolean} True if the two vectors strictly match, otherwise false.
      */
@@ -8896,12 +8896,12 @@ var Vector3 = new Class({
     /**
      * Copy the components of a given Vector into this Vector.
      *
-     * @method Phaser.Math.Vector3#copy
+     * @method Oyun.Math.Vector3#copy
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} src - The Vector to copy the components from.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} src - The Vector to copy the components from.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     copy: function (src)
     {
@@ -8915,14 +8915,14 @@ var Vector3 = new Class({
     /**
      * Set the `x`, `y`, and `z` components of this Vector to the given `x`, `y`, and `z` values.
      *
-     * @method Phaser.Math.Vector3#set
+     * @method Oyun.Math.Vector3#set
      * @since 3.0.0
      *
      * @param {(number|object)} x - The x value to set for this Vector, or an object containing x, y and z components.
      * @param {number} [y] - The y value to set for this Vector.
      * @param {number} [z] - The z value to set for this Vector.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     set: function (x, y, z)
     {
@@ -8945,12 +8945,12 @@ var Vector3 = new Class({
     /**
      * Sets the components of this Vector3 from the position of the given Matrix4.
      *
-     * @method Phaser.Math.Vector3#setFromMatrixPosition
+     * @method Oyun.Math.Vector3#setFromMatrixPosition
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} mat4 - The Matrix4 to get the position from.
+     * @param {Oyun.Math.Matrix4} mat4 - The Matrix4 to get the position from.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     setFromMatrixPosition: function (m)
     {
@@ -8960,13 +8960,13 @@ var Vector3 = new Class({
     /**
      * Sets the components of this Vector3 from the Matrix4 column specified.
      *
-     * @method Phaser.Math.Vector3#setFromMatrixColumn
+     * @method Oyun.Math.Vector3#setFromMatrixColumn
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} mat4 - The Matrix4 to get the column from.
+     * @param {Oyun.Math.Matrix4} mat4 - The Matrix4 to get the column from.
      * @param {number} index - The column index.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     setFromMatrixColumn: function (mat4, index)
     {
@@ -8980,13 +8980,13 @@ var Vector3 = new Class({
      * Vector3.y = array[offset + 1]
      * Vector3.z = array[offset + 2]
      *
-     * @method Phaser.Math.Vector3#fromArray
+     * @method Oyun.Math.Vector3#fromArray
      * @since 3.50.0
      *
      * @param {number[]} array - The array of values to get this Vector from.
      * @param {number} [offset=0] - The offset index into the array.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     fromArray: function (array, offset)
     {
@@ -9002,12 +9002,12 @@ var Vector3 = new Class({
     /**
      * Add a given Vector to this Vector. Addition is component-wise.
      *
-     * @method Phaser.Math.Vector3#add
+     * @method Oyun.Math.Vector3#add
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} v - The Vector to add to this Vector.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} v - The Vector to add to this Vector.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     add: function (v)
     {
@@ -9021,12 +9021,12 @@ var Vector3 = new Class({
     /**
      * Add the given value to each component of this Vector.
      *
-     * @method Phaser.Math.Vector3#addScalar
+     * @method Oyun.Math.Vector3#addScalar
      * @since 3.50.0
      *
      * @param {number} s - The amount to add to this Vector.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     addScalar: function (s)
     {
@@ -9040,13 +9040,13 @@ var Vector3 = new Class({
     /**
      * Add and scale a given Vector to this Vector. Addition is component-wise.
      *
-     * @method Phaser.Math.Vector3#addScale
+     * @method Oyun.Math.Vector3#addScale
      * @since 3.50.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} v - The Vector to add to this Vector.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} v - The Vector to add to this Vector.
      * @param {number} scale - The amount to scale `v` by.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     addScale: function (v, scale)
     {
@@ -9060,12 +9060,12 @@ var Vector3 = new Class({
     /**
      * Subtract the given Vector from this Vector. Subtraction is component-wise.
      *
-     * @method Phaser.Math.Vector3#subtract
+     * @method Oyun.Math.Vector3#subtract
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} v - The Vector to subtract from this Vector.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} v - The Vector to subtract from this Vector.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     subtract: function (v)
     {
@@ -9081,12 +9081,12 @@ var Vector3 = new Class({
      *
      * Multiplies this Vector by the given Vector.
      *
-     * @method Phaser.Math.Vector3#multiply
+     * @method Oyun.Math.Vector3#multiply
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} v - The Vector to multiply this Vector by.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} v - The Vector to multiply this Vector by.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     multiply: function (v)
     {
@@ -9100,12 +9100,12 @@ var Vector3 = new Class({
     /**
      * Scale this Vector by the given value.
      *
-     * @method Phaser.Math.Vector3#scale
+     * @method Oyun.Math.Vector3#scale
      * @since 3.0.0
      *
      * @param {number} scale - The value to scale this Vector by.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     scale: function (scale)
     {
@@ -9130,12 +9130,12 @@ var Vector3 = new Class({
      *
      * Divides this Vector by the given Vector.
      *
-     * @method Phaser.Math.Vector3#divide
+     * @method Oyun.Math.Vector3#divide
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} v - The Vector to divide this Vector by.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} v - The Vector to divide this Vector by.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     divide: function (v)
     {
@@ -9149,10 +9149,10 @@ var Vector3 = new Class({
     /**
      * Negate the `x`, `y` and `z` components of this Vector.
      *
-     * @method Phaser.Math.Vector3#negate
+     * @method Oyun.Math.Vector3#negate
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     negate: function ()
     {
@@ -9166,10 +9166,10 @@ var Vector3 = new Class({
     /**
      * Calculate the distance between this Vector and the given Vector.
      *
-     * @method Phaser.Math.Vector3#distance
+     * @method Oyun.Math.Vector3#distance
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} v - The Vector to calculate the distance to.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} v - The Vector to calculate the distance to.
      *
      * @return {number} The distance from this Vector to the given Vector.
      */
@@ -9185,10 +9185,10 @@ var Vector3 = new Class({
     /**
      * Calculate the distance between this Vector and the given Vector, squared.
      *
-     * @method Phaser.Math.Vector3#distanceSq
+     * @method Oyun.Math.Vector3#distanceSq
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3)} v - The Vector to calculate the distance to.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3)} v - The Vector to calculate the distance to.
      *
      * @return {number} The distance from this Vector to the given Vector, squared.
      */
@@ -9204,7 +9204,7 @@ var Vector3 = new Class({
     /**
      * Calculate the length (or magnitude) of this Vector.
      *
-     * @method Phaser.Math.Vector3#length
+     * @method Oyun.Math.Vector3#length
      * @since 3.0.0
      *
      * @return {number} The length of this Vector.
@@ -9221,7 +9221,7 @@ var Vector3 = new Class({
     /**
      * Calculate the length of this Vector squared.
      *
-     * @method Phaser.Math.Vector3#lengthSq
+     * @method Oyun.Math.Vector3#lengthSq
      * @since 3.0.0
      *
      * @return {number} The length of this Vector, squared.
@@ -9240,10 +9240,10 @@ var Vector3 = new Class({
      *
      * Makes the vector a unit length vector (magnitude of 1) in the same direction.
      *
-     * @method Phaser.Math.Vector3#normalize
+     * @method Oyun.Math.Vector3#normalize
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     normalize: function ()
     {
@@ -9267,10 +9267,10 @@ var Vector3 = new Class({
     /**
      * Calculate the dot product of this Vector and the given Vector.
      *
-     * @method Phaser.Math.Vector3#dot
+     * @method Oyun.Math.Vector3#dot
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector3} v - The Vector3 to dot product with this Vector3.
+     * @param {Oyun.Math.Vector3} v - The Vector3 to dot product with this Vector3.
      *
      * @return {number} The dot product of this Vector and `v`.
      */
@@ -9282,12 +9282,12 @@ var Vector3 = new Class({
     /**
      * Calculate the cross (vector) product of this Vector (which will be modified) and the given Vector.
      *
-     * @method Phaser.Math.Vector3#cross
+     * @method Oyun.Math.Vector3#cross
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector3} v - The Vector to cross product with.
+     * @param {Oyun.Math.Vector3} v - The Vector to cross product with.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     cross: function (v)
     {
@@ -9310,13 +9310,13 @@ var Vector3 = new Class({
      *
      * Interpolates this Vector towards the given Vector.
      *
-     * @method Phaser.Math.Vector3#lerp
+     * @method Oyun.Math.Vector3#lerp
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector3} v - The Vector3 to interpolate towards.
+     * @param {Oyun.Math.Vector3} v - The Vector3 to interpolate towards.
      * @param {number} [t=0] - The interpolation percentage, between 0 and 1.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     lerp: function (v, t)
     {
@@ -9336,12 +9336,12 @@ var Vector3 = new Class({
     /**
      * Takes a Matrix3 and applies it to this Vector3.
      *
-     * @method Phaser.Math.Vector3#applyMatrix3
+     * @method Oyun.Math.Vector3#applyMatrix3
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix3} mat3 - The Matrix3 to apply to this Vector3.
+     * @param {Oyun.Math.Matrix3} mat3 - The Matrix3 to apply to this Vector3.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     applyMatrix3: function (mat3)
     {
@@ -9360,12 +9360,12 @@ var Vector3 = new Class({
     /**
      * Takes a Matrix4 and applies it to this Vector3.
      *
-     * @method Phaser.Math.Vector3#applyMatrix4
+     * @method Oyun.Math.Vector3#applyMatrix4
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} mat4 - The Matrix4 to apply to this Vector3.
+     * @param {Oyun.Math.Matrix4} mat4 - The Matrix4 to apply to this Vector3.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     applyMatrix4: function (mat4)
     {
@@ -9386,12 +9386,12 @@ var Vector3 = new Class({
     /**
      * Transform this Vector with the given Matrix.
      *
-     * @method Phaser.Math.Vector3#transformMat3
+     * @method Oyun.Math.Vector3#transformMat3
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix3} mat - The Matrix3 to transform this Vector3 with.
+     * @param {Oyun.Math.Matrix3} mat - The Matrix3 to transform this Vector3 with.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     transformMat3: function (mat)
     {
@@ -9410,12 +9410,12 @@ var Vector3 = new Class({
     /**
      * Transform this Vector with the given Matrix4.
      *
-     * @method Phaser.Math.Vector3#transformMat4
+     * @method Oyun.Math.Vector3#transformMat4
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} mat - The Matrix4 to transform this Vector3 with.
+     * @param {Oyun.Math.Matrix4} mat - The Matrix4 to transform this Vector3 with.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     transformMat4: function (mat)
     {
@@ -9434,12 +9434,12 @@ var Vector3 = new Class({
     /**
      * Transforms the coordinates of this Vector3 with the given Matrix4.
      *
-     * @method Phaser.Math.Vector3#transformCoordinates
+     * @method Oyun.Math.Vector3#transformCoordinates
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} mat - The Matrix4 to transform this Vector3 with.
+     * @param {Oyun.Math.Matrix4} mat - The Matrix4 to transform this Vector3 with.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     transformCoordinates: function (mat)
     {
@@ -9463,12 +9463,12 @@ var Vector3 = new Class({
     /**
      * Transform this Vector with the given Quaternion.
      *
-     * @method Phaser.Math.Vector3#transformQuat
+     * @method Oyun.Math.Vector3#transformQuat
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Quaternion} q - The Quaternion to transform this Vector with.
+     * @param {Oyun.Math.Quaternion} q - The Quaternion to transform this Vector with.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     transformQuat: function (q)
     {
@@ -9499,12 +9499,12 @@ var Vector3 = new Class({
      * Multiplies this Vector3 by the specified matrix, applying a W divide. This is useful for projection,
      * e.g. unprojecting a 2D point into 3D space.
      *
-     * @method Phaser.Math.Vector3#project
+     * @method Oyun.Math.Vector3#project
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} mat - The Matrix4 to multiply this Vector3 with.
+     * @param {Oyun.Math.Matrix4} mat - The Matrix4 to multiply this Vector3 with.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     project: function (mat)
     {
@@ -9542,13 +9542,13 @@ var Vector3 = new Class({
     /**
      * Multiplies this Vector3 by the given view and projection matrices.
      *
-     * @method Phaser.Math.Vector3#projectViewMatrix
+     * @method Oyun.Math.Vector3#projectViewMatrix
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} viewMatrix - A View Matrix.
-     * @param {Phaser.Math.Matrix4} projectionMatrix - A Projection Matrix.
+     * @param {Oyun.Math.Matrix4} viewMatrix - A View Matrix.
+     * @param {Oyun.Math.Matrix4} projectionMatrix - A Projection Matrix.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     projectViewMatrix: function (viewMatrix, projectionMatrix)
     {
@@ -9558,13 +9558,13 @@ var Vector3 = new Class({
     /**
      * Multiplies this Vector3 by the given inversed projection matrix and world matrix.
      *
-     * @method Phaser.Math.Vector3#unprojectViewMatrix
+     * @method Oyun.Math.Vector3#unprojectViewMatrix
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} projectionMatrix - An inversed Projection Matrix.
-     * @param {Phaser.Math.Matrix4} worldMatrix - A World View Matrix.
+     * @param {Oyun.Math.Matrix4} projectionMatrix - An inversed Projection Matrix.
+     * @param {Oyun.Math.Matrix4} worldMatrix - A World View Matrix.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     unprojectViewMatrix: function (projectionMatrix, worldMatrix)
     {
@@ -9581,13 +9581,13 @@ var Vector3 = new Class({
      * After this operation, this vector's (x, y, z) components will
      * represent the unprojected 3D coordinate.
      *
-     * @method Phaser.Math.Vector3#unproject
+     * @method Oyun.Math.Vector3#unproject
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector4} viewport - Screen x, y, width and height in pixels.
-     * @param {Phaser.Math.Matrix4} invProjectionView - Combined projection and view matrix.
+     * @param {Oyun.Math.Vector4} viewport - Screen x, y, width and height in pixels.
+     * @param {Oyun.Math.Matrix4} invProjectionView - Combined projection and view matrix.
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     unproject: function (viewport, invProjectionView)
     {
@@ -9610,10 +9610,10 @@ var Vector3 = new Class({
     /**
      * Make this Vector the zero vector (0, 0, 0).
      *
-     * @method Phaser.Math.Vector3#reset
+     * @method Oyun.Math.Vector3#reset
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector3} This Vector3.
+     * @return {Oyun.Math.Vector3} This Vector3.
      */
     reset: function ()
     {
@@ -9632,8 +9632,8 @@ var Vector3 = new Class({
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.ZERO
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.ZERO
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.ZERO = new Vector3();
@@ -9644,8 +9644,8 @@ Vector3.ZERO = new Vector3();
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.RIGHT
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.RIGHT
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.RIGHT = new Vector3(1, 0, 0);
@@ -9656,8 +9656,8 @@ Vector3.RIGHT = new Vector3(1, 0, 0);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.LEFT
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.LEFT
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.LEFT = new Vector3(-1, 0, 0);
@@ -9668,8 +9668,8 @@ Vector3.LEFT = new Vector3(-1, 0, 0);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.UP
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.UP
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.UP = new Vector3(0, -1, 0);
@@ -9680,8 +9680,8 @@ Vector3.UP = new Vector3(0, -1, 0);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.DOWN
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.DOWN
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.DOWN = new Vector3(0, 1, 0);
@@ -9692,8 +9692,8 @@ Vector3.DOWN = new Vector3(0, 1, 0);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.FORWARD
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.FORWARD
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.FORWARD = new Vector3(0, 0, 1);
@@ -9704,8 +9704,8 @@ Vector3.FORWARD = new Vector3(0, 0, 1);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.BACK
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.BACK
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.BACK = new Vector3(0, 0, -1);
@@ -9716,8 +9716,8 @@ Vector3.BACK = new Vector3(0, 0, -1);
  * This constant is meant for comparison operations and should not be modified directly.
  *
  * @constant
- * @name Phaser.Math.Vector3.ONE
- * @type {Phaser.Math.Vector3}
+ * @name Oyun.Math.Vector3.ONE
+ * @type {Oyun.Math.Vector3}
  * @since 3.16.0
  */
 Vector3.ONE = new Vector3(1, 1, 1);
@@ -9736,7 +9736,7 @@ module.exports = Vector3;
  */
 
 /**
- * @namespace Phaser.Tilemaps.Formats
+ * @namespace Oyun.Tilemaps.Formats
  */
 
 module.exports = {
@@ -9744,7 +9744,7 @@ module.exports = {
     /**
      * CSV Map Type
      * 
-     * @name Phaser.Tilemaps.Formats.CSV
+     * @name Oyun.Tilemaps.Formats.CSV
      * @type {number}
      * @since 3.0.0
      */
@@ -9753,7 +9753,7 @@ module.exports = {
     /**
      * Tiled JSON Map Type
      * 
-     * @name Phaser.Tilemaps.Formats.TILED_JSON
+     * @name Oyun.Tilemaps.Formats.TILED_JSON
      * @type {number}
      * @since 3.0.0
      */
@@ -9762,7 +9762,7 @@ module.exports = {
     /**
      * 2D Array Map Type
      * 
-     * @name Phaser.Tilemaps.Formats.ARRAY_2D
+     * @name Oyun.Tilemaps.Formats.ARRAY_2D
      * @type {number}
      * @since 3.0.0
      */
@@ -9771,7 +9771,7 @@ module.exports = {
     /**
      * Weltmeister (Impact.js) Map Type
      * 
-     * @name Phaser.Tilemaps.Formats.WELTMEISTER
+     * @name Oyun.Tilemaps.Formats.WELTMEISTER
      * @type {number}
      * @since 3.0.0
      */
@@ -9793,10 +9793,10 @@ module.exports = {
 /**
  * Returns the bottom coordinate from the bounds of the Game Object.
  *
- * @function Phaser.Display.Bounds.GetBottom
+ * @function Oyun.Display.Bounds.GetBottom
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
  *
  * @return {number} The bottom coordinate of the bounds of the Game Object.
  */
@@ -9821,10 +9821,10 @@ module.exports = GetBottom;
 /**
  * Returns the left coordinate from the bounds of the Game Object.
  *
- * @function Phaser.Display.Bounds.GetLeft
+ * @function Oyun.Display.Bounds.GetLeft
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
  *
  * @return {number} The left coordinate of the bounds of the Game Object.
  */
@@ -9849,10 +9849,10 @@ module.exports = GetLeft;
 /**
  * Returns the right coordinate from the bounds of the Game Object.
  *
- * @function Phaser.Display.Bounds.GetRight
+ * @function Oyun.Display.Bounds.GetRight
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
  *
  * @return {number} The right coordinate of the bounds of the Game Object.
  */
@@ -9877,10 +9877,10 @@ module.exports = GetRight;
 /**
  * Returns the top coordinate from the bounds of the Game Object.
  *
- * @function Phaser.Display.Bounds.GetTop
+ * @function Oyun.Display.Bounds.GetTop
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
  *
  * @return {number} The top coordinate of the bounds of the Game Object.
  */
@@ -9910,19 +9910,19 @@ module.exports = GetTop;
  *
  * To use this with a Group: `PropertyValueInc(group.getChildren(), key, value, step)`
  *
- * @function Phaser.Actions.PropertyValueInc
+ * @function Oyun.Actions.PropertyValueInc
  * @since 3.3.0
  *
- * @generic {Phaser.GameObjects.GameObject[]} G - [items,$return]
+ * @generic {Oyun.GameObjects.GameObject[]} G - [items,$return]
  *
- * @param {(array|Phaser.GameObjects.GameObject[])} items - The array of items to be updated by this action.
+ * @param {(array|Oyun.GameObjects.GameObject[])} items - The array of items to be updated by this action.
  * @param {string} key - The property to be updated.
  * @param {number} value - The amount to be added to the property.
  * @param {number} [step=0] - This is added to the `value` amount, multiplied by the iteration counter.
  * @param {number} [index=0] - An optional offset to start searching from within the items array.
  * @param {number} [direction=1] - The direction to iterate through the array. 1 is from beginning to end, -1 from end to beginning.
  *
- * @return {(array|Phaser.GameObjects.GameObject[])} The array of objects that were passed to this Action.
+ * @return {(array|Oyun.GameObjects.GameObject[])} The array of objects that were passed to this Action.
  */
 var PropertyValueInc = function (items, key, value, step, index, direction)
 {
@@ -9981,7 +9981,7 @@ var Vector2 = __webpack_require__(3);
  * Defines a Line segment, a part of a line between two endpoints.
  *
  * @class Line
- * @memberof Phaser.Geom
+ * @memberof Oyun.Geom
  * @constructor
  * @since 3.0.0
  *
@@ -10005,7 +10005,7 @@ var Line = new Class({
          * The geometry constant type of this object: `GEOM_CONST.LINE`.
          * Used for fast type comparisons.
          *
-         * @name Phaser.Geom.Line#type
+         * @name Oyun.Geom.Line#type
          * @type {number}
          * @readonly
          * @since 3.19.0
@@ -10015,7 +10015,7 @@ var Line = new Class({
         /**
          * The x coordinate of the lines starting point.
          *
-         * @name Phaser.Geom.Line#x1
+         * @name Oyun.Geom.Line#x1
          * @type {number}
          * @since 3.0.0
          */
@@ -10024,7 +10024,7 @@ var Line = new Class({
         /**
          * The y coordinate of the lines starting point.
          *
-         * @name Phaser.Geom.Line#y1
+         * @name Oyun.Geom.Line#y1
          * @type {number}
          * @since 3.0.0
          */
@@ -10033,7 +10033,7 @@ var Line = new Class({
         /**
          * The x coordinate of the lines ending point.
          *
-         * @name Phaser.Geom.Line#x2
+         * @name Oyun.Geom.Line#x2
          * @type {number}
          * @since 3.0.0
          */
@@ -10042,7 +10042,7 @@ var Line = new Class({
         /**
          * The y coordinate of the lines ending point.
          *
-         * @name Phaser.Geom.Line#y2
+         * @name Oyun.Geom.Line#y2
          * @type {number}
          * @since 3.0.0
          */
@@ -10052,15 +10052,15 @@ var Line = new Class({
     /**
      * Get a point on a line that's a given percentage along its length.
      *
-     * @method Phaser.Geom.Line#getPoint
+     * @method Oyun.Geom.Line#getPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [output,$return]
+     * @generic {Oyun.Geom.Point} O - [output,$return]
      *
      * @param {number} position - A value between 0 and 1, where 0 is the start, 0.5 is the middle and 1 is the end of the line.
-     * @param {(Phaser.Geom.Point|object)} [output] - An optional point, or point-like object, to store the coordinates of the point on the line.
+     * @param {(Oyun.Geom.Point|object)} [output] - An optional point, or point-like object, to store the coordinates of the point on the line.
      *
-     * @return {(Phaser.Geom.Point|object)} A Point, or point-like object, containing the coordinates of the point on the line.
+     * @return {(Oyun.Geom.Point|object)} A Point, or point-like object, containing the coordinates of the point on the line.
      */
     getPoint: function (position, output)
     {
@@ -10075,16 +10075,16 @@ var Line = new Class({
      * Provide a `stepRate` to ensure a specific distance between each point on the line. Set `quantity` to `0` when
      * providing a `stepRate`.
      *
-     * @method Phaser.Geom.Line#getPoints
+     * @method Oyun.Geom.Line#getPoints
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point[]} O - [output,$return]
+     * @generic {Oyun.Geom.Point[]} O - [output,$return]
      *
      * @param {number} quantity - The number of points to place on the line. Set to `0` to use `stepRate` instead.
      * @param {number} [stepRate] - The distance between each point on the line. When set, `quantity` is implied and should be set to `0`.
-     * @param {(array|Phaser.Geom.Point[])} [output] - An optional array of Points, or point-like objects, to store the coordinates of the points on the line.
+     * @param {(array|Oyun.Geom.Point[])} [output] - An optional array of Points, or point-like objects, to store the coordinates of the points on the line.
      *
-     * @return {(array|Phaser.Geom.Point[])} An array of Points, or point-like objects, containing the coordinates of the points on the line.
+     * @return {(array|Oyun.Geom.Point[])} An array of Points, or point-like objects, containing the coordinates of the points on the line.
      */
     getPoints: function (quantity, stepRate, output)
     {
@@ -10094,14 +10094,14 @@ var Line = new Class({
     /**
      * Get a random Point on the Line.
      *
-     * @method Phaser.Geom.Line#getRandomPoint
+     * @method Oyun.Geom.Line#getRandomPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [point,$return]
+     * @generic {Oyun.Geom.Point} O - [point,$return]
      *
-     * @param {(Phaser.Geom.Point|object)} [point] - An instance of a Point to be modified.
+     * @param {(Oyun.Geom.Point|object)} [point] - An instance of a Point to be modified.
      *
-     * @return {Phaser.Geom.Point} A random Point on the Line.
+     * @return {Oyun.Geom.Point} A random Point on the Line.
      */
     getRandomPoint: function (point)
     {
@@ -10111,7 +10111,7 @@ var Line = new Class({
     /**
      * Set new coordinates for the line endpoints.
      *
-     * @method Phaser.Geom.Line#setTo
+     * @method Oyun.Geom.Line#setTo
      * @since 3.0.0
      *
      * @param {number} [x1=0] - The x coordinate of the lines starting point.
@@ -10140,14 +10140,14 @@ var Line = new Class({
     /**
      * Returns a Vector2 object that corresponds to the start of this Line.
      *
-     * @method Phaser.Geom.Line#getPointA
+     * @method Oyun.Geom.Line#getPointA
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [vec2,$return]
+     * @generic {Oyun.Math.Vector2} O - [vec2,$return]
      *
-     * @param {Phaser.Math.Vector2} [vec2] - A Vector2 object to set the results in. If `undefined` a new Vector2 will be created.
+     * @param {Oyun.Math.Vector2} [vec2] - A Vector2 object to set the results in. If `undefined` a new Vector2 will be created.
      *
-     * @return {Phaser.Math.Vector2} A Vector2 object that corresponds to the start of this Line.
+     * @return {Oyun.Math.Vector2} A Vector2 object that corresponds to the start of this Line.
      */
     getPointA: function (vec2)
     {
@@ -10161,14 +10161,14 @@ var Line = new Class({
     /**
      * Returns a Vector2 object that corresponds to the end of this Line.
      *
-     * @method Phaser.Geom.Line#getPointB
+     * @method Oyun.Geom.Line#getPointB
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [vec2,$return]
+     * @generic {Oyun.Math.Vector2} O - [vec2,$return]
      *
-     * @param {Phaser.Math.Vector2} [vec2] - A Vector2 object to set the results in. If `undefined` a new Vector2 will be created.
+     * @param {Oyun.Math.Vector2} [vec2] - A Vector2 object to set the results in. If `undefined` a new Vector2 will be created.
      *
-     * @return {Phaser.Math.Vector2} A Vector2 object that corresponds to the end of this Line.
+     * @return {Oyun.Math.Vector2} A Vector2 object that corresponds to the end of this Line.
      */
     getPointB: function (vec2)
     {
@@ -10182,7 +10182,7 @@ var Line = new Class({
     /**
      * The left position of the Line.
      *
-     * @name Phaser.Geom.Line#left
+     * @name Oyun.Geom.Line#left
      * @type {number}
      * @since 3.0.0
      */
@@ -10210,7 +10210,7 @@ var Line = new Class({
     /**
      * The right position of the Line.
      *
-     * @name Phaser.Geom.Line#right
+     * @name Oyun.Geom.Line#right
      * @type {number}
      * @since 3.0.0
      */
@@ -10238,7 +10238,7 @@ var Line = new Class({
     /**
      * The top position of the Line.
      *
-     * @name Phaser.Geom.Line#top
+     * @name Oyun.Geom.Line#top
      * @type {number}
      * @since 3.0.0
      */
@@ -10266,7 +10266,7 @@ var Line = new Class({
     /**
      * The bottom position of the Line.
      *
-     * @name Phaser.Geom.Line#bottom
+     * @name Oyun.Geom.Line#bottom
      * @type {number}
      * @since 3.0.0
      */
@@ -10309,12 +10309,12 @@ module.exports = Line;
 /**
  * Sets the fillStyle on the target context based on the given Shape.
  *
- * @method Phaser.GameObjects.Shape#FillStyleCanvas
+ * @method Oyun.GameObjects.Shape#FillStyleCanvas
  * @since 3.13.0
  * @private
  *
  * @param {CanvasRenderingContext2D} ctx - The context to set the fill style on.
- * @param {Phaser.GameObjects.Shape} src - The Game Object to set the fill style from.
+ * @param {Oyun.GameObjects.Shape} src - The Game Object to set the fill style from.
  * @param {number} [altColor] - An alternative color to render with.
  * @param {number} [altAlpha] - An alternative alpha to render with.
  */
@@ -10353,14 +10353,14 @@ var Class = __webpack_require__(0);
  * You shouldn't create an instance of a MultiFile directly, but should extend it with your own class, setting a custom type and processing methods.
  *
  * @class MultiFile
- * @memberof Phaser.Loader
+ * @memberof Oyun.Loader
  * @constructor
  * @since 3.7.0
  *
- * @param {Phaser.Loader.LoaderPlugin} loader - The Loader that is going to load this File.
+ * @param {Oyun.Loader.LoaderPlugin} loader - The Loader that is going to load this File.
  * @param {string} type - The file type string for sorting within the Loader.
  * @param {string} key - The key of the file within the loader.
- * @param {Phaser.Loader.File[]} files - An array of Files that make-up this MultiFile.
+ * @param {Oyun.Loader.File[]} files - An array of Files that make-up this MultiFile.
  */
 var MultiFile = new Class({
 
@@ -10382,8 +10382,8 @@ var MultiFile = new Class({
         /**
          * A reference to the Loader that is going to load this file.
          *
-         * @name Phaser.Loader.MultiFile#loader
-         * @type {Phaser.Loader.LoaderPlugin}
+         * @name Oyun.Loader.MultiFile#loader
+         * @type {Oyun.Loader.LoaderPlugin}
          * @since 3.7.0
          */
         this.loader = loader;
@@ -10391,7 +10391,7 @@ var MultiFile = new Class({
         /**
          * The file type string for sorting within the Loader.
          *
-         * @name Phaser.Loader.MultiFile#type
+         * @name Oyun.Loader.MultiFile#type
          * @type {string}
          * @since 3.7.0
          */
@@ -10400,7 +10400,7 @@ var MultiFile = new Class({
         /**
          * Unique cache key (unique within its file type)
          *
-         * @name Phaser.Loader.MultiFile#key
+         * @name Oyun.Loader.MultiFile#key
          * @type {string}
          * @since 3.7.0
          */
@@ -10409,7 +10409,7 @@ var MultiFile = new Class({
         /**
          * The current index being used by multi-file loaders to avoid key clashes.
          *
-         * @name Phaser.Loader.MultiFile#multiKeyIndex
+         * @name Oyun.Loader.MultiFile#multiKeyIndex
          * @type {number}
          * @private
          * @since 3.20.0
@@ -10419,8 +10419,8 @@ var MultiFile = new Class({
         /**
          * Array of files that make up this MultiFile.
          *
-         * @name Phaser.Loader.MultiFile#files
-         * @type {Phaser.Loader.File[]}
+         * @name Oyun.Loader.MultiFile#files
+         * @type {Oyun.Loader.File[]}
          * @since 3.7.0
          */
         this.files = finalFiles;
@@ -10428,7 +10428,7 @@ var MultiFile = new Class({
         /**
          * The completion status of this MultiFile.
          *
-         * @name Phaser.Loader.MultiFile#complete
+         * @name Oyun.Loader.MultiFile#complete
          * @type {boolean}
          * @default false
          * @since 3.7.0
@@ -10438,7 +10438,7 @@ var MultiFile = new Class({
         /**
          * The number of files to load.
          *
-         * @name Phaser.Loader.MultiFile#pending
+         * @name Oyun.Loader.MultiFile#pending
          * @type {number}
          * @since 3.7.0
          */
@@ -10448,7 +10448,7 @@ var MultiFile = new Class({
         /**
          * The number of files that failed to load.
          *
-         * @name Phaser.Loader.MultiFile#failed
+         * @name Oyun.Loader.MultiFile#failed
          * @type {number}
          * @default 0
          * @since 3.7.0
@@ -10458,7 +10458,7 @@ var MultiFile = new Class({
         /**
          * A storage container for transient data that the loading files need.
          *
-         * @name Phaser.Loader.MultiFile#config
+         * @name Oyun.Loader.MultiFile#config
          * @type {any}
          * @since 3.7.0
          */
@@ -10468,7 +10468,7 @@ var MultiFile = new Class({
          * A reference to the Loaders baseURL at the time this MultiFile was created.
          * Used to populate child-files.
          *
-         * @name Phaser.Loader.MultiFile#baseURL
+         * @name Oyun.Loader.MultiFile#baseURL
          * @type {string}
          * @since 3.20.0
          */
@@ -10478,7 +10478,7 @@ var MultiFile = new Class({
          * A reference to the Loaders path at the time this MultiFile was created.
          * Used to populate child-files.
          *
-         * @name Phaser.Loader.MultiFile#path
+         * @name Oyun.Loader.MultiFile#path
          * @type {string}
          * @since 3.20.0
          */
@@ -10488,7 +10488,7 @@ var MultiFile = new Class({
          * A reference to the Loaders prefix at the time this MultiFile was created.
          * Used to populate child-files.
          *
-         * @name Phaser.Loader.MultiFile#prefix
+         * @name Oyun.Loader.MultiFile#prefix
          * @type {string}
          * @since 3.20.0
          */
@@ -10504,7 +10504,7 @@ var MultiFile = new Class({
     /**
      * Checks if this MultiFile is ready to process its children or not.
      *
-     * @method Phaser.Loader.MultiFile#isReadyToProcess
+     * @method Oyun.Loader.MultiFile#isReadyToProcess
      * @since 3.7.0
      *
      * @return {boolean} `true` if all children of this MultiFile have loaded, otherwise `false`.
@@ -10517,12 +10517,12 @@ var MultiFile = new Class({
     /**
      * Adds another child to this MultiFile, increases the pending count and resets the completion status.
      *
-     * @method Phaser.Loader.MultiFile#addToMultiFile
+     * @method Oyun.Loader.MultiFile#addToMultiFile
      * @since 3.7.0
      *
-     * @param {Phaser.Loader.File} files - The File to add to this MultiFile.
+     * @param {Oyun.Loader.File} files - The File to add to this MultiFile.
      *
-     * @return {Phaser.Loader.MultiFile} This MultiFile instance.
+     * @return {Oyun.Loader.MultiFile} This MultiFile instance.
      */
     addToMultiFile: function (file)
     {
@@ -10540,10 +10540,10 @@ var MultiFile = new Class({
     /**
      * Called by each File when it finishes loading.
      *
-     * @method Phaser.Loader.MultiFile#onFileComplete
+     * @method Oyun.Loader.MultiFile#onFileComplete
      * @since 3.7.0
      *
-     * @param {Phaser.Loader.File} file - The File that has completed processing.
+     * @param {Oyun.Loader.File} file - The File that has completed processing.
      */
     onFileComplete: function (file)
     {
@@ -10558,10 +10558,10 @@ var MultiFile = new Class({
     /**
      * Called by each File that fails to load.
      *
-     * @method Phaser.Loader.MultiFile#onFileFailed
+     * @method Oyun.Loader.MultiFile#onFileFailed
      * @since 3.7.0
      *
-     * @param {Phaser.Loader.File} file - The File that has failed to load.
+     * @param {Oyun.Loader.File} file - The File that has failed to load.
      */
     onFileFailed: function (file)
     {
@@ -10591,7 +10591,7 @@ module.exports = MultiFile;
 /**
  * Calculate the distance between two sets of coordinates (points).
  *
- * @function Phaser.Math.Distance.Between
+ * @function Oyun.Math.Distance.Between
  * @since 3.0.0
  *
  * @param {number} x1 - The x coordinate of the first point.
@@ -10623,7 +10623,7 @@ module.exports = DistanceBetween;
  */
 
 /**
- * @namespace Phaser.Input.Events
+ * @namespace Oyun.Input.Events
  */
 
 module.exports = {
@@ -11235,15 +11235,15 @@ module.exports = Common;
 /**
  * Positions the Game Object so that the top of its bounds aligns with the given coordinate.
  *
- * @function Phaser.Display.Bounds.SetTop
+ * @function Oyun.Display.Bounds.SetTop
  * @since 3.0.0
  *
- * @generic {Phaser.GameObjects.GameObject} G - [gameObject,$return]
+ * @generic {Oyun.GameObjects.GameObject} G - [gameObject,$return]
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
  * @param {number} value - The coordinate to position the Game Object bounds on.
  *
- * @return {Phaser.GameObjects.GameObject} The Game Object that was positioned.
+ * @return {Oyun.GameObjects.GameObject} The Game Object that was positioned.
  */
 var SetTop = function (gameObject, value)
 {
@@ -11268,15 +11268,15 @@ module.exports = SetTop;
 /**
  * Positions the Game Object so that the left of its bounds aligns with the given coordinate.
  *
- * @function Phaser.Display.Bounds.SetLeft
+ * @function Oyun.Display.Bounds.SetLeft
  * @since 3.0.0
  *
- * @generic {Phaser.GameObjects.GameObject} G - [gameObject,$return]
+ * @generic {Oyun.GameObjects.GameObject} G - [gameObject,$return]
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
  * @param {number} value - The coordinate to position the Game Object bounds on.
  *
- * @return {Phaser.GameObjects.GameObject} The Game Object that was positioned.
+ * @return {Oyun.GameObjects.GameObject} The Game Object that was positioned.
  */
 var SetLeft = function (gameObject, value)
 {
@@ -11301,15 +11301,15 @@ module.exports = SetLeft;
 /**
  * Positions the Game Object so that the left of its bounds aligns with the given coordinate.
  *
- * @function Phaser.Display.Bounds.SetRight
+ * @function Oyun.Display.Bounds.SetRight
  * @since 3.0.0
  *
- * @generic {Phaser.GameObjects.GameObject} G - [gameObject,$return]
+ * @generic {Oyun.GameObjects.GameObject} G - [gameObject,$return]
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
  * @param {number} value - The coordinate to position the Game Object bounds on.
  *
- * @return {Phaser.GameObjects.GameObject} The Game Object that was positioned.
+ * @return {Oyun.GameObjects.GameObject} The Game Object that was positioned.
  */
 var SetRight = function (gameObject, value)
 {
@@ -11334,15 +11334,15 @@ module.exports = SetRight;
 /**
  * Positions the Game Object so that the bottom of its bounds aligns with the given coordinate.
  *
- * @function Phaser.Display.Bounds.SetBottom
+ * @function Oyun.Display.Bounds.SetBottom
  * @since 3.0.0
  *
- * @generic {Phaser.GameObjects.GameObject} G - [gameObject,$return]
+ * @generic {Oyun.GameObjects.GameObject} G - [gameObject,$return]
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
  * @param {number} value - The coordinate to position the Game Object bounds on.
  *
- * @return {Phaser.GameObjects.GameObject} The Game Object that was positioned.
+ * @return {Oyun.GameObjects.GameObject} The Game Object that was positioned.
  */
 var SetBottom = function (gameObject, value)
 {
@@ -11369,7 +11369,7 @@ var GEOM_CONST = {
     /**
      * A Circle Geometry object type.
      * 
-     * @name Phaser.Geom.CIRCLE
+     * @name Oyun.Geom.CIRCLE
      * @type {number}
      * @since 3.19.0
      */
@@ -11378,7 +11378,7 @@ var GEOM_CONST = {
     /**
      * An Ellipse Geometry object type.
      * 
-     * @name Phaser.Geom.ELLIPSE
+     * @name Oyun.Geom.ELLIPSE
      * @type {number}
      * @since 3.19.0
      */
@@ -11387,7 +11387,7 @@ var GEOM_CONST = {
     /**
      * A Line Geometry object type.
      * 
-     * @name Phaser.Geom.LINE
+     * @name Oyun.Geom.LINE
      * @type {number}
      * @since 3.19.0
      */
@@ -11396,7 +11396,7 @@ var GEOM_CONST = {
     /**
      * A Point Geometry object type.
      * 
-     * @name Phaser.Geom.POINT
+     * @name Oyun.Geom.POINT
      * @type {number}
      * @since 3.19.0
      */
@@ -11405,7 +11405,7 @@ var GEOM_CONST = {
     /**
      * A Polygon Geometry object type.
      * 
-     * @name Phaser.Geom.POLYGON
+     * @name Oyun.Geom.POLYGON
      * @type {number}
      * @since 3.19.0
      */
@@ -11414,7 +11414,7 @@ var GEOM_CONST = {
     /**
      * A Rectangle Geometry object type.
      * 
-     * @name Phaser.Geom.RECTANGLE
+     * @name Oyun.Geom.RECTANGLE
      * @type {number}
      * @since 3.19.0
      */
@@ -11423,7 +11423,7 @@ var GEOM_CONST = {
     /**
      * A Triangle Geometry object type.
      * 
-     * @name Phaser.Geom.TRIANGLE
+     * @name Oyun.Geom.TRIANGLE
      * @type {number}
      * @since 3.19.0
      */
@@ -11447,10 +11447,10 @@ module.exports = GEOM_CONST;
 /**
  * Checks if a given point is inside a Rectangle's bounds.
  *
- * @function Phaser.Geom.Rectangle.Contains
+ * @function Oyun.Geom.Rectangle.Contains
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Rectangle} rect - The Rectangle to check.
+ * @param {Oyun.Geom.Rectangle} rect - The Rectangle to check.
  * @param {number} x - The X coordinate of the point to check.
  * @param {number} y - The Y coordinate of the point to check.
  *
@@ -11492,7 +11492,7 @@ var WebGLShader = __webpack_require__(369);
 
 /**
  * @classdesc
- * The `WebGLPipeline` is a base class used by all of the core Phaser pipelines.
+ * The `WebGLPipeline` is a base class used by all of the core Oyun pipelines.
  *
  * It describes the way elements will be rendered in WebGL. Internally, it handles
  * compiling the shaders, creating vertex buffers, assigning primitive topology and
@@ -11516,12 +11516,12 @@ var WebGLShader = __webpack_require__(369);
  * 4) onPostRender - called once at the end of the render step
  *
  * @class WebGLPipeline
- * @extends Phaser.Events.EventEmitter
- * @memberof Phaser.Renderer.WebGL
+ * @extends Oyun.Events.EventEmitter
+ * @memberof Oyun.Renderer.WebGL
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Types.Renderer.WebGL.WebGLPipelineConfig} config - The configuration object for this WebGL Pipeline.
+ * @param {Oyun.Types.Renderer.WebGL.WebGLPipelineConfig} config - The configuration object for this WebGL Pipeline.
  */
 var WebGLPipeline = new Class({
 
@@ -11540,17 +11540,17 @@ var WebGLPipeline = new Class({
         /**
          * Name of the pipeline. Used for identification and setting from Game Objects.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#name
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#name
          * @type {string}
          * @since 3.0.0
          */
         this.name = GetFastValue(config, 'name', 'WebGLPipeline');
 
         /**
-         * The Phaser Game instance to which this pipeline is bound.
+         * The Oyun Game instance to which this pipeline is bound.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#game
-         * @type {Phaser.Game}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#game
+         * @type {Oyun.Game}
          * @since 3.0.0
          */
         this.game = game;
@@ -11558,8 +11558,8 @@ var WebGLPipeline = new Class({
         /**
          * The WebGL Renderer instance to which this pipeline is bound.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#renderer
-         * @type {Phaser.Renderer.WebGL.WebGLRenderer}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#renderer
+         * @type {Oyun.Renderer.WebGL.WebGLRenderer}
          * @since 3.0.0
          */
         this.renderer = renderer;
@@ -11570,8 +11570,8 @@ var WebGLPipeline = new Class({
          * This is initially undefined and only set when this pipeline is added
          * to the manager.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#manager
-         * @type {?Phaser.Renderer.WebGL.PipelineManager}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#manager
+         * @type {?Oyun.Renderer.WebGL.PipelineManager}
          * @since 3.50.0
          */
         this.manager;
@@ -11579,7 +11579,7 @@ var WebGLPipeline = new Class({
         /**
          * The WebGL context this WebGL Pipeline uses.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#gl
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#gl
          * @type {WebGLRenderingContext}
          * @since 3.0.0
          */
@@ -11588,7 +11588,7 @@ var WebGLPipeline = new Class({
         /**
          * The canvas which this WebGL Pipeline renders to.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#view
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#view
          * @type {HTMLCanvasElement}
          * @since 3.0.0
          */
@@ -11597,7 +11597,7 @@ var WebGLPipeline = new Class({
         /**
          * Width of the current viewport.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#width
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#width
          * @type {number}
          * @since 3.0.0
          */
@@ -11606,7 +11606,7 @@ var WebGLPipeline = new Class({
         /**
          * Height of the current viewport.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#height
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#height
          * @type {number}
          * @since 3.0.0
          */
@@ -11615,7 +11615,7 @@ var WebGLPipeline = new Class({
         /**
          * The current number of vertices that have been added to the pipeline batch.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#vertexCount
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#vertexCount
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -11627,7 +11627,7 @@ var WebGLPipeline = new Class({
          *
          * This defaults to `renderer batchSize * 6`, where `batchSize` is defined in the Renderer Game Config.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#vertexCapacity
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#vertexCapacity
          * @type {number}
          * @since 3.0.0
          */
@@ -11639,7 +11639,7 @@ var WebGLPipeline = new Class({
          * Either set via the config object `vertices` property, or generates a new Array Buffer of
          * size `vertexCapacity * vertexSize`.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#vertexData
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#vertexData
          * @type {ArrayBuffer}
          * @readonly
          * @since 3.0.0
@@ -11652,7 +11652,7 @@ var WebGLPipeline = new Class({
          * Created from the `vertexData` ArrayBuffer. If `vertices` are set in the config, a `STATIC_DRAW` buffer
          * is created. If not, a `DYNAMIC_DRAW` buffer is created.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#vertexBuffer
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#vertexBuffer
          * @type {WebGLBuffer}
          * @readonly
          * @since 3.0.0
@@ -11664,7 +11664,7 @@ var WebGLPipeline = new Class({
          *
          * Defaults to GL_TRIANGLES if not otherwise set in the config.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#topology
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#topology
          * @type {GLenum}
          * @since 3.0.0
          */
@@ -11673,7 +11673,7 @@ var WebGLPipeline = new Class({
         /**
          * Uint8 view to the `vertexData` ArrayBuffer. Used for uploading vertex buffer resources to the GPU.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#bytes
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#bytes
          * @type {Uint8Array}
          * @since 3.0.0
          */
@@ -11682,7 +11682,7 @@ var WebGLPipeline = new Class({
         /**
          * Float32 view of the array buffer containing the pipeline's vertices.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#vertexViewF32
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#vertexViewF32
          * @type {Float32Array}
          * @since 3.0.0
          */
@@ -11691,7 +11691,7 @@ var WebGLPipeline = new Class({
         /**
          * Uint32 view of the array buffer containing the pipeline's vertices.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#vertexViewU32
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#vertexViewU32
          * @type {Uint32Array}
          * @since 3.0.0
          */
@@ -11702,7 +11702,7 @@ var WebGLPipeline = new Class({
          *
          * Toggle this property to enable or disable a pipeline from rendering anything.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#active
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#active
          * @type {boolean}
          * @since 3.10.0
          */
@@ -11713,7 +11713,7 @@ var WebGLPipeline = new Class({
          *
          * Treat this value as read-only.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#currentUnit
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#currentUnit
          * @type {number}
          * @since 3.50.0
          */
@@ -11724,7 +11724,7 @@ var WebGLPipeline = new Class({
          *
          * This property should be set when that is the case.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#forceZero
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#forceZero
          * @type {boolean}
          * @since 3.50.0
          */
@@ -11736,7 +11736,7 @@ var WebGLPipeline = new Class({
          * A pipeline boots only when the Game instance itself, and all associated systems, is
          * fully ready.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#hasBooted
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#hasBooted
          * @type {boolean}
          * @readonly
          * @since 3.50.0
@@ -11746,7 +11746,7 @@ var WebGLPipeline = new Class({
         /**
          * Indicates if this is a Post FX Pipeline, or not.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#isPostFX
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#isPostFX
          * @type {boolean}
          * @readonly
          * @since 3.50.0
@@ -11756,8 +11756,8 @@ var WebGLPipeline = new Class({
         /**
          * An array of RenderTarget instances that belong to this pipeline.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#renderTargets
-         * @type {Phaser.Renderer.WebGL.RenderTarget[]}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#renderTargets
+         * @type {Oyun.Renderer.WebGL.RenderTarget[]}
          * @since 3.50.0
          */
         this.renderTargets = [];
@@ -11765,8 +11765,8 @@ var WebGLPipeline = new Class({
         /**
          * A reference to the currently bound Render Target instance from the `WebGLPipeline.renderTargets` array.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#currentRenderTarget
-         * @type {Phaser.Renderer.WebGL.RenderTarget}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#currentRenderTarget
+         * @type {Oyun.Renderer.WebGL.RenderTarget}
          * @since 3.50.0
          */
         this.currentRenderTarget;
@@ -11780,8 +11780,8 @@ var WebGLPipeline = new Class({
          * Shaders are set in a call to the `setShadersFromConfig` method, which happens automatically,
          * but can also be called at any point in your game. See the method documentation for details.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#shaders
-         * @type {Phaser.Renderer.WebGL.WebGLShader[]}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#shaders
+         * @type {Oyun.Renderer.WebGL.WebGLShader[]}
          * @since 3.50.0
          */
         this.shaders = [];
@@ -11792,8 +11792,8 @@ var WebGLPipeline = new Class({
          * For lots of pipelines, this is the only shader, so it is a quick way to reference it without
          * an array look-up.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#currentShader
-         * @type {Phaser.Renderer.WebGL.WebGLShader}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#currentShader
+         * @type {Oyun.Renderer.WebGL.WebGLShader}
          * @since 3.50.0
          */
         this.currentShader;
@@ -11801,8 +11801,8 @@ var WebGLPipeline = new Class({
         /**
          * The Projection matrix, used by shaders as 'uProjectionMatrix' uniform.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#projectionMatrix
-         * @type {Phaser.Math.Matrix4}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#projectionMatrix
+         * @type {Oyun.Math.Matrix4}
          * @since 3.50.0
          */
         this.projectionMatrix;
@@ -11810,7 +11810,7 @@ var WebGLPipeline = new Class({
         /**
          * The cached width of the Projection matrix.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#projectionWidth
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#projectionWidth
          * @type {number}
          * @since 3.50.0
          */
@@ -11819,7 +11819,7 @@ var WebGLPipeline = new Class({
         /**
          * The cached height of the Projection matrix.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#projectionHeight
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#projectionHeight
          * @type {number}
          * @since 3.50.0
          */
@@ -11832,8 +11832,8 @@ var WebGLPipeline = new Class({
          * impact this pipeline in any way. However, it is used internally for cloning
          * and post-boot set-up.
          *
-         * @name Phaser.Renderer.WebGL.WebGLPipeline#config
-         * @type {Phaser.Types.Renderer.WebGL.WebGLPipelineConfig}
+         * @name Oyun.Renderer.WebGL.WebGLPipeline#config
+         * @type {Oyun.Types.Renderer.WebGL.WebGLPipelineConfig}
          * @since 3.50.0
          */
         this.config = config;
@@ -11845,8 +11845,8 @@ var WebGLPipeline = new Class({
      * By this stage all Game level systems are now in place. You can perform any final tasks that the
      * pipeline may need, that relies on game systems such as the Texture Manager being ready.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#boot
-     * @fires Phaser.Renderer.WebGL.Pipelines.Events#BOOT
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#boot
+     * @fires Oyun.Renderer.WebGL.Pipelines.Events#BOOT
      * @since 3.11.0
      */
     boot: function ()
@@ -11970,7 +11970,7 @@ var WebGLPipeline = new Class({
      * at the end of the boot process. By the time this method is called, all
      * of the shaders are ready and configured.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onBoot
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onBoot
      * @since 3.50.0
      */
     onBoot: function ()
@@ -11983,7 +11983,7 @@ var WebGLPipeline = new Class({
      * of the shaders are ready and configured. It's also called if the renderer
      * changes size.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onResize
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onResize
      * @since 3.50.0
      *
      * @param {number} width - The new width of this WebGL Pipeline.
@@ -11996,10 +11996,10 @@ var WebGLPipeline = new Class({
     /**
      * Sets the currently active shader within this pipeline.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setShader
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setShader
      * @since 3.50.0
      *
-     * @param {Phaser.Renderer.WebGL.WebGLShader} shader - The shader to set as being current.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} shader - The shader to set as being current.
      * @param {boolean} [setAttributes=false] - Should the vertex attribute pointers be set?
      *
      * @return {this} This WebGLPipeline instance.
@@ -12032,12 +12032,12 @@ var WebGLPipeline = new Class({
     /**
      * Searches all shaders in this pipeline for one matching the given name, then returns it.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#getShaderByName
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#getShaderByName
      * @since 3.50.0
      *
      * @param {string} name - The index of the shader to set.
      *
-     * @return {Phaser.Renderer.WebGL.WebGLShader} The WebGLShader instance, if found.
+     * @return {Oyun.Renderer.WebGL.WebGLShader} The WebGLShader instance, if found.
      */
     getShaderByName: function (name)
     {
@@ -12059,10 +12059,10 @@ var WebGLPipeline = new Class({
      *
      * This is a destructive process. Be very careful when you call it, should you need to.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setShadersFromConfig
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setShadersFromConfig
      * @since 3.50.0
      *
-     * @param {Phaser.Types.Renderer.WebGL.WebGLPipelineConfig} config - The configuration object for this WebGL Pipeline.
+     * @param {Oyun.Types.Renderer.WebGL.WebGLPipelineConfig} config - The configuration object for this WebGL Pipeline.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -12135,11 +12135,11 @@ var WebGLPipeline = new Class({
      * Custom pipelines can use this method in order to perform any required pre-batch tasks
      * for the given Game Object. It must return the texture unit the Game Object was assigned.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setGameObject
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setGameObject
      * @since 3.50.0
      *
-     * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object being rendered or added to the batch.
-     * @param {Phaser.Textures.Frame} [frame] - Optional frame to use. Can override that of the Game Object.
+     * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object being rendered or added to the batch.
+     * @param {Oyun.Textures.Frame} [frame] - Optional frame to use. Can override that of the Game Object.
      *
      * @return {number} The texture unit the Game Object has been assigned.
      */
@@ -12159,7 +12159,7 @@ var WebGLPipeline = new Class({
      * needs to flush _if_ the `amount` is added to it. This allows you to test if you should
      * flush before populating the batch.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#shouldFlush
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#shouldFlush
      * @since 3.0.0
      *
      * @param {number} [amount=0] - Will the batch need to flush if this many vertices are added to it?
@@ -12178,8 +12178,8 @@ var WebGLPipeline = new Class({
      *
      * This method is called automatically by the renderer during its resize handler.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#resize
-     * @fires Phaser.Renderer.WebGL.Pipelines.Events#RESIZE
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#resize
+     * @fires Oyun.Renderer.WebGL.Pipelines.Events#RESIZE
      * @since 3.0.0
      *
      * @param {number} width - The new width of this WebGL Pipeline.
@@ -12219,7 +12219,7 @@ var WebGLPipeline = new Class({
      *
      * This method is called automatically by the renderer during its resize handler.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setProjectionMatrix
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setProjectionMatrix
      * @since 3.50.0
      *
      * @param {number} width - The new width of this WebGL Pipeline.
@@ -12268,7 +12268,7 @@ var WebGLPipeline = new Class({
      * This method is called automatically by the Pipeline Manager when this
      * pipeline is set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#updateProjectionMatrix
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#updateProjectionMatrix
      * @since 3.50.0
      */
     updateProjectionMatrix: function ()
@@ -12291,11 +12291,11 @@ var WebGLPipeline = new Class({
      * It binds the resources and shader needed for this pipeline, including setting the vertex buffer
      * and attribute pointers.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#bind
-     * @fires Phaser.Renderer.WebGL.Pipelines.Events#BIND
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#bind
+     * @fires Oyun.Renderer.WebGL.Pipelines.Events#BIND
      * @since 3.0.0
      *
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [currentShader] - The shader to set as being current.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [currentShader] - The shader to set as being current.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -12321,8 +12321,8 @@ var WebGLPipeline = new Class({
      *
      * It resets all shaders this pipeline uses, setting their attributes again.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#rebind
-     * @fires Phaser.Renderer.WebGL.Pipelines.Events#REBIND
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#rebind
+     * @fires Oyun.Renderer.WebGL.Pipelines.Events#REBIND
      * @since 3.0.0
      *
      * @return {this} This WebGLPipeline instance.
@@ -12354,7 +12354,7 @@ var WebGLPipeline = new Class({
      * It first checks to see if it's already set as the active buffer and only
      * binds itself if not.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setVertexBuffer
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setVertexBuffer
      * @since 3.50.0
      *
      * @return {boolean} `true` if the vertex buffer was bound, or `false` if it was already bound.
@@ -12380,10 +12380,10 @@ var WebGLPipeline = new Class({
      * renderer has just performed a flush. It will bind the current render target, if any are set
      * and finally call the `onPreBatch` hook.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#preBatch
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#preBatch
      * @since 3.50.0
      *
-     * @param {(Phaser.GameObjects.GameObject|Phaser.Cameras.Scene2D.Camera)} [gameObject] - The Game Object or Camera that invoked this pipeline, if any.
+     * @param {(Oyun.GameObjects.GameObject|Oyun.Cameras.Scene2D.Camera)} [gameObject] - The Game Object or Camera that invoked this pipeline, if any.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -12407,10 +12407,10 @@ var WebGLPipeline = new Class({
      * It calls the `onDraw` hook followed by the `onPostBatch` hook, which can be used to perform
      * additional Post FX Pipeline processing.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#postBatch
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#postBatch
      * @since 3.50.0
      *
-     * @param {(Phaser.GameObjects.GameObject|Phaser.Cameras.Scene2D.Camera)} [gameObject] - The Game Object or Camera that invoked this pipeline, if any.
+     * @param {(Oyun.GameObjects.GameObject|Oyun.Cameras.Scene2D.Camera)} [gameObject] - The Game Object or Camera that invoked this pipeline, if any.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -12433,10 +12433,10 @@ var WebGLPipeline = new Class({
      * however, you can do as much additional processing as you like in this method if
      * you override it from within your own pipelines.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onDraw
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onDraw
      * @since 3.50.0
      *
-     * @param {Phaser.Renderer.WebGL.RenderTarget} renderTarget - The Render Target.
+     * @param {Oyun.Renderer.WebGL.RenderTarget} renderTarget - The Render Target.
      */
     onDraw: function ()
     {
@@ -12446,7 +12446,7 @@ var WebGLPipeline = new Class({
      * This method is called every time the Pipeline Manager deactivates this pipeline, swapping from
      * it to another one. This happens after a call to `flush` and before the new pipeline is bound.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#unbind
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#unbind
      * @since 3.50.0
      */
     unbind: function ()
@@ -12460,9 +12460,9 @@ var WebGLPipeline = new Class({
     /**
      * Uploads the vertex data and emits a draw call for the current batch of vertices.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#flush
-     * @fires Phaser.Renderer.WebGL.Pipelines.Events#BEFORE_FLUSH
-     * @fires Phaser.Renderer.WebGL.Pipelines.Events#AFTER_FLUSH
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#flush
+     * @fires Oyun.Renderer.WebGL.Pipelines.Events#BEFORE_FLUSH
+     * @fires Oyun.Renderer.WebGL.Pipelines.Events#AFTER_FLUSH
      * @since 3.0.0
      *
      * @param {boolean} [isPostFlush=false] - Was this flush invoked as part of a post-process, or not?
@@ -12521,10 +12521,10 @@ var WebGLPipeline = new Class({
      *
      * If you need to listen for that event instead, use the `onBind` hook.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onActive
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onActive
      * @since 3.50.0
      *
-     * @param {Phaser.Renderer.WebGL.WebGLShader} currentShader - The shader that was set as current.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} currentShader - The shader that was set as current.
      */
     onActive: function ()
     {
@@ -12540,10 +12540,10 @@ var WebGLPipeline = new Class({
      * active, this hook is called for every Game Object that requests use of this pipeline, allowing you to
      * perform per-object set-up, such as loading shader uniform data.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onBind
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onBind
      * @since 3.50.0
      *
-     * @param {Phaser.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
+     * @param {Oyun.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
      */
     onBind: function ()
     {
@@ -12554,9 +12554,9 @@ var WebGLPipeline = new Class({
      *
      * This method is called when the Pipeline Manager needs to rebind this pipeline. This happens after a
      * pipeline has been cleared, usually when passing control over to a 3rd party WebGL library, like Spine,
-     * and then returing to Phaser again.
+     * and then returing to Oyun again.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onRebind
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onRebind
      * @since 3.50.0
      */
     onRebind: function ()
@@ -12575,10 +12575,10 @@ var WebGLPipeline = new Class({
      * Note that Game Objects may call `batchQuad` or `batchTri` multiple times for a single draw,
      * for example the Graphics Game Object.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onBatch
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onBatch
      * @since 3.50.0
      *
-     * @param {Phaser.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
+     * @param {Oyun.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
      */
     onBatch: function ()
     {
@@ -12589,10 +12589,10 @@ var WebGLPipeline = new Class({
      *
      * This method is called immediately before a **Game Object** is about to add itself to the batch.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onPreBatch
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onPreBatch
      * @since 3.50.0
      *
-     * @param {Phaser.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
+     * @param {Oyun.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
      */
     onPreBatch: function ()
     {
@@ -12603,10 +12603,10 @@ var WebGLPipeline = new Class({
      *
      * This method is called immediately after a **Game Object** has been added to the batch.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onPostBatch
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onPostBatch
      * @since 3.50.0
      *
-     * @param {Phaser.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
+     * @param {Oyun.GameObjects.GameObject} [gameObject] - The Game Object that invoked this pipeline, if any.
      */
     onPostBatch: function ()
     {
@@ -12618,7 +12618,7 @@ var WebGLPipeline = new Class({
      * This method is called once per frame, right before anything has been rendered, but after the canvas
      * has been cleared. If this pipeline has a render target, it will also have been cleared by this point.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onPreRender
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onPreRender
      * @since 3.50.0
      */
     onPreRender: function ()
@@ -12632,11 +12632,11 @@ var WebGLPipeline = new Class({
      *
      * It is called at the start of the rendering process, before anything has been drawn to the Camera.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onRender
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onRender
      * @since 3.50.0
      *
-     * @param {Phaser.Scene} scene - The Scene being rendered.
-     * @param {Phaser.Cameras.Scene2D.Camera} camera - The Scene Camera being rendered with.
+     * @param {Oyun.Scene} scene - The Scene being rendered.
+     * @param {Oyun.Cameras.Scene2D.Camera} camera - The Scene Camera being rendered with.
      */
     onRender: function ()
     {
@@ -12650,7 +12650,7 @@ var WebGLPipeline = new Class({
      * It is called at the very end of the rendering process, once all Cameras, for all Scenes, have
      * been rendered.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onPostRender
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onPostRender
      * @since 3.50.0
      */
     onPostRender: function ()
@@ -12665,7 +12665,7 @@ var WebGLPipeline = new Class({
      * It is called immediately before the `gl.bufferData` and `gl.drawArrays` calls are made, so you can
      * perform any final pre-render modifications. To apply changes post-render, see `onAfterFlush`.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onBeforeFlush
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onBeforeFlush
      * @since 3.50.0
      *
      * @param {boolean} [isPostFlush=false] - Was this flush invoked as part of a post-process, or not?
@@ -12686,7 +12686,7 @@ var WebGLPipeline = new Class({
      *
      * To apply changes pre-render, see `onBeforeFlush`.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#onAfterFlush
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#onAfterFlush
      * @since 3.50.0
      *
      * @param {boolean} [isPostFlush=false] - Was this flush invoked as part of a post-process, or not?
@@ -12704,7 +12704,7 @@ var WebGLPipeline = new Class({
      * It does not perform any batch limit checking itself, so if you need to call
      * this method directly, do so in the same way that `batchQuad` does, for example.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#batchVert
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#batchVert
      * @since 3.50.0
      *
      * @param {number} x - The vertex x position.
@@ -12750,10 +12750,10 @@ var WebGLPipeline = new Class({
      *
      * Where tx0/ty0 = 0, tx1/ty1 = 1, tx2/ty2 = 2 and tx3/ty3 = 3
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#batchQuad
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#batchQuad
      * @since 3.50.0
      *
-     * @param {(Phaser.GameObjects.GameObject|null)} gameObject - The Game Object, if any, drawing this quad.
+     * @param {(Oyun.GameObjects.GameObject|null)} gameObject - The Game Object, if any, drawing this quad.
      * @param {number} x0 - The top-left x position.
      * @param {number} y0 - The top-left y position.
      * @param {number} x1 - The bottom-left x position.
@@ -12818,10 +12818,10 @@ var WebGLPipeline = new Class({
      * 1-----2
      * ```
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#batchTri
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#batchTri
      * @since 3.50.0
      *
-     * @param {(Phaser.GameObjects.GameObject|null)} gameObject - The Game Object, if any, drawing this quad.
+     * @param {(Oyun.GameObjects.GameObject|null)} gameObject - The Game Object, if any, drawing this quad.
      * @param {number} x1 - The bottom-left x position.
      * @param {number} y1 - The bottom-left y position.
      * @param {number} x2 - The bottom-right x position.
@@ -12874,7 +12874,7 @@ var WebGLPipeline = new Class({
      *
      * Used for directly batching untransformed rectangles, such as Camera background colors.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#drawFillRect
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#drawFillRect
      * @since 3.50.0
      *
      * @param {number} x - Horizontal top left coordinate of the rectangle.
@@ -12919,7 +12919,7 @@ var WebGLPipeline = new Class({
      * Sets the texture to be bound to the next available texture unit and returns
      * the unit id.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setTexture2D
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setTexture2D
      * @since 3.50.0
      *
      * @param {WebGLTexture} [texture] - WebGLTexture that will be assigned to the current batch. If not given uses `whiteTexture`.
@@ -12938,7 +12938,7 @@ var WebGLPipeline = new Class({
     /**
      * Activates the given WebGL Texture and binds it to the requested texture slot.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#bindTexture
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#bindTexture
      * @since 3.50.0
      *
      * @param {WebGLTexture} [target] - The WebGLTexture to activate and bind.
@@ -12963,10 +12963,10 @@ var WebGLPipeline = new Class({
      * Activates the given Render Target texture and binds it to the
      * requested WebGL texture slot.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#bindRenderTarget
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#bindRenderTarget
      * @since 3.50.0
      *
-     * @param {Phaser.Renderer.WebGL.RenderTarget} [target] - The Render Target to activate and bind.
+     * @param {Oyun.Renderer.WebGL.RenderTarget} [target] - The Render Target to activate and bind.
      * @param {number} [unit=0] - The WebGL texture ID to activate. Defaults to `gl.TEXTURE0`.
      *
      * @return {this} This WebGL Pipeline instance.
@@ -12981,7 +12981,7 @@ var WebGLPipeline = new Class({
      *
      * This can be used for mapping time uniform values, such as `iTime`.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setTime
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setTime
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
@@ -13004,12 +13004,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set1f
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set1f
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number} x - The new value of the `float` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13031,13 +13031,13 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set2f
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set2f
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number} x - The new X component of the `vec2` uniform.
      * @param {number} y - The new Y component of the `vec2` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13059,14 +13059,14 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set3f
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set3f
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number} x - The new X component of the `vec3` uniform.
      * @param {number} y - The new Y component of the `vec3` uniform.
      * @param {number} z - The new Z component of the `vec3` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13088,7 +13088,7 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set4f
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set4f
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
@@ -13096,7 +13096,7 @@ var WebGLPipeline = new Class({
      * @param {number} y - Y component of the uniform
      * @param {number} z - Z component of the uniform
      * @param {number} w - W component of the uniform
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13118,12 +13118,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set1fv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set1fv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13145,12 +13145,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set2fv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set2fv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13172,12 +13172,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set3fv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set3fv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13199,12 +13199,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set4fv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set4fv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13226,12 +13226,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set1iv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set1iv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13253,12 +13253,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set2iv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set2iv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13280,12 +13280,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set3iv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set3iv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13307,12 +13307,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set4iv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set4iv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number[]|Float32Array} arr - The new value to be used for the uniform variable.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13334,12 +13334,12 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set1i
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set1i
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number} x - The new value of the `int` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13361,13 +13361,13 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set2i
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set2i
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number} x - The new X component of the `ivec2` uniform.
      * @param {number} y - The new Y component of the `ivec2` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13389,14 +13389,14 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set3i
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set3i
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {number} x - The new X component of the `ivec3` uniform.
      * @param {number} y - The new Y component of the `ivec3` uniform.
      * @param {number} z - The new Z component of the `ivec3` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13418,7 +13418,7 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#set4i
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#set4i
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
@@ -13426,7 +13426,7 @@ var WebGLPipeline = new Class({
      * @param {number} y - Y component of the uniform.
      * @param {number} z - Z component of the uniform.
      * @param {number} w - W component of the uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13448,13 +13448,13 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setMatrix2fv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setMatrix2fv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {boolean} transpose - Whether to transpose the matrix. Should be `false`.
      * @param {number[]|Float32Array} matrix - The new values for the `mat2` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13476,13 +13476,13 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setMatrix3fv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setMatrix3fv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {boolean} transpose - Whether to transpose the matrix. Should be `false`.
      * @param {Float32Array} matrix - The new values for the `mat3` uniform.
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13504,13 +13504,13 @@ var WebGLPipeline = new Class({
      * directly, use the `WebGLShader` method equivalent instead, to avoid the program
      * being set.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#setMatrix4fv
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#setMatrix4fv
      * @since 3.50.0
      *
      * @param {string} name - The name of the uniform to set.
      * @param {boolean} transpose - Should the matrix be transpose
      * @param {Float32Array} matrix - Matrix data
-     * @param {Phaser.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
+     * @param {Oyun.Renderer.WebGL.WebGLShader} [shader] - The shader to set the value on. If not given, the `currentShader` is used.
      *
      * @return {this} This WebGLPipeline instance.
      */
@@ -13526,8 +13526,8 @@ var WebGLPipeline = new Class({
     /**
      * Destroys all shader instances, removes all object references and nulls all external references.
      *
-     * @method Phaser.Renderer.WebGL.WebGLPipeline#destroy
-     * @fires Phaser.Renderer.WebGL.Pipelines.Events#DESTROY
+     * @method Oyun.Renderer.WebGL.WebGLPipeline#destroy
+     * @fires Oyun.Renderer.WebGL.Pipelines.Events#DESTROY
      * @since 3.0.0
      *
      * @return {this} This WebGLPipeline instance.
@@ -13599,12 +13599,12 @@ module.exports = WebGLPipeline;
 /**
  * Sets the strokeStyle and lineWidth on the target context based on the given Shape.
  *
- * @method Phaser.GameObjects.Shape#LineStyleCanvas
+ * @method Oyun.GameObjects.Shape#LineStyleCanvas
  * @since 3.13.0
  * @private
  *
  * @param {CanvasRenderingContext2D} ctx - The context to set the stroke style on.
- * @param {Phaser.GameObjects.Shape} src - The Game Object to set the stroke style from.
+ * @param {Oyun.GameObjects.Shape} src - The Game Object to set the stroke style from.
  * @param {number} [altColor] - An alternative color to render with.
  * @param {number} [altAlpha] - An alternative alpha to render with.
  */
@@ -13646,20 +13646,20 @@ var IsPlainObject = __webpack_require__(7);
  * @classdesc
  * A single JSON File suitable for loading by the Loader.
  *
- * These are created when you use the Phaser.Loader.LoaderPlugin#json method and are not typically created directly.
+ * These are created when you use the Oyun.Loader.LoaderPlugin#json method and are not typically created directly.
  *
- * For documentation about what all the arguments and configuration options mean please see Phaser.Loader.LoaderPlugin#json.
+ * For documentation about what all the arguments and configuration options mean please see Oyun.Loader.LoaderPlugin#json.
  *
  * @class JSONFile
- * @extends Phaser.Loader.File
- * @memberof Phaser.Loader.FileTypes
+ * @extends Oyun.Loader.File
+ * @memberof Oyun.Loader.FileTypes
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Loader.LoaderPlugin} loader - A reference to the Loader that is responsible for this file.
- * @param {(string|Phaser.Types.Loader.FileTypes.JSONFileConfig)} key - The key to use for this file, or a file configuration object.
+ * @param {Oyun.Loader.LoaderPlugin} loader - A reference to the Loader that is responsible for this file.
+ * @param {(string|Oyun.Types.Loader.FileTypes.JSONFileConfig)} key - The key to use for this file, or a file configuration object.
  * @param {(object|string)} [url] - The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json". Or, can be a fully formed JSON Object.
- * @param {Phaser.Types.Loader.XHRSettingsObject} [xhrSettings] - Extra XHR Settings specifically for this file.
+ * @param {Oyun.Types.Loader.XHRSettingsObject} [xhrSettings] - Extra XHR Settings specifically for this file.
  * @param {string} [dataKey] - When the JSON file loads only this property will be stored in the Cache.
  */
 var JSONFile = new Class({
@@ -13719,7 +13719,7 @@ var JSONFile = new Class({
      * Called automatically by Loader.nextFile.
      * This method controls what extra work this File does with its loaded data.
      *
-     * @method Phaser.Loader.FileTypes.JSONFile#onProcess
+     * @method Oyun.Loader.FileTypes.JSONFile#onProcess
      * @since 3.7.0
      */
     onProcess: function ()
@@ -13763,7 +13763,7 @@ var JSONFile = new Class({
  * or if it's already running, when the next free load slot becomes available. This happens automatically if you
  * are calling this from within the Scene's `preload` method, or a related callback. Because the file is queued
  * it means you cannot use the file immediately after calling this method, but must wait for the file to complete.
- * The typical flow for a Phaser Scene is that you load assets in the Scene's `preload` method and then when the
+ * The typical flow for a Oyun Scene is that you load assets in the Scene's `preload` method and then when the
  * Scene's `create` method is called you are guaranteed that all of those assets are ready for use and have been
  * loaded.
  *
@@ -13781,7 +13781,7 @@ var JSONFile = new Class({
  * });
  * ```
  *
- * See the documentation for `Phaser.Types.Loader.FileTypes.JSONFileConfig` for more details.
+ * See the documentation for `Oyun.Types.Loader.FileTypes.JSONFileConfig` for more details.
  *
  * Once the file has finished loading you can access it from its Cache using its key:
  *
@@ -13819,17 +13819,17 @@ var JSONFile = new Class({
  *
  * And you only wanted to store the `boss` data in the Cache, then you could pass `level1.baddies.boss`as the `dataKey`.
  *
- * Note: The ability to load this type of file will only be available if the JSON File type has been built into Phaser.
+ * Note: The ability to load this type of file will only be available if the JSON File type has been built into Oyun.
  * It is available in the default build but can be excluded from custom builds.
  *
- * @method Phaser.Loader.LoaderPlugin#json
- * @fires Phaser.Loader.LoaderPlugin#ADD
+ * @method Oyun.Loader.LoaderPlugin#json
+ * @fires Oyun.Loader.LoaderPlugin#ADD
  * @since 3.0.0
  *
- * @param {(string|Phaser.Types.Loader.FileTypes.JSONFileConfig|Phaser.Types.Loader.FileTypes.JSONFileConfig[])} key - The key to use for this file, or a file configuration object, or array of them.
+ * @param {(string|Oyun.Types.Loader.FileTypes.JSONFileConfig|Oyun.Types.Loader.FileTypes.JSONFileConfig[])} key - The key to use for this file, or a file configuration object, or array of them.
  * @param {(object|string)} [url] - The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json". Or, can be a fully formed JSON Object.
  * @param {string} [dataKey] - When the JSON file loads only this property will be stored in the Cache.
- * @param {Phaser.Types.Loader.XHRSettingsObject} [xhrSettings] - An XHR Settings configuration object. Used in replacement of the Loaders default XHR Settings.
+ * @param {Oyun.Types.Loader.XHRSettingsObject} [xhrSettings] - An XHR Settings configuration object. Used in replacement of the Loaders default XHR Settings.
  *
  * @return {this} The Loader instance.
  */
@@ -13875,33 +13875,33 @@ var CONST = {
     /**
      * Dynamic Body.
      *
-     * @name Phaser.Physics.Arcade.DYNAMIC_BODY
+     * @name Oyun.Physics.Arcade.DYNAMIC_BODY
      * @readonly
      * @type {number}
      * @since 3.0.0
      *
-     * @see Phaser.Physics.Arcade.Body#physicsType
-     * @see Phaser.Physics.Arcade.Group#physicsType
+     * @see Oyun.Physics.Arcade.Body#physicsType
+     * @see Oyun.Physics.Arcade.Group#physicsType
      */
     DYNAMIC_BODY: 0,
 
     /**
      * Static Body.
      *
-     * @name Phaser.Physics.Arcade.STATIC_BODY
+     * @name Oyun.Physics.Arcade.STATIC_BODY
      * @readonly
      * @type {number}
      * @since 3.0.0
      *
-     * @see Phaser.Physics.Arcade.Body#physicsType
-     * @see Phaser.Physics.Arcade.StaticBody#physicsType
+     * @see Oyun.Physics.Arcade.Body#physicsType
+     * @see Oyun.Physics.Arcade.StaticBody#physicsType
      */
     STATIC_BODY: 1,
 
     /**
      * Arcade Physics Group containing Dynamic Bodies.
      *
-     * @name Phaser.Physics.Arcade.GROUP
+     * @name Oyun.Physics.Arcade.GROUP
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -13911,7 +13911,7 @@ var CONST = {
     /**
      * A Tilemap Layer.
      *
-     * @name Phaser.Physics.Arcade.TILEMAPLAYER
+     * @name Oyun.Physics.Arcade.TILEMAPLAYER
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -13921,60 +13921,60 @@ var CONST = {
     /**
      * Facing no direction (initial value).
      *
-     * @name Phaser.Physics.Arcade.FACING_NONE
+     * @name Oyun.Physics.Arcade.FACING_NONE
      * @readonly
      * @type {number}
      * @since 3.0.0
      *
-     * @see Phaser.Physics.Arcade.Body#facing
+     * @see Oyun.Physics.Arcade.Body#facing
      */
     FACING_NONE: 10,
 
     /**
      * Facing up.
      *
-     * @name Phaser.Physics.Arcade.FACING_UP
+     * @name Oyun.Physics.Arcade.FACING_UP
      * @readonly
      * @type {number}
      * @since 3.0.0
      *
-     * @see Phaser.Physics.Arcade.Body#facing
+     * @see Oyun.Physics.Arcade.Body#facing
      */
     FACING_UP: 11,
 
     /**
      * Facing down.
      *
-     * @name Phaser.Physics.Arcade.FACING_DOWN
+     * @name Oyun.Physics.Arcade.FACING_DOWN
      * @readonly
      * @type {number}
      * @since 3.0.0
      *
-     * @see Phaser.Physics.Arcade.Body#facing
+     * @see Oyun.Physics.Arcade.Body#facing
      */
     FACING_DOWN: 12,
 
     /**
      * Facing left.
      *
-     * @name Phaser.Physics.Arcade.FACING_LEFT
+     * @name Oyun.Physics.Arcade.FACING_LEFT
      * @readonly
      * @type {number}
      * @since 3.0.0
      *
-     * @see Phaser.Physics.Arcade.Body#facing
+     * @see Oyun.Physics.Arcade.Body#facing
      */
     FACING_LEFT: 13,
 
     /**
      * Facing right.
      *
-     * @name Phaser.Physics.Arcade.FACING_RIGHT
+     * @name Oyun.Physics.Arcade.FACING_RIGHT
      * @readonly
      * @type {number}
      * @since 3.0.0
      *
-     * @see Phaser.Physics.Arcade.Body#facing
+     * @see Oyun.Physics.Arcade.Body#facing
      */
     FACING_RIGHT: 14
 
@@ -14001,14 +14001,14 @@ var GetTilesWithin = __webpack_require__(26);
  * layer. Interesting faces are used internally for optimizing collisions against tiles. This method
  * is mostly used internally.
  *
- * @function Phaser.Tilemaps.Components.CalculateFacesWithin
+ * @function Oyun.Tilemaps.Components.CalculateFacesWithin
  * @since 3.0.0
  *
  * @param {number} tileX - The left most tile index (in tile coordinates) to use as the origin of the area.
  * @param {number} tileY - The top most tile index (in tile coordinates) to use as the origin of the area.
  * @param {number} width - How many tiles wide from the `tileX` index the area will be.
  * @param {number} height - How many tiles tall from the `tileY` index the area will be.
- * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
+ * @param {Oyun.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
  */
 var CalculateFacesWithin = function (tileX, tileY, width, height, layer)
 {
@@ -14074,7 +14074,7 @@ var Random = __webpack_require__(166);
  * To render a Circle you should look at the capabilities of the Graphics class.
  *
  * @class Circle
- * @memberof Phaser.Geom
+ * @memberof Oyun.Geom
  * @constructor
  * @since 3.0.0
  *
@@ -14096,7 +14096,7 @@ var Circle = new Class({
          * The geometry constant type of this object: `GEOM_CONST.CIRCLE`.
          * Used for fast type comparisons.
          *
-         * @name Phaser.Geom.Circle#type
+         * @name Oyun.Geom.Circle#type
          * @type {number}
          * @readonly
          * @since 3.19.0
@@ -14106,7 +14106,7 @@ var Circle = new Class({
         /**
          * The x position of the center of the circle.
          *
-         * @name Phaser.Geom.Circle#x
+         * @name Oyun.Geom.Circle#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -14116,7 +14116,7 @@ var Circle = new Class({
         /**
          * The y position of the center of the circle.
          *
-         * @name Phaser.Geom.Circle#y
+         * @name Oyun.Geom.Circle#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -14126,7 +14126,7 @@ var Circle = new Class({
         /**
          * The internal radius of the circle.
          *
-         * @name Phaser.Geom.Circle#_radius
+         * @name Oyun.Geom.Circle#_radius
          * @type {number}
          * @private
          * @since 3.0.0
@@ -14136,7 +14136,7 @@ var Circle = new Class({
         /**
          * The internal diameter of the circle.
          *
-         * @name Phaser.Geom.Circle#_diameter
+         * @name Oyun.Geom.Circle#_diameter
          * @type {number}
          * @private
          * @since 3.0.0
@@ -14147,7 +14147,7 @@ var Circle = new Class({
     /**
      * Check to see if the Circle contains the given x / y coordinates.
      *
-     * @method Phaser.Geom.Circle#contains
+     * @method Oyun.Geom.Circle#contains
      * @since 3.0.0
      *
      * @param {number} x - The x coordinate to check within the circle.
@@ -14165,15 +14165,15 @@ var Circle = new Class({
      * based on the given angle normalized to the range 0 to 1. I.e. a value of 0.5 will give the point
      * at 180 degrees around the circle.
      *
-     * @method Phaser.Geom.Circle#getPoint
+     * @method Oyun.Geom.Circle#getPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [out,$return]
+     * @generic {Oyun.Geom.Point} O - [out,$return]
      *
      * @param {number} position - A value between 0 and 1, where 0 equals 0 degrees, 0.5 equals 180 degrees and 1 equals 360 around the circle.
-     * @param {(Phaser.Geom.Point|object)} [out] - An object to store the return values in. If not given a Point object will be created.
+     * @param {(Oyun.Geom.Point|object)} [out] - An object to store the return values in. If not given a Point object will be created.
      *
-     * @return {(Phaser.Geom.Point|object)} A Point, or point-like object, containing the coordinates of the point around the circle.
+     * @return {(Oyun.Geom.Point|object)} A Point, or point-like object, containing the coordinates of the point around the circle.
      */
     getPoint: function (position, point)
     {
@@ -14184,16 +14184,16 @@ var Circle = new Class({
      * Returns an array of Point objects containing the coordinates of the points around the circumference of the Circle,
      * based on the given quantity or stepRate values.
      *
-     * @method Phaser.Geom.Circle#getPoints
+     * @method Oyun.Geom.Circle#getPoints
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point[]} O - [output,$return]
+     * @generic {Oyun.Geom.Point[]} O - [output,$return]
      *
      * @param {number} quantity - The amount of points to return. If a falsey value the quantity will be derived from the `stepRate` instead.
      * @param {number} [stepRate] - Sets the quantity by getting the circumference of the circle and dividing it by the stepRate.
-     * @param {(array|Phaser.Geom.Point[])} [output] - An array to insert the points in to. If not provided a new array will be created.
+     * @param {(array|Oyun.Geom.Point[])} [output] - An array to insert the points in to. If not provided a new array will be created.
      *
-     * @return {(array|Phaser.Geom.Point[])} An array of Point objects pertaining to the points around the circumference of the circle.
+     * @return {(array|Oyun.Geom.Point[])} An array of Point objects pertaining to the points around the circumference of the circle.
      */
     getPoints: function (quantity, stepRate, output)
     {
@@ -14203,14 +14203,14 @@ var Circle = new Class({
     /**
      * Returns a uniformly distributed random point from anywhere within the Circle.
      *
-     * @method Phaser.Geom.Circle#getRandomPoint
+     * @method Oyun.Geom.Circle#getRandomPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [point,$return]
+     * @generic {Oyun.Geom.Point} O - [point,$return]
      *
-     * @param {(Phaser.Geom.Point|object)} [point] - A Point or point-like object to set the random `x` and `y` values in.
+     * @param {(Oyun.Geom.Point|object)} [point] - A Point or point-like object to set the random `x` and `y` values in.
      *
-     * @return {(Phaser.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
+     * @return {(Oyun.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
      */
     getRandomPoint: function (point)
     {
@@ -14220,7 +14220,7 @@ var Circle = new Class({
     /**
      * Sets the x, y and radius of this circle.
      *
-     * @method Phaser.Geom.Circle#setTo
+     * @method Oyun.Geom.Circle#setTo
      * @since 3.0.0
      *
      * @param {number} [x=0] - The x position of the center of the circle.
@@ -14243,7 +14243,7 @@ var Circle = new Class({
      * Sets this Circle to be empty with a radius of zero.
      * Does not change its position.
      *
-     * @method Phaser.Geom.Circle#setEmpty
+     * @method Oyun.Geom.Circle#setEmpty
      * @since 3.0.0
      *
      * @return {this} This Circle object.
@@ -14259,7 +14259,7 @@ var Circle = new Class({
     /**
      * Sets the position of this Circle.
      *
-     * @method Phaser.Geom.Circle#setPosition
+     * @method Oyun.Geom.Circle#setPosition
      * @since 3.0.0
      *
      * @param {number} [x=0] - The x position of the center of the circle.
@@ -14280,7 +14280,7 @@ var Circle = new Class({
     /**
      * Checks to see if the Circle is empty: has a radius of zero.
      *
-     * @method Phaser.Geom.Circle#isEmpty
+     * @method Oyun.Geom.Circle#isEmpty
      * @since 3.0.0
      *
      * @return {boolean} True if the Circle is empty, otherwise false.
@@ -14293,7 +14293,7 @@ var Circle = new Class({
     /**
      * The radius of the Circle.
      *
-     * @name Phaser.Geom.Circle#radius
+     * @name Oyun.Geom.Circle#radius
      * @type {number}
      * @since 3.0.0
      */
@@ -14315,7 +14315,7 @@ var Circle = new Class({
     /**
      * The diameter of the Circle.
      *
-     * @name Phaser.Geom.Circle#diameter
+     * @name Oyun.Geom.Circle#diameter
      * @type {number}
      * @since 3.0.0
      */
@@ -14337,7 +14337,7 @@ var Circle = new Class({
     /**
      * The left position of the Circle.
      *
-     * @name Phaser.Geom.Circle#left
+     * @name Oyun.Geom.Circle#left
      * @type {number}
      * @since 3.0.0
      */
@@ -14358,7 +14358,7 @@ var Circle = new Class({
     /**
      * The right position of the Circle.
      *
-     * @name Phaser.Geom.Circle#right
+     * @name Oyun.Geom.Circle#right
      * @type {number}
      * @since 3.0.0
      */
@@ -14379,7 +14379,7 @@ var Circle = new Class({
     /**
      * The top position of the Circle.
      *
-     * @name Phaser.Geom.Circle#top
+     * @name Oyun.Geom.Circle#top
      * @type {number}
      * @since 3.0.0
      */
@@ -14400,7 +14400,7 @@ var Circle = new Class({
     /**
      * The bottom position of the Circle.
      *
-     * @name Phaser.Geom.Circle#bottom
+     * @name Oyun.Geom.Circle#bottom
      * @type {number}
      * @since 3.0.0
      */
@@ -14436,10 +14436,10 @@ module.exports = Circle;
 /**
  * Check to see if the Circle contains the given x / y coordinates.
  *
- * @function Phaser.Geom.Circle.Contains
+ * @function Oyun.Geom.Circle.Contains
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Circle} circle - The Circle to check.
+ * @param {Oyun.Geom.Circle} circle - The Circle to check.
  * @param {number} x - The x coordinate to check within the circle.
  * @param {number} y - The y coordinate to check within the circle.
  *
@@ -14477,10 +14477,10 @@ module.exports = Contains;
 /**
  * Calculate the length of the given line.
  *
- * @function Phaser.Geom.Line.Length
+ * @function Oyun.Geom.Line.Length
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Line} line - The line to calculate the length of.
+ * @param {Oyun.Geom.Line} line - The line to calculate the length of.
  *
  * @return {number} The length of the line.
  */
@@ -14507,7 +14507,7 @@ var PIPELINE_CONST = {
     /**
      * The Bitmap Mask Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.BITMAPMASK_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.BITMAPMASK_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14517,7 +14517,7 @@ var PIPELINE_CONST = {
     /**
      * The Light 2D Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.LIGHT_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.LIGHT_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14527,7 +14527,7 @@ var PIPELINE_CONST = {
     /**
      * The Point Light Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.POINTLIGHT_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.POINTLIGHT_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14537,7 +14537,7 @@ var PIPELINE_CONST = {
     /**
      * The Single Texture Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.SINGLE_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.SINGLE_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14547,7 +14547,7 @@ var PIPELINE_CONST = {
     /**
      * The Multi Texture Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.MULTI_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.MULTI_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14557,7 +14557,7 @@ var PIPELINE_CONST = {
     /**
      * The Rope Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.ROPE_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.ROPE_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14567,7 +14567,7 @@ var PIPELINE_CONST = {
     /**
      * The Graphics and Shapes Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.GRAPHICS_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.GRAPHICS_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14577,7 +14577,7 @@ var PIPELINE_CONST = {
     /**
      * The Post FX Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.POSTFX_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.POSTFX_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14587,7 +14587,7 @@ var PIPELINE_CONST = {
     /**
      * The Utility Pipeline.
      *
-     * @name Phaser.Renderer.WebGL.Pipelines.UTILITY_PIPELINE
+     * @name Oyun.Renderer.WebGL.Pipelines.UTILITY_PIPELINE
      * @type {string}
      * @const
      * @since 3.50.0
@@ -14611,7 +14611,7 @@ module.exports = PIPELINE_CONST;
 /**
  * Wrap the given `value` between `min` and `max.
  *
- * @function Phaser.Math.Wrap
+ * @function Oyun.Math.Wrap
  * @since 3.0.0
  *
  * @param {number} value - The value to wrap.
@@ -14656,11 +14656,11 @@ var EPSILON = 0.000001;
  * and [vecmath](https://github.com/mattdesl/vecmath) by mattdesl
  *
  * @class Matrix4
- * @memberof Phaser.Math
+ * @memberof Oyun.Math
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Math.Matrix4} [m] - Optional Matrix4 to copy values from.
+ * @param {Oyun.Math.Matrix4} [m] - Optional Matrix4 to copy values from.
  */
 var Matrix4 = new Class({
 
@@ -14671,7 +14671,7 @@ var Matrix4 = new Class({
         /**
          * The matrix values.
          *
-         * @name Phaser.Math.Matrix4#val
+         * @name Oyun.Math.Matrix4#val
          * @type {Float32Array}
          * @since 3.0.0
          */
@@ -14692,10 +14692,10 @@ var Matrix4 = new Class({
     /**
      * Make a clone of this Matrix4.
      *
-     * @method Phaser.Math.Matrix4#clone
+     * @method Oyun.Math.Matrix4#clone
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Matrix4} A clone of this Matrix4.
+     * @return {Oyun.Math.Matrix4} A clone of this Matrix4.
      */
     clone: function ()
     {
@@ -14705,10 +14705,10 @@ var Matrix4 = new Class({
     /**
      * This method is an alias for `Matrix4.copy`.
      *
-     * @method Phaser.Math.Matrix4#set
+     * @method Oyun.Math.Matrix4#set
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} src - The Matrix to set the values of this Matrix's from.
+     * @param {Oyun.Math.Matrix4} src - The Matrix to set the values of this Matrix's from.
      *
      * @return {this} This Matrix4.
      */
@@ -14720,7 +14720,7 @@ var Matrix4 = new Class({
     /**
      * Sets all values of this Matrix4.
      *
-     * @method Phaser.Math.Matrix4#setValues
+     * @method Oyun.Math.Matrix4#setValues
      * @since 3.50.0
      *
      * @param {number} m00 - The m00 value.
@@ -14769,10 +14769,10 @@ var Matrix4 = new Class({
     /**
      * Copy the values of a given Matrix into this Matrix.
      *
-     * @method Phaser.Math.Matrix4#copy
+     * @method Oyun.Math.Matrix4#copy
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} src - The Matrix to copy the values from.
+     * @param {Oyun.Math.Matrix4} src - The Matrix to copy the values from.
      *
      * @return {this} This Matrix4.
      */
@@ -14786,7 +14786,7 @@ var Matrix4 = new Class({
     /**
      * Set the values of this Matrix from the given array.
      *
-     * @method Phaser.Math.Matrix4#fromArray
+     * @method Oyun.Math.Matrix4#fromArray
      * @since 3.0.0
      *
      * @param {number[]} a - The array to copy the values from. Must have at least 16 elements.
@@ -14803,10 +14803,10 @@ var Matrix4 = new Class({
      *
      * Sets all values to `0`.
      *
-     * @method Phaser.Math.Matrix4#zero
+     * @method Oyun.Math.Matrix4#zero
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Matrix4} This Matrix4.
+     * @return {Oyun.Math.Matrix4} This Matrix4.
      */
     zero: function ()
     {
@@ -14816,12 +14816,12 @@ var Matrix4 = new Class({
     /**
      * Generates a transform matrix based on the given position, scale and rotation.
      *
-     * @method Phaser.Math.Matrix4#transform
+     * @method Oyun.Math.Matrix4#transform
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Vector3} position - The position vector.
-     * @param {Phaser.Math.Vector3} scale - The scale vector.
-     * @param {Phaser.Math.Quaternion} rotation - The rotation quaternion.
+     * @param {Oyun.Math.Vector3} position - The position vector.
+     * @param {Oyun.Math.Vector3} scale - The scale vector.
+     * @param {Oyun.Math.Quaternion} rotation - The rotation quaternion.
      *
      * @return {this} This Matrix4.
      */
@@ -14861,7 +14861,7 @@ var Matrix4 = new Class({
     /**
      * Set the `x`, `y` and `z` values of this Matrix.
      *
-     * @method Phaser.Math.Matrix4#xyz
+     * @method Oyun.Math.Matrix4#xyz
      * @since 3.0.0
      *
      * @param {number} x - The x value.
@@ -14886,7 +14886,7 @@ var Matrix4 = new Class({
     /**
      * Set the scaling values of this Matrix.
      *
-     * @method Phaser.Math.Matrix4#scaling
+     * @method Oyun.Math.Matrix4#scaling
      * @since 3.0.0
      *
      * @param {number} x - The x scaling value.
@@ -14912,7 +14912,7 @@ var Matrix4 = new Class({
     /**
      * Reset this Matrix to an identity (default) matrix.
      *
-     * @method Phaser.Math.Matrix4#identity
+     * @method Oyun.Math.Matrix4#identity
      * @since 3.0.0
      *
      * @return {this} This Matrix4.
@@ -14925,7 +14925,7 @@ var Matrix4 = new Class({
     /**
      * Transpose this Matrix.
      *
-     * @method Phaser.Math.Matrix4#transpose
+     * @method Oyun.Math.Matrix4#transpose
      * @since 3.0.0
      *
      * @return {this} This Matrix4.
@@ -14960,10 +14960,10 @@ var Matrix4 = new Class({
     /**
      * Copies the given Matrix4 into this Matrix and then inverses it.
      *
-     * @method Phaser.Math.Matrix4#getInverse
+     * @method Oyun.Math.Matrix4#getInverse
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} m - The Matrix4 to invert into this Matrix4.
+     * @param {Oyun.Math.Matrix4} m - The Matrix4 to invert into this Matrix4.
      *
      * @return {this} This Matrix4.
      */
@@ -14977,7 +14977,7 @@ var Matrix4 = new Class({
     /**
      * Invert this Matrix.
      *
-     * @method Phaser.Math.Matrix4#invert
+     * @method Oyun.Math.Matrix4#invert
      * @since 3.0.0
      *
      * @return {this} This Matrix4.
@@ -15054,7 +15054,7 @@ var Matrix4 = new Class({
     /**
      * Calculate the adjoint, or adjugate, of this Matrix.
      *
-     * @method Phaser.Math.Matrix4#adjoint
+     * @method Oyun.Math.Matrix4#adjoint
      * @since 3.0.0
      *
      * @return {this} This Matrix4.
@@ -15106,7 +15106,7 @@ var Matrix4 = new Class({
     /**
      * Calculate the determinant of this Matrix.
      *
-     * @method Phaser.Math.Matrix4#determinant
+     * @method Oyun.Math.Matrix4#determinant
      * @since 3.0.0
      *
      * @return {number} The determinant of this Matrix.
@@ -15155,10 +15155,10 @@ var Matrix4 = new Class({
     /**
      * Multiply this Matrix by the given Matrix.
      *
-     * @method Phaser.Math.Matrix4#multiply
+     * @method Oyun.Math.Matrix4#multiply
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} src - The Matrix to multiply this Matrix by.
+     * @param {Oyun.Math.Matrix4} src - The Matrix to multiply this Matrix by.
      *
      * @return {this} This Matrix4.
      */
@@ -15235,10 +15235,10 @@ var Matrix4 = new Class({
     /**
      * Multiply the values of this Matrix4 by those given in the `src` argument.
      *
-     * @method Phaser.Math.Matrix4#multiplyLocal
+     * @method Oyun.Math.Matrix4#multiplyLocal
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} src - The source Matrix4 that this Matrix4 is multiplied by.
+     * @param {Oyun.Math.Matrix4} src - The source Matrix4 that this Matrix4 is multiplied by.
      *
      * @return {this} This Matrix4.
      */
@@ -15275,10 +15275,10 @@ var Matrix4 = new Class({
      *
      * This is the same as calling `multiplyMatrices(m, this)`.
      *
-     * @method Phaser.Math.Matrix4#premultiply
+     * @method Oyun.Math.Matrix4#premultiply
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} m - The Matrix4 to multiply with this one.
+     * @param {Oyun.Math.Matrix4} m - The Matrix4 to multiply with this one.
      *
      * @return {this} This Matrix4.
      */
@@ -15290,11 +15290,11 @@ var Matrix4 = new Class({
     /**
      * Multiplies the two given Matrix4 objects and stores the results in this Matrix.
      *
-     * @method Phaser.Math.Matrix4#multiplyMatrices
+     * @method Oyun.Math.Matrix4#multiplyMatrices
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} a - The first Matrix4 to multiply.
-     * @param {Phaser.Math.Matrix4} b - The second Matrix4 to multiply.
+     * @param {Oyun.Math.Matrix4} a - The first Matrix4 to multiply.
+     * @param {Oyun.Math.Matrix4} b - The second Matrix4 to multiply.
      *
      * @return {this} This Matrix4.
      */
@@ -15360,10 +15360,10 @@ var Matrix4 = new Class({
     /**
      * Translate this Matrix using the given Vector.
      *
-     * @method Phaser.Math.Matrix4#translate
+     * @method Oyun.Math.Matrix4#translate
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to translate this Matrix with.
+     * @param {(Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to translate this Matrix with.
      *
      * @return {this} This Matrix4.
      */
@@ -15375,7 +15375,7 @@ var Matrix4 = new Class({
     /**
      * Translate this Matrix using the given values.
      *
-     * @method Phaser.Math.Matrix4#translateXYZ
+     * @method Oyun.Math.Matrix4#translateXYZ
      * @since 3.16.0
      *
      * @param {number} x - The x component.
@@ -15401,10 +15401,10 @@ var Matrix4 = new Class({
      *
      * Uses the `x`, `y` and `z` components of the given Vector to scale the Matrix.
      *
-     * @method Phaser.Math.Matrix4#scale
+     * @method Oyun.Math.Matrix4#scale
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to scale this Matrix with.
+     * @param {(Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to scale this Matrix with.
      *
      * @return {this} This Matrix4.
      */
@@ -15416,7 +15416,7 @@ var Matrix4 = new Class({
     /**
      * Apply a scale transformation to this Matrix.
      *
-     * @method Phaser.Math.Matrix4#scaleXYZ
+     * @method Oyun.Math.Matrix4#scaleXYZ
      * @since 3.16.0
      *
      * @param {number} x - The x component.
@@ -15450,10 +15450,10 @@ var Matrix4 = new Class({
     /**
      * Derive a rotation matrix around the given axis.
      *
-     * @method Phaser.Math.Matrix4#makeRotationAxis
+     * @method Oyun.Math.Matrix4#makeRotationAxis
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector3|Phaser.Math.Vector4)} axis - The rotation axis.
+     * @param {(Oyun.Math.Vector3|Oyun.Math.Vector4)} axis - The rotation axis.
      * @param {number} angle - The rotation angle in radians.
      *
      * @return {this} This Matrix4.
@@ -15482,11 +15482,11 @@ var Matrix4 = new Class({
     /**
      * Apply a rotation transformation to this Matrix.
      *
-     * @method Phaser.Math.Matrix4#rotate
+     * @method Oyun.Math.Matrix4#rotate
      * @since 3.0.0
      *
      * @param {number} rad - The angle in radians to rotate by.
-     * @param {Phaser.Math.Vector3} axis - The axis to rotate upon.
+     * @param {Oyun.Math.Vector3} axis - The axis to rotate upon.
      *
      * @return {this} This Matrix4.
      */
@@ -15566,7 +15566,7 @@ var Matrix4 = new Class({
     /**
      * Rotate this matrix on its X axis.
      *
-     * @method Phaser.Math.Matrix4#rotateX
+     * @method Oyun.Math.Matrix4#rotateX
      * @since 3.0.0
      *
      * @param {number} rad - The angle in radians to rotate by.
@@ -15605,7 +15605,7 @@ var Matrix4 = new Class({
     /**
      * Rotate this matrix on its Y axis.
      *
-     * @method Phaser.Math.Matrix4#rotateY
+     * @method Oyun.Math.Matrix4#rotateY
      * @since 3.0.0
      *
      * @param {number} rad - The angle to rotate by, in radians.
@@ -15644,7 +15644,7 @@ var Matrix4 = new Class({
     /**
      * Rotate this matrix on its Z axis.
      *
-     * @method Phaser.Math.Matrix4#rotateZ
+     * @method Oyun.Math.Matrix4#rotateZ
      * @since 3.0.0
      *
      * @param {number} rad - The angle to rotate by, in radians.
@@ -15683,11 +15683,11 @@ var Matrix4 = new Class({
     /**
      * Set the values of this Matrix from the given rotation Quaternion and translation Vector.
      *
-     * @method Phaser.Math.Matrix4#fromRotationTranslation
+     * @method Oyun.Math.Matrix4#fromRotationTranslation
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Quaternion} q - The Quaternion to set rotation from.
-     * @param {Phaser.Math.Vector3} v - The Vector to set translation from.
+     * @param {Oyun.Math.Quaternion} q - The Quaternion to set rotation from.
+     * @param {Oyun.Math.Vector3} v - The Vector to set translation from.
      *
      * @return {this} This Matrix4.
      */
@@ -15741,10 +15741,10 @@ var Matrix4 = new Class({
     /**
      * Set the values of this Matrix from the given Quaternion.
      *
-     * @method Phaser.Math.Matrix4#fromQuat
+     * @method Oyun.Math.Matrix4#fromQuat
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Quaternion} q - The Quaternion to set the values of this Matrix from.
+     * @param {Oyun.Math.Quaternion} q - The Quaternion to set the values of this Matrix from.
      *
      * @return {this} This Matrix4.
      */
@@ -15797,7 +15797,7 @@ var Matrix4 = new Class({
     /**
      * Generate a frustum matrix with the given bounds.
      *
-     * @method Phaser.Math.Matrix4#frustum
+     * @method Oyun.Math.Matrix4#frustum
      * @since 3.0.0
      *
      * @param {number} left - The left bound of the frustum.
@@ -15841,7 +15841,7 @@ var Matrix4 = new Class({
     /**
      * Generate a perspective projection matrix with the given bounds.
      *
-     * @method Phaser.Math.Matrix4#perspective
+     * @method Oyun.Math.Matrix4#perspective
      * @since 3.0.0
      *
      * @param {number} fovy - Vertical field of view in radians
@@ -15882,7 +15882,7 @@ var Matrix4 = new Class({
     /**
      * Generate a perspective projection matrix with the given bounds.
      *
-     * @method Phaser.Math.Matrix4#perspectiveLH
+     * @method Oyun.Math.Matrix4#perspectiveLH
      * @since 3.0.0
      *
      * @param {number} width - The width of the frustum.
@@ -15920,7 +15920,7 @@ var Matrix4 = new Class({
     /**
      * Generate an orthogonal projection matrix with the given bounds.
      *
-     * @method Phaser.Math.Matrix4#ortho
+     * @method Oyun.Math.Matrix4#ortho
      * @since 3.0.0
      *
      * @param {number} left - The left bound of the frustum.
@@ -15969,12 +15969,12 @@ var Matrix4 = new Class({
     /**
      * Generate a right-handed look-at matrix with the given eye position, target and up axis.
      *
-     * @method Phaser.Math.Matrix4#lookAtRH
+     * @method Oyun.Math.Matrix4#lookAtRH
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Vector3} eye - Position of the viewer.
-     * @param {Phaser.Math.Vector3} target - Point the viewer is looking at.
-     * @param {Phaser.Math.Vector3} up - vec3 pointing up.
+     * @param {Oyun.Math.Vector3} eye - Position of the viewer.
+     * @param {Oyun.Math.Vector3} target - Point the viewer is looking at.
+     * @param {Oyun.Math.Vector3} up - vec3 pointing up.
      *
      * @return {this} This Matrix4.
      */
@@ -16029,12 +16029,12 @@ var Matrix4 = new Class({
     /**
      * Generate a look-at matrix with the given eye position, focal point, and up axis.
      *
-     * @method Phaser.Math.Matrix4#lookAt
+     * @method Oyun.Math.Matrix4#lookAt
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector3} eye - Position of the viewer
-     * @param {Phaser.Math.Vector3} center - Point the viewer is looking at
-     * @param {Phaser.Math.Vector3} up - vec3 pointing up.
+     * @param {Oyun.Math.Vector3} eye - Position of the viewer
+     * @param {Oyun.Math.Vector3} center - Point the viewer is looking at
+     * @param {Oyun.Math.Vector3} up - vec3 pointing up.
      *
      * @return {this} This Matrix4.
      */
@@ -16135,7 +16135,7 @@ var Matrix4 = new Class({
     /**
      * Set the values of this matrix from the given `yaw`, `pitch` and `roll` values.
      *
-     * @method Phaser.Math.Matrix4#yawPitchRoll
+     * @method Oyun.Math.Matrix4#yawPitchRoll
      * @since 3.0.0
      *
      * @param {number} yaw - The yaw value.
@@ -16196,14 +16196,14 @@ var Matrix4 = new Class({
     /**
      * Generate a world matrix from the given rotation, position, scale, view matrix and projection matrix.
      *
-     * @method Phaser.Math.Matrix4#setWorldMatrix
+     * @method Oyun.Math.Matrix4#setWorldMatrix
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector3} rotation - The rotation of the world matrix.
-     * @param {Phaser.Math.Vector3} position - The position of the world matrix.
-     * @param {Phaser.Math.Vector3} scale - The scale of the world matrix.
-     * @param {Phaser.Math.Matrix4} [viewMatrix] - The view matrix.
-     * @param {Phaser.Math.Matrix4} [projectionMatrix] - The projection matrix.
+     * @param {Oyun.Math.Vector3} rotation - The rotation of the world matrix.
+     * @param {Oyun.Math.Vector3} position - The position of the world matrix.
+     * @param {Oyun.Math.Vector3} scale - The scale of the world matrix.
+     * @param {Oyun.Math.Matrix4} [viewMatrix] - The view matrix.
+     * @param {Oyun.Math.Matrix4} [projectionMatrix] - The projection matrix.
      *
      * @return {this} This Matrix4.
      */
@@ -16233,13 +16233,13 @@ var Matrix4 = new Class({
     /**
      * Multiplies this Matrix4 by the given `src` Matrix4 and stores the results in the `out` Matrix4.
      *
-     * @method Phaser.Math.Matrix4#multiplyToMat4
+     * @method Oyun.Math.Matrix4#multiplyToMat4
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} src - The Matrix4 to multiply with this one.
-     * @param {Phaser.Math.Matrix4} out - The receiving Matrix.
+     * @param {Oyun.Math.Matrix4} src - The Matrix4 to multiply with this one.
+     * @param {Oyun.Math.Matrix4} out - The receiving Matrix.
      *
-     * @return {Phaser.Math.Matrix4} This `out` Matrix4.
+     * @return {Oyun.Math.Matrix4} This `out` Matrix4.
      */
     multiplyToMat4: function (src, out)
     {
@@ -16306,11 +16306,11 @@ var Matrix4 = new Class({
     /**
      * Takes the rotation and position vectors and builds this Matrix4 from them.
      *
-     * @method Phaser.Math.Matrix4#fromRotationXYTranslation
+     * @method Oyun.Math.Matrix4#fromRotationXYTranslation
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Vector3} rotation - The rotation vector.
-     * @param {Phaser.Math.Vector3} position - The position vector.
+     * @param {Oyun.Math.Vector3} rotation - The rotation vector.
+     * @param {Oyun.Math.Vector3} position - The position vector.
      * @param {boolean} translateFirst - Should the operation translate then rotate (`true`), or rotate then translate? (`false`)
      *
      * @return {this} This Matrix4.
@@ -16377,7 +16377,7 @@ var Matrix4 = new Class({
     /**
      * Returns the maximum axis scale from this Matrix4.
      *
-     * @method Phaser.Math.Matrix4#getMaxScaleOnAxis
+     * @method Oyun.Math.Matrix4#getMaxScaleOnAxis
      * @since 3.50.0
      *
      * @return {number} The maximum axis scale.
@@ -16442,7 +16442,7 @@ module.exports = Matrix4;
  * Example:
  *
  * ```javascript
- * const triangles = Phaser.Geom.Polygon.Earcut([10,0, 0,50, 60,60, 70,10]); // returns [1,0,3, 3,2,1]
+ * const triangles = Oyun.Geom.Polygon.Earcut([10,0, 0,50, 60,60, 70,10]); // returns [1,0,3, 3,2,1]
  * ```
  *
  * Each group of three vertex indices in the resulting array forms a triangle.
@@ -16460,14 +16460,14 @@ module.exports = Matrix4;
  * If you pass a single vertex as a hole, Earcut treats it as a Steiner point.
  *
  * If your input is a multi-dimensional array (e.g. GeoJSON Polygon), you can convert it to the format
- * expected by Earcut with `Phaser.Geom.Polygon.Earcut.flatten`:
+ * expected by Earcut with `Oyun.Geom.Polygon.Earcut.flatten`:
  *
  * ```javascript
  * var data = earcut.flatten(geojson.geometry.coordinates);
  * var triangles = earcut(data.vertices, data.holes, data.dimensions);
  * ```
  *
- * After getting a triangulation, you can verify its correctness with `Phaser.Geom.Polygon.Earcut.deviation`:
+ * After getting a triangulation, you can verify its correctness with `Oyun.Geom.Polygon.Earcut.deviation`:
  *
  * ```javascript
  * var deviation = earcut.deviation(vertices, holes, dimensions, triangles);
@@ -16477,7 +16477,7 @@ module.exports = Matrix4;
  *
  * For more information see https://github.com/mapbox/earcut
  *
- * @function Phaser.Geom.Polygon.Earcut
+ * @function Oyun.Geom.Polygon.Earcut
  * @since 3.50.0
  *
  * @param {number[]} data - A flat array of vertex coordinate, like [x0,y0, x1,y1, x2,y2, ...]
@@ -17198,7 +17198,7 @@ module.exports = earcut;
  */
 
 /**
- * @namespace Phaser.Sound.Events
+ * @namespace Oyun.Sound.Events
  */
 
 module.exports = {
@@ -17252,21 +17252,21 @@ var IsPlainObject = __webpack_require__(7);
  * @classdesc
  * A single Image File suitable for loading by the Loader.
  *
- * These are created when you use the Phaser.Loader.LoaderPlugin#image method and are not typically created directly.
+ * These are created when you use the Oyun.Loader.LoaderPlugin#image method and are not typically created directly.
  *
- * For documentation about what all the arguments and configuration options mean please see Phaser.Loader.LoaderPlugin#image.
+ * For documentation about what all the arguments and configuration options mean please see Oyun.Loader.LoaderPlugin#image.
  *
  * @class ImageFile
- * @extends Phaser.Loader.File
- * @memberof Phaser.Loader.FileTypes
+ * @extends Oyun.Loader.File
+ * @memberof Oyun.Loader.FileTypes
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Loader.LoaderPlugin} loader - A reference to the Loader that is responsible for this file.
- * @param {(string|Phaser.Types.Loader.FileTypes.ImageFileConfig)} key - The key to use for this file, or a file configuration object.
+ * @param {Oyun.Loader.LoaderPlugin} loader - A reference to the Loader that is responsible for this file.
+ * @param {(string|Oyun.Types.Loader.FileTypes.ImageFileConfig)} key - The key to use for this file, or a file configuration object.
  * @param {string|string[]} [url] - The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
- * @param {Phaser.Types.Loader.XHRSettingsObject} [xhrSettings] - Extra XHR Settings specifically for this file.
- * @param {Phaser.Types.Loader.FileTypes.ImageFrameConfig} [frameConfig] - The frame configuration object. Only provided for, and used by, Sprite Sheets.
+ * @param {Oyun.Types.Loader.XHRSettingsObject} [xhrSettings] - Extra XHR Settings specifically for this file.
+ * @param {Oyun.Types.Loader.FileTypes.ImageFrameConfig} [frameConfig] - The frame configuration object. Only provided for, and used by, Sprite Sheets.
  */
 var ImageFile = new Class({
 
@@ -17327,7 +17327,7 @@ var ImageFile = new Class({
      * Called automatically by Loader.nextFile.
      * This method controls what extra work this File does with its loaded data.
      *
-     * @method Phaser.Loader.FileTypes.ImageFile#onProcess
+     * @method Oyun.Loader.FileTypes.ImageFile#onProcess
      * @since 3.7.0
      */
     onProcess: function ()
@@ -17360,7 +17360,7 @@ var ImageFile = new Class({
     /**
      * Adds this file to its target cache upon successful loading and processing.
      *
-     * @method Phaser.Loader.FileTypes.ImageFile#addToCache
+     * @method Oyun.Loader.FileTypes.ImageFile#addToCache
      * @since 3.7.0
      */
     addToCache: function ()
@@ -17401,7 +17401,7 @@ var ImageFile = new Class({
  * ```javascript
  * function preload ()
  * {
- *     this.load.image('logo', 'images/phaserLogo.png');
+ *     this.load.image('logo', 'images/OyunLogo.png');
  * }
  * ```
  *
@@ -17409,11 +17409,11 @@ var ImageFile = new Class({
  * or if it's already running, when the next free load slot becomes available. This happens automatically if you
  * are calling this from within the Scene's `preload` method, or a related callback. Because the file is queued
  * it means you cannot use the file immediately after calling this method, but must wait for the file to complete.
- * The typical flow for a Phaser Scene is that you load assets in the Scene's `preload` method and then when the
+ * The typical flow for a Oyun Scene is that you load assets in the Scene's `preload` method and then when the
  * Scene's `create` method is called you are guaranteed that all of those assets are ready for use and have been
  * loaded.
  *
- * Phaser can load all common image types: png, jpg, gif and any other format the browser can natively handle.
+ * Oyun can load all common image types: png, jpg, gif and any other format the browser can natively handle.
  * If you try to load an animated gif only the first frame will be rendered. Browsers do not natively support playback
  * of animated gifs to Canvas elements.
  *
@@ -17431,7 +17431,7 @@ var ImageFile = new Class({
  * });
  * ```
  *
- * See the documentation for `Phaser.Types.Loader.FileTypes.ImageFileConfig` for more details.
+ * See the documentation for `Oyun.Types.Loader.FileTypes.ImageFileConfig` for more details.
  *
  * Once the file has finished loading you can use it as a texture for a Game Object by referencing its key:
  *
@@ -17451,7 +17451,7 @@ var ImageFile = new Class({
  * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension, although
  * this can be overridden if using an object instead of method arguments. If you do not desire this action then provide a URL.
  *
- * Phaser also supports the automatic loading of associated normal maps. If you have a normal map to go with this image,
+ * Oyun also supports the automatic loading of associated normal maps. If you have a normal map to go with this image,
  * then you can specify it by providing an array as the `url` where the second element is the normal map:
  *
  * ```javascript
@@ -17471,16 +17471,16 @@ var ImageFile = new Class({
  * The normal map file is subject to the same conditions as the image file with regard to the path, baseURL, CORs and XHR Settings.
  * Normal maps are a WebGL only feature.
  *
- * Note: The ability to load this type of file will only be available if the Image File type has been built into Phaser.
+ * Note: The ability to load this type of file will only be available if the Image File type has been built into Oyun.
  * It is available in the default build but can be excluded from custom builds.
  *
- * @method Phaser.Loader.LoaderPlugin#image
- * @fires Phaser.Loader.LoaderPlugin#ADD
+ * @method Oyun.Loader.LoaderPlugin#image
+ * @fires Oyun.Loader.LoaderPlugin#ADD
  * @since 3.0.0
  *
- * @param {(string|Phaser.Types.Loader.FileTypes.ImageFileConfig|Phaser.Types.Loader.FileTypes.ImageFileConfig[])} key - The key to use for this file, or a file configuration object, or array of them.
+ * @param {(string|Oyun.Types.Loader.FileTypes.ImageFileConfig|Oyun.Types.Loader.FileTypes.ImageFileConfig[])} key - The key to use for this file, or a file configuration object, or array of them.
  * @param {string|string[]} [url] - The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
- * @param {Phaser.Types.Loader.XHRSettingsObject} [xhrSettings] - An XHR Settings configuration object. Used in replacement of the Loaders default XHR Settings.
+ * @param {Oyun.Types.Loader.XHRSettingsObject} [xhrSettings] - An XHR Settings configuration object. Used in replacement of the Loaders default XHR Settings.
  *
  * @return {this} The Loader instance.
  */
@@ -17553,7 +17553,7 @@ var Axes = __webpack_require__(585);
             parts: [],
             plugin: {},
             angle: 0,
-            vertices: null, // Phaser change: no point calling fromPath if they pass in vertices anyway
+            vertices: null, // Oyun change: no point calling fromPath if they pass in vertices anyway
             position: { x: 0, y: 0 },
             force: { x: 0, y: 0 },
             torque: 0,
@@ -17603,23 +17603,23 @@ var Axes = __webpack_require__(585);
                     xOffset: 0,
                     yOffset: 0
                 },
-                fillColor: null,            // custom Phaser property
-                fillOpacity: null,          // custom Phaser property
-                lineColor: null,            // custom Phaser property
-                lineOpacity: null,          // custom Phaser property
-                lineThickness: null         // custom Phaser property
+                fillColor: null,            // custom Oyun property
+                fillOpacity: null,          // custom Oyun property
+                lineColor: null,            // custom Oyun property
+                lineOpacity: null,          // custom Oyun property
+                lineThickness: null         // custom Oyun property
             },
-            gameObject: null,               // custom Phaser property
-            scale: { x: 1, y: 1 },          // custom Phaser property
-            centerOfMass: { x: 0, y: 0 },   // custom Phaser property (float, 0 - 1)
-            centerOffset: { x: 0, y: 0 },   // custom Phaser property (pixel values)
-            gravityScale: { x: 1, y: 1 },   // custom Phaser property
-            ignoreGravity: false,           // custom Phaser property
-            ignorePointer: false,           // custom Phaser property
-            onCollideCallback: null,        // custom Phaser property
-            onCollideEndCallback: null,     // custom Phaser property
-            onCollideActiveCallback: null,  // custom Phaser property
-            onCollideWith: {}               // custom Phaser property
+            gameObject: null,               // custom Oyun property
+            scale: { x: 1, y: 1 },          // custom Oyun property
+            centerOfMass: { x: 0, y: 0 },   // custom Oyun property (float, 0 - 1)
+            centerOffset: { x: 0, y: 0 },   // custom Oyun property (pixel values)
+            gravityScale: { x: 1, y: 1 },   // custom Oyun property
+            ignoreGravity: false,           // custom Oyun property
+            ignorePointer: false,           // custom Oyun property
+            onCollideCallback: null,        // custom Oyun property
+            onCollideEndCallback: null,     // custom Oyun property
+            onCollideActiveCallback: null,  // custom Oyun property
+            onCollideWith: {}               // custom Oyun property
         };
 
         if (!options.hasOwnProperty('position') && options.hasOwnProperty('vertices'))
@@ -17973,7 +17973,7 @@ var Axes = __webpack_require__(585);
         // sum the properties of all compound parts of the parent body
         var total = Body._totalProperties(body);
 
-        //  Phaser addition
+        //  Oyun addition
         var cx = total.centre.x;
         var cy = total.centre.y;
 
@@ -18799,10 +18799,10 @@ var Axes = __webpack_require__(585);
      */
 
     /**
-     * A reference to the Phaser Game Object this body belongs to, if any.
+     * A reference to the Oyun Game Object this body belongs to, if any.
      *
      * @property gameObject
-     * @type Phaser.GameObjects.GameObject
+     * @type Oyun.GameObjects.GameObject
      */
 
     /**
@@ -18815,7 +18815,7 @@ var Axes = __webpack_require__(585);
 
     /**
      * The center of the body in pixel values.
-     * Used by Phaser for texture aligment.
+     * Used by Oyun for texture aligment.
      *
      * @property centerOffset
      * @type vector
@@ -18839,7 +18839,7 @@ var Axes = __webpack_require__(585);
      */
 
      /**
-     * Will this Body ignore Phaser Pointer input events?
+     * Will this Body ignore Oyun Pointer input events?
      *
      * @property ignorePointer
      * @type boolean
@@ -18901,10 +18901,10 @@ var Axes = __webpack_require__(585);
  * Internally used method to set the colliding state of a tile. This does not recalculate
  * interesting faces.
  *
- * @function Phaser.Tilemaps.Components.SetTileCollision
+ * @function Oyun.Tilemaps.Components.SetTileCollision
  * @since 3.0.0
  *
- * @param {Phaser.Tilemaps.Tile} tile - The Tile to set the collision on.
+ * @param {Oyun.Tilemaps.Tile} tile - The Tile to set the collision on.
  * @param {boolean} [collides=true] - Should the tile index collide or not?
  */
 var SetTileCollision = function (tile, collides)
@@ -18951,30 +18951,30 @@ var SpriteRender = __webpack_require__(1059);
  * Component. If you do not require animation then you can safely use Images to replace Sprites in all cases.
  *
  * @class Sprite
- * @extends Phaser.GameObjects.GameObject
- * @memberof Phaser.GameObjects
+ * @extends Oyun.GameObjects.GameObject
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.0.0
  *
- * @extends Phaser.GameObjects.Components.Alpha
- * @extends Phaser.GameObjects.Components.BlendMode
- * @extends Phaser.GameObjects.Components.Depth
- * @extends Phaser.GameObjects.Components.Flip
- * @extends Phaser.GameObjects.Components.GetBounds
- * @extends Phaser.GameObjects.Components.Mask
- * @extends Phaser.GameObjects.Components.Origin
- * @extends Phaser.GameObjects.Components.Pipeline
- * @extends Phaser.GameObjects.Components.ScrollFactor
- * @extends Phaser.GameObjects.Components.Size
- * @extends Phaser.GameObjects.Components.TextureCrop
- * @extends Phaser.GameObjects.Components.Tint
- * @extends Phaser.GameObjects.Components.Transform
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.GameObjects.Components.Alpha
+ * @extends Oyun.GameObjects.Components.BlendMode
+ * @extends Oyun.GameObjects.Components.Depth
+ * @extends Oyun.GameObjects.Components.Flip
+ * @extends Oyun.GameObjects.Components.GetBounds
+ * @extends Oyun.GameObjects.Components.Mask
+ * @extends Oyun.GameObjects.Components.Origin
+ * @extends Oyun.GameObjects.Components.Pipeline
+ * @extends Oyun.GameObjects.Components.ScrollFactor
+ * @extends Oyun.GameObjects.Components.Size
+ * @extends Oyun.GameObjects.Components.TextureCrop
+ * @extends Oyun.GameObjects.Components.Tint
+ * @extends Oyun.GameObjects.Components.Transform
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
  * @param {number} x - The horizontal position of this Game Object in the world.
  * @param {number} y - The vertical position of this Game Object in the world.
- * @param {(string|Phaser.Textures.Texture)} texture - The key, or instance of the Texture this Game Object will use to render with, as stored in the Texture Manager.
+ * @param {(string|Oyun.Textures.Texture)} texture - The key, or instance of the Texture this Game Object will use to render with, as stored in the Texture Manager.
  * @param {(string|number)} [frame] - An optional frame from the Texture this Game Object is rendering with.
  */
 var Sprite = new Class({
@@ -19008,7 +19008,7 @@ var Sprite = new Class({
         /**
          * The internal crop data object, as used by `setCrop` and passed to the `Frame.setCropUVs` method.
          *
-         * @name Phaser.GameObjects.Sprite#_crop
+         * @name Oyun.GameObjects.Sprite#_crop
          * @type {object}
          * @private
          * @since 3.11.0
@@ -19022,8 +19022,8 @@ var Sprite = new Class({
          * It is responsible for playing, loading, queuing animations for later playback,
          * mixing between animations and setting the current animation frame to this Sprite.
          *
-         * @name Phaser.GameObjects.Sprite#anims
-         * @type {Phaser.Animations.AnimationState}
+         * @name Oyun.GameObjects.Sprite#anims
+         * @type {Oyun.Animations.AnimationState}
          * @since 3.0.0
          */
         this.anims = new AnimationState(this);
@@ -19050,7 +19050,7 @@ var Sprite = new Class({
     /**
      * Update this Sprite's animations.
      *
-     * @method Phaser.GameObjects.Sprite#preUpdate
+     * @method Oyun.GameObjects.Sprite#preUpdate
      * @protected
      * @since 3.0.0
      *
@@ -19065,7 +19065,7 @@ var Sprite = new Class({
     /**
      * Start playing the given animation on this Sprite.
      *
-     * Animations in Phaser can either belong to the global Animation Manager, or specifically to this Sprite.
+     * Animations in Oyun can either belong to the global Animation Manager, or specifically to this Sprite.
      *
      * The benefit of a global animation is that multiple Sprites can all play the same animation, without
      * having to duplicate the data. You can just create it once and then play it on any Sprite.
@@ -19113,11 +19113,11 @@ var Sprite = new Class({
      *
      * Also, see the documentation in the Animation Manager for further details on creating animations.
      *
-     * @method Phaser.GameObjects.Sprite#play
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.GameObjects.Sprite#play
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.0.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {boolean} [ignoreIfPlaying=false] - If an animation is already playing then ignore this call.
      *
      * @return {this} This Game Object.
@@ -19130,7 +19130,7 @@ var Sprite = new Class({
     /**
      * Start playing the given animation on this Sprite, in reverse.
      *
-     * Animations in Phaser can either belong to the global Animation Manager, or specifically to this Sprite.
+     * Animations in Oyun can either belong to the global Animation Manager, or specifically to this Sprite.
      *
      * The benefit of a global animation is that multiple Sprites can all play the same animation, without
      * having to duplicate the data. You can just create it once and then play it on any Sprite.
@@ -19178,11 +19178,11 @@ var Sprite = new Class({
      *
      * Also, see the documentation in the Animation Manager for further details on creating animations.
      *
-     * @method Phaser.GameObjects.Sprite#playReverse
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.GameObjects.Sprite#playReverse
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.50.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {boolean} [ignoreIfPlaying=false] - If an animation is already playing then ignore this call.
      *
      * @return {this} This Game Object.
@@ -19206,13 +19206,13 @@ var Sprite = new Class({
      * locally within the Sprite. If it can, it will play the local animation. If not, it will then
      * search the global Animation Manager and look for it there.
      *
-     * Prior to Phaser 3.50 this method was called 'delayedPlay'.
+     * Prior to Oyun 3.50 this method was called 'delayedPlay'.
      *
-     * @method Phaser.GameObjects.Sprite#playAfterDelay
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.GameObjects.Sprite#playAfterDelay
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.50.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {number} delay - The delay, in milliseconds, to wait before starting the animation playing.
      *
      * @return {this} This Game Object.
@@ -19235,11 +19235,11 @@ var Sprite = new Class({
      * locally within the Sprite. If it can, it will play the local animation. If not, it will then
      * search the global Animation Manager and look for it there.
      *
-     * @method Phaser.GameObjects.Sprite#playAfterRepeat
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.GameObjects.Sprite#playAfterRepeat
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.50.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {number} [repeatCount=1] - How many times should the animation repeat before the next one starts?
      *
      * @return {this} This Game Object.
@@ -19269,10 +19269,10 @@ var Sprite = new Class({
      * locally within the Sprite. If it can, it will play the local animation. If not, it will then
      * search the global Animation Manager and look for it there.
      *
-     * @method Phaser.GameObjects.Sprite#chain
+     * @method Oyun.GameObjects.Sprite#chain
      * @since 3.50.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig|string[]|Phaser.Animations.Animation[]|Phaser.Types.Animations.PlayAnimationConfig[])} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object, or an array of them.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig|string[]|Oyun.Animations.Animation[]|Oyun.Types.Animations.PlayAnimationConfig[])} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object, or an array of them.
      *
      * @return {this} This Game Object.
      */
@@ -19288,8 +19288,8 @@ var Sprite = new Class({
      *
      * If there is another animation queued (via the `chain` method) then it will start playing immediately.
      *
-     * @method Phaser.GameObjects.Sprite#stop
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.GameObjects.Sprite#stop
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.50.0
      *
      * @return {this} This Game Object.
@@ -19309,8 +19309,8 @@ var Sprite = new Class({
      * If there is another animation in the queue (set via the `chain` method) then it will start playing,
      * when the current one stops.
      *
-     * @method Phaser.GameObjects.Sprite#stopAfterDelay
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.GameObjects.Sprite#stopAfterDelay
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.50.0
      *
      * @param {number} delay - The number of milliseconds to wait before stopping this animation.
@@ -19332,8 +19332,8 @@ var Sprite = new Class({
      * If there is another animation in the queue (set via the `chain` method) then it will start playing,
      * when the current one stops.
      *
-     * @method Phaser.GameObjects.Sprite#stopAfterRepeat
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.GameObjects.Sprite#stopAfterRepeat
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.50.0
      *
      * @param {number} [repeatCount=1] - How many times should the animation repeat before stopping?
@@ -19356,11 +19356,11 @@ var Sprite = new Class({
      * If there is another animation in the queue (set via the `chain` method) then it will start playing,
      * when the current one stops.
      *
-     * @method Phaser.GameObjects.Sprite#stopOnFrame
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.GameObjects.Sprite#stopOnFrame
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.50.0
      *
-     * @param {Phaser.Animations.AnimationFrame} frame - The frame to check before stopping this animation.
+     * @param {Oyun.Animations.AnimationFrame} frame - The frame to check before stopping this animation.
      *
      * @return {this} This Game Object.
      */
@@ -19372,10 +19372,10 @@ var Sprite = new Class({
     /**
      * Build a JSON representation of this Sprite.
      *
-     * @method Phaser.GameObjects.Sprite#toJSON
+     * @method Oyun.GameObjects.Sprite#toJSON
      * @since 3.0.0
      *
-     * @return {Phaser.Types.GameObjects.JSONGameObject} A JSON representation of the Game Object.
+     * @return {Oyun.Types.GameObjects.JSONGameObject} A JSON representation of the Game Object.
      */
     toJSON: function ()
     {
@@ -19385,7 +19385,7 @@ var Sprite = new Class({
     /**
      * Handles the pre-destroy step for the Sprite, which removes the Animation component.
      *
-     * @method Phaser.GameObjects.Sprite#preDestroy
+     * @method Oyun.GameObjects.Sprite#preDestroy
      * @private
      * @since 3.14.0
      */
@@ -19415,7 +19415,7 @@ module.exports = Sprite;
  * Removes a single item from an array and returns it without creating gc, like the native splice does.
  * Based on code by Mike Reinstein.
  *
- * @function Phaser.Utils.Array.SpliceOne
+ * @function Oyun.Utils.Array.SpliceOne
  * @since 3.0.0
  *
  * @param {array} array - The array to splice from.
@@ -19458,7 +19458,7 @@ module.exports = SpliceOne;
  */
 
 /**
- * @namespace Phaser.GameObjects.Events
+ * @namespace Oyun.GameObjects.Events
  */
 
 module.exports = {
@@ -19496,7 +19496,7 @@ module.exports = {
  * Example: if you have an interval gap of `5` and a position of `12`... you will snap to `10`.
  * As will `14` snap to `10`... but `16` will snap to `15`.
  *
- * @function Phaser.Math.Snap.Floor
+ * @function Oyun.Math.Snap.Floor
  * @since 3.0.0
  *
  * @param {number} value - The value to snap.
@@ -19537,7 +19537,7 @@ module.exports = SnapFloor;
 /**
  * Shallow Object Clone. Will not clone nested objects.
  *
- * @function Phaser.Utils.Objects.Clone
+ * @function Oyun.Utils.Objects.Clone
  * @since 3.0.0
  *
  * @param {object} obj - The object to clone.
@@ -19579,7 +19579,7 @@ module.exports = Clone;
 /**
  * Tests if the start and end indexes are a safe range for the given array.
  * 
- * @function Phaser.Utils.Array.SafeRange
+ * @function Oyun.Utils.Array.SafeRange
  * @since 3.4.0
  *
  * @param {array} array - The array to check.
@@ -19765,7 +19765,7 @@ function RunPass (arr, comp, chk, result)
  *
  * Function based on the Two-Screen/stable sort 0.1.8 from https://github.com/Two-Screen/stable
  *
- * @function Phaser.Utils.Array.StableSort
+ * @function Oyun.Utils.Array.StableSort
  * @since 3.0.0
  *
  * @param {array} array - The input array to be sorted.
@@ -19809,7 +19809,7 @@ var UppercaseFirst = __webpack_require__(202);
  * 
  * It can take a variety of input, including an EaseMap based string, or a custom function.
  *
- * @function Phaser.Tweens.Builders.GetEaseFunction
+ * @function Oyun.Tweens.Builders.GetEaseFunction
  * @since 3.0.0
  *
  * @param {(string|function)} ease - The ease to find. This can be either a string from the EaseMap, or a custom function.
@@ -19915,12 +19915,12 @@ var Utils = __webpack_require__(12);
 /**
  * Renders a stroke outline around the given Shape.
  *
- * @method Phaser.GameObjects.Shape#StrokePathWebGL
+ * @method Oyun.GameObjects.Shape#StrokePathWebGL
  * @since 3.13.0
  * @private
  *
- * @param {Phaser.Renderer.WebGL.WebGLPipeline} pipeline - The WebGL Pipeline used to render this Shape.
- * @param {Phaser.GameObjects.Shape} src - The Game Object shape being rendered in this call.
+ * @param {Oyun.Renderer.WebGL.WebGLPipeline} pipeline - The WebGL Pipeline used to render this Shape.
+ * @param {Oyun.GameObjects.Shape} src - The Game Object shape being rendered in this call.
  * @param {number} alpha - The base alpha value.
  * @param {number} dx - The source displayOriginX.
  * @param {number} dy - The source displayOriginY.
@@ -19998,7 +19998,7 @@ var Random = __webpack_require__(178);
  * specify the second point, and the last two arguments specify the third point.
  *
  * @class Triangle
- * @memberof Phaser.Geom
+ * @memberof Oyun.Geom
  * @constructor
  * @since 3.0.0
  *
@@ -20026,7 +20026,7 @@ var Triangle = new Class({
          * The geometry constant type of this object: `GEOM_CONST.TRIANGLE`.
          * Used for fast type comparisons.
          *
-         * @name Phaser.Geom.Triangle#type
+         * @name Oyun.Geom.Triangle#type
          * @type {number}
          * @readonly
          * @since 3.19.0
@@ -20036,7 +20036,7 @@ var Triangle = new Class({
         /**
          * `x` coordinate of the first point.
          *
-         * @name Phaser.Geom.Triangle#x1
+         * @name Oyun.Geom.Triangle#x1
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -20046,7 +20046,7 @@ var Triangle = new Class({
         /**
          * `y` coordinate of the first point.
          *
-         * @name Phaser.Geom.Triangle#y1
+         * @name Oyun.Geom.Triangle#y1
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -20056,7 +20056,7 @@ var Triangle = new Class({
         /**
          * `x` coordinate of the second point.
          *
-         * @name Phaser.Geom.Triangle#x2
+         * @name Oyun.Geom.Triangle#x2
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -20066,7 +20066,7 @@ var Triangle = new Class({
         /**
          * `y` coordinate of the second point.
          *
-         * @name Phaser.Geom.Triangle#y2
+         * @name Oyun.Geom.Triangle#y2
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -20076,7 +20076,7 @@ var Triangle = new Class({
         /**
          * `x` coordinate of the third point.
          *
-         * @name Phaser.Geom.Triangle#x3
+         * @name Oyun.Geom.Triangle#x3
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -20086,7 +20086,7 @@ var Triangle = new Class({
         /**
          * `y` coordinate of the third point.
          *
-         * @name Phaser.Geom.Triangle#y3
+         * @name Oyun.Geom.Triangle#y3
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -20097,7 +20097,7 @@ var Triangle = new Class({
     /**
      * Checks whether a given points lies within the triangle.
      *
-     * @method Phaser.Geom.Triangle#contains
+     * @method Oyun.Geom.Triangle#contains
      * @since 3.0.0
      *
      * @param {number} x - The x coordinate of the point to check.
@@ -20113,15 +20113,15 @@ var Triangle = new Class({
     /**
      * Returns a specific point  on the triangle.
      *
-     * @method Phaser.Geom.Triangle#getPoint
+     * @method Oyun.Geom.Triangle#getPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [output,$return]
+     * @generic {Oyun.Geom.Point} O - [output,$return]
      *
      * @param {number} position - Position as float within `0` and `1`. `0` equals the first point.
-     * @param {(Phaser.Geom.Point|object)} [output] - Optional Point, or point-like object, that the calculated point will be written to.
+     * @param {(Oyun.Geom.Point|object)} [output] - Optional Point, or point-like object, that the calculated point will be written to.
      *
-     * @return {(Phaser.Geom.Point|object)} Calculated `Point` that represents the requested position. It is the same as `output` when this parameter has been given.
+     * @return {(Oyun.Geom.Point|object)} Calculated `Point` that represents the requested position. It is the same as `output` when this parameter has been given.
      */
     getPoint: function (position, output)
     {
@@ -20131,16 +20131,16 @@ var Triangle = new Class({
     /**
      * Calculates a list of evenly distributed points on the triangle. It is either possible to pass an amount of points to be generated (`quantity`) or the distance between two points (`stepRate`).
      *
-     * @method Phaser.Geom.Triangle#getPoints
+     * @method Oyun.Geom.Triangle#getPoints
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point[]} O - [output,$return]
+     * @generic {Oyun.Geom.Point[]} O - [output,$return]
      *
      * @param {number} quantity - Number of points to be generated. Can be falsey when `stepRate` should be used. All points have the same distance along the triangle.
      * @param {number} [stepRate] - Distance between two points. Will only be used when `quantity` is falsey.
-     * @param {(array|Phaser.Geom.Point[])} [output] - Optional Array for writing the calculated points into. Otherwise a new array will be created.
+     * @param {(array|Oyun.Geom.Point[])} [output] - Optional Array for writing the calculated points into. Otherwise a new array will be created.
      *
-     * @return {(array|Phaser.Geom.Point[])} Returns a list of calculated `Point` instances or the filled array passed as parameter `output`.
+     * @return {(array|Oyun.Geom.Point[])} Returns a list of calculated `Point` instances or the filled array passed as parameter `output`.
      */
     getPoints: function (quantity, stepRate, output)
     {
@@ -20150,14 +20150,14 @@ var Triangle = new Class({
     /**
      * Returns a random point along the triangle.
      *
-     * @method Phaser.Geom.Triangle#getRandomPoint
+     * @method Oyun.Geom.Triangle#getRandomPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [point,$return]
+     * @generic {Oyun.Geom.Point} O - [point,$return]
      *
-     * @param {Phaser.Geom.Point} [point] - Optional `Point` that should be modified. Otherwise a new one will be created.
+     * @param {Oyun.Geom.Point} [point] - Optional `Point` that should be modified. Otherwise a new one will be created.
      *
-     * @return {Phaser.Geom.Point} Random `Point`. When parameter `point` has been provided it will be returned.
+     * @return {Oyun.Geom.Point} Random `Point`. When parameter `point` has been provided it will be returned.
      */
     getRandomPoint: function (point)
     {
@@ -20167,7 +20167,7 @@ var Triangle = new Class({
     /**
      * Sets all three points of the triangle. Leaving out any coordinate sets it to be `0`.
      *
-     * @method Phaser.Geom.Triangle#setTo
+     * @method Oyun.Geom.Triangle#setTo
      * @since 3.0.0
      *
      * @param {number} [x1=0] - `x` coordinate of the first point.
@@ -20203,14 +20203,14 @@ var Triangle = new Class({
     /**
      * Returns a Line object that corresponds to Line A of this Triangle.
      *
-     * @method Phaser.Geom.Triangle#getLineA
+     * @method Oyun.Geom.Triangle#getLineA
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Line} O - [line,$return]
+     * @generic {Oyun.Geom.Line} O - [line,$return]
      *
-     * @param {Phaser.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
+     * @param {Oyun.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
      *
-     * @return {Phaser.Geom.Line} A Line object that corresponds to line A of this Triangle.
+     * @return {Oyun.Geom.Line} A Line object that corresponds to line A of this Triangle.
      */
     getLineA: function (line)
     {
@@ -20224,14 +20224,14 @@ var Triangle = new Class({
     /**
      * Returns a Line object that corresponds to Line B of this Triangle.
      *
-     * @method Phaser.Geom.Triangle#getLineB
+     * @method Oyun.Geom.Triangle#getLineB
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Line} O - [line,$return]
+     * @generic {Oyun.Geom.Line} O - [line,$return]
      *
-     * @param {Phaser.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
+     * @param {Oyun.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
      *
-     * @return {Phaser.Geom.Line} A Line object that corresponds to line B of this Triangle.
+     * @return {Oyun.Geom.Line} A Line object that corresponds to line B of this Triangle.
      */
     getLineB: function (line)
     {
@@ -20245,14 +20245,14 @@ var Triangle = new Class({
     /**
      * Returns a Line object that corresponds to Line C of this Triangle.
      *
-     * @method Phaser.Geom.Triangle#getLineC
+     * @method Oyun.Geom.Triangle#getLineC
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Line} O - [line,$return]
+     * @generic {Oyun.Geom.Line} O - [line,$return]
      *
-     * @param {Phaser.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
+     * @param {Oyun.Geom.Line} [line] - A Line object to set the results in. If `undefined` a new Line will be created.
      *
-     * @return {Phaser.Geom.Line} A Line object that corresponds to line C of this Triangle.
+     * @return {Oyun.Geom.Line} A Line object that corresponds to line C of this Triangle.
      */
     getLineC: function (line)
     {
@@ -20266,7 +20266,7 @@ var Triangle = new Class({
     /**
      * Left most X coordinate of the triangle. Setting it moves the triangle on the X axis accordingly.
      *
-     * @name Phaser.Geom.Triangle#left
+     * @name Oyun.Geom.Triangle#left
      * @type {number}
      * @since 3.0.0
      */
@@ -20304,7 +20304,7 @@ var Triangle = new Class({
     /**
      * Right most X coordinate of the triangle. Setting it moves the triangle on the X axis accordingly.
      *
-     * @name Phaser.Geom.Triangle#right
+     * @name Oyun.Geom.Triangle#right
      * @type {number}
      * @since 3.0.0
      */
@@ -20342,7 +20342,7 @@ var Triangle = new Class({
     /**
      * Top most Y coordinate of the triangle. Setting it moves the triangle on the Y axis accordingly.
      *
-     * @name Phaser.Geom.Triangle#top
+     * @name Oyun.Geom.Triangle#top
      * @type {number}
      * @since 3.0.0
      */
@@ -20380,7 +20380,7 @@ var Triangle = new Class({
     /**
      * Bottom most Y coordinate of the triangle. Setting it moves the triangle on the Y axis accordingly.
      *
-     * @name Phaser.Geom.Triangle#bottom
+     * @name Oyun.Geom.Triangle#bottom
      * @type {number}
      * @since 3.0.0
      */
@@ -20442,15 +20442,15 @@ var Rectangle = __webpack_require__(496);
  * scale or layer position.
  *
  * @class Tile
- * @memberof Phaser.Tilemaps
+ * @memberof Oyun.Tilemaps
  * @constructor
  * @since 3.0.0
  *
- * @extends Phaser.GameObjects.Components.Alpha
- * @extends Phaser.GameObjects.Components.Flip
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.GameObjects.Components.Alpha
+ * @extends Oyun.GameObjects.Components.Flip
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Tilemaps.LayerData} layer - The LayerData object in the Tilemap that this tile belongs to.
+ * @param {Oyun.Tilemaps.LayerData} layer - The LayerData object in the Tilemap that this tile belongs to.
  * @param {number} index - The unique index of this tile within the map.
  * @param {number} x - The x coordinate of this tile in tile coordinates.
  * @param {number} y - The y coordinate of this tile in tile coordinates.
@@ -20478,8 +20478,8 @@ var Tile = new Class({
         /**
          * The LayerData in the Tilemap data that this tile belongs to.
          *
-         * @name Phaser.Tilemaps.Tile#layer
-         * @type {Phaser.Tilemaps.LayerData}
+         * @name Oyun.Tilemaps.Tile#layer
+         * @type {Oyun.Tilemaps.LayerData}
          * @since 3.0.0
          */
         this.layer = layer;
@@ -20488,7 +20488,7 @@ var Tile = new Class({
          * The index of this tile within the map data corresponding to the tileset, or -1 if this
          * represents a blank tile.
          *
-         * @name Phaser.Tilemaps.Tile#index
+         * @name Oyun.Tilemaps.Tile#index
          * @type {number}
          * @since 3.0.0
          */
@@ -20497,7 +20497,7 @@ var Tile = new Class({
         /**
          * The x map coordinate of this tile in tile units.
          *
-         * @name Phaser.Tilemaps.Tile#x
+         * @name Oyun.Tilemaps.Tile#x
          * @type {number}
          * @since 3.0.0
          */
@@ -20506,7 +20506,7 @@ var Tile = new Class({
         /**
          * The y map coordinate of this tile in tile units.
          *
-         * @name Phaser.Tilemaps.Tile#y
+         * @name Oyun.Tilemaps.Tile#y
          * @type {number}
          * @since 3.0.0
          */
@@ -20515,7 +20515,7 @@ var Tile = new Class({
         /**
          * The width of the tile in pixels.
          *
-         * @name Phaser.Tilemaps.Tile#width
+         * @name Oyun.Tilemaps.Tile#width
          * @type {number}
          * @since 3.0.0
          */
@@ -20524,7 +20524,7 @@ var Tile = new Class({
         /**
          * The height of the tile in pixels.
          *
-         * @name Phaser.Tilemaps.Tile#height
+         * @name Oyun.Tilemaps.Tile#height
          * @type {number}
          * @since 3.0.0
          */
@@ -20535,7 +20535,7 @@ var Tile = new Class({
          *
          * Set in the `updatePixelXY` method.
          *
-         * @name Phaser.Tilemaps.Tile#right
+         * @name Oyun.Tilemaps.Tile#right
          * @type {number}
          * @since 3.50.0
          */
@@ -20546,7 +20546,7 @@ var Tile = new Class({
          *
          * Set in the `updatePixelXY` method.
          *
-         * @name Phaser.Tilemaps.Tile#bottom
+         * @name Oyun.Tilemaps.Tile#bottom
          * @type {number}
          * @since 3.50.0
          */
@@ -20556,7 +20556,7 @@ var Tile = new Class({
          * The maps base width of a tile in pixels. Tiled maps support multiple tileset sizes
          * within one map, but they are still placed at intervals of the base tile size.
          *
-         * @name Phaser.Tilemaps.Tile#baseWidth
+         * @name Oyun.Tilemaps.Tile#baseWidth
          * @type {number}
          * @since 3.0.0
          */
@@ -20566,7 +20566,7 @@ var Tile = new Class({
          * The maps base height of a tile in pixels. Tiled maps support multiple tileset sizes
          * within one map, but they are still placed at intervals of the base tile size.
          *
-         * @name Phaser.Tilemaps.Tile#baseHeight
+         * @name Oyun.Tilemaps.Tile#baseHeight
          * @type {number}
          * @since 3.0.0
          */
@@ -20577,7 +20577,7 @@ var Tile = new Class({
          * of the layer this tile is being rendered within. This property does NOT factor in camera
          * scroll, layer scale or layer position.
          *
-         * @name Phaser.Tilemaps.Tile#pixelX
+         * @name Oyun.Tilemaps.Tile#pixelX
          * @type {number}
          * @since 3.0.0
          */
@@ -20588,7 +20588,7 @@ var Tile = new Class({
          * of the layer this tile is being rendered within. This property does NOT factor in camera
          * scroll, layer scale or layer position.
          *
-         * @name Phaser.Tilemaps.Tile#pixelY
+         * @name Oyun.Tilemaps.Tile#pixelY
          * @type {number}
          * @since 3.0.0
          */
@@ -20599,7 +20599,7 @@ var Tile = new Class({
         /**
          * Tile specific properties. These usually come from Tiled.
          *
-         * @name Phaser.Tilemaps.Tile#properties
+         * @name Oyun.Tilemaps.Tile#properties
          * @type {any}
          * @since 3.0.0
          */
@@ -20608,7 +20608,7 @@ var Tile = new Class({
         /**
          * The rotation angle of this tile.
          *
-         * @name Phaser.Tilemaps.Tile#rotation
+         * @name Oyun.Tilemaps.Tile#rotation
          * @type {number}
          * @since 3.0.0
          */
@@ -20620,7 +20620,7 @@ var Tile = new Class({
          * This property is used by Arcade Physics only, however, you can also use it
          * in your own checks.
          *
-         * @name Phaser.Tilemaps.Tile#collideLeft
+         * @name Oyun.Tilemaps.Tile#collideLeft
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20632,7 +20632,7 @@ var Tile = new Class({
          * This property is used by Arcade Physics only, however, you can also use it
          * in your own checks.
          *
-         * @name Phaser.Tilemaps.Tile#collideRight
+         * @name Oyun.Tilemaps.Tile#collideRight
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20644,7 +20644,7 @@ var Tile = new Class({
          * This property is used by Arcade Physics only, however, you can also use it
          * in your own checks.
          *
-         * @name Phaser.Tilemaps.Tile#collideUp
+         * @name Oyun.Tilemaps.Tile#collideUp
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20656,7 +20656,7 @@ var Tile = new Class({
          * This property is used by Arcade Physics only, however, you can also use it
          * in your own checks.
          *
-         * @name Phaser.Tilemaps.Tile#collideDown
+         * @name Oyun.Tilemaps.Tile#collideDown
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20665,7 +20665,7 @@ var Tile = new Class({
         /**
          * Whether the tiles left edge is interesting for collisions.
          *
-         * @name Phaser.Tilemaps.Tile#faceLeft
+         * @name Oyun.Tilemaps.Tile#faceLeft
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20674,7 +20674,7 @@ var Tile = new Class({
         /**
          * Whether the tiles right edge is interesting for collisions.
          *
-         * @name Phaser.Tilemaps.Tile#faceRight
+         * @name Oyun.Tilemaps.Tile#faceRight
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20683,7 +20683,7 @@ var Tile = new Class({
         /**
          * Whether the tiles top edge is interesting for collisions.
          *
-         * @name Phaser.Tilemaps.Tile#faceTop
+         * @name Oyun.Tilemaps.Tile#faceTop
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20692,7 +20692,7 @@ var Tile = new Class({
         /**
          * Whether the tiles bottom edge is interesting for collisions.
          *
-         * @name Phaser.Tilemaps.Tile#faceBottom
+         * @name Oyun.Tilemaps.Tile#faceBottom
          * @type {boolean}
          * @since 3.0.0
          */
@@ -20701,7 +20701,7 @@ var Tile = new Class({
         /**
          * Tile collision callback.
          *
-         * @name Phaser.Tilemaps.Tile#collisionCallback
+         * @name Oyun.Tilemaps.Tile#collisionCallback
          * @type {function}
          * @since 3.0.0
          */
@@ -20710,7 +20710,7 @@ var Tile = new Class({
         /**
          * The context in which the collision callback will be called.
          *
-         * @name Phaser.Tilemaps.Tile#collisionCallbackContext
+         * @name Oyun.Tilemaps.Tile#collisionCallbackContext
          * @type {object}
          * @since 3.0.0
          */
@@ -20720,7 +20720,7 @@ var Tile = new Class({
          * The tint to apply to this tile. Note: tint is currently a single color value instead of
          * the 4 corner tint component on other GameObjects.
          *
-         * @name Phaser.Tilemaps.Tile#tint
+         * @name Oyun.Tilemaps.Tile#tint
          * @type {number}
          * @default
          * @since 3.0.0
@@ -20730,7 +20730,7 @@ var Tile = new Class({
         /**
          * An empty object where physics-engine specific information (e.g. bodies) may be stored.
          *
-         * @name Phaser.Tilemaps.Tile#physics
+         * @name Oyun.Tilemaps.Tile#physics
          * @type {object}
          * @since 3.0.0
          */
@@ -20741,7 +20741,7 @@ var Tile = new Class({
      * Check if the given x and y world coordinates are within this Tile. This does not factor in
      * camera scroll, layer scale or layer position.
      *
-     * @method Phaser.Tilemaps.Tile#containsPoint
+     * @method Oyun.Tilemaps.Tile#containsPoint
      * @since 3.0.0
      *
      * @param {number} x - The x coordinate to test.
@@ -20758,10 +20758,10 @@ var Tile = new Class({
      * Copies the tile data & properties from the given tile to this tile. This copies everything
      * except for position and interesting faces.
      *
-     * @method Phaser.Tilemaps.Tile#copy
+     * @method Oyun.Tilemaps.Tile#copy
      * @since 3.0.0
      *
-     * @param {Phaser.Tilemaps.Tile} tile - The tile to copy from.
+     * @param {Oyun.Tilemaps.Tile} tile - The tile to copy from.
      *
      * @return {this} This Tile object instance.
      */
@@ -20789,7 +20789,7 @@ var Tile = new Class({
      * the collision group stored within the Tileset, so any modification of the returned object
      * will impact all tiles that have the same index as this tile.
      *
-     * @method Phaser.Tilemaps.Tile#getCollisionGroup
+     * @method Oyun.Tilemaps.Tile#getCollisionGroup
      * @since 3.0.0
      *
      * @return {?object} The collision group for this Tile, as defined in the Tileset, or `null` if no group was defined.
@@ -20805,7 +20805,7 @@ var Tile = new Class({
      * data stored within the Tileset, so any modification of the returned object will impact all
      * tiles that have the same index as this tile.
      *
-     * @method Phaser.Tilemaps.Tile#getTileData
+     * @method Oyun.Tilemaps.Tile#getTileData
      * @since 3.0.0
      *
      * @return {?object} The tile data for this Tile, as defined in the Tileset, or `null` if no data was defined.
@@ -20819,10 +20819,10 @@ var Tile = new Class({
      * Gets the world X position of the left side of the tile, factoring in the layers position,
      * scale and scroll.
      *
-     * @method Phaser.Tilemaps.Tile#getLeft
+     * @method Oyun.Tilemaps.Tile#getLeft
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
      *
      * @return {number} The left (x) value of this tile.
      */
@@ -20837,10 +20837,10 @@ var Tile = new Class({
      * Gets the world X position of the right side of the tile, factoring in the layer's position,
      * scale and scroll.
      *
-     * @method Phaser.Tilemaps.Tile#getRight
+     * @method Oyun.Tilemaps.Tile#getRight
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
      *
      * @return {number} The right (x) value of this tile.
      */
@@ -20855,10 +20855,10 @@ var Tile = new Class({
      * Gets the world Y position of the top side of the tile, factoring in the layer's position,
      * scale and scroll.
      *
-     * @method Phaser.Tilemaps.Tile#getTop
+     * @method Oyun.Tilemaps.Tile#getTop
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
      *
      * @return {number} The top (y) value of this tile.
      */
@@ -20878,10 +20878,10 @@ var Tile = new Class({
      * Gets the world Y position of the bottom side of the tile, factoring in the layer's position,
      * scale and scroll.
 
-     * @method Phaser.Tilemaps.Tile#getBottom
+     * @method Oyun.Tilemaps.Tile#getBottom
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
      *
      * @return {number} The bottom (y) value of this tile.
      */
@@ -20899,13 +20899,13 @@ var Tile = new Class({
      * Gets the world rectangle bounding box for the tile, factoring in the layers position,
      * scale and scroll.
      *
-     * @method Phaser.Tilemaps.Tile#getBounds
+     * @method Oyun.Tilemaps.Tile#getBounds
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
-     * @param {Phaser.Geom.Rectangle} [output] - Optional Rectangle object to store the results in.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
+     * @param {Oyun.Geom.Rectangle} [output] - Optional Rectangle object to store the results in.
      *
-     * @return {(Phaser.Geom.Rectangle|object)} The bounds of this Tile.
+     * @return {(Oyun.Geom.Rectangle|object)} The bounds of this Tile.
      */
     getBounds: function (camera, output)
     {
@@ -20923,10 +20923,10 @@ var Tile = new Class({
      * Gets the world X position of the center of the tile, factoring in the layer's position,
      * scale and scroll.
      *
-     * @method Phaser.Tilemaps.Tile#getCenterX
+     * @method Oyun.Tilemaps.Tile#getCenterX
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
      *
      * @return {number} The center x position of this Tile.
      */
@@ -20939,10 +20939,10 @@ var Tile = new Class({
      * Gets the world Y position of the center of the tile, factoring in the layer's position,
      * scale and scroll.
      *
-     * @method Phaser.Tilemaps.Tile#getCenterY
+     * @method Oyun.Tilemaps.Tile#getCenterY
      * @since 3.0.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera to use to perform the check.
      *
      * @return {number} The center y position of this Tile.
      */
@@ -20955,7 +20955,7 @@ var Tile = new Class({
      * Check for intersection with this tile. This does not factor in camera scroll, layer scale or
      * layer position.
      *
-     * @method Phaser.Tilemaps.Tile#intersects
+     * @method Oyun.Tilemaps.Tile#intersects
      * @since 3.0.0
      *
      * @param {number} x - The x axis in pixels.
@@ -20976,7 +20976,7 @@ var Tile = new Class({
     /**
      * Checks if the tile is interesting.
      *
-     * @method Phaser.Tilemaps.Tile#isInteresting
+     * @method Oyun.Tilemaps.Tile#isInteresting
      * @since 3.0.0
      *
      * @param {boolean} collides - If true, will consider the tile interesting if it collides on any side.
@@ -21005,7 +21005,7 @@ var Tile = new Class({
     /**
      * Reset collision status flags.
      *
-     * @method Phaser.Tilemaps.Tile#resetCollision
+     * @method Oyun.Tilemaps.Tile#resetCollision
      * @since 3.0.0
      *
      * @param {boolean} [recalculateFaces=true] - Whether or not to recalculate interesting faces for this tile and its neighbors.
@@ -21042,7 +21042,7 @@ var Tile = new Class({
     /**
      * Reset faces.
      *
-     * @method Phaser.Tilemaps.Tile#resetFaces
+     * @method Oyun.Tilemaps.Tile#resetFaces
      * @since 3.0.0
      *
      * @return {this} This Tile object instance.
@@ -21060,7 +21060,7 @@ var Tile = new Class({
     /**
      * Sets the collision flags for each side of this tile and updates the interesting faces list.
      *
-     * @method Phaser.Tilemaps.Tile#setCollision
+     * @method Oyun.Tilemaps.Tile#setCollision
      * @since 3.0.0
      *
      * @param {boolean} left - Indicating collide with any object on the left.
@@ -21105,7 +21105,7 @@ var Tile = new Class({
      * Set a callback to be called when this tile is hit by an object. The callback must true for
      * collision processing to take place.
      *
-     * @method Phaser.Tilemaps.Tile#setCollisionCallback
+     * @method Oyun.Tilemaps.Tile#setCollisionCallback
      * @since 3.0.0
      *
      * @param {function} callback - Callback function.
@@ -21132,7 +21132,7 @@ var Tile = new Class({
     /**
      * Sets the size of the tile and updates its pixelX and pixelY.
      *
-     * @method Phaser.Tilemaps.Tile#setSize
+     * @method Oyun.Tilemaps.Tile#setSize
      * @since 3.0.0
      *
      * @param {number} tileWidth - The width of the tile in pixels.
@@ -21157,7 +21157,7 @@ var Tile = new Class({
     /**
      * Used internally. Updates the tiles world XY position based on the current tile size.
      *
-     * @method Phaser.Tilemaps.Tile#updatePixelXY
+     * @method Oyun.Tilemaps.Tile#updatePixelXY
      * @since 3.0.0
      *
      * @return {this} This Tile object instance.
@@ -21169,7 +21169,7 @@ var Tile = new Class({
         if (orientation === CONST.ORTHOGONAL)
         {
             //  In orthogonal mode, Tiled places tiles on a grid of baseWidth x baseHeight. The origin for a tile is the
-            //  bottom left, while the Phaser renderer assumes the origin is the top left. The y
+            //  bottom left, while the Oyun renderer assumes the origin is the top left. The y
             //  coordinate needs to be adjusted by the difference.
 
             this.pixelX = this.x * this.baseWidth;
@@ -21206,7 +21206,7 @@ var Tile = new Class({
     /**
      * Clean up memory.
      *
-     * @method Phaser.Tilemaps.Tile#destroy
+     * @method Oyun.Tilemaps.Tile#destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -21219,7 +21219,7 @@ var Tile = new Class({
     /**
      * True if this tile can collide on any of its faces or has a collision callback set.
      *
-     * @name Phaser.Tilemaps.Tile#canCollide
+     * @name Oyun.Tilemaps.Tile#canCollide
      * @type {boolean}
      * @readonly
      * @since 3.0.0
@@ -21236,7 +21236,7 @@ var Tile = new Class({
     /**
      * True if this tile can collide on any of its faces.
      *
-     * @name Phaser.Tilemaps.Tile#collides
+     * @name Oyun.Tilemaps.Tile#collides
      * @type {boolean}
      * @readonly
      * @since 3.0.0
@@ -21253,7 +21253,7 @@ var Tile = new Class({
     /**
      * True if this tile has any interesting faces.
      *
-     * @name Phaser.Tilemaps.Tile#hasInterestingFace
+     * @name Oyun.Tilemaps.Tile#hasInterestingFace
      * @type {boolean}
      * @readonly
      * @since 3.0.0
@@ -21272,8 +21272,8 @@ var Tile = new Class({
      * before the tile is placed in a TilemapLayer, or if the tile has an index that doesn't correspond
      * to any of the maps tilesets.
      *
-     * @name Phaser.Tilemaps.Tile#tileset
-     * @type {?Phaser.Tilemaps.Tileset}
+     * @name Oyun.Tilemaps.Tile#tileset
+     * @type {?Oyun.Tilemaps.Tileset}
      * @readonly
      * @since 3.0.0
      */
@@ -21302,8 +21302,8 @@ var Tile = new Class({
      * The tilemap layer that contains this Tile. This will only return null if accessed from a
      * LayerData instance before the tile is placed within a TilemapLayer.
      *
-     * @name Phaser.Tilemaps.Tile#tilemapLayer
-     * @type {?Phaser.Tilemaps.TilemapLayer}
+     * @name Oyun.Tilemaps.Tile#tilemapLayer
+     * @type {?Oyun.Tilemaps.TilemapLayer}
      * @readonly
      * @since 3.0.0
      */
@@ -21320,8 +21320,8 @@ var Tile = new Class({
      * The tilemap that contains this Tile. This will only return null if accessed from a LayerData
      * instance before the tile is placed within a TilemapLayer.
      *
-     * @name Phaser.Tilemaps.Tile#tilemap
-     * @type {?Phaser.Tilemaps.Tilemap}
+     * @name Oyun.Tilemaps.Tile#tilemap
+     * @type {?Oyun.Tilemaps.Tilemap}
      * @readonly
      * @since 3.0.0
      */
@@ -21354,10 +21354,10 @@ module.exports = Tile;
 /**
  * Returns the center x coordinate from the bounds of the Game Object.
  *
- * @function Phaser.Display.Bounds.GetCenterX
+ * @function Oyun.Display.Bounds.GetCenterX
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
  *
  * @return {number} The center x coordinate of the bounds of the Game Object.
  */
@@ -21382,15 +21382,15 @@ module.exports = GetCenterX;
 /**
  * Positions the Game Object so that the center top of its bounds aligns with the given coordinate.
  *
- * @function Phaser.Display.Bounds.SetCenterX
+ * @function Oyun.Display.Bounds.SetCenterX
  * @since 3.0.0
  *
- * @generic {Phaser.GameObjects.GameObject} G - [gameObject,$return]
+ * @generic {Oyun.GameObjects.GameObject} G - [gameObject,$return]
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
  * @param {number} x - The coordinate to position the Game Object bounds on.
  *
- * @return {Phaser.GameObjects.GameObject} The Game Object that was positioned.
+ * @return {Oyun.GameObjects.GameObject} The Game Object that was positioned.
  */
 var SetCenterX = function (gameObject, x)
 {
@@ -21417,10 +21417,10 @@ module.exports = SetCenterX;
 /**
  * Returns the center y coordinate from the bounds of the Game Object.
  *
- * @function Phaser.Display.Bounds.GetCenterY
+ * @function Oyun.Display.Bounds.GetCenterY
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object to get the bounds value from.
  *
  * @return {number} The center y coordinate of the bounds of the Game Object.
  */
@@ -21445,15 +21445,15 @@ module.exports = GetCenterY;
 /**
  * Positions the Game Object so that the center top of its bounds aligns with the given coordinate.
  *
- * @function Phaser.Display.Bounds.SetCenterY
+ * @function Oyun.Display.Bounds.SetCenterY
  * @since 3.0.0
  *
- * @generic {Phaser.GameObjects.GameObject} G - [gameObject,$return]
+ * @generic {Oyun.GameObjects.GameObject} G - [gameObject,$return]
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object that will be re-positioned.
  * @param {number} y - The coordinate to position the Game Object bounds on.
  *
- * @return {Phaser.GameObjects.GameObject} The Game Object that was positioned.
+ * @return {Oyun.GameObjects.GameObject} The Game Object that was positioned.
  */
 var SetCenterY = function (gameObject, y)
 {
@@ -21478,7 +21478,7 @@ module.exports = SetCenterY;
  */
 
 /**
- * @namespace Phaser.Renderer.Events
+ * @namespace Oyun.Renderer.Events
  */
 
 module.exports = {
@@ -21510,7 +21510,7 @@ var SpliceOne = __webpack_require__(74);
  *
  * You can optionally specify a callback to be invoked for each item successfully removed from the array.
  *
- * @function Phaser.Utils.Array.Remove
+ * @function Oyun.Utils.Array.Remove
  * @since 3.4.0
  *
  * @param {array} array - The array to be modified.
@@ -21602,7 +21602,7 @@ var Vector2 = __webpack_require__(3);
  * Based on the three.js Curve classes created by [zz85](http://www.lab4games.net/zz85/blog)
  *
  * @class Curve
- * @memberof Phaser.Curves
+ * @memberof Oyun.Curves
  * @constructor
  * @since 3.0.0
  *
@@ -21617,7 +21617,7 @@ var Curve = new Class({
         /**
          * String based identifier for the type of curve.
          *
-         * @name Phaser.Curves.Curve#type
+         * @name Oyun.Curves.Curve#type
          * @type {string}
          * @since 3.0.0
          */
@@ -21626,7 +21626,7 @@ var Curve = new Class({
         /**
          * The default number of divisions within the curve.
          *
-         * @name Phaser.Curves.Curve#defaultDivisions
+         * @name Oyun.Curves.Curve#defaultDivisions
          * @type {number}
          * @default 5
          * @since 3.0.0
@@ -21636,7 +21636,7 @@ var Curve = new Class({
         /**
          * The quantity of arc length divisions within the curve.
          *
-         * @name Phaser.Curves.Curve#arcLengthDivisions
+         * @name Oyun.Curves.Curve#arcLengthDivisions
          * @type {number}
          * @default 100
          * @since 3.0.0
@@ -21646,7 +21646,7 @@ var Curve = new Class({
         /**
          * An array of cached arc length values.
          *
-         * @name Phaser.Curves.Curve#cacheArcLengths
+         * @name Oyun.Curves.Curve#cacheArcLengths
          * @type {number[]}
          * @default []
          * @since 3.0.0
@@ -21656,7 +21656,7 @@ var Curve = new Class({
         /**
          * Does the data of this curve need updating?
          *
-         * @name Phaser.Curves.Curve#needsUpdate
+         * @name Oyun.Curves.Curve#needsUpdate
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -21666,7 +21666,7 @@ var Curve = new Class({
         /**
          * For a curve on a Path, `false` means the Path will ignore this curve.
          *
-         * @name Phaser.Curves.Curve#active
+         * @name Oyun.Curves.Curve#active
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -21676,8 +21676,8 @@ var Curve = new Class({
         /**
          * A temporary calculation Vector.
          *
-         * @name Phaser.Curves.Curve#_tmpVec2A
-         * @type {Phaser.Math.Vector2}
+         * @name Oyun.Curves.Curve#_tmpVec2A
+         * @type {Oyun.Math.Vector2}
          * @private
          * @since 3.0.0
          */
@@ -21686,8 +21686,8 @@ var Curve = new Class({
         /**
          * A temporary calculation Vector.
          *
-         * @name Phaser.Curves.Curve#_tmpVec2B
-         * @type {Phaser.Math.Vector2}
+         * @name Oyun.Curves.Curve#_tmpVec2B
+         * @type {Oyun.Math.Vector2}
          * @private
          * @since 3.0.0
          */
@@ -21700,15 +21700,15 @@ var Curve = new Class({
      * The curve is drawn using `Graphics.strokePoints` so will be drawn at whatever the present Graphics stroke color is.
      * The Graphics object is not cleared before the draw, so the curve will appear on-top of anything else already rendered to it.
      *
-     * @method Phaser.Curves.Curve#draw
+     * @method Oyun.Curves.Curve#draw
      * @since 3.0.0
      *
-     * @generic {Phaser.GameObjects.Graphics} G - [graphics,$return]
+     * @generic {Oyun.GameObjects.Graphics} G - [graphics,$return]
      *
-     * @param {Phaser.GameObjects.Graphics} graphics - The Graphics instance onto which this curve will be drawn.
+     * @param {Oyun.GameObjects.Graphics} graphics - The Graphics instance onto which this curve will be drawn.
      * @param {number} [pointsTotal=32] - The resolution of the curve. The higher the value the smoother it will render, at the cost of rendering performance.
      *
-     * @return {Phaser.GameObjects.Graphics} The Graphics object to which the curve was drawn.
+     * @return {Oyun.GameObjects.Graphics} The Graphics object to which the curve was drawn.
      */
     draw: function (graphics, pointsTotal)
     {
@@ -21724,13 +21724,13 @@ var Curve = new Class({
      * You can control the accuracy of the bounds. The value given is used to work out how many points
      * to plot across the curve. Higher values are more accurate at the cost of calculation speed.
      *
-     * @method Phaser.Curves.Curve#getBounds
+     * @method Oyun.Curves.Curve#getBounds
      * @since 3.0.0
      *
-     * @param {Phaser.Geom.Rectangle} [out] - The Rectangle to store the bounds in. If falsey a new object will be created.
+     * @param {Oyun.Geom.Rectangle} [out] - The Rectangle to store the bounds in. If falsey a new object will be created.
      * @param {number} [accuracy=16] - The accuracy of the bounds calculations.
      *
-     * @return {Phaser.Geom.Rectangle} A Rectangle object holding the bounds of this curve. If `out` was given it will be this object.
+     * @return {Oyun.Geom.Rectangle} A Rectangle object holding the bounds of this curve. If `out` was given it will be this object.
      */
     getBounds: function (out, accuracy)
     {
@@ -21756,12 +21756,12 @@ var Curve = new Class({
      * Returns an array of points, spaced out X distance pixels apart.
      * The smaller the distance, the larger the array will be.
      *
-     * @method Phaser.Curves.Curve#getDistancePoints
+     * @method Oyun.Curves.Curve#getDistancePoints
      * @since 3.0.0
      *
      * @param {number} distance - The distance, in pixels, between each point along the curve.
      *
-     * @return {Phaser.Geom.Point[]} An Array of Point objects.
+     * @return {Oyun.Geom.Point[]} An Array of Point objects.
      */
     getDistancePoints: function (distance)
     {
@@ -21775,12 +21775,12 @@ var Curve = new Class({
     /**
      * Get a point at the end of the curve.
      *
-     * @method Phaser.Curves.Curve#getEndPoint
+     * @method Oyun.Curves.Curve#getEndPoint
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector2} [out] - Optional Vector object to store the result in.
+     * @param {Oyun.Math.Vector2} [out] - Optional Vector object to store the result in.
      *
-     * @return {Phaser.Math.Vector2} Vector2 containing the coordinates of the curves end point.
+     * @return {Oyun.Math.Vector2} Vector2 containing the coordinates of the curves end point.
      */
     getEndPoint: function (out)
     {
@@ -21792,7 +21792,7 @@ var Curve = new Class({
     /**
      * Get total curve arc length
      *
-     * @method Phaser.Curves.Curve#getLength
+     * @method Oyun.Curves.Curve#getLength
      * @since 3.0.0
      *
      * @return {number} The total length of the curve.
@@ -21816,7 +21816,7 @@ var Curve = new Class({
      * - ...
      * - [divisions] All segments
      *
-     * @method Phaser.Curves.Curve#getLengths
+     * @method Oyun.Curves.Curve#getLengths
      * @since 3.0.0
      *
      * @param {number} [divisions] - The number of divisions or segments.
@@ -21864,15 +21864,15 @@ var Curve = new Class({
     /**
      * Get a point at a relative position on the curve, by arc length.
      *
-     * @method Phaser.Curves.Curve#getPointAt
+     * @method Oyun.Curves.Curve#getPointAt
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [out,$return]
+     * @generic {Oyun.Math.Vector2} O - [out,$return]
      *
      * @param {number} u - The relative position, [0..1].
-     * @param {Phaser.Math.Vector2} [out] - A point to store the result in.
+     * @param {Oyun.Math.Vector2} [out] - A point to store the result in.
      *
-     * @return {Phaser.Math.Vector2} The point.
+     * @return {Oyun.Math.Vector2} The point.
      */
     getPointAt: function (u, out)
     {
@@ -21896,16 +21896,16 @@ var Curve = new Class({
      *
      * `1 + divisions` points will be returned.
      *
-     * @method Phaser.Curves.Curve#getPoints
+     * @method Oyun.Curves.Curve#getPoints
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2[]} O - [out,$return]
+     * @generic {Oyun.Math.Vector2[]} O - [out,$return]
      *
      * @param {number} [divisions] - The number of divisions to make.
      * @param {number} [stepRate] - The curve distance between points, implying `divisions`.
-     * @param {(array|Phaser.Math.Vector2[])} [out] - An optional array to store the points in.
+     * @param {(array|Oyun.Math.Vector2[])} [out] - An optional array to store the points in.
      *
-     * @return {(array|Phaser.Math.Vector2[])} An array of Points from the curve.
+     * @return {(array|Oyun.Math.Vector2[])} An array of Points from the curve.
      */
     getPoints: function (divisions, stepRate, out)
     {
@@ -21935,14 +21935,14 @@ var Curve = new Class({
     /**
      * Get a random point from the curve.
      *
-     * @method Phaser.Curves.Curve#getRandomPoint
+     * @method Oyun.Curves.Curve#getRandomPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [out,$return]
+     * @generic {Oyun.Math.Vector2} O - [out,$return]
      *
-     * @param {Phaser.Math.Vector2} [out] - A point object to store the result in.
+     * @param {Oyun.Math.Vector2} [out] - A point object to store the result in.
      *
-     * @return {Phaser.Math.Vector2} The point.
+     * @return {Oyun.Math.Vector2} The point.
      */
     getRandomPoint: function (out)
     {
@@ -21958,14 +21958,14 @@ var Curve = new Class({
      *
      * `1 + divisions` points will be returned.
      *
-     * @method Phaser.Curves.Curve#getSpacedPoints
+     * @method Oyun.Curves.Curve#getSpacedPoints
      * @since 3.0.0
      *
      * @param {number} [divisions=this.defaultDivisions] - The number of divisions to make.
      * @param {number} [stepRate] - Step between points. Used to calculate the number of points to return when divisions is falsy. Ignored if divisions is positive.
-     * @param {(array|Phaser.Math.Vector2[])} [out] - An optional array to store the points in.
+     * @param {(array|Oyun.Math.Vector2[])} [out] - An optional array to store the points in.
      *
-     * @return {Phaser.Math.Vector2[]} An array of points.
+     * @return {Oyun.Math.Vector2[]} An array of points.
      */
     getSpacedPoints: function (divisions, stepRate, out)
     {
@@ -21997,14 +21997,14 @@ var Curve = new Class({
     /**
      * Get a point at the start of the curve.
      *
-     * @method Phaser.Curves.Curve#getStartPoint
+     * @method Oyun.Curves.Curve#getStartPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [out,$return]
+     * @generic {Oyun.Math.Vector2} O - [out,$return]
      *
-     * @param {Phaser.Math.Vector2} [out] - A point to store the result in.
+     * @param {Oyun.Math.Vector2} [out] - A point to store the result in.
      *
-     * @return {Phaser.Math.Vector2} The point.
+     * @return {Oyun.Math.Vector2} The point.
      */
     getStartPoint: function (out)
     {
@@ -22019,15 +22019,15 @@ var Curve = new Class({
      * 2 points a small delta apart will be used to find its gradient
      * which seems to give a reasonable approximation
      *
-     * @method Phaser.Curves.Curve#getTangent
+     * @method Oyun.Curves.Curve#getTangent
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [out,$return]
+     * @generic {Oyun.Math.Vector2} O - [out,$return]
      *
      * @param {number} t - The relative position on the curve, [0..1].
-     * @param {Phaser.Math.Vector2} [out] - A vector to store the result in.
+     * @param {Oyun.Math.Vector2} [out] - A vector to store the result in.
      *
-     * @return {Phaser.Math.Vector2} Vector approximating the tangent line at the point t (delta +/- 0.0001)
+     * @return {Oyun.Math.Vector2} Vector approximating the tangent line at the point t (delta +/- 0.0001)
      */
     getTangent: function (t, out)
     {
@@ -22058,15 +22058,15 @@ var Curve = new Class({
     /**
      * Get a unit vector tangent at a relative position on the curve, by arc length.
      *
-     * @method Phaser.Curves.Curve#getTangentAt
+     * @method Oyun.Curves.Curve#getTangentAt
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [out,$return]
+     * @generic {Oyun.Math.Vector2} O - [out,$return]
      *
      * @param {number} u - The relative position on the curve, [0..1].
-     * @param {Phaser.Math.Vector2} [out] - A vector to store the result in.
+     * @param {Oyun.Math.Vector2} [out] - A vector to store the result in.
      *
-     * @return {Phaser.Math.Vector2} The tangent vector.
+     * @return {Oyun.Math.Vector2} The tangent vector.
      */
     getTangentAt: function (u, out)
     {
@@ -22078,7 +22078,7 @@ var Curve = new Class({
     /**
      * Given a distance in pixels, get a t to find p.
      *
-     * @method Phaser.Curves.Curve#getTFromDistance
+     * @method Oyun.Curves.Curve#getTFromDistance
      * @since 3.0.0
      *
      * @param {number} distance - The distance, in pixels.
@@ -22099,7 +22099,7 @@ var Curve = new Class({
     /**
      * Given u ( 0 .. 1 ), get a t to find p. This gives you points which are equidistant.
      *
-     * @method Phaser.Curves.Curve#getUtoTmapping
+     * @method Oyun.Curves.Curve#getUtoTmapping
      * @since 3.0.0
      *
      * @param {number} u - A float between 0 and 1.
@@ -22180,10 +22180,10 @@ var Curve = new Class({
     /**
      * Calculate and cache the arc lengths.
      *
-     * @method Phaser.Curves.Curve#updateArcLengths
+     * @method Oyun.Curves.Curve#updateArcLengths
      * @since 3.0.0
      *
-     * @see Phaser.Curves.Curve#getLengths()
+     * @see Oyun.Curves.Curve#getLengths()
      */
     updateArcLengths: function ()
     {
@@ -22208,7 +22208,7 @@ module.exports = Curve;
  */
 
 /**
- * @namespace Phaser.Loader.Events
+ * @namespace Oyun.Loader.Events
  */
 
 module.exports = {
@@ -22245,12 +22245,12 @@ var Point = __webpack_require__(4);
 /**
  * Checks if two Lines intersect. If the Lines are identical, they will be treated as parallel and thus non-intersecting.
  *
- * @function Phaser.Geom.Intersects.LineToLine
+ * @function Oyun.Geom.Intersects.LineToLine
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Line} line1 - The first Line to check.
- * @param {Phaser.Geom.Line} line2 - The second Line to check.
- * @param {Phaser.Geom.Point} [out] - A Point in which to optionally store the point of intersection.
+ * @param {Oyun.Geom.Line} line1 - The first Line to check.
+ * @param {Oyun.Geom.Line} line2 - The second Line to check.
+ * @param {Oyun.Geom.Point} [out] - A Point in which to optionally store the point of intersection.
  *
  * @return {boolean} `true` if the two Lines intersect, and the `out` object will be populated, if given. Otherwise, `false`.
  */
@@ -22316,10 +22316,10 @@ module.exports = LineToLine;
 /**
  * Calculate the angle of the line in radians.
  *
- * @function Phaser.Geom.Line.Angle
+ * @function Oyun.Geom.Line.Angle
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Line} line - The line to calculate the angle of.
+ * @param {Oyun.Geom.Line} line - The line to calculate the angle of.
  *
  * @return {number} The angle of the line, in radians.
  */
@@ -22807,7 +22807,7 @@ var Clamp = __webpack_require__(18);
 /**
  * Return a value based on the range between `min` and `max` and the percentage given.
  *
- * @function Phaser.Math.FromPercent
+ * @function Oyun.Math.FromPercent
  * @since 3.0.0
  *
  * @param {number} percent - A value between 0 and 1 representing the percentage.
@@ -22839,7 +22839,7 @@ module.exports = FromPercent;
 /**
  * Retrieves the value of the given key from an object.
  *
- * @function Phaser.Tweens.Builders.GetBoolean
+ * @function Oyun.Tweens.Builders.GetBoolean
  * @since 3.0.0
  *
  * @param {object} source - The object to retrieve the value from.
@@ -22882,7 +22882,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.CREATED
+     * @name Oyun.Tweens.CREATED
      * @type {number}
      * @since 3.0.0
      */
@@ -22891,7 +22891,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.INIT
+     * @name Oyun.Tweens.INIT
      * @type {number}
      * @since 3.0.0
      */
@@ -22900,7 +22900,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.DELAY
+     * @name Oyun.Tweens.DELAY
      * @type {number}
      * @since 3.0.0
      */
@@ -22909,7 +22909,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.OFFSET_DELAY
+     * @name Oyun.Tweens.OFFSET_DELAY
      * @type {number}
      * @since 3.0.0
      */
@@ -22918,7 +22918,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.PENDING_RENDER
+     * @name Oyun.Tweens.PENDING_RENDER
      * @type {number}
      * @since 3.0.0
      */
@@ -22927,7 +22927,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.PLAYING_FORWARD
+     * @name Oyun.Tweens.PLAYING_FORWARD
      * @type {number}
      * @since 3.0.0
      */
@@ -22936,7 +22936,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.PLAYING_BACKWARD
+     * @name Oyun.Tweens.PLAYING_BACKWARD
      * @type {number}
      * @since 3.0.0
      */
@@ -22945,7 +22945,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.HOLD_DELAY
+     * @name Oyun.Tweens.HOLD_DELAY
      * @type {number}
      * @since 3.0.0
      */
@@ -22954,7 +22954,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.REPEAT_DELAY
+     * @name Oyun.Tweens.REPEAT_DELAY
      * @type {number}
      * @since 3.0.0
      */
@@ -22963,7 +22963,7 @@ var TWEEN_CONST = {
     /**
      * TweenData state.
      * 
-     * @name Phaser.Tweens.COMPLETE
+     * @name Oyun.Tweens.COMPLETE
      * @type {number}
      * @since 3.0.0
      */
@@ -22974,7 +22974,7 @@ var TWEEN_CONST = {
     /**
      * Tween state.
      * 
-     * @name Phaser.Tweens.PENDING_ADD
+     * @name Oyun.Tweens.PENDING_ADD
      * @type {number}
      * @since 3.0.0
      */
@@ -22983,7 +22983,7 @@ var TWEEN_CONST = {
     /**
      * Tween state.
      * 
-     * @name Phaser.Tweens.PAUSED
+     * @name Oyun.Tweens.PAUSED
      * @type {number}
      * @since 3.0.0
      */
@@ -22992,7 +22992,7 @@ var TWEEN_CONST = {
     /**
      * Tween state.
      * 
-     * @name Phaser.Tweens.LOOP_DELAY
+     * @name Oyun.Tweens.LOOP_DELAY
      * @type {number}
      * @since 3.0.0
      */
@@ -23001,7 +23001,7 @@ var TWEEN_CONST = {
     /**
      * Tween state.
      * 
-     * @name Phaser.Tweens.ACTIVE
+     * @name Oyun.Tweens.ACTIVE
      * @type {number}
      * @since 3.0.0
      */
@@ -23010,7 +23010,7 @@ var TWEEN_CONST = {
     /**
      * Tween state.
      * 
-     * @name Phaser.Tweens.COMPLETE_DELAY
+     * @name Oyun.Tweens.COMPLETE_DELAY
      * @type {number}
      * @since 3.0.0
      */
@@ -23019,7 +23019,7 @@ var TWEEN_CONST = {
     /**
      * Tween state.
      * 
-     * @name Phaser.Tweens.PENDING_REMOVE
+     * @name Oyun.Tweens.PENDING_REMOVE
      * @type {number}
      * @since 3.0.0
      */
@@ -23028,7 +23028,7 @@ var TWEEN_CONST = {
     /**
      * Tween state.
      * 
-     * @name Phaser.Tweens.REMOVED
+     * @name Oyun.Tweens.REMOVED
      * @type {number}
      * @since 3.0.0
      */
@@ -23068,12 +23068,12 @@ var Events = __webpack_require__(309);
  * or have a property called `events` that is an instance of it.
  *
  * @class DataManager
- * @memberof Phaser.Data
+ * @memberof Oyun.Data
  * @constructor
  * @since 3.0.0
  *
  * @param {object} parent - The object that this DataManager belongs to.
- * @param {Phaser.Events.EventEmitter} [eventEmitter] - The DataManager's event emitter.
+ * @param {Oyun.Events.EventEmitter} [eventEmitter] - The DataManager's event emitter.
  */
 var DataManager = new Class({
 
@@ -23084,7 +23084,7 @@ var DataManager = new Class({
         /**
          * The object that this DataManager belongs to.
          *
-         * @name Phaser.Data.DataManager#parent
+         * @name Oyun.Data.DataManager#parent
          * @type {*}
          * @since 3.0.0
          */
@@ -23093,8 +23093,8 @@ var DataManager = new Class({
         /**
          * The DataManager's event emitter.
          *
-         * @name Phaser.Data.DataManager#events
-         * @type {Phaser.Events.EventEmitter}
+         * @name Oyun.Data.DataManager#events
+         * @type {Oyun.Events.EventEmitter}
          * @since 3.0.0
          */
         this.events = eventEmitter;
@@ -23107,7 +23107,7 @@ var DataManager = new Class({
         /**
          * The data list.
          *
-         * @name Phaser.Data.DataManager#list
+         * @name Oyun.Data.DataManager#list
          * @type {Object.<string, *>}
          * @default {}
          * @since 3.0.0
@@ -23134,7 +23134,7 @@ var DataManager = new Class({
          * Do not modify this object directly. Adding properties directly to this object will not
          * emit any events. Always use `DataManager.set` to create new items the first time around.
          *
-         * @name Phaser.Data.DataManager#values
+         * @name Oyun.Data.DataManager#values
          * @type {Object.<string, *>}
          * @default {}
          * @since 3.10.0
@@ -23144,7 +23144,7 @@ var DataManager = new Class({
         /**
          * Whether setting data is frozen for this DataManager.
          *
-         * @name Phaser.Data.DataManager#_frozen
+         * @name Oyun.Data.DataManager#_frozen
          * @type {boolean}
          * @private
          * @default false
@@ -23181,7 +23181,7 @@ var DataManager = new Class({
      *
      * This approach is useful for destructuring arrays in ES6.
      *
-     * @method Phaser.Data.DataManager#get
+     * @method Oyun.Data.DataManager#get
      * @since 3.0.0
      *
      * @param {(string|string[])} key - The key of the value to retrieve, or an array of keys.
@@ -23212,7 +23212,7 @@ var DataManager = new Class({
     /**
      * Retrieves all data values in a new object.
      *
-     * @method Phaser.Data.DataManager#getAll
+     * @method Oyun.Data.DataManager#getAll
      * @since 3.0.0
      *
      * @return {Object.<string, *>} All data values.
@@ -23235,7 +23235,7 @@ var DataManager = new Class({
     /**
      * Queries the DataManager for the values of keys matching the given regular expression.
      *
-     * @method Phaser.Data.DataManager#query
+     * @method Oyun.Data.DataManager#query
      * @since 3.0.0
      *
      * @param {RegExp} search - A regular expression object. If a non-RegExp object obj is passed, it is implicitly converted to a RegExp by using new RegExp(obj).
@@ -23291,10 +23291,10 @@ var DataManager = new Class({
      * Please note that the data keys are case-sensitive and must be valid JavaScript Object property strings.
      * This means the keys `gold` and `Gold` are treated as two unique values within the Data Manager.
      *
-     * @method Phaser.Data.DataManager#set
-     * @fires Phaser.Data.Events#SET_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA_KEY
+     * @method Oyun.Data.DataManager#set
+     * @fires Oyun.Data.Events#SET_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA_KEY
      * @since 3.0.0
      *
      * @param {(string|object)} key - The key to set the value for. Or an object or key value pairs. If an object the `data` argument is ignored.
@@ -23329,16 +23329,16 @@ var DataManager = new Class({
      *
      * When the value is first set, a `setdata` event is emitted.
      *
-     * @method Phaser.Data.DataManager#inc
-     * @fires Phaser.Data.Events#SET_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA_KEY
+     * @method Oyun.Data.DataManager#inc
+     * @fires Oyun.Data.Events#SET_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA_KEY
      * @since 3.23.0
      *
      * @param {(string|object)} key - The key to increase the value for.
      * @param {*} [data] - The value to increase for the given key.
      *
-     * @return {Phaser.Data.DataManager} This DataManager object.
+     * @return {Oyun.Data.DataManager} This DataManager object.
      */
     inc: function (key, data)
     {
@@ -23368,15 +23368,15 @@ var DataManager = new Class({
      *
      * When the value is first set, a `setdata` event is emitted.
      *
-     * @method Phaser.Data.DataManager#toggle
-     * @fires Phaser.Data.Events#SET_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA_KEY
+     * @method Oyun.Data.DataManager#toggle
+     * @fires Oyun.Data.Events#SET_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA_KEY
      * @since 3.23.0
      *
      * @param {(string|object)} key - The key to toggle the value for.
      *
-     * @return {Phaser.Data.DataManager} This DataManager object.
+     * @return {Oyun.Data.DataManager} This DataManager object.
      */
     toggle: function (key)
     {
@@ -23393,10 +23393,10 @@ var DataManager = new Class({
     /**
      * Internal value setter, called automatically by the `set` method.
      *
-     * @method Phaser.Data.DataManager#setValue
-     * @fires Phaser.Data.Events#SET_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA_KEY
+     * @method Oyun.Data.DataManager#setValue
+     * @fires Oyun.Data.Events#SET_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA_KEY
      * @private
      * @since 3.10.0
      *
@@ -23460,7 +23460,7 @@ var DataManager = new Class({
     /**
      * Passes all data entries to the given callback.
      *
-     * @method Phaser.Data.DataManager#each
+     * @method Oyun.Data.DataManager#each
      * @since 3.0.0
      *
      * @param {DataEachCallback} callback - The function to call.
@@ -23495,10 +23495,10 @@ var DataManager = new Class({
      * Any newly created values will emit a `setdata` event. Any updated values (see the `overwrite` argument)
      * will emit a `changedata` event.
      *
-     * @method Phaser.Data.DataManager#merge
-     * @fires Phaser.Data.Events#SET_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA
-     * @fires Phaser.Data.Events#CHANGE_DATA_KEY
+     * @method Oyun.Data.DataManager#merge
+     * @fires Oyun.Data.Events#SET_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA
+     * @fires Oyun.Data.Events#CHANGE_DATA_KEY
      * @since 3.0.0
      *
      * @param {Object.<string, *>} data - The data to merge.
@@ -23534,8 +23534,8 @@ var DataManager = new Class({
      * this.data.remove([ 'gold', 'armor', 'health' ]);
      * ```
      *
-     * @method Phaser.Data.DataManager#remove
-     * @fires Phaser.Data.Events#REMOVE_DATA
+     * @method Oyun.Data.DataManager#remove
+     * @fires Oyun.Data.Events#REMOVE_DATA
      * @since 3.0.0
      *
      * @param {(string|string[])} key - The key to remove, or an array of keys to remove.
@@ -23567,9 +23567,9 @@ var DataManager = new Class({
     /**
      * Internal value remover, called automatically by the `remove` method.
      *
-     * @method Phaser.Data.DataManager#removeValue
+     * @method Oyun.Data.DataManager#removeValue
      * @private
-     * @fires Phaser.Data.Events#REMOVE_DATA
+     * @fires Oyun.Data.Events#REMOVE_DATA
      * @since 3.10.0
      *
      * @param {string} key - The key to set the value for.
@@ -23594,8 +23594,8 @@ var DataManager = new Class({
     /**
      * Retrieves the data associated with the given 'key', deletes it from this Data Manager, then returns it.
      *
-     * @method Phaser.Data.DataManager#pop
-     * @fires Phaser.Data.Events#REMOVE_DATA
+     * @method Oyun.Data.DataManager#pop
+     * @fires Oyun.Data.Events#REMOVE_DATA
      * @since 3.0.0
      *
      * @param {string} key - The key of the value to retrieve and delete.
@@ -23625,7 +23625,7 @@ var DataManager = new Class({
      * Please note that the keys are case-sensitive and must be valid JavaScript Object property strings.
      * This means the keys `gold` and `Gold` are treated as two unique values within the Data Manager.
      *
-     * @method Phaser.Data.DataManager#has
+     * @method Oyun.Data.DataManager#has
      * @since 3.0.0
      *
      * @param {string} key - The key to check.
@@ -23641,7 +23641,7 @@ var DataManager = new Class({
      * Freeze or unfreeze this Data Manager. A frozen Data Manager will block all attempts
      * to create new values or update existing ones.
      *
-     * @method Phaser.Data.DataManager#setFreeze
+     * @method Oyun.Data.DataManager#setFreeze
      * @since 3.0.0
      *
      * @param {boolean} value - Whether to freeze or unfreeze the Data Manager.
@@ -23658,7 +23658,7 @@ var DataManager = new Class({
     /**
      * Delete all data in this Data Manager and unfreeze it.
      *
-     * @method Phaser.Data.DataManager#reset
+     * @method Oyun.Data.DataManager#reset
      * @since 3.0.0
      *
      * @return {this} This DataManager object.
@@ -23679,7 +23679,7 @@ var DataManager = new Class({
     /**
      * Destroy this data manager.
      *
-     * @method Phaser.Data.DataManager#destroy
+     * @method Oyun.Data.DataManager#destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -23697,7 +23697,7 @@ var DataManager = new Class({
      * Gets or sets the frozen state of this Data Manager.
      * A frozen Data Manager will block all attempts to create new values or update existing ones.
      *
-     * @name Phaser.Data.DataManager#freeze
+     * @name Oyun.Data.DataManager#freeze
      * @type {boolean}
      * @since 3.0.0
      */
@@ -23718,7 +23718,7 @@ var DataManager = new Class({
     /**
      * Return the total number of entries in this Data Manager.
      *
-     * @name Phaser.Data.DataManager#count
+     * @name Oyun.Data.DataManager#count
      * @type {number}
      * @since 3.0.0
      */
@@ -23780,7 +23780,7 @@ var Class = __webpack_require__(0);
  * ```
  *
  * @class Map
- * @memberof Phaser.Structs
+ * @memberof Oyun.Structs
  * @constructor
  * @since 3.0.0
  *
@@ -23801,7 +23801,7 @@ var Map = new Class({
          *
          * @genericUse {Object.<string, V>} - [$type]
          *
-         * @name Phaser.Structs.Map#entries
+         * @name Oyun.Structs.Map#entries
          * @type {Object.<string, *>}
          * @default {}
          * @since 3.0.0
@@ -23811,7 +23811,7 @@ var Map = new Class({
         /**
          * The number of key / value pairs in this Map.
          *
-         * @name Phaser.Structs.Map#size
+         * @name Oyun.Structs.Map#size
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -23831,17 +23831,17 @@ var Map = new Class({
      * Adds an element with a specified `key` and `value` to this Map.
      * If the `key` already exists, the value will be replaced.
      *
-     * @method Phaser.Structs.Map#set
+     * @method Oyun.Structs.Map#set
      * @since 3.0.0
      *
      * @genericUse {K} - [key]
      * @genericUse {V} - [value]
-     * @genericUse {Phaser.Structs.Map.<K, V>} - [$return]
+     * @genericUse {Oyun.Structs.Map.<K, V>} - [$return]
      *
      * @param {string} key - The key of the element to be added to this Map.
      * @param {*} value - The value of the element to be added to this Map.
      *
-     * @return {Phaser.Structs.Map} This Map object.
+     * @return {Oyun.Structs.Map} This Map object.
      */
     set: function (key, value)
     {
@@ -23858,7 +23858,7 @@ var Map = new Class({
     /**
      * Returns the value associated to the `key`, or `undefined` if there is none.
      *
-     * @method Phaser.Structs.Map#get
+     * @method Oyun.Structs.Map#get
      * @since 3.0.0
      *
      * @genericUse {K} - [key]
@@ -23879,7 +23879,7 @@ var Map = new Class({
     /**
      * Returns an `Array` of all the values stored in this Map.
      *
-     * @method Phaser.Structs.Map#getArray
+     * @method Oyun.Structs.Map#getArray
      * @since 3.0.0
      *
      * @genericUse {V[]} - [$return]
@@ -23902,7 +23902,7 @@ var Map = new Class({
     /**
      * Returns a boolean indicating whether an element with the specified key exists or not.
      *
-     * @method Phaser.Structs.Map#has
+     * @method Oyun.Structs.Map#has
      * @since 3.0.0
      *
      * @genericUse {K} - [key]
@@ -23919,15 +23919,15 @@ var Map = new Class({
     /**
      * Delete the specified element from this Map.
      *
-     * @method Phaser.Structs.Map#delete
+     * @method Oyun.Structs.Map#delete
      * @since 3.0.0
      *
      * @genericUse {K} - [key]
-     * @genericUse {Phaser.Structs.Map.<K, V>} - [$return]
+     * @genericUse {Oyun.Structs.Map.<K, V>} - [$return]
      *
      * @param {string} key - The key of the element to delete from this Map.
      *
-     * @return {Phaser.Structs.Map} This Map object.
+     * @return {Oyun.Structs.Map} This Map object.
      */
     delete: function (key)
     {
@@ -23943,12 +23943,12 @@ var Map = new Class({
     /**
      * Delete all entries from this Map.
      *
-     * @method Phaser.Structs.Map#clear
+     * @method Oyun.Structs.Map#clear
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.Map.<K, V>} - [$return]
+     * @genericUse {Oyun.Structs.Map.<K, V>} - [$return]
      *
-     * @return {Phaser.Structs.Map} This Map object.
+     * @return {Oyun.Structs.Map} This Map object.
      */
     clear: function ()
     {
@@ -23966,7 +23966,7 @@ var Map = new Class({
     /**
      * Returns all entries keys in this Map.
      *
-     * @method Phaser.Structs.Map#keys
+     * @method Oyun.Structs.Map#keys
      * @since 3.0.0
      *
      * @genericUse {K[]} - [$return]
@@ -23981,7 +23981,7 @@ var Map = new Class({
     /**
      * Returns an `Array` of all entries.
      *
-     * @method Phaser.Structs.Map#values
+     * @method Oyun.Structs.Map#values
      * @since 3.0.0
      *
      * @genericUse {V[]} - [$return]
@@ -24004,7 +24004,7 @@ var Map = new Class({
     /**
      * Dumps the contents of this Map to the console via `console.group`.
      *
-     * @method Phaser.Structs.Map#dump
+     * @method Oyun.Structs.Map#dump
      * @since 3.0.0
      */
     dump: function ()
@@ -24028,15 +24028,15 @@ var Map = new Class({
      *
      * If the callback returns `false`, the iteration will break.
      *
-     * @method Phaser.Structs.Map#each
+     * @method Oyun.Structs.Map#each
      * @since 3.0.0
      *
      * @genericUse {EachMapCallback.<V>} - [callback]
-     * @genericUse {Phaser.Structs.Map.<K, V>} - [$return]
+     * @genericUse {Oyun.Structs.Map.<K, V>} - [$return]
      *
      * @param {EachMapCallback} callback - The callback which will receive the keys and entries held in this Map.
      *
-     * @return {Phaser.Structs.Map} This Map object.
+     * @return {Oyun.Structs.Map} This Map object.
      */
     each: function (callback)
     {
@@ -24056,7 +24056,7 @@ var Map = new Class({
     /**
      * Returns `true` if the value exists within this Map. Otherwise, returns `false`.
      *
-     * @method Phaser.Structs.Map#contains
+     * @method Oyun.Structs.Map#contains
      * @since 3.0.0
      *
      * @genericUse {V} - [value]
@@ -24084,15 +24084,15 @@ var Map = new Class({
      * Merges all new keys from the given Map into this one.
      * If it encounters a key that already exists it will be skipped unless override is set to `true`.
      *
-     * @method Phaser.Structs.Map#merge
+     * @method Oyun.Structs.Map#merge
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.Map.<K, V>} - [map,$return]
+     * @genericUse {Oyun.Structs.Map.<K, V>} - [map,$return]
      *
-     * @param {Phaser.Structs.Map} map - The Map to merge in to this Map.
+     * @param {Oyun.Structs.Map} map - The Map to merge in to this Map.
      * @param {boolean} [override=false] - Set to `true` to replace values in this Map with those from the source map, or `false` to skip them.
      *
-     * @return {Phaser.Structs.Map} This Map object.
+     * @return {Oyun.Structs.Map} This Map object.
      */
     merge: function (map, override)
     {
@@ -24134,7 +24134,7 @@ module.exports = Map;
 /**
  * Given 3 separate color values this will return an integer representation of it.
  *
- * @function Phaser.Display.Color.GetColor
+ * @function Oyun.Display.Color.GetColor
  * @since 3.0.0
  *
  * @param {number} red - The red color value. A number between 0 and 255.
@@ -24162,7 +24162,7 @@ module.exports = GetColor;
  */
 
 /**
- * @namespace Phaser.Scale.Events
+ * @namespace Oyun.Scale.Events
  */
 
 module.exports = {
@@ -24188,12 +24188,12 @@ module.exports = {
  */
 
 /**
- * Determines the operating system of the device running this Phaser Game instance.
+ * Determines the operating system of the device running this Oyun Game instance.
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.os` from within any Scene.
  *
- * @typedef {object} Phaser.Device.OS
+ * @typedef {object} Oyun.Device.OS
  * @since 3.0.0
  *
  * @property {boolean} android - Is running on android?
@@ -24373,7 +24373,7 @@ module.exports = init();
  */
 
 /**
- * @namespace Phaser.Textures.Events
+ * @namespace Oyun.Textures.Events
  */
 
 module.exports = {
@@ -24402,8 +24402,8 @@ var WEBGL_CONST = {
     /**
      * 	8-bit twos complement signed integer.
      *
-     * @name Phaser.Renderer.WebGL.BYTE
-     * @type {Phaser.Types.Renderer.WebGL.WebGLConst}
+     * @name Oyun.Renderer.WebGL.BYTE
+     * @type {Oyun.Types.Renderer.WebGL.WebGLConst}
      * @since 3.50.0
      */
     BYTE: { enum: 0x1400, size: 1 },
@@ -24411,8 +24411,8 @@ var WEBGL_CONST = {
     /**
      * 8-bit twos complement unsigned integer.
      *
-     * @name Phaser.Renderer.WebGL.UNSIGNED_BYTE
-     * @type {Phaser.Types.Renderer.WebGL.WebGLConst}
+     * @name Oyun.Renderer.WebGL.UNSIGNED_BYTE
+     * @type {Oyun.Types.Renderer.WebGL.WebGLConst}
      * @since 3.50.0
      */
     UNSIGNED_BYTE: { enum: 0x1401, size: 1 },
@@ -24420,8 +24420,8 @@ var WEBGL_CONST = {
     /**
      * 16-bit twos complement signed integer.
      *
-     * @name Phaser.Renderer.WebGL.SHORT
-     * @type {Phaser.Types.Renderer.WebGL.WebGLConst}
+     * @name Oyun.Renderer.WebGL.SHORT
+     * @type {Oyun.Types.Renderer.WebGL.WebGLConst}
      * @since 3.50.0
      */
     SHORT: { enum: 0x1402, size: 2 },
@@ -24429,8 +24429,8 @@ var WEBGL_CONST = {
     /**
      * 16-bit twos complement unsigned integer.
      *
-     * @name Phaser.Renderer.WebGL.UNSIGNED_SHORT
-     * @type {Phaser.Types.Renderer.WebGL.WebGLConst}
+     * @name Oyun.Renderer.WebGL.UNSIGNED_SHORT
+     * @type {Oyun.Types.Renderer.WebGL.WebGLConst}
      * @since 3.50.0
      */
     UNSIGNED_SHORT: { enum: 0x1403, size: 2 },
@@ -24438,8 +24438,8 @@ var WEBGL_CONST = {
     /**
      * 32-bit twos complement signed integer.
      *
-     * @name Phaser.Renderer.WebGL.INT
-     * @type {Phaser.Types.Renderer.WebGL.WebGLConst}
+     * @name Oyun.Renderer.WebGL.INT
+     * @type {Oyun.Types.Renderer.WebGL.WebGLConst}
      * @since 3.50.0
      */
     INT: { enum: 0x1404, size: 4 },
@@ -24447,8 +24447,8 @@ var WEBGL_CONST = {
     /**
      * 32-bit twos complement unsigned integer.
      *
-     * @name Phaser.Renderer.WebGL.UNSIGNED_INT
-     * @type {Phaser.Types.Renderer.WebGL.WebGLConst}
+     * @name Oyun.Renderer.WebGL.UNSIGNED_INT
+     * @type {Oyun.Types.Renderer.WebGL.WebGLConst}
      * @since 3.50.0
      */
     UNSIGNED_INT: { enum: 0x1405, size: 4 },
@@ -24456,8 +24456,8 @@ var WEBGL_CONST = {
     /**
      * 32-bit IEEE floating point number.
      *
-     * @name Phaser.Renderer.WebGL.FLOAT
-     * @type {Phaser.Types.Renderer.WebGL.WebGLConst}
+     * @name Oyun.Renderer.WebGL.FLOAT
+     * @type {Oyun.Types.Renderer.WebGL.WebGLConst}
      * @since 3.50.0
      */
     FLOAT: { enum: 0x1406, size: 4 }
@@ -24490,14 +24490,14 @@ var WebGLPipeline = __webpack_require__(57);
 /**
  * @classdesc
  *
- * The Multi Pipeline is the core 2D texture rendering pipeline used by Phaser in WebGL.
+ * The Multi Pipeline is the core 2D texture rendering pipeline used by Oyun in WebGL.
  * Virtually all Game Objects use this pipeline by default, including Sprites, Graphics
  * and Tilemaps. It handles the batching of quads and tris, as well as methods for
  * drawing and batching geometry data.
  *
- * Prior to Phaser v3.50 this pipeline was called the `TextureTintPipeline`.
+ * Prior to Oyun v3.50 this pipeline was called the `TextureTintPipeline`.
  *
- * In previous versions of Phaser only one single texture unit was supported at any one time.
+ * In previous versions of Oyun only one single texture unit was supported at any one time.
  * The Multi Pipeline is an evolution of the old Texture Tint Pipeline, updated to support
  * multi-textures for increased performance.
  *
@@ -24530,12 +24530,12 @@ var WebGLPipeline = __webpack_require__(57);
  * internal texture iteration, please see the `SinglePipeline` instead.
  *
  * @class MultiPipeline
- * @extends Phaser.Renderer.WebGL.WebGLPipeline
- * @memberof Phaser.Renderer.WebGL.Pipelines
+ * @extends Oyun.Renderer.WebGL.WebGLPipeline
+ * @memberof Oyun.Renderer.WebGL.Pipelines
  * @constructor
  * @since 3.50.0
  *
- * @param {Phaser.Types.Renderer.WebGL.WebGLPipelineConfig} config - The configuration options for this pipeline.
+ * @param {Oyun.Types.Renderer.WebGL.WebGLPipelineConfig} config - The configuration options for this pipeline.
  */
 var MultiPipeline = new Class({
 
@@ -24579,9 +24579,9 @@ var MultiPipeline = new Class({
         /**
          * A temporary Transform Matrix, re-used internally during batching.
          *
-         * @name Phaser.Renderer.WebGL.Pipelines.MultiPipeline#_tempMatrix1
+         * @name Oyun.Renderer.WebGL.Pipelines.MultiPipeline#_tempMatrix1
          * @private
-         * @type {Phaser.GameObjects.Components.TransformMatrix}
+         * @type {Oyun.GameObjects.Components.TransformMatrix}
          * @since 3.11.0
          */
         this._tempMatrix1 = new TransformMatrix();
@@ -24589,9 +24589,9 @@ var MultiPipeline = new Class({
         /**
          * A temporary Transform Matrix, re-used internally during batching.
          *
-         * @name Phaser.Renderer.WebGL.Pipelines.MultiPipeline#_tempMatrix2
+         * @name Oyun.Renderer.WebGL.Pipelines.MultiPipeline#_tempMatrix2
          * @private
-         * @type {Phaser.GameObjects.Components.TransformMatrix}
+         * @type {Oyun.GameObjects.Components.TransformMatrix}
          * @since 3.11.0
          */
         this._tempMatrix2 = new TransformMatrix();
@@ -24599,9 +24599,9 @@ var MultiPipeline = new Class({
         /**
          * A temporary Transform Matrix, re-used internally during batching.
          *
-         * @name Phaser.Renderer.WebGL.Pipelines.MultiPipeline#_tempMatrix3
+         * @name Oyun.Renderer.WebGL.Pipelines.MultiPipeline#_tempMatrix3
          * @private
-         * @type {Phaser.GameObjects.Components.TransformMatrix}
+         * @type {Oyun.GameObjects.Components.TransformMatrix}
          * @since 3.11.0
          */
         this._tempMatrix3 = new TransformMatrix();
@@ -24612,7 +24612,7 @@ var MultiPipeline = new Class({
      * Sets the shader program, vertex buffer and other resources.
      * Should only be called when changing pipeline.
      *
-     * @method Phaser.Renderer.WebGL.Pipelines.MultiPipeline#bind
+     * @method Oyun.Renderer.WebGL.Pipelines.MultiPipeline#bind
      * @since 3.50.0
      *
      * @return {this} This WebGLPipeline instance.
@@ -24627,12 +24627,12 @@ var MultiPipeline = new Class({
     /**
      * Takes a Sprite Game Object, or any object that extends it, and adds it to the batch.
      *
-     * @method Phaser.Renderer.WebGL.Pipelines.MultiPipeline#batchSprite
+     * @method Oyun.Renderer.WebGL.Pipelines.MultiPipeline#batchSprite
      * @since 3.0.0
      *
-     * @param {(Phaser.GameObjects.Image|Phaser.GameObjects.Sprite)} gameObject - The texture based Game Object to add to the batch.
-     * @param {Phaser.Cameras.Scene2D.Camera} camera - The Camera to use for the rendering transform.
-     * @param {Phaser.GameObjects.Components.TransformMatrix} [parentTransformMatrix] - The transform matrix of the parent container, if set.
+     * @param {(Oyun.GameObjects.Image|Oyun.GameObjects.Sprite)} gameObject - The texture based Game Object to add to the batch.
+     * @param {Oyun.Cameras.Scene2D.Camera} camera - The Camera to use for the rendering transform.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} [parentTransformMatrix] - The transform matrix of the parent container, if set.
      */
     batchSprite: function (gameObject, camera, parentTransformMatrix)
     {
@@ -24774,10 +24774,10 @@ var MultiPipeline = new Class({
     /**
      * Generic function for batching a textured quad using argument values instead of a Game Object.
      *
-     * @method Phaser.Renderer.WebGL.Pipelines.MultiPipeline#batchTexture
+     * @method Oyun.Renderer.WebGL.Pipelines.MultiPipeline#batchTexture
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.GameObject} gameObject - Source GameObject.
+     * @param {Oyun.GameObjects.GameObject} gameObject - Source GameObject.
      * @param {WebGLTexture} texture - Raw WebGLTexture associated with the quad.
      * @param {number} textureWidth - Real texture width.
      * @param {number} textureHeight - Real texture height.
@@ -24805,8 +24805,8 @@ var MultiPipeline = new Class({
      * @param {number} tintEffect - The tint effect.
      * @param {number} uOffset - Horizontal offset on texture coordinate.
      * @param {number} vOffset - Vertical offset on texture coordinate.
-     * @param {Phaser.Cameras.Scene2D.Camera} camera - Current used camera.
-     * @param {Phaser.GameObjects.Components.TransformMatrix} parentTransformMatrix - Parent container.
+     * @param {Oyun.Cameras.Scene2D.Camera} camera - Current used camera.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} parentTransformMatrix - Parent container.
      * @param {boolean} [skipFlip=false] - Skip the renderTexture check.
      * @param {number} [textureUnit] - Use the currently bound texture unit?
      */
@@ -24959,16 +24959,16 @@ var MultiPipeline = new Class({
     /**
      * Adds a Texture Frame into the batch for rendering.
      *
-     * @method Phaser.Renderer.WebGL.Pipelines.MultiPipeline#batchTextureFrame
+     * @method Oyun.Renderer.WebGL.Pipelines.MultiPipeline#batchTextureFrame
      * @since 3.12.0
      *
-     * @param {Phaser.Textures.Frame} frame - The Texture Frame to be rendered.
+     * @param {Oyun.Textures.Frame} frame - The Texture Frame to be rendered.
      * @param {number} x - The horizontal position to render the texture at.
      * @param {number} y - The vertical position to render the texture at.
      * @param {number} tint - The tint color.
      * @param {number} alpha - The alpha value.
-     * @param {Phaser.GameObjects.Components.TransformMatrix} transformMatrix - The Transform Matrix to use for the texture.
-     * @param {Phaser.GameObjects.Components.TransformMatrix} [parentTransformMatrix] - A parent Transform Matrix.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} transformMatrix - The Transform Matrix to use for the texture.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} [parentTransformMatrix] - A parent Transform Matrix.
      */
     batchTextureFrame: function (
         frame,
@@ -25038,11 +25038,11 @@ var Extend = __webpack_require__(17);
  * A Frame is a section of a Texture.
  *
  * @class Frame
- * @memberof Phaser.Textures
+ * @memberof Oyun.Textures
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Textures.Texture} texture - The Texture this Frame is a part of.
+ * @param {Oyun.Textures.Texture} texture - The Texture this Frame is a part of.
  * @param {(number|string)} name - The name of this Frame. The name is unique within the Texture.
  * @param {number} sourceIndex - The index of the TextureSource that this Frame is a part of.
  * @param {number} x - The x coordinate of the top-left of this Frame.
@@ -25059,8 +25059,8 @@ var Frame = new Class({
         /**
          * The Texture this Frame is a part of.
          *
-         * @name Phaser.Textures.Frame#texture
-         * @type {Phaser.Textures.Texture}
+         * @name Oyun.Textures.Frame#texture
+         * @type {Oyun.Textures.Texture}
          * @since 3.0.0
          */
         this.texture = texture;
@@ -25069,7 +25069,7 @@ var Frame = new Class({
          * The name of this Frame.
          * The name is unique within the Texture.
          *
-         * @name Phaser.Textures.Frame#name
+         * @name Oyun.Textures.Frame#name
          * @type {string}
          * @since 3.0.0
          */
@@ -25078,8 +25078,8 @@ var Frame = new Class({
         /**
          * The TextureSource this Frame is part of.
          *
-         * @name Phaser.Textures.Frame#source
-         * @type {Phaser.Textures.TextureSource}
+         * @name Oyun.Textures.Frame#source
+         * @type {Oyun.Textures.TextureSource}
          * @since 3.0.0
          */
         this.source = texture.source[sourceIndex];
@@ -25087,7 +25087,7 @@ var Frame = new Class({
         /**
          * The index of the TextureSource in the Texture sources array.
          *
-         * @name Phaser.Textures.Frame#sourceIndex
+         * @name Oyun.Textures.Frame#sourceIndex
          * @type {number}
          * @since 3.0.0
          */
@@ -25096,7 +25096,7 @@ var Frame = new Class({
         /**
          * A reference to the Texture Source WebGL Texture that this Frame is using.
          *
-         * @name Phaser.Textures.Frame#glTexture
+         * @name Oyun.Textures.Frame#glTexture
          * @type {?WebGLTexture}
          * @default null
          * @since 3.11.0
@@ -25106,7 +25106,7 @@ var Frame = new Class({
         /**
          * X position within the source image to cut from.
          *
-         * @name Phaser.Textures.Frame#cutX
+         * @name Oyun.Textures.Frame#cutX
          * @type {number}
          * @since 3.0.0
          */
@@ -25115,7 +25115,7 @@ var Frame = new Class({
         /**
          * Y position within the source image to cut from.
          *
-         * @name Phaser.Textures.Frame#cutY
+         * @name Oyun.Textures.Frame#cutY
          * @type {number}
          * @since 3.0.0
          */
@@ -25124,7 +25124,7 @@ var Frame = new Class({
         /**
          * The width of the area in the source image to cut.
          *
-         * @name Phaser.Textures.Frame#cutWidth
+         * @name Oyun.Textures.Frame#cutWidth
          * @type {number}
          * @since 3.0.0
          */
@@ -25133,7 +25133,7 @@ var Frame = new Class({
         /**
          * The height of the area in the source image to cut.
          *
-         * @name Phaser.Textures.Frame#cutHeight
+         * @name Oyun.Textures.Frame#cutHeight
          * @type {number}
          * @since 3.0.0
          */
@@ -25142,7 +25142,7 @@ var Frame = new Class({
         /**
          * The X rendering offset of this Frame, taking trim into account.
          *
-         * @name Phaser.Textures.Frame#x
+         * @name Oyun.Textures.Frame#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -25152,7 +25152,7 @@ var Frame = new Class({
         /**
          * The Y rendering offset of this Frame, taking trim into account.
          *
-         * @name Phaser.Textures.Frame#y
+         * @name Oyun.Textures.Frame#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -25162,7 +25162,7 @@ var Frame = new Class({
         /**
          * The rendering width of this Frame, taking trim into account.
          *
-         * @name Phaser.Textures.Frame#width
+         * @name Oyun.Textures.Frame#width
          * @type {number}
          * @since 3.0.0
          */
@@ -25171,7 +25171,7 @@ var Frame = new Class({
         /**
          * The rendering height of this Frame, taking trim into account.
          *
-         * @name Phaser.Textures.Frame#height
+         * @name Oyun.Textures.Frame#height
          * @type {number}
          * @since 3.0.0
          */
@@ -25181,7 +25181,7 @@ var Frame = new Class({
          * Half the width, floored.
          * Precalculated for the renderer.
          *
-         * @name Phaser.Textures.Frame#halfWidth
+         * @name Oyun.Textures.Frame#halfWidth
          * @type {number}
          * @since 3.0.0
          */
@@ -25191,7 +25191,7 @@ var Frame = new Class({
          * Half the height, floored.
          * Precalculated for the renderer.
          *
-         * @name Phaser.Textures.Frame#halfHeight
+         * @name Oyun.Textures.Frame#halfHeight
          * @type {number}
          * @since 3.0.0
          */
@@ -25200,7 +25200,7 @@ var Frame = new Class({
         /**
          * The x center of this frame, floored.
          *
-         * @name Phaser.Textures.Frame#centerX
+         * @name Oyun.Textures.Frame#centerX
          * @type {number}
          * @since 3.0.0
          */
@@ -25209,7 +25209,7 @@ var Frame = new Class({
         /**
          * The y center of this frame, floored.
          *
-         * @name Phaser.Textures.Frame#centerY
+         * @name Oyun.Textures.Frame#centerY
          * @type {number}
          * @since 3.0.0
          */
@@ -25218,7 +25218,7 @@ var Frame = new Class({
         /**
          * The horizontal pivot point of this Frame.
          *
-         * @name Phaser.Textures.Frame#pivotX
+         * @name Oyun.Textures.Frame#pivotX
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -25228,7 +25228,7 @@ var Frame = new Class({
         /**
          * The vertical pivot point of this Frame.
          *
-         * @name Phaser.Textures.Frame#pivotY
+         * @name Oyun.Textures.Frame#pivotY
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -25238,7 +25238,7 @@ var Frame = new Class({
         /**
          * Does this Frame have a custom pivot point?
          *
-         * @name Phaser.Textures.Frame#customPivot
+         * @name Oyun.Textures.Frame#customPivot
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -25252,7 +25252,7 @@ var Frame = new Class({
          * Rotation allows you to use rotated frames in texture atlas packing.
          * It has nothing to do with Sprite rotation.
          *
-         * @name Phaser.Textures.Frame#rotated
+         * @name Oyun.Textures.Frame#rotated
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -25265,7 +25265,7 @@ var Frame = new Class({
          * 0 = No rounding
          * 1 = Round
          *
-         * @name Phaser.Textures.Frame#autoRound
+         * @name Oyun.Textures.Frame#autoRound
          * @type {number}
          * @default -1
          * @since 3.0.0
@@ -25275,7 +25275,7 @@ var Frame = new Class({
         /**
          * Any Frame specific custom data can be stored here.
          *
-         * @name Phaser.Textures.Frame#customData
+         * @name Oyun.Textures.Frame#customData
          * @type {object}
          * @since 3.0.0
          */
@@ -25284,7 +25284,7 @@ var Frame = new Class({
         /**
          * WebGL UV u0 value.
          *
-         * @name Phaser.Textures.Frame#u0
+         * @name Oyun.Textures.Frame#u0
          * @type {number}
          * @default 0
          * @since 3.11.0
@@ -25294,7 +25294,7 @@ var Frame = new Class({
         /**
          * WebGL UV v0 value.
          *
-         * @name Phaser.Textures.Frame#v0
+         * @name Oyun.Textures.Frame#v0
          * @type {number}
          * @default 0
          * @since 3.11.0
@@ -25304,7 +25304,7 @@ var Frame = new Class({
         /**
          * WebGL UV u1 value.
          *
-         * @name Phaser.Textures.Frame#u1
+         * @name Oyun.Textures.Frame#u1
          * @type {number}
          * @default 0
          * @since 3.11.0
@@ -25314,7 +25314,7 @@ var Frame = new Class({
         /**
          * WebGL UV v1 value.
          *
-         * @name Phaser.Textures.Frame#v1
+         * @name Oyun.Textures.Frame#v1
          * @type {number}
          * @default 0
          * @since 3.11.0
@@ -25324,7 +25324,7 @@ var Frame = new Class({
         /**
          * The un-modified source frame, trim and UV data.
          *
-         * @name Phaser.Textures.Frame#data
+         * @name Oyun.Textures.Frame#data
          * @type {object}
          * @private
          * @since 3.0.0
@@ -25369,7 +25369,7 @@ var Frame = new Class({
      * This is called automatically by the constructor
      * and should rarely be changed on-the-fly.
      *
-     * @method Phaser.Textures.Frame#setSize
+     * @method Oyun.Textures.Frame#setSize
      * @since 3.7.0
      *
      * @param {number} width - The width of the frame before being trimmed.
@@ -25377,7 +25377,7 @@ var Frame = new Class({
      * @param {number} [x=0] - The x coordinate of the top-left of this Frame.
      * @param {number} [y=0] - The y coordinate of the top-left of this Frame.
      *
-     * @return {Phaser.Textures.Frame} This Frame object.
+     * @return {Oyun.Textures.Frame} This Frame object.
      */
     setSize: function (width, height, x, y)
     {
@@ -25429,7 +25429,7 @@ var Frame = new Class({
     /**
      * If the frame was trimmed when added to the Texture Atlas, this records the trim and source data.
      *
-     * @method Phaser.Textures.Frame#setTrim
+     * @method Oyun.Textures.Frame#setTrim
      * @since 3.0.0
      *
      * @param {number} actualWidth - The width of the frame before being trimmed.
@@ -25439,7 +25439,7 @@ var Frame = new Class({
      * @param {number} destWidth - The destination width of the trimmed frame for display.
      * @param {number} destHeight - The destination height of the trimmed frame for display.
      *
-     * @return {Phaser.Textures.Frame} This Frame object.
+     * @return {Oyun.Textures.Frame} This Frame object.
      */
     setTrim: function (actualWidth, actualHeight, destX, destY, destWidth, destHeight)
     {
@@ -25483,7 +25483,7 @@ var Frame = new Class({
      * This is called directly by the Game Object Texture Components `setCrop` method.
      * Please use that method to crop a Game Object.
      *
-     * @method Phaser.Textures.Frame#setCropUVs
+     * @method Oyun.Textures.Frame#setCropUVs
      * @since 3.11.0
      *
      * @param {object} crop - The crop data object. This is the `GameObject._crop` property.
@@ -25621,7 +25621,7 @@ var Frame = new Class({
      * Takes a crop data object and recalculates the UVs based on the dimensions inside the crop object.
      * Called automatically by `setFrame`.
      *
-     * @method Phaser.Textures.Frame#updateCropUVs
+     * @method Oyun.Textures.Frame#updateCropUVs
      * @since 3.11.0
      *
      * @param {object} crop - The crop data object. This is the `GameObject._crop` property.
@@ -25641,7 +25641,7 @@ var Frame = new Class({
      * Use this if you need to override the values that are generated automatically
      * when the Frame is created.
      *
-     * @method Phaser.Textures.Frame#setUVs
+     * @method Oyun.Textures.Frame#setUVs
      * @since 3.50.0
      *
      * @param {number} width - Width of this frame for the Canvas data.
@@ -25651,7 +25651,7 @@ var Frame = new Class({
      * @param {number} u1 - UV u1 value.
      * @param {number} v1 - UV v1 value.
      *
-     * @return {Phaser.Textures.Frame} This Frame object.
+     * @return {Oyun.Textures.Frame} This Frame object.
      */
     setUVs: function (width, height, u0, v0, u1, v1)
     {
@@ -25676,10 +25676,10 @@ var Frame = new Class({
     /**
      * Updates the internal WebGL UV cache and the drawImage cache.
      *
-     * @method Phaser.Textures.Frame#updateUVs
+     * @method Oyun.Textures.Frame#updateUVs
      * @since 3.0.0
      *
-     * @return {Phaser.Textures.Frame} This Frame object.
+     * @return {Oyun.Textures.Frame} This Frame object.
      */
     updateUVs: function ()
     {
@@ -25712,10 +25712,10 @@ var Frame = new Class({
     /**
      * Updates the internal WebGL UV cache.
      *
-     * @method Phaser.Textures.Frame#updateUVsInverted
+     * @method Oyun.Textures.Frame#updateUVsInverted
      * @since 3.0.0
      *
-     * @return {Phaser.Textures.Frame} This Frame object.
+     * @return {Oyun.Textures.Frame} This Frame object.
      */
     updateUVsInverted: function ()
     {
@@ -25734,10 +25734,10 @@ var Frame = new Class({
     /**
      * Clones this Frame into a new Frame object.
      *
-     * @method Phaser.Textures.Frame#clone
+     * @method Oyun.Textures.Frame#clone
      * @since 3.0.0
      *
-     * @return {Phaser.Textures.Frame} A clone of this Frame.
+     * @return {Oyun.Textures.Frame} A clone of this Frame.
      */
     clone: function ()
     {
@@ -25772,7 +25772,7 @@ var Frame = new Class({
     /**
      * Destroys this Frame by nulling its reference to the parent Texture and and data objects.
      *
-     * @method Phaser.Textures.Frame#destroy
+     * @method Oyun.Textures.Frame#destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -25788,7 +25788,7 @@ var Frame = new Class({
      * The width of the Frame in its un-trimmed, un-padded state, as prepared in the art package,
      * before being packed.
      *
-     * @name Phaser.Textures.Frame#realWidth
+     * @name Oyun.Textures.Frame#realWidth
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -25806,7 +25806,7 @@ var Frame = new Class({
      * The height of the Frame in its un-trimmed, un-padded state, as prepared in the art package,
      * before being packed.
      *
-     * @name Phaser.Textures.Frame#realHeight
+     * @name Oyun.Textures.Frame#realHeight
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -25823,7 +25823,7 @@ var Frame = new Class({
     /**
      * The radius of the Frame (derived from sqrt(w * w + h * h) / 2)
      *
-     * @name Phaser.Textures.Frame#radius
+     * @name Oyun.Textures.Frame#radius
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -25840,7 +25840,7 @@ var Frame = new Class({
     /**
      * Is the Frame trimmed or not?
      *
-     * @name Phaser.Textures.Frame#trimmed
+     * @name Oyun.Textures.Frame#trimmed
      * @type {boolean}
      * @readonly
      * @since 3.0.0
@@ -25857,7 +25857,7 @@ var Frame = new Class({
     /**
      * The Canvas drawImage data object.
      *
-     * @name Phaser.Textures.Frame#canvasData
+     * @name Oyun.Textures.Frame#canvasData
      * @type {object}
      * @readonly
      * @since 3.0.0
@@ -25903,7 +25903,7 @@ var StableSort = __webpack_require__(79);
  * List is a generic implementation of an ordered list which contains utility methods for retrieving, manipulating, and iterating items.
  *
  * @class List
- * @memberof Phaser.Structs
+ * @memberof Oyun.Structs
  * @constructor
  * @since 3.0.0
  *
@@ -25920,7 +25920,7 @@ var List = new Class({
         /**
          * The parent of this list.
          *
-         * @name Phaser.Structs.List#parent
+         * @name Oyun.Structs.List#parent
          * @type {*}
          * @since 3.0.0
          */
@@ -25931,7 +25931,7 @@ var List = new Class({
          *
          * @genericUse {T[]} - [$type]
          *
-         * @name Phaser.Structs.List#list
+         * @name Oyun.Structs.List#list
          * @type {Array.<*>}
          * @default []
          * @since 3.0.0
@@ -25943,7 +25943,7 @@ var List = new Class({
          *
          * This is used internally when iterating through the list with the {@link #first}, {@link #last}, {@link #get}, and {@link #previous} properties.
          *
-         * @name Phaser.Structs.List#position
+         * @name Oyun.Structs.List#position
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -25953,7 +25953,7 @@ var List = new Class({
         /**
          * A callback that is invoked every time a child is added to this list.
          *
-         * @name Phaser.Structs.List#addCallback
+         * @name Oyun.Structs.List#addCallback
          * @type {function}
          * @since 3.4.0
          */
@@ -25962,7 +25962,7 @@ var List = new Class({
         /**
          * A callback that is invoked every time a child is removed from this list.
          *
-         * @name Phaser.Structs.List#removeCallback
+         * @name Oyun.Structs.List#removeCallback
          * @type {function}
          * @since 3.4.0
          */
@@ -25971,7 +25971,7 @@ var List = new Class({
         /**
          * The property key to sort by.
          *
-         * @name Phaser.Structs.List#_sortKey
+         * @name Oyun.Structs.List#_sortKey
          * @type {string}
          * @since 3.4.0
          */
@@ -25981,7 +25981,7 @@ var List = new Class({
     /**
      * Adds the given item to the end of the list. Each item must be unique.
      *
-     * @method Phaser.Structs.List#add
+     * @method Oyun.Structs.List#add
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26006,7 +26006,7 @@ var List = new Class({
     /**
      * Adds an item to list, starting at a specified index. Each item must be unique within the list.
      *
-     * @method Phaser.Structs.List#addAt
+     * @method Oyun.Structs.List#addAt
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26032,7 +26032,7 @@ var List = new Class({
     /**
      * Retrieves the item at a given position inside the List.
      *
-     * @method Phaser.Structs.List#getAt
+     * @method Oyun.Structs.List#getAt
      * @since 3.0.0
      *
      * @genericUse {T} - [$return]
@@ -26049,7 +26049,7 @@ var List = new Class({
     /**
      * Locates an item within the List and returns its index.
      *
-     * @method Phaser.Structs.List#getIndex
+     * @method Oyun.Structs.List#getIndex
      * @since 3.0.0
      *
      * @genericUse {T} - [child]
@@ -26068,7 +26068,7 @@ var List = new Class({
      * Sort the contents of this List so the items are in order based on the given property.
      * For example, `sort('alpha')` would sort the List contents based on the value of their `alpha` property.
      *
-     * @method Phaser.Structs.List#sort
+     * @method Oyun.Structs.List#sort
      * @since 3.0.0
      *
      * @genericUse {T[]} - [children,$return]
@@ -26076,7 +26076,7 @@ var List = new Class({
      * @param {string} property - The property to lexically sort by.
      * @param {function} [handler] - Provide your own custom handler function. Will receive 2 children which it should compare and return a boolean.
      *
-     * @return {Phaser.Structs.List} This List object.
+     * @return {Oyun.Structs.List} This List object.
      */
     sort: function (property, handler)
     {
@@ -26103,7 +26103,7 @@ var List = new Class({
      * property matching the given argument. Should more than one child have
      * the same name only the first is returned.
      *
-     * @method Phaser.Structs.List#getByName
+     * @method Oyun.Structs.List#getByName
      * @since 3.0.0
      *
      * @genericUse {T | null} - [$return]
@@ -26120,7 +26120,7 @@ var List = new Class({
     /**
      * Returns a random child from the group.
      *
-     * @method Phaser.Structs.List#getRandom
+     * @method Oyun.Structs.List#getRandom
      * @since 3.0.0
      *
      * @genericUse {T | null} - [$return]
@@ -26138,7 +26138,7 @@ var List = new Class({
     /**
      * Returns the first element in a given part of the List which matches a specific criterion.
      *
-     * @method Phaser.Structs.List#getFirst
+     * @method Oyun.Structs.List#getFirst
      * @since 3.0.0
      *
      * @genericUse {T | null} - [$return]
@@ -26170,7 +26170,7 @@ var List = new Class({
      * and you set `startIndex` to 0 and `endIndex` to 50, it would return matches from only
      * the first 50 children in the List.
      *
-     * @method Phaser.Structs.List#getAll
+     * @method Oyun.Structs.List#getAll
      * @since 3.0.0
      *
      * @genericUse {T} - [value]
@@ -26191,7 +26191,7 @@ var List = new Class({
     /**
      * Returns the total number of items in the List which have a property matching the given value.
      *
-     * @method Phaser.Structs.List#count
+     * @method Oyun.Structs.List#count
      * @since 3.0.0
      *
      * @genericUse {T} - [value]
@@ -26209,7 +26209,7 @@ var List = new Class({
     /**
      * Swaps the positions of two items in the list.
      *
-     * @method Phaser.Structs.List#swap
+     * @method Oyun.Structs.List#swap
      * @since 3.0.0
      *
      * @genericUse {T} - [child1,child2]
@@ -26225,7 +26225,7 @@ var List = new Class({
     /**
      * Moves an item in the List to a new position.
      *
-     * @method Phaser.Structs.List#moveTo
+     * @method Oyun.Structs.List#moveTo
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26243,7 +26243,7 @@ var List = new Class({
     /**
      * Removes one or many items from the List.
      *
-     * @method Phaser.Structs.List#remove
+     * @method Oyun.Structs.List#remove
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26268,7 +26268,7 @@ var List = new Class({
     /**
      * Removes the item at the given position in the List.
      *
-     * @method Phaser.Structs.List#removeAt
+     * @method Oyun.Structs.List#removeAt
      * @since 3.0.0
      *
      * @genericUse {T} - [$return]
@@ -26293,7 +26293,7 @@ var List = new Class({
     /**
      * Removes the items within the given range in the List.
      *
-     * @method Phaser.Structs.List#removeBetween
+     * @method Oyun.Structs.List#removeBetween
      * @since 3.0.0
      *
      * @genericUse {T[]} - [$return]
@@ -26319,14 +26319,14 @@ var List = new Class({
     /**
      * Removes all the items.
      *
-     * @method Phaser.Structs.List#removeAll
+     * @method Oyun.Structs.List#removeAll
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.List.<T>} - [$return]
+     * @genericUse {Oyun.Structs.List.<T>} - [$return]
      *
      * @param {boolean} [skipCallback=false] - Skip calling the List.removeCallback.
      *
-     * @return {Phaser.Structs.List} This List object.
+     * @return {Oyun.Structs.List} This List object.
      */
     removeAll: function (skipCallback)
     {
@@ -26343,7 +26343,7 @@ var List = new Class({
     /**
      * Brings the given child to the top of this List.
      *
-     * @method Phaser.Structs.List#bringToTop
+     * @method Oyun.Structs.List#bringToTop
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26360,7 +26360,7 @@ var List = new Class({
     /**
      * Sends the given child to the bottom of this List.
      *
-     * @method Phaser.Structs.List#sendToBack
+     * @method Oyun.Structs.List#sendToBack
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26377,7 +26377,7 @@ var List = new Class({
     /**
      * Moves the given child up one place in this group unless it's already at the top.
      *
-     * @method Phaser.Structs.List#moveUp
+     * @method Oyun.Structs.List#moveUp
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26396,7 +26396,7 @@ var List = new Class({
     /**
      * Moves the given child down one place in this group unless it's already at the bottom.
      *
-     * @method Phaser.Structs.List#moveDown
+     * @method Oyun.Structs.List#moveDown
      * @since 3.0.0
      *
      * @genericUse {T} - [child,$return]
@@ -26415,12 +26415,12 @@ var List = new Class({
     /**
      * Reverses the order of all children in this List.
      *
-     * @method Phaser.Structs.List#reverse
+     * @method Oyun.Structs.List#reverse
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.List.<T>} - [$return]
+     * @genericUse {Oyun.Structs.List.<T>} - [$return]
      *
-     * @return {Phaser.Structs.List} This List object.
+     * @return {Oyun.Structs.List} This List object.
      */
     reverse: function ()
     {
@@ -26432,12 +26432,12 @@ var List = new Class({
     /**
      * Shuffles the items in the list.
      *
-     * @method Phaser.Structs.List#shuffle
+     * @method Oyun.Structs.List#shuffle
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.List.<T>} - [$return]
+     * @genericUse {Oyun.Structs.List.<T>} - [$return]
      *
-     * @return {Phaser.Structs.List} This List object.
+     * @return {Oyun.Structs.List} This List object.
      */
     shuffle: function ()
     {
@@ -26449,7 +26449,7 @@ var List = new Class({
     /**
      * Replaces a child of this List with the given newChild. The newChild cannot be a member of this List.
      *
-     * @method Phaser.Structs.List#replace
+     * @method Oyun.Structs.List#replace
      * @since 3.0.0
      *
      * @genericUse {T} - [oldChild,newChild,$return]
@@ -26467,7 +26467,7 @@ var List = new Class({
     /**
      * Checks if an item exists within the List.
      *
-     * @method Phaser.Structs.List#exists
+     * @method Oyun.Structs.List#exists
      * @since 3.0.0
      *
      * @genericUse {T} - [child]
@@ -26484,7 +26484,7 @@ var List = new Class({
     /**
      * Sets the property `key` to the given value on all members of this List.
      *
-     * @method Phaser.Structs.List#setAll
+     * @method Oyun.Structs.List#setAll
      * @since 3.0.0
      *
      * @genericUse {T} - [value]
@@ -26504,7 +26504,7 @@ var List = new Class({
     /**
      * Passes all children to the given callback.
      *
-     * @method Phaser.Structs.List#each
+     * @method Oyun.Structs.List#each
      * @since 3.0.0
      *
      * @genericUse {EachListCallback.<T>} - [callback]
@@ -26533,7 +26533,7 @@ var List = new Class({
     /**
      * Clears the List and recreates its internal array.
      *
-     * @method Phaser.Structs.List#shutdown
+     * @method Oyun.Structs.List#shutdown
      * @since 3.0.0
      */
     shutdown: function ()
@@ -26546,7 +26546,7 @@ var List = new Class({
     /**
      * Destroys this List.
      *
-     * @method Phaser.Structs.List#destroy
+     * @method Oyun.Structs.List#destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -26561,7 +26561,7 @@ var List = new Class({
     /**
      * The number of items inside the List.
      *
-     * @name Phaser.Structs.List#length
+     * @name Oyun.Structs.List#length
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -26578,7 +26578,7 @@ var List = new Class({
     /**
      * The first item in the List or `null` for an empty List.
      *
-     * @name Phaser.Structs.List#first
+     * @name Oyun.Structs.List#first
      * @genericUse {T} - [$type]
      * @type {*}
      * @readonly
@@ -26605,7 +26605,7 @@ var List = new Class({
     /**
      * The last item in the List, or `null` for an empty List.
      *
-     * @name Phaser.Structs.List#last
+     * @name Oyun.Structs.List#last
      * @genericUse {T} - [$type]
      * @type {*}
      * @readonly
@@ -26634,7 +26634,7 @@ var List = new Class({
      *
      * This property can be read successively after reading {@link #first} or manually setting the {@link #position} to iterate the List.
      *
-     * @name Phaser.Structs.List#next
+     * @name Oyun.Structs.List#next
      * @genericUse {T} - [$type]
      * @type {*}
      * @readonly
@@ -26663,7 +26663,7 @@ var List = new Class({
      *
      * This property can be read successively after reading {@link #last} or manually setting the {@link #position} to iterate the List backwards.
      *
-     * @name Phaser.Structs.List#previous
+     * @name Oyun.Structs.List#previous
      * @genericUse {T} - [$type]
      * @type {*}
      * @readonly
@@ -26718,7 +26718,7 @@ var Random = __webpack_require__(177);
  * To render an Ellipse you should look at the capabilities of the Graphics class.
  *
  * @class Ellipse
- * @memberof Phaser.Geom
+ * @memberof Oyun.Geom
  * @constructor
  * @since 3.0.0
  *
@@ -26742,7 +26742,7 @@ var Ellipse = new Class({
          * The geometry constant type of this object: `GEOM_CONST.ELLIPSE`.
          * Used for fast type comparisons.
          *
-         * @name Phaser.Geom.Ellipse#type
+         * @name Oyun.Geom.Ellipse#type
          * @type {number}
          * @readonly
          * @since 3.19.0
@@ -26752,7 +26752,7 @@ var Ellipse = new Class({
         /**
          * The x position of the center of the ellipse.
          *
-         * @name Phaser.Geom.Ellipse#x
+         * @name Oyun.Geom.Ellipse#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -26762,7 +26762,7 @@ var Ellipse = new Class({
         /**
          * The y position of the center of the ellipse.
          *
-         * @name Phaser.Geom.Ellipse#y
+         * @name Oyun.Geom.Ellipse#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -26772,7 +26772,7 @@ var Ellipse = new Class({
         /**
          * The width of the ellipse.
          *
-         * @name Phaser.Geom.Ellipse#width
+         * @name Oyun.Geom.Ellipse#width
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -26782,7 +26782,7 @@ var Ellipse = new Class({
         /**
          * The height of the ellipse.
          *
-         * @name Phaser.Geom.Ellipse#height
+         * @name Oyun.Geom.Ellipse#height
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -26793,7 +26793,7 @@ var Ellipse = new Class({
     /**
      * Check to see if the Ellipse contains the given x / y coordinates.
      *
-     * @method Phaser.Geom.Ellipse#contains
+     * @method Oyun.Geom.Ellipse#contains
      * @since 3.0.0
      *
      * @param {number} x - The x coordinate to check within the ellipse.
@@ -26811,15 +26811,15 @@ var Ellipse = new Class({
      * based on the given angle normalized to the range 0 to 1. I.e. a value of 0.5 will give the point
      * at 180 degrees around the circle.
      *
-     * @method Phaser.Geom.Ellipse#getPoint
+     * @method Oyun.Geom.Ellipse#getPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [out,$return]
+     * @generic {Oyun.Geom.Point} O - [out,$return]
      *
      * @param {number} position - A value between 0 and 1, where 0 equals 0 degrees, 0.5 equals 180 degrees and 1 equals 360 around the ellipse.
-     * @param {(Phaser.Geom.Point|object)} [out] - An object to store the return values in. If not given a Point object will be created.
+     * @param {(Oyun.Geom.Point|object)} [out] - An object to store the return values in. If not given a Point object will be created.
      *
-     * @return {(Phaser.Geom.Point|object)} A Point, or point-like object, containing the coordinates of the point around the ellipse.
+     * @return {(Oyun.Geom.Point|object)} A Point, or point-like object, containing the coordinates of the point around the ellipse.
      */
     getPoint: function (position, point)
     {
@@ -26830,16 +26830,16 @@ var Ellipse = new Class({
      * Returns an array of Point objects containing the coordinates of the points around the circumference of the Ellipse,
      * based on the given quantity or stepRate values.
      *
-     * @method Phaser.Geom.Ellipse#getPoints
+     * @method Oyun.Geom.Ellipse#getPoints
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point[]} O - [output,$return]
+     * @generic {Oyun.Geom.Point[]} O - [output,$return]
      *
      * @param {number} quantity - The amount of points to return. If a falsey value the quantity will be derived from the `stepRate` instead.
      * @param {number} [stepRate] - Sets the quantity by getting the circumference of the ellipse and dividing it by the stepRate.
-     * @param {(array|Phaser.Geom.Point[])} [output] - An array to insert the points in to. If not provided a new array will be created.
+     * @param {(array|Oyun.Geom.Point[])} [output] - An array to insert the points in to. If not provided a new array will be created.
      *
-     * @return {(array|Phaser.Geom.Point[])} An array of Point objects pertaining to the points around the circumference of the ellipse.
+     * @return {(array|Oyun.Geom.Point[])} An array of Point objects pertaining to the points around the circumference of the ellipse.
      */
     getPoints: function (quantity, stepRate, output)
     {
@@ -26849,14 +26849,14 @@ var Ellipse = new Class({
     /**
      * Returns a uniformly distributed random point from anywhere within the given Ellipse.
      *
-     * @method Phaser.Geom.Ellipse#getRandomPoint
+     * @method Oyun.Geom.Ellipse#getRandomPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Geom.Point} O - [point,$return]
+     * @generic {Oyun.Geom.Point} O - [point,$return]
      *
-     * @param {(Phaser.Geom.Point|object)} [point] - A Point or point-like object to set the random `x` and `y` values in.
+     * @param {(Oyun.Geom.Point|object)} [point] - A Point or point-like object to set the random `x` and `y` values in.
      *
-     * @return {(Phaser.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
+     * @return {(Oyun.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
      */
     getRandomPoint: function (point)
     {
@@ -26866,7 +26866,7 @@ var Ellipse = new Class({
     /**
      * Sets the x, y, width and height of this ellipse.
      *
-     * @method Phaser.Geom.Ellipse#setTo
+     * @method Oyun.Geom.Ellipse#setTo
      * @since 3.0.0
      *
      * @param {number} x - The x position of the center of the ellipse.
@@ -26890,7 +26890,7 @@ var Ellipse = new Class({
      * Sets this Ellipse to be empty with a width and height of zero.
      * Does not change its position.
      *
-     * @method Phaser.Geom.Ellipse#setEmpty
+     * @method Oyun.Geom.Ellipse#setEmpty
      * @since 3.0.0
      *
      * @return {this} This Ellipse object.
@@ -26906,7 +26906,7 @@ var Ellipse = new Class({
     /**
      * Sets the position of this Ellipse.
      *
-     * @method Phaser.Geom.Ellipse#setPosition
+     * @method Oyun.Geom.Ellipse#setPosition
      * @since 3.0.0
      *
      * @param {number} x - The x position of the center of the ellipse.
@@ -26928,7 +26928,7 @@ var Ellipse = new Class({
      * Sets the size of this Ellipse.
      * Does not change its position.
      *
-     * @method Phaser.Geom.Ellipse#setSize
+     * @method Oyun.Geom.Ellipse#setSize
      * @since 3.0.0
      *
      * @param {number} width - The width of the ellipse.
@@ -26949,7 +26949,7 @@ var Ellipse = new Class({
     /**
      * Checks to see if the Ellipse is empty: has a width or height equal to zero.
      *
-     * @method Phaser.Geom.Ellipse#isEmpty
+     * @method Oyun.Geom.Ellipse#isEmpty
      * @since 3.0.0
      *
      * @return {boolean} True if the Ellipse is empty, otherwise false.
@@ -26962,7 +26962,7 @@ var Ellipse = new Class({
     /**
      * Returns the minor radius of the ellipse. Also known as the Semi Minor Axis.
      *
-     * @method Phaser.Geom.Ellipse#getMinorRadius
+     * @method Oyun.Geom.Ellipse#getMinorRadius
      * @since 3.0.0
      *
      * @return {number} The minor radius.
@@ -26975,7 +26975,7 @@ var Ellipse = new Class({
     /**
      * Returns the major radius of the ellipse. Also known as the Semi Major Axis.
      *
-     * @method Phaser.Geom.Ellipse#getMajorRadius
+     * @method Oyun.Geom.Ellipse#getMajorRadius
      * @since 3.0.0
      *
      * @return {number} The major radius.
@@ -26988,7 +26988,7 @@ var Ellipse = new Class({
     /**
      * The left position of the Ellipse.
      *
-     * @name Phaser.Geom.Ellipse#left
+     * @name Oyun.Geom.Ellipse#left
      * @type {number}
      * @since 3.0.0
      */
@@ -27009,7 +27009,7 @@ var Ellipse = new Class({
     /**
      * The right position of the Ellipse.
      *
-     * @name Phaser.Geom.Ellipse#right
+     * @name Oyun.Geom.Ellipse#right
      * @type {number}
      * @since 3.0.0
      */
@@ -27030,7 +27030,7 @@ var Ellipse = new Class({
     /**
      * The top position of the Ellipse.
      *
-     * @name Phaser.Geom.Ellipse#top
+     * @name Oyun.Geom.Ellipse#top
      * @type {number}
      * @since 3.0.0
      */
@@ -27051,7 +27051,7 @@ var Ellipse = new Class({
     /**
      * The bottom position of the Ellipse.
      *
-     * @name Phaser.Geom.Ellipse#bottom
+     * @name Oyun.Geom.Ellipse#bottom
      * @type {number}
      * @since 3.0.0
      */
@@ -27087,10 +27087,10 @@ module.exports = Ellipse;
 /**
  * Check to see if the Ellipse contains the given x / y coordinates.
  *
- * @function Phaser.Geom.Ellipse.Contains
+ * @function Oyun.Geom.Ellipse.Contains
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Ellipse} ellipse - The Ellipse to check.
+ * @param {Oyun.Geom.Ellipse} ellipse - The Ellipse to check.
  * @param {number} x - The x coordinate to check within the ellipse.
  * @param {number} y - The y coordinate to check within the ellipse.
  *
@@ -27147,16 +27147,16 @@ var Sprite = __webpack_require__(73);
  * Groups themselves aren't displayable, and can't be positioned, rotated, scaled, or hidden.
  *
  * @class Group
- * @memberof Phaser.GameObjects
- * @extends Phaser.Events.EventEmitter
+ * @memberof Oyun.GameObjects
+ * @extends Oyun.Events.EventEmitter
  * @constructor
  * @since 3.0.0
- * @param {Phaser.Scene} scene - The scene this group belongs to.
- * @param {(Phaser.GameObjects.GameObject[]|Phaser.Types.GameObjects.Group.GroupConfig|Phaser.Types.GameObjects.Group.GroupCreateConfig)} [children] - Game Objects to add to this group; or the `config` argument.
- * @param {Phaser.Types.GameObjects.Group.GroupConfig|Phaser.Types.GameObjects.Group.GroupCreateConfig} [config] - Settings for this group. If `key` is set, Phaser.GameObjects.Group#createMultiple is also called with these settings.
+ * @param {Oyun.Scene} scene - The scene this group belongs to.
+ * @param {(Oyun.GameObjects.GameObject[]|Oyun.Types.GameObjects.Group.GroupConfig|Oyun.Types.GameObjects.Group.GroupCreateConfig)} [children] - Game Objects to add to this group; or the `config` argument.
+ * @param {Oyun.Types.GameObjects.Group.GroupConfig|Oyun.Types.GameObjects.Group.GroupCreateConfig} [config] - Settings for this group. If `key` is set, Oyun.GameObjects.Group#createMultiple is also called with these settings.
  *
- * @see Phaser.Physics.Arcade.Group
- * @see Phaser.Physics.Arcade.StaticGroup
+ * @see Oyun.Physics.Arcade.Group
+ * @see Oyun.Physics.Arcade.StaticGroup
  */
 var Group = new Class({
 
@@ -27207,8 +27207,8 @@ var Group = new Class({
         /**
          * This scene this group belongs to.
          *
-         * @name Phaser.GameObjects.Group#scene
-         * @type {Phaser.Scene}
+         * @name Oyun.GameObjects.Group#scene
+         * @type {Oyun.Scene}
          * @since 3.0.0
          */
         this.scene = scene;
@@ -27216,8 +27216,8 @@ var Group = new Class({
         /**
          * Members of this group.
          *
-         * @name Phaser.GameObjects.Group#children
-         * @type {Phaser.Structs.Set.<Phaser.GameObjects.GameObject>}
+         * @name Oyun.GameObjects.Group#children
+         * @type {Oyun.Structs.Set.<Oyun.GameObjects.GameObject>}
          * @since 3.0.0
          */
         this.children = new Set();
@@ -27225,7 +27225,7 @@ var Group = new Class({
         /**
          * A flag identifying this object as a group.
          *
-         * @name Phaser.GameObjects.Group#isParent
+         * @name Oyun.GameObjects.Group#isParent
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -27234,9 +27234,9 @@ var Group = new Class({
 
         /**
          * A textual representation of this Game Object.
-         * Used internally by Phaser but is available for your own custom classes to populate.
+         * Used internally by Oyun but is available for your own custom classes to populate.
          *
-         * @name Phaser.GameObjects.Group#type
+         * @name Oyun.GameObjects.Group#type
          * @type {string}
          * @default 'Group'
          * @since 3.21.0
@@ -27246,18 +27246,18 @@ var Group = new Class({
         /**
          * The class to create new group members from.
          *
-         * @name Phaser.GameObjects.Group#classType
+         * @name Oyun.GameObjects.Group#classType
          * @type {Function}
          * @since 3.0.0
-         * @default Phaser.GameObjects.Sprite
+         * @default Oyun.GameObjects.Sprite
          */
         this.classType = GetFastValue(config, 'classType', Sprite);
 
         /**
          * The name of this group.
-         * Empty by default and never populated by Phaser, this is left for developers to use.
+         * Empty by default and never populated by Oyun, this is left for developers to use.
          *
-         * @name Phaser.GameObjects.Group#name
+         * @name Oyun.GameObjects.Group#name
          * @type {string}
          * @default ''
          * @since 3.18.0
@@ -27265,9 +27265,9 @@ var Group = new Class({
         this.name = GetFastValue(config, 'name', '');
 
         /**
-         * Whether this group runs its {@link Phaser.GameObjects.Group#preUpdate} method (which may update any members).
+         * Whether this group runs its {@link Oyun.GameObjects.Group#preUpdate} method (which may update any members).
          *
-         * @name Phaser.GameObjects.Group#active
+         * @name Oyun.GameObjects.Group#active
          * @type {boolean}
          * @since 3.0.0
          */
@@ -27276,7 +27276,7 @@ var Group = new Class({
         /**
          * The maximum size of this group, if used as a pool. -1 is no limit.
          *
-         * @name Phaser.GameObjects.Group#maxSize
+         * @name Oyun.GameObjects.Group#maxSize
          * @type {number}
          * @since 3.0.0
          * @default -1
@@ -27286,10 +27286,10 @@ var Group = new Class({
         /**
          * A default texture key to use when creating new group members.
          *
-         * This is used in {@link Phaser.GameObjects.Group#create}
-         * but not in {@link Phaser.GameObjects.Group#createMultiple}.
+         * This is used in {@link Oyun.GameObjects.Group#create}
+         * but not in {@link Oyun.GameObjects.Group#createMultiple}.
          *
-         * @name Phaser.GameObjects.Group#defaultKey
+         * @name Oyun.GameObjects.Group#defaultKey
          * @type {string}
          * @since 3.0.0
          */
@@ -27298,7 +27298,7 @@ var Group = new Class({
         /**
          * A default texture frame to use when creating new group members.
          *
-         * @name Phaser.GameObjects.Group#defaultFrame
+         * @name Oyun.GameObjects.Group#defaultFrame
          * @type {(string|number)}
          * @since 3.0.0
          */
@@ -27307,19 +27307,19 @@ var Group = new Class({
         /**
          * Whether to call the update method of any members.
          *
-         * @name Phaser.GameObjects.Group#runChildUpdate
+         * @name Oyun.GameObjects.Group#runChildUpdate
          * @type {boolean}
          * @default false
          * @since 3.0.0
-         * @see Phaser.GameObjects.Group#preUpdate
+         * @see Oyun.GameObjects.Group#preUpdate
          */
         this.runChildUpdate = GetFastValue(config, 'runChildUpdate', false);
 
         /**
          * A function to be called when adding or creating group members.
          *
-         * @name Phaser.GameObjects.Group#createCallback
-         * @type {?Phaser.Types.GameObjects.Group.GroupCallback}
+         * @name Oyun.GameObjects.Group#createCallback
+         * @type {?Oyun.Types.GameObjects.Group.GroupCallback}
          * @since 3.0.0
          */
         this.createCallback = GetFastValue(config, 'createCallback', null);
@@ -27327,8 +27327,8 @@ var Group = new Class({
         /**
          * A function to be called when removing group members.
          *
-         * @name Phaser.GameObjects.Group#removeCallback
-         * @type {?Phaser.Types.GameObjects.Group.GroupCallback}
+         * @name Oyun.GameObjects.Group#removeCallback
+         * @type {?Oyun.Types.GameObjects.Group.GroupCallback}
          * @since 3.0.0
          */
         this.removeCallback = GetFastValue(config, 'removeCallback', null);
@@ -27336,8 +27336,8 @@ var Group = new Class({
         /**
          * A function to be called when creating several group members at once.
          *
-         * @name Phaser.GameObjects.Group#createMultipleCallback
-         * @type {?Phaser.Types.GameObjects.Group.GroupMultipleCreateCallback}
+         * @name Oyun.GameObjects.Group#createMultipleCallback
+         * @type {?Oyun.Types.GameObjects.Group.GroupMultipleCreateCallback}
          * @since 3.0.0
          */
         this.createMultipleCallback = GetFastValue(config, 'createMultipleCallback', null);
@@ -27346,8 +27346,8 @@ var Group = new Class({
          * A function to be called when adding or creating group members.
          * For internal use only by a Group, or any class that extends it.
          *
-         * @name Phaser.GameObjects.Group#internalCreateCallback
-         * @type {?Phaser.Types.GameObjects.Group.GroupCallback}
+         * @name Oyun.GameObjects.Group#internalCreateCallback
+         * @type {?Oyun.Types.GameObjects.Group.GroupCallback}
          * @private
          * @since 3.22.0
          */
@@ -27357,8 +27357,8 @@ var Group = new Class({
          * A function to be called when removing group members.
          * For internal use only by a Group, or any class that extends it.
          *
-         * @name Phaser.GameObjects.Group#internalRemoveCallback
-         * @type {?Phaser.Types.GameObjects.Group.GroupCallback}
+         * @name Oyun.GameObjects.Group#internalRemoveCallback
+         * @type {?Oyun.Types.GameObjects.Group.GroupCallback}
          * @private
          * @since 3.22.0
          */
@@ -27388,19 +27388,19 @@ var Group = new Class({
     },
 
     /**
-     * Creates a new Game Object and adds it to this group, unless the group {@link Phaser.GameObjects.Group#isFull is full}.
+     * Creates a new Game Object and adds it to this group, unless the group {@link Oyun.GameObjects.Group#isFull is full}.
      *
-     * Calls {@link Phaser.GameObjects.Group#createCallback}.
+     * Calls {@link Oyun.GameObjects.Group#createCallback}.
      *
-     * @method Phaser.GameObjects.Group#create
+     * @method Oyun.GameObjects.Group#create
      * @since 3.0.0
      *
      * @param {number} [x=0] - The horizontal position of the new Game Object in the world.
      * @param {number} [y=0] - The vertical position of the new Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key of the new Game Object.
      * @param {(string|number)} [frame=defaultFrame] - The texture frame of the new Game Object.
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of the new Game Object.
-     * @param {boolean} [active=true] - The {@link Phaser.GameObjects.GameObject#active} state of the new Game Object.
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of the new Game Object.
+     * @param {boolean} [active=true] - The {@link Oyun.GameObjects.GameObject#active} state of the new Game Object.
      *
      * @return {any} The new Game Object (usually a Sprite, etc.).
      */
@@ -27439,14 +27439,14 @@ var Group = new Class({
     /**
      * Creates several Game Objects and adds them to this group.
      *
-     * If the group becomes {@link Phaser.GameObjects.Group#isFull}, no further Game Objects are created.
+     * If the group becomes {@link Oyun.GameObjects.Group#isFull}, no further Game Objects are created.
      *
-     * Calls {@link Phaser.GameObjects.Group#createMultipleCallback} and {@link Phaser.GameObjects.Group#createCallback}.
+     * Calls {@link Oyun.GameObjects.Group#createMultipleCallback} and {@link Oyun.GameObjects.Group#createCallback}.
      *
-     * @method Phaser.GameObjects.Group#createMultiple
+     * @method Oyun.GameObjects.Group#createMultiple
      * @since 3.0.0
      *
-     * @param {Phaser.Types.GameObjects.Group.GroupCreateConfig|Phaser.Types.GameObjects.Group.GroupCreateConfig[]} config - Creation settings. This can be a single configuration object or an array of such objects, which will be applied in turn.
+     * @param {Oyun.Types.GameObjects.Group.GroupCreateConfig|Oyun.Types.GameObjects.Group.GroupCreateConfig[]} config - Creation settings. This can be a single configuration object or an array of such objects, which will be applied in turn.
      *
      * @return {any[]} The newly created Game Objects.
      */
@@ -27478,12 +27478,12 @@ var Group = new Class({
     },
 
     /**
-     * A helper for {@link Phaser.GameObjects.Group#createMultiple}.
+     * A helper for {@link Oyun.GameObjects.Group#createMultiple}.
      *
-     * @method Phaser.GameObjects.Group#createFromConfig
+     * @method Oyun.GameObjects.Group#createFromConfig
      * @since 3.0.0
      *
-     * @param {Phaser.Types.GameObjects.Group.GroupCreateConfig} options - Creation settings.
+     * @param {Oyun.Types.GameObjects.Group.GroupCreateConfig} options - Creation settings.
      *
      * @return {any[]} The newly created Game Objects.
      */
@@ -27633,9 +27633,9 @@ var Group = new Class({
     },
 
     /**
-     * Updates any group members, if {@link Phaser.GameObjects.Group#runChildUpdate} is enabled.
+     * Updates any group members, if {@link Oyun.GameObjects.Group#runChildUpdate} is enabled.
      *
-     * @method Phaser.GameObjects.Group#preUpdate
+     * @method Oyun.GameObjects.Group#preUpdate
      * @since 3.0.0
      *
      * @param {number} time - The current timestamp.
@@ -27665,12 +27665,12 @@ var Group = new Class({
     /**
      * Adds a Game Object to this group.
      *
-     * Calls {@link Phaser.GameObjects.Group#createCallback}.
+     * Calls {@link Oyun.GameObjects.Group#createCallback}.
      *
-     * @method Phaser.GameObjects.Group#add
+     * @method Oyun.GameObjects.Group#add
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.GameObject} child - The Game Object to add.
+     * @param {Oyun.GameObjects.GameObject} child - The Game Object to add.
      * @param {boolean} [addToScene=false] - Also add the Game Object to the scene.
      *
      * @return {this} This Group object.
@@ -27714,12 +27714,12 @@ var Group = new Class({
     /**
      * Adds several Game Objects to this group.
      *
-     * Calls {@link Phaser.GameObjects.Group#createCallback}.
+     * Calls {@link Oyun.GameObjects.Group#createCallback}.
      *
-     * @method Phaser.GameObjects.Group#addMultiple
+     * @method Oyun.GameObjects.Group#addMultiple
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.GameObject[]} children - The Game Objects to add.
+     * @param {Oyun.GameObjects.GameObject[]} children - The Game Objects to add.
      * @param {boolean} [addToScene=false] - Also add the Game Objects to the scene.
      *
      * @return {this} This group.
@@ -27742,12 +27742,12 @@ var Group = new Class({
     /**
      * Removes a member of this Group and optionally removes it from the Scene and / or destroys it.
      *
-     * Calls {@link Phaser.GameObjects.Group#removeCallback}.
+     * Calls {@link Oyun.GameObjects.Group#removeCallback}.
      *
-     * @method Phaser.GameObjects.Group#remove
+     * @method Oyun.GameObjects.Group#remove
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.GameObject} child - The Game Object to remove.
+     * @param {Oyun.GameObjects.GameObject} child - The Game Object to remove.
      * @param {boolean} [removeFromScene=false] - Optionally remove the Group member from the Scene it belongs to.
      * @param {boolean} [destroyChild=false] - Optionally call destroy on the removed Group member.
      *
@@ -27797,9 +27797,9 @@ var Group = new Class({
     /**
      * Removes all members of this Group and optionally removes them from the Scene and / or destroys them.
      *
-     * Does not call {@link Phaser.GameObjects.Group#removeCallback}.
+     * Does not call {@link Oyun.GameObjects.Group#removeCallback}.
      *
-     * @method Phaser.GameObjects.Group#clear
+     * @method Oyun.GameObjects.Group#clear
      * @since 3.0.0
      *
      * @param {boolean} [removeFromScene=false] - Optionally remove each Group member from the Scene.
@@ -27843,10 +27843,10 @@ var Group = new Class({
     /**
      * Tests if a Game Object is a member of this group.
      *
-     * @method Phaser.GameObjects.Group#contains
+     * @method Oyun.GameObjects.Group#contains
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.GameObject} child - A Game Object.
+     * @param {Oyun.GameObjects.GameObject} child - A Game Object.
      *
      * @return {boolean} True if the Game Object is a member of this group.
      */
@@ -27858,10 +27858,10 @@ var Group = new Class({
     /**
      * All members of the group.
      *
-     * @method Phaser.GameObjects.Group#getChildren
+     * @method Oyun.GameObjects.Group#getChildren
      * @since 3.0.0
      *
-     * @return {Phaser.GameObjects.GameObject[]} The group members.
+     * @return {Oyun.GameObjects.GameObject[]} The group members.
      */
     getChildren: function ()
     {
@@ -27871,7 +27871,7 @@ var Group = new Class({
     /**
      * The number of members of the group.
      *
-     * @method Phaser.GameObjects.Group#getLength
+     * @method Oyun.GameObjects.Group#getLength
      * @since 3.0.0
      *
      * @return {number}
@@ -27890,7 +27890,7 @@ var Group = new Class({
      * and you set `startIndex` to 0 and `endIndex` to 50, it would return matches from only
      * the first 50.
      *
-     * @method Phaser.GameObjects.Group#getMatching
+     * @method Oyun.GameObjects.Group#getMatching
      * @since 3.50.0
      *
      * @param {string} [property] - The property to test on each array element.
@@ -27906,22 +27906,22 @@ var Group = new Class({
     },
 
     /**
-     * Scans the Group, from top to bottom, for the first member that has an {@link Phaser.GameObjects.GameObject#active} state matching the argument,
+     * Scans the Group, from top to bottom, for the first member that has an {@link Oyun.GameObjects.GameObject#active} state matching the argument,
      * assigns `x` and `y`, and returns the member.
      *
      * If no matching member is found and `createIfNull` is true and the group isn't full then it will create a new Game Object using `x`, `y`, `key`, `frame`, and `visible`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#getFirst
+     * @method Oyun.GameObjects.Group#getFirst
      * @since 3.0.0
      *
-     * @param {boolean} [state=false] - The {@link Phaser.GameObjects.GameObject#active} value to match.
+     * @param {boolean} [state=false] - The {@link Oyun.GameObjects.GameObject#active} value to match.
      * @param {boolean} [createIfNull=false] - Create a new Game Object if no matching members are found, using the following arguments.
      * @param {number} [x] - The horizontal position of the Game Object in the world.
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {?any} The first matching group member, or a newly created member, or null.
      */
@@ -27931,23 +27931,23 @@ var Group = new Class({
     },
 
     /**
-     * Scans the Group, from top to bottom, for the nth member that has an {@link Phaser.GameObjects.GameObject#active} state matching the argument,
+     * Scans the Group, from top to bottom, for the nth member that has an {@link Oyun.GameObjects.GameObject#active} state matching the argument,
      * assigns `x` and `y`, and returns the member.
      *
      * If no matching member is found and `createIfNull` is true and the group isn't full then it will create a new Game Object using `x`, `y`, `key`, `frame`, and `visible`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#getFirstNth
+     * @method Oyun.GameObjects.Group#getFirstNth
      * @since 3.6.0
      *
      * @param {number} nth - The nth matching Group member to search for.
-     * @param {boolean} [state=false] - The {@link Phaser.GameObjects.GameObject#active} value to match.
+     * @param {boolean} [state=false] - The {@link Oyun.GameObjects.GameObject#active} value to match.
      * @param {boolean} [createIfNull=false] - Create a new Game Object if no matching members are found, using the following arguments.
      * @param {number} [x] - The horizontal position of the Game Object in the world.
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {?any} The first matching group member, or a newly created member, or null.
      */
@@ -27957,22 +27957,22 @@ var Group = new Class({
     },
 
     /**
-     * Scans the Group for the last member that has an {@link Phaser.GameObjects.GameObject#active} state matching the argument,
+     * Scans the Group for the last member that has an {@link Oyun.GameObjects.GameObject#active} state matching the argument,
      * assigns `x` and `y`, and returns the member.
      *
      * If no matching member is found and `createIfNull` is true and the group isn't full then it will create a new Game Object using `x`, `y`, `key`, `frame`, and `visible`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#getLast
+     * @method Oyun.GameObjects.Group#getLast
      * @since 3.6.0
      *
-     * @param {boolean} [state=false] - The {@link Phaser.GameObjects.GameObject#active} value to match.
+     * @param {boolean} [state=false] - The {@link Oyun.GameObjects.GameObject#active} value to match.
      * @param {boolean} [createIfNull=false] - Create a new Game Object if no matching members are found, using the following arguments.
      * @param {number} [x] - The horizontal position of the Game Object in the world.
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {?any} The first matching group member, or a newly created member, or null.
      */
@@ -27982,23 +27982,23 @@ var Group = new Class({
     },
 
     /**
-     * Scans the Group for the last nth member that has an {@link Phaser.GameObjects.GameObject#active} state matching the argument,
+     * Scans the Group for the last nth member that has an {@link Oyun.GameObjects.GameObject#active} state matching the argument,
      * assigns `x` and `y`, and returns the member.
      *
      * If no matching member is found and `createIfNull` is true and the group isn't full then it will create a new Game Object using `x`, `y`, `key`, `frame`, and `visible`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#getLastNth
+     * @method Oyun.GameObjects.Group#getLastNth
      * @since 3.6.0
      *
      * @param {number} nth - The nth matching Group member to search for.
-     * @param {boolean} [state=false] - The {@link Phaser.GameObjects.GameObject#active} value to match.
+     * @param {boolean} [state=false] - The {@link Oyun.GameObjects.GameObject#active} value to match.
      * @param {boolean} [createIfNull=false] - Create a new Game Object if no matching members are found, using the following arguments.
      * @param {number} [x] - The horizontal position of the Game Object in the world.
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {?any} The first matching group member, or a newly created member, or null.
      */
@@ -28008,25 +28008,25 @@ var Group = new Class({
     },
 
     /**
-     * Scans the group for the last member that has an {@link Phaser.GameObjects.GameObject#active} state matching the argument,
+     * Scans the group for the last member that has an {@link Oyun.GameObjects.GameObject#active} state matching the argument,
      * assigns `x` and `y`, and returns the member.
      *
      * If no matching member is found and `createIfNull` is true and the group isn't full then it will create a new Game Object using `x`, `y`, `key`, `frame`, and `visible`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#getHandler
+     * @method Oyun.GameObjects.Group#getHandler
      * @private
      * @since 3.6.0
      *
      * @param {boolean} forwards - Search front to back or back to front?
      * @param {number} nth - Stop matching after nth successful matches.
-     * @param {boolean} [state=false] - The {@link Phaser.GameObjects.GameObject#active} value to match.
+     * @param {boolean} [state=false] - The {@link Oyun.GameObjects.GameObject#active} value to match.
      * @param {boolean} [createIfNull=false] - Create a new Game Object if no matching members are found, using the following arguments.
      * @param {number} [x] - The horizontal position of the Game Object in the world.
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {?any} The first matching group member, or a newly created member, or null.
      */
@@ -28111,21 +28111,21 @@ var Group = new Class({
     },
 
     /**
-     * Scans the group for the first member that has an {@link Phaser.GameObjects.GameObject#active} state set to `false`,
+     * Scans the group for the first member that has an {@link Oyun.GameObjects.GameObject#active} state set to `false`,
      * assigns `x` and `y`, and returns the member.
      *
      * If no inactive member is found and the group isn't full then it will create a new Game Object using `x`, `y`, `key`, `frame`, and `visible`.
      * The new Game Object will have its active state set to `true`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#get
+     * @method Oyun.GameObjects.Group#get
      * @since 3.0.0
      *
      * @param {number} [x] - The horizontal position of the Game Object in the world.
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {?any} The first inactive group member, or a newly created member, or null.
      */
@@ -28135,13 +28135,13 @@ var Group = new Class({
     },
 
     /**
-     * Scans the group for the first member that has an {@link Phaser.GameObjects.GameObject#active} state set to `true`,
+     * Scans the group for the first member that has an {@link Oyun.GameObjects.GameObject#active} state set to `true`,
      * assigns `x` and `y`, and returns the member.
      *
      * If no active member is found and `createIfNull` is `true` and the group isn't full then it will create a new one using `x`, `y`, `key`, `frame`, and `visible`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#getFirstAlive
+     * @method Oyun.GameObjects.Group#getFirstAlive
      * @since 3.0.0
      *
      * @param {boolean} [createIfNull=false] - Create a new Game Object if no matching members are found, using the following arguments.
@@ -28149,7 +28149,7 @@ var Group = new Class({
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {any} The first active group member, or a newly created member, or null.
      */
@@ -28159,14 +28159,14 @@ var Group = new Class({
     },
 
     /**
-     * Scans the group for the first member that has an {@link Phaser.GameObjects.GameObject#active} state set to `false`,
+     * Scans the group for the first member that has an {@link Oyun.GameObjects.GameObject#active} state set to `false`,
      * assigns `x` and `y`, and returns the member.
      *
      * If no inactive member is found and `createIfNull` is `true` and the group isn't full then it will create a new one using `x`, `y`, `key`, `frame`, and `visible`.
      * The new Game Object will have an active state set to `true`.
      * Unless a new member is created, `key`, `frame`, and `visible` are ignored.
      *
-     * @method Phaser.GameObjects.Group#getFirstDead
+     * @method Oyun.GameObjects.Group#getFirstDead
      * @since 3.0.0
      *
      * @param {boolean} [createIfNull=false] - Create a new Game Object if no matching members are found, using the following arguments.
@@ -28174,7 +28174,7 @@ var Group = new Class({
      * @param {number} [y] - The vertical position of the Game Object in the world.
      * @param {string} [key=defaultKey] - The texture key assigned to a new Game Object (if one is created).
      * @param {(string|number)} [frame=defaultFrame] - A texture frame assigned to a new Game Object (if one is created).
-     * @param {boolean} [visible=true] - The {@link Phaser.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
+     * @param {boolean} [visible=true] - The {@link Oyun.GameObjects.Components.Visible#visible} state of a new Game Object (if one is created).
      *
      * @return {any} The first inactive group member, or a newly created member, or null.
      */
@@ -28184,9 +28184,9 @@ var Group = new Class({
     },
 
     /**
-     * {@link Phaser.GameObjects.Components.Animation#play Plays} an animation for all members of this group.
+     * {@link Oyun.GameObjects.Components.Animation#play Plays} an animation for all members of this group.
      *
-     * @method Phaser.GameObjects.Group#playAnimation
+     * @method Oyun.GameObjects.Group#playAnimation
      * @since 3.0.0
      *
      * @param {string} key - The string-based key of the animation to play.
@@ -28202,12 +28202,12 @@ var Group = new Class({
     },
 
     /**
-     * Whether this group's size at its {@link Phaser.GameObjects.Group#maxSize maximum}.
+     * Whether this group's size at its {@link Oyun.GameObjects.Group#maxSize maximum}.
      *
-     * @method Phaser.GameObjects.Group#isFull
+     * @method Oyun.GameObjects.Group#isFull
      * @since 3.0.0
      *
-     * @return {boolean} True if the number of members equals {@link Phaser.GameObjects.Group#maxSize}.
+     * @return {boolean} True if the number of members equals {@link Oyun.GameObjects.Group#maxSize}.
      */
     isFull: function ()
     {
@@ -28224,7 +28224,7 @@ var Group = new Class({
     /**
      * Counts the number of active (or inactive) group members.
      *
-     * @method Phaser.GameObjects.Group#countActive
+     * @method Oyun.GameObjects.Group#countActive
      * @since 3.0.0
      *
      * @param {boolean} [value=true] - Count active (true) or inactive (false) group members.
@@ -28251,7 +28251,7 @@ var Group = new Class({
     /**
      * Counts the number of in-use (active) group members.
      *
-     * @method Phaser.GameObjects.Group#getTotalUsed
+     * @method Oyun.GameObjects.Group#getTotalUsed
      * @since 3.0.0
      *
      * @return {number} The number of group members with an active state of true.
@@ -28262,11 +28262,11 @@ var Group = new Class({
     },
 
     /**
-     * The difference of {@link Phaser.GameObjects.Group#maxSize} and the number of active group members.
+     * The difference of {@link Oyun.GameObjects.Group#maxSize} and the number of active group members.
      *
      * This represents the number of group members that could be created or reactivated before reaching the size limit.
      *
-     * @method Phaser.GameObjects.Group#getTotalFree
+     * @method Oyun.GameObjects.Group#getTotalFree
      * @since 3.0.0
      *
      * @return {number} maxSize minus the number of active group numbers; or a large number (if maxSize is -1).
@@ -28283,7 +28283,7 @@ var Group = new Class({
      * Sets the `active` property of this Group.
      * When active, this Group runs its `preUpdate` method.
      *
-     * @method Phaser.GameObjects.Group#setActive
+     * @method Oyun.GameObjects.Group#setActive
      * @since 3.24.0
      *
      * @param {boolean} value - True if this Group should be set as active, false if not.
@@ -28299,9 +28299,9 @@ var Group = new Class({
 
     /**
      * Sets the `name` property of this Group.
-     * The `name` property is not populated by Phaser and is presented for your own use.
+     * The `name` property is not populated by Oyun and is presented for your own use.
      *
-     * @method Phaser.GameObjects.Group#setName
+     * @method Oyun.GameObjects.Group#setName
      * @since 3.24.0
      *
      * @param {string} value - The name to be given to this Group.
@@ -28318,7 +28318,7 @@ var Group = new Class({
     /**
      * Sets the property as defined in `key` of each group member to the given value.
      *
-     * @method Phaser.GameObjects.Group#propertyValueSet
+     * @method Oyun.GameObjects.Group#propertyValueSet
      * @since 3.21.0
      *
      * @param {string} key - The property to be updated.
@@ -28339,7 +28339,7 @@ var Group = new Class({
     /**
      * Adds the given value to the property as defined in `key` of each group member.
      *
-     * @method Phaser.GameObjects.Group#propertyValueInc
+     * @method Oyun.GameObjects.Group#propertyValueInc
      * @since 3.21.0
      *
      * @param {string} key - The property to be updated.
@@ -28360,7 +28360,7 @@ var Group = new Class({
     /**
      * Sets the x of each group member.
      *
-     * @method Phaser.GameObjects.Group#setX
+     * @method Oyun.GameObjects.Group#setX
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the property to.
@@ -28378,7 +28378,7 @@ var Group = new Class({
     /**
      * Sets the y of each group member.
      *
-     * @method Phaser.GameObjects.Group#setY
+     * @method Oyun.GameObjects.Group#setY
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the property to.
@@ -28396,7 +28396,7 @@ var Group = new Class({
     /**
      * Sets the x, y of each group member.
      *
-     * @method Phaser.GameObjects.Group#setXY
+     * @method Oyun.GameObjects.Group#setXY
      * @since 3.21.0
      *
      * @param {number} x - The amount to set the `x` property to.
@@ -28416,7 +28416,7 @@ var Group = new Class({
     /**
      * Adds the given value to the x of each group member.
      *
-     * @method Phaser.GameObjects.Group#incX
+     * @method Oyun.GameObjects.Group#incX
      * @since 3.21.0
      *
      * @param {number} value - The amount to be added to the `x` property.
@@ -28434,7 +28434,7 @@ var Group = new Class({
     /**
      * Adds the given value to the y of each group member.
      *
-     * @method Phaser.GameObjects.Group#incY
+     * @method Oyun.GameObjects.Group#incY
      * @since 3.21.0
      *
      * @param {number} value - The amount to be added to the `y` property.
@@ -28452,7 +28452,7 @@ var Group = new Class({
     /**
      * Adds the given value to the x, y of each group member.
      *
-     * @method Phaser.GameObjects.Group#incXY
+     * @method Oyun.GameObjects.Group#incXY
      * @since 3.21.0
      *
      * @param {number} x - The amount to be added to the `x` property.
@@ -28475,7 +28475,7 @@ var Group = new Class({
      *
      * The first group member position is set to x/y.
      *
-     * @method Phaser.GameObjects.Group#shiftPosition
+     * @method Oyun.GameObjects.Group#shiftPosition
      * @since 3.21.0
      *
      * @param {number} x - The x coordinate to place the first item in the array at.
@@ -28494,7 +28494,7 @@ var Group = new Class({
     /**
      * Sets the angle of each group member.
      *
-     * @method Phaser.GameObjects.Group#angle
+     * @method Oyun.GameObjects.Group#angle
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the angle to, in degrees.
@@ -28512,7 +28512,7 @@ var Group = new Class({
     /**
      * Sets the rotation of each group member.
      *
-     * @method Phaser.GameObjects.Group#rotate
+     * @method Oyun.GameObjects.Group#rotate
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the rotation to, in radians.
@@ -28530,10 +28530,10 @@ var Group = new Class({
     /**
      * Rotates each group member around the given point by the given angle.
      *
-     * @method Phaser.GameObjects.Group#rotateAround
+     * @method Oyun.GameObjects.Group#rotateAround
      * @since 3.21.0
      *
-     * @param {Phaser.Types.Math.Vector2Like} point - Any object with public `x` and `y` properties.
+     * @param {Oyun.Types.Math.Vector2Like} point - Any object with public `x` and `y` properties.
      * @param {number} angle - The angle to rotate by, in radians.
      *
      * @return {this} This Group object.
@@ -28548,10 +28548,10 @@ var Group = new Class({
     /**
      * Rotates each group member around the given point by the given angle and distance.
      *
-     * @method Phaser.GameObjects.Group#rotateAroundDistance
+     * @method Oyun.GameObjects.Group#rotateAroundDistance
      * @since 3.21.0
      *
-     * @param {Phaser.Types.Math.Vector2Like} point - Any object with public `x` and `y` properties.
+     * @param {Oyun.Types.Math.Vector2Like} point - Any object with public `x` and `y` properties.
      * @param {number} angle - The angle to rotate by, in radians.
      * @param {number} distance - The distance from the point of rotation in pixels.
      *
@@ -28567,7 +28567,7 @@ var Group = new Class({
     /**
      * Sets the alpha of each group member.
      *
-     * @method Phaser.GameObjects.Group#setAlpha
+     * @method Oyun.GameObjects.Group#setAlpha
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the alpha to.
@@ -28585,7 +28585,7 @@ var Group = new Class({
     /**
      * Sets the tint of each group member.
      *
-     * @method Phaser.GameObjects.Group#setTint
+     * @method Oyun.GameObjects.Group#setTint
      * @since 3.21.0
      *
      * @param {number} topLeft - The tint being applied to top-left corner of item. If other parameters are given no value, this tint will be applied to whole item.
@@ -28605,7 +28605,7 @@ var Group = new Class({
     /**
      * Sets the originX, originY of each group member.
      *
-     * @method Phaser.GameObjects.Group#setOrigin
+     * @method Oyun.GameObjects.Group#setOrigin
      * @since 3.21.0
      *
      * @param {number} originX - The amount to set the `originX` property to.
@@ -28625,7 +28625,7 @@ var Group = new Class({
     /**
      * Sets the scaleX of each group member.
      *
-     * @method Phaser.GameObjects.Group#scaleX
+     * @method Oyun.GameObjects.Group#scaleX
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the property to.
@@ -28643,7 +28643,7 @@ var Group = new Class({
     /**
      * Sets the scaleY of each group member.
      *
-     * @method Phaser.GameObjects.Group#scaleY
+     * @method Oyun.GameObjects.Group#scaleY
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the property to.
@@ -28661,7 +28661,7 @@ var Group = new Class({
     /**
      * Sets the scaleX, scaleY of each group member.
      *
-     * @method Phaser.GameObjects.Group#scaleXY
+     * @method Oyun.GameObjects.Group#scaleXY
      * @since 3.21.0
      *
      * @param {number} scaleX - The amount to be added to the `scaleX` property.
@@ -28681,7 +28681,7 @@ var Group = new Class({
     /**
      * Sets the depth of each group member.
      *
-     * @method Phaser.GameObjects.Group#setDepth
+     * @method Oyun.GameObjects.Group#setDepth
      * @since 3.0.0
      *
      * @param {number} value - The amount to set the property to.
@@ -28699,7 +28699,7 @@ var Group = new Class({
     /**
      * Sets the blendMode of each group member.
      *
-     * @method Phaser.GameObjects.Group#setBlendMode
+     * @method Oyun.GameObjects.Group#setBlendMode
      * @since 3.21.0
      *
      * @param {number} value - The amount to set the property to.
@@ -28716,11 +28716,11 @@ var Group = new Class({
     /**
      * Passes all group members to the Input Manager to enable them for input with identical areas and callbacks.
      *
-     * @method Phaser.GameObjects.Group#setHitArea
+     * @method Oyun.GameObjects.Group#setHitArea
      * @since 3.21.0
      *
      * @param {*} hitArea - Either an input configuration object, or a geometric shape that defines the hit area for the Game Object. If not specified a Rectangle will be used.
-     * @param {Phaser.Types.Input.HitAreaCallback} hitAreaCallback - A callback to be invoked when the Game Object is interacted with. If you provide a shape you must also provide a callback.
+     * @param {Oyun.Types.Input.HitAreaCallback} hitAreaCallback - A callback to be invoked when the Game Object is interacted with. If you provide a shape you must also provide a callback.
      *
      * @return {this} This Group object.
      */
@@ -28734,7 +28734,7 @@ var Group = new Class({
     /**
      * Shuffles the group members in place.
      *
-     * @method Phaser.GameObjects.Group#shuffle
+     * @method Oyun.GameObjects.Group#shuffle
      * @since 3.21.0
      *
      * @return {this} This Group object.
@@ -28749,10 +28749,10 @@ var Group = new Class({
     /**
      * Deactivates a member of this group.
      *
-     * @method Phaser.GameObjects.Group#kill
+     * @method Oyun.GameObjects.Group#kill
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.GameObject} gameObject - A member of this group.
+     * @param {Oyun.GameObjects.GameObject} gameObject - A member of this group.
      */
     kill: function (gameObject)
     {
@@ -28765,10 +28765,10 @@ var Group = new Class({
     /**
      * Deactivates and hides a member of this group.
      *
-     * @method Phaser.GameObjects.Group#killAndHide
+     * @method Oyun.GameObjects.Group#killAndHide
      * @since 3.0.0
      *
-     * @param {Phaser.GameObjects.GameObject} gameObject - A member of this group.
+     * @param {Oyun.GameObjects.GameObject} gameObject - A member of this group.
      */
     killAndHide: function (gameObject)
     {
@@ -28782,7 +28782,7 @@ var Group = new Class({
     /**
      * Sets the visible of each group member.
      *
-     * @method Phaser.GameObjects.Group#setVisible
+     * @method Oyun.GameObjects.Group#setVisible
      * @since 3.21.0
      *
      * @param {boolean} value - The value to set the property to.
@@ -28801,7 +28801,7 @@ var Group = new Class({
     /**
      * Toggles (flips) the visible state of each member of this group.
      *
-     * @method Phaser.GameObjects.Group#toggleVisible
+     * @method Oyun.GameObjects.Group#toggleVisible
      * @since 3.0.0
      *
      * @return {this} This Group object.
@@ -28816,12 +28816,12 @@ var Group = new Class({
     /**
      * Empties this group and removes it from the Scene.
      *
-     * Does not call {@link Phaser.GameObjects.Group#removeCallback}.
+     * Does not call {@link Oyun.GameObjects.Group#removeCallback}.
      *
-     * @method Phaser.GameObjects.Group#destroy
+     * @method Oyun.GameObjects.Group#destroy
      * @since 3.0.0
      *
-     * @param {boolean} [destroyChildren=false] - Also {@link Phaser.GameObjects.GameObject#destroy} each group member.
+     * @param {boolean} [destroyChildren=false] - Also {@link Oyun.GameObjects.GameObject#destroy} each group member.
      */
     destroy: function (destroyChildren)
     {
@@ -28859,13 +28859,13 @@ var Utils = __webpack_require__(12);
 /**
  * Renders a filled path for the given Shape.
  *
- * @method Phaser.GameObjects.Shape#FillPathWebGL
+ * @method Oyun.GameObjects.Shape#FillPathWebGL
  * @since 3.13.0
  * @private
  *
- * @param {Phaser.Renderer.WebGL.WebGLPipeline} pipeline - The WebGL Pipeline used to render this Shape.
- * @param {Phaser.GameObjects.Components.TransformMatrix} calcMatrix - The transform matrix used to get the position values.
- * @param {Phaser.GameObjects.Shape} src - The Game Object shape being rendered in this call.
+ * @param {Oyun.Renderer.WebGL.WebGLPipeline} pipeline - The WebGL Pipeline used to render this Shape.
+ * @param {Oyun.GameObjects.Components.TransformMatrix} calcMatrix - The transform matrix used to get the position values.
+ * @param {Oyun.GameObjects.Shape} src - The Game Object shape being rendered in this call.
  * @param {number} alpha - The base alpha value.
  * @param {number} dx - The source displayOriginX.
  * @param {number} dy - The source displayOriginY.
@@ -28921,10 +28921,10 @@ module.exports = FillPathWebGL;
 /**
  * Checks if a point (as a pair of coordinates) is inside a Triangle's bounds.
  *
- * @function Phaser.Geom.Triangle.Contains
+ * @function Oyun.Geom.Triangle.Contains
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Triangle} triangle - The Triangle to check.
+ * @param {Oyun.Geom.Triangle} triangle - The Triangle to check.
  * @param {number} x - The X coordinate of the point to check.
  * @param {number} y - The Y coordinate of the point to check.
  *
@@ -29007,13 +29007,13 @@ function GetLength (x1, y1, x2, y2)
  * you modify and test them.
  *
  * @class Face
- * @memberof Phaser.Geom.Mesh
+ * @memberof Oyun.Geom.Mesh
  * @constructor
  * @since 3.50.0
  *
- * @param {Phaser.Geom.Mesh.Vertex} vertex1 - The first vertex of the Face.
- * @param {Phaser.Geom.Mesh.Vertex} vertex2 - The second vertex of the Face.
- * @param {Phaser.Geom.Mesh.Vertex} vertex3 - The third vertex of the Face.
+ * @param {Oyun.Geom.Mesh.Vertex} vertex1 - The first vertex of the Face.
+ * @param {Oyun.Geom.Mesh.Vertex} vertex2 - The second vertex of the Face.
+ * @param {Oyun.Geom.Mesh.Vertex} vertex3 - The third vertex of the Face.
  */
 var Face = new Class({
 
@@ -29024,8 +29024,8 @@ var Face = new Class({
         /**
          * The first vertex in this Face.
          *
-         * @name Phaser.Geom.Mesh.Face#vertex1
-         * @type {Phaser.Geom.Mesh.Vertex}
+         * @name Oyun.Geom.Mesh.Face#vertex1
+         * @type {Oyun.Geom.Mesh.Vertex}
          * @since 3.50.0
          */
         this.vertex1 = vertex1;
@@ -29033,8 +29033,8 @@ var Face = new Class({
         /**
          * The second vertex in this Face.
          *
-         * @name Phaser.Geom.Mesh.Face#vertex2
-         * @type {Phaser.Geom.Mesh.Vertex}
+         * @name Oyun.Geom.Mesh.Face#vertex2
+         * @type {Oyun.Geom.Mesh.Vertex}
          * @since 3.50.0
          */
         this.vertex2 = vertex2;
@@ -29042,8 +29042,8 @@ var Face = new Class({
         /**
          * The third vertex in this Face.
          *
-         * @name Phaser.Geom.Mesh.Face#vertex3
-         * @type {Phaser.Geom.Mesh.Vertex}
+         * @name Oyun.Geom.Mesh.Face#vertex3
+         * @type {Oyun.Geom.Mesh.Vertex}
          * @since 3.50.0
          */
         this.vertex3 = vertex3;
@@ -29053,8 +29053,8 @@ var Face = new Class({
          *
          * Be sure to call the `Face.updateBounds` method _before_ using this property.
          *
-         * @name Phaser.Geom.Mesh.Face#bounds
-         * @type {Phaser.Geom.Rectangle}
+         * @name Oyun.Geom.Mesh.Face#bounds
+         * @type {Oyun.Geom.Rectangle}
          * @since 3.50.0
          */
         this.bounds = new Rectangle();
@@ -29062,8 +29062,8 @@ var Face = new Class({
         /**
          * The face inCenter. Do not access directly, instead use the `getInCenter` method.
          *
-         * @name Phaser.Geom.Mesh.Face#_inCenter
-         * @type {Phaser.Math.Vector2}
+         * @name Oyun.Geom.Mesh.Face#_inCenter
+         * @type {Oyun.Math.Vector2}
          * @private
          * @since 3.50.0
          */
@@ -29073,12 +29073,12 @@ var Face = new Class({
     /**
      * Calculates and returns the in-center position of this Face.
      *
-     * @method Phaser.Geom.Mesh.Face#getInCenter
+     * @method Oyun.Geom.Mesh.Face#getInCenter
      * @since 3.50.0
      *
      * @param {boolean} [local=true] Return the in center from the un-transformed vertex positions (`true`), or transformed? (`false`)
      *
-     * @return {Phaser.Math.Vector2} A Vector2 containing the in center position of this Face.
+     * @return {Oyun.Math.Vector2} A Vector2 containing the in center position of this Face.
      */
     getInCenter: function (local)
     {
@@ -29138,12 +29138,12 @@ var Face = new Class({
      * You can optionally provide a transform matrix. If given, the Face vertices
      * will be transformed first, before being checked against the coordinates.
      *
-     * @method Phaser.Geom.Mesh.Face#contains
+     * @method Oyun.Geom.Mesh.Face#contains
      * @since 3.50.0
      *
      * @param {number} x - The horizontal position to check.
      * @param {number} y - The vertical position to check.
-     * @param {Phaser.GameObjects.Components.TransformMatrix} [calcMatrix] - Optional transform matrix to apply to the vertices before comparison.
+     * @param {Oyun.GameObjects.Components.TransformMatrix} [calcMatrix] - Optional transform matrix to apply to the vertices before comparison.
      *
      * @return {boolean} `true` if the coordinates lay within this Face, otherwise `false`.
      */
@@ -29210,7 +29210,7 @@ var Face = new Class({
      *
      * It checks the transformed position of the vertices, not the local one.
      *
-     * @method Phaser.Geom.Mesh.Face#isCounterClockwise
+     * @method Oyun.Geom.Mesh.Face#isCounterClockwise
      * @since 3.50.0
      *
      * @param {number} z - The z-axis value to test against. Typically the `Mesh.modelPosition.z`.
@@ -29231,7 +29231,7 @@ var Face = new Class({
     /**
      * Loads the data from this Vertex into the given Typed Arrays.
      *
-     * @method Phaser.Geom.Mesh.Face#load
+     * @method Oyun.Geom.Mesh.Face#load
      * @since 3.50.0
      *
      * @param {Float32Array} F32 - A Float32 Array to insert the position, UV and unit data in to.
@@ -29261,10 +29261,10 @@ var Face = new Class({
     /**
      * Transforms all Face vertices by the given matrix, storing the results in their `vx`, `vy` and `vz` properties.
      *
-     * @method Phaser.Geom.Mesh.Face#transformCoordinatesLocal
+     * @method Oyun.Geom.Mesh.Face#transformCoordinatesLocal
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} transformMatrix - The transform matrix to apply to this vertex.
+     * @param {Oyun.Math.Matrix4} transformMatrix - The transform matrix to apply to this vertex.
      * @param {number} width - The width of the parent Mesh.
      * @param {number} height - The height of the parent Mesh.
      * @param {number} cameraZ - The z position of the MeshCamera.
@@ -29285,7 +29285,7 @@ var Face = new Class({
      *
      * Call this method prior to accessing the `Face.bounds` property.
      *
-     * @method Phaser.Geom.Mesh.Face#updateBounds
+     * @method Oyun.Geom.Mesh.Face#updateBounds
      * @since 3.50.0
      *
      * @return {this} This Face instance.
@@ -29322,10 +29322,10 @@ var Face = new Class({
      * and return the results of an intersection test between the bounds and the camera world view
      * rectangle.
      *
-     * @method Phaser.Geom.Mesh.Face#isInView
+     * @method Oyun.Geom.Mesh.Face#isInView
      * @since 3.50.0
      *
-     * @param {Phaser.Cameras.Scene2D.Camera} camera - The Camera to check against.
+     * @param {Oyun.Cameras.Scene2D.Camera} camera - The Camera to check against.
      * @param {boolean} hideCCW - Test the counter-clockwise orientation of the verts?
      * @param {number} z - The Cameras z position, used in the CCW test.
      * @param {number} alpha - The alpha of the parent object.
@@ -29375,7 +29375,7 @@ var Face = new Class({
      *
      * Therefore, this updates the vertex data directly.
      *
-     * @method Phaser.Geom.Mesh.Face#translate
+     * @method Oyun.Geom.Mesh.Face#translate
      * @since 3.50.0
      *
      * @param {number} x - The amount to horizontally translate by.
@@ -29406,7 +29406,7 @@ var Face = new Class({
     /**
      * The x coordinate of this Face, based on the in center position of the Face.
      *
-     * @name Phaser.Geom.Mesh.Face#x
+     * @name Oyun.Geom.Mesh.Face#x
      * @type {number}
      * @since 3.50.0
      */
@@ -29429,7 +29429,7 @@ var Face = new Class({
     /**
      * The y coordinate of this Face, based on the in center position of the Face.
      *
-     * @name Phaser.Geom.Mesh.Face#y
+     * @name Oyun.Geom.Mesh.Face#y
      * @type {number}
      * @since 3.50.0
      */
@@ -29458,7 +29458,7 @@ var Face = new Class({
      * When getting the alpha of this Face, it will return an average of the alpha
      * component of all three vertices.
      *
-     * @name Phaser.Geom.Mesh.Face#alpha
+     * @name Oyun.Geom.Mesh.Face#alpha
      * @type {number}
      * @since 3.50.0
      */
@@ -29487,7 +29487,7 @@ var Face = new Class({
      *
      * The depth is calculated based on the transformed z value, not the local one.
      *
-     * @name Phaser.Geom.Mesh.Face#depth
+     * @name Oyun.Geom.Mesh.Face#depth
      * @type {number}
      * @readonly
      * @since 3.50.0
@@ -29508,7 +29508,7 @@ var Face = new Class({
     /**
      * Destroys this Face and nulls the references to the vertices.
      *
-     * @method Phaser.Geom.Mesh.Face#destroy
+     * @method Oyun.Geom.Mesh.Face#destroy
      * @since 3.50.0
      */
     destroy: function ()
@@ -29540,11 +29540,11 @@ module.exports = Face;
  * As such, the two Rectangles are considered "solid".
  * A Rectangle with no width or no height will never intersect another Rectangle.
  *
- * @function Phaser.Geom.Intersects.RectangleToRectangle
+ * @function Oyun.Geom.Intersects.RectangleToRectangle
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Rectangle} rectA - The first Rectangle to check for intersection.
- * @param {Phaser.Geom.Rectangle} rectB - The second Rectangle to check for intersection.
+ * @param {Oyun.Geom.Rectangle} rectA - The first Rectangle to check for intersection.
+ * @param {Oyun.Geom.Rectangle} rectB - The second Rectangle to check for intersection.
  *
  * @return {boolean} `true` if the two Rectangles intersect, otherwise `false`.
  */
@@ -29584,9 +29584,9 @@ var Vector3 = __webpack_require__(38);
  * Faces, and thus Vertex objects, are used by the Mesh Game Object in order to render objects in WebGL.
  *
  * @class Vertex
- * @memberof Phaser.Geom.Mesh
+ * @memberof Oyun.Geom.Mesh
  * @constructor
- * @extends Phaser.Math.Vector3
+ * @extends Oyun.Math.Vector3
  * @since 3.50.0
  *
  * @param {number} x - The x position of the vertex.
@@ -29619,7 +29619,7 @@ var Vertex = new Class({
         /**
          * The projected x coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#vx
+         * @name Oyun.Geom.Mesh.Vertex#vx
          * @type {number}
          * @since 3.50.0
          */
@@ -29628,7 +29628,7 @@ var Vertex = new Class({
         /**
          * The projected y coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#vy
+         * @name Oyun.Geom.Mesh.Vertex#vy
          * @type {number}
          * @since 3.50.0
          */
@@ -29637,7 +29637,7 @@ var Vertex = new Class({
         /**
          * The projected z coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#vz
+         * @name Oyun.Geom.Mesh.Vertex#vz
          * @type {number}
          * @since 3.50.0
          */
@@ -29646,7 +29646,7 @@ var Vertex = new Class({
         /**
          * The projected x coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#nx
+         * @name Oyun.Geom.Mesh.Vertex#nx
          * @type {number}
          * @since 3.50.0
          */
@@ -29655,7 +29655,7 @@ var Vertex = new Class({
         /**
          * The projected y coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#ny
+         * @name Oyun.Geom.Mesh.Vertex#ny
          * @type {number}
          * @since 3.50.0
          */
@@ -29664,7 +29664,7 @@ var Vertex = new Class({
         /**
          * The projected z coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#nz
+         * @name Oyun.Geom.Mesh.Vertex#nz
          * @type {number}
          * @since 3.50.0
          */
@@ -29673,7 +29673,7 @@ var Vertex = new Class({
         /**
          * UV u coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#u
+         * @name Oyun.Geom.Mesh.Vertex#u
          * @type {number}
          * @since 3.50.0
          */
@@ -29682,7 +29682,7 @@ var Vertex = new Class({
         /**
          * UV v coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#v
+         * @name Oyun.Geom.Mesh.Vertex#v
          * @type {number}
          * @since 3.50.0
          */
@@ -29691,7 +29691,7 @@ var Vertex = new Class({
         /**
          * The color value of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#color
+         * @name Oyun.Geom.Mesh.Vertex#color
          * @type {number}
          * @since 3.50.0
          */
@@ -29700,7 +29700,7 @@ var Vertex = new Class({
         /**
          * The alpha value of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#alpha
+         * @name Oyun.Geom.Mesh.Vertex#alpha
          * @type {number}
          * @since 3.50.0
          */
@@ -29709,7 +29709,7 @@ var Vertex = new Class({
         /**
          * The translated x coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#tx
+         * @name Oyun.Geom.Mesh.Vertex#tx
          * @type {number}
          * @since 3.50.0
          */
@@ -29718,7 +29718,7 @@ var Vertex = new Class({
         /**
          * The translated y coordinate of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#ty
+         * @name Oyun.Geom.Mesh.Vertex#ty
          * @type {number}
          * @since 3.50.0
          */
@@ -29727,7 +29727,7 @@ var Vertex = new Class({
         /**
          * The translated alpha value of this vertex.
          *
-         * @name Phaser.Geom.Mesh.Vertex#ta
+         * @name Oyun.Geom.Mesh.Vertex#ta
          * @type {number}
          * @since 3.50.0
          */
@@ -29737,7 +29737,7 @@ var Vertex = new Class({
     /**
      * Sets the U and V properties.
      *
-     * @method Phaser.Geom.Mesh.Vertex#setUVs
+     * @method Oyun.Geom.Mesh.Vertex#setUVs
      * @since 3.50.0
      *
      * @param {number} u - The UV u coordinate of the vertex.
@@ -29756,10 +29756,10 @@ var Vertex = new Class({
     /**
      * Transforms this vertex by the given matrix, storing the results in `vx`, `vy` and `vz`.
      *
-     * @method Phaser.Geom.Mesh.Vertex#transformCoordinatesLocal
+     * @method Oyun.Geom.Mesh.Vertex#transformCoordinatesLocal
      * @since 3.50.0
      *
-     * @param {Phaser.Math.Matrix4} transformMatrix - The transform matrix to apply to this vertex.
+     * @param {Oyun.Math.Matrix4} transformMatrix - The transform matrix to apply to this vertex.
      * @param {number} width - The width of the parent Mesh.
      * @param {number} height - The height of the parent Mesh.
      * @param {number} cameraZ - The z position of the MeshCamera.
@@ -29793,7 +29793,7 @@ var Vertex = new Class({
     /**
      * Updates this Vertex based on the given transform.
      *
-     * @method Phaser.Geom.Mesh.Vertex#update
+     * @method Oyun.Geom.Mesh.Vertex#update
      * @since 3.50.0
      *
      * @param {number} a - The parent transform matrix data a component.
@@ -29828,7 +29828,7 @@ var Vertex = new Class({
     /**
      * Loads the data from this Vertex into the given Typed Arrays.
      *
-     * @method Phaser.Geom.Mesh.Vertex#load
+     * @method Oyun.Geom.Mesh.Vertex#load
      * @since 3.50.0
      *
      * @param {Float32Array} F32 - A Float32 Array to insert the position, UV and unit data in to.
@@ -30239,12 +30239,12 @@ module.exports = Bounds;
 /**
  * Checks if the given tile coordinates are within the bounds of the layer.
  *
- * @function Phaser.Tilemaps.Components.IsInLayerBounds
+ * @function Oyun.Tilemaps.Components.IsInLayerBounds
  * @since 3.0.0
  *
  * @param {number} tileX - The x coordinate, in tiles, not pixels.
  * @param {number} tileY - The y coordinate, in tiles, not pixels.
- * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
+ * @param {Oyun.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
  *
  * @return {boolean} `true` if the tile coordinates are within the bounds of the layer, otherwise `false`.
  */
@@ -30277,11 +30277,11 @@ var GetFastValue = __webpack_require__(2);
  * to this data and use it to look up and perform operations on tiles.
  *
  * @class LayerData
- * @memberof Phaser.Tilemaps
+ * @memberof Oyun.Tilemaps
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Types.Tilemaps.LayerDataConfig} [config] - The Layer Data configuration object.
+ * @param {Oyun.Types.Tilemaps.LayerDataConfig} [config] - The Layer Data configuration object.
  */
 var LayerData = new Class({
 
@@ -30294,7 +30294,7 @@ var LayerData = new Class({
         /**
          * The name of the layer, if specified in Tiled.
          *
-         * @name Phaser.Tilemaps.LayerData#name
+         * @name Oyun.Tilemaps.LayerData#name
          * @type {string}
          * @since 3.0.0
          */
@@ -30303,7 +30303,7 @@ var LayerData = new Class({
         /**
          * The x offset of where to draw from the top left.
          *
-         * @name Phaser.Tilemaps.LayerData#x
+         * @name Oyun.Tilemaps.LayerData#x
          * @type {number}
          * @since 3.0.0
          */
@@ -30312,7 +30312,7 @@ var LayerData = new Class({
         /**
          * The y offset of where to draw from the top left.
          *
-         * @name Phaser.Tilemaps.LayerData#y
+         * @name Oyun.Tilemaps.LayerData#y
          * @type {number}
          * @since 3.0.0
          */
@@ -30321,7 +30321,7 @@ var LayerData = new Class({
         /**
          * The width of the layer in tiles.
          *
-         * @name Phaser.Tilemaps.LayerData#width
+         * @name Oyun.Tilemaps.LayerData#width
          * @type {number}
          * @since 3.0.0
          */
@@ -30330,7 +30330,7 @@ var LayerData = new Class({
         /**
          * The height of the layer in tiles.
          *
-         * @name Phaser.Tilemaps.LayerData#height
+         * @name Oyun.Tilemaps.LayerData#height
          * @type {number}
          * @since 3.0.0
          */
@@ -30339,7 +30339,7 @@ var LayerData = new Class({
         /**
          * The pixel width of the tiles.
          *
-         * @name Phaser.Tilemaps.LayerData#tileWidth
+         * @name Oyun.Tilemaps.LayerData#tileWidth
          * @type {number}
          * @since 3.0.0
          */
@@ -30348,7 +30348,7 @@ var LayerData = new Class({
         /**
          * The pixel height of the tiles.
          *
-         * @name Phaser.Tilemaps.LayerData#tileHeight
+         * @name Oyun.Tilemaps.LayerData#tileHeight
          * @type {number}
          * @since 3.0.0
          */
@@ -30357,7 +30357,7 @@ var LayerData = new Class({
         /**
          * The base tile width.
          *
-         * @name Phaser.Tilemaps.LayerData#baseTileWidth
+         * @name Oyun.Tilemaps.LayerData#baseTileWidth
          * @type {number}
          * @since 3.0.0
          */
@@ -30366,7 +30366,7 @@ var LayerData = new Class({
         /**
          * The base tile height.
          *
-         * @name Phaser.Tilemaps.LayerData#baseTileHeight
+         * @name Oyun.Tilemaps.LayerData#baseTileHeight
          * @type {number}
          * @since 3.0.0
          */
@@ -30375,8 +30375,8 @@ var LayerData = new Class({
         /**
          * The layers orientation, necessary to be able to determine a tiles pixelX and pixelY as well as the layers width and height.
          *
-         * @name Phaser.Tilemaps.LayerData#orientation
-         * @type {Phaser.Tilemaps.OrientationType}
+         * @name Oyun.Tilemaps.LayerData#orientation
+         * @type {Oyun.Tilemaps.OrientationType}
          * @since 3.50.0
          */
         this.orientation = GetFastValue(config, 'orientation', CONST.ORTHOGONAL);
@@ -30384,7 +30384,7 @@ var LayerData = new Class({
         /**
          * The width in pixels of the entire layer.
          *
-         * @name Phaser.Tilemaps.LayerData#widthInPixels
+         * @name Oyun.Tilemaps.LayerData#widthInPixels
          * @type {number}
          * @since 3.0.0
          */
@@ -30393,7 +30393,7 @@ var LayerData = new Class({
         /**
          * The height in pixels of the entire layer.
          *
-         * @name Phaser.Tilemaps.LayerData#heightInPixels
+         * @name Oyun.Tilemaps.LayerData#heightInPixels
          * @type {number}
          * @since 3.0.0
          */
@@ -30402,7 +30402,7 @@ var LayerData = new Class({
         /**
          * The alpha value of the layer.
          *
-         * @name Phaser.Tilemaps.LayerData#alpha
+         * @name Oyun.Tilemaps.LayerData#alpha
          * @type {number}
          * @since 3.0.0
          */
@@ -30411,7 +30411,7 @@ var LayerData = new Class({
         /**
          * Is the layer visible or not?
          *
-         * @name Phaser.Tilemaps.LayerData#visible
+         * @name Oyun.Tilemaps.LayerData#visible
          * @type {boolean}
          * @since 3.0.0
          */
@@ -30420,7 +30420,7 @@ var LayerData = new Class({
         /**
          * Layer specific properties (can be specified in Tiled)
          *
-         * @name Phaser.Tilemaps.LayerData#properties
+         * @name Oyun.Tilemaps.LayerData#properties
          * @type {object[]}
          * @since 3.0.0
          */
@@ -30429,7 +30429,7 @@ var LayerData = new Class({
         /**
          * Tile ID index map.
          *
-         * @name Phaser.Tilemaps.LayerData#indexes
+         * @name Oyun.Tilemaps.LayerData#indexes
          * @type {array}
          * @since 3.0.0
          */
@@ -30438,7 +30438,7 @@ var LayerData = new Class({
         /**
          * Tile Collision ID index map.
          *
-         * @name Phaser.Tilemaps.LayerData#collideIndexes
+         * @name Oyun.Tilemaps.LayerData#collideIndexes
          * @type {array}
          * @since 3.0.0
          */
@@ -30447,7 +30447,7 @@ var LayerData = new Class({
         /**
          * An array of callbacks.
          *
-         * @name Phaser.Tilemaps.LayerData#callbacks
+         * @name Oyun.Tilemaps.LayerData#callbacks
          * @type {array}
          * @since 3.0.0
          */
@@ -30456,7 +30456,7 @@ var LayerData = new Class({
         /**
          * An array of physics bodies.
          *
-         * @name Phaser.Tilemaps.LayerData#bodies
+         * @name Oyun.Tilemaps.LayerData#bodies
          * @type {array}
          * @since 3.0.0
          */
@@ -30465,8 +30465,8 @@ var LayerData = new Class({
         /**
          * An array of the tile data indexes.
          *
-         * @name Phaser.Tilemaps.LayerData#data
-         * @type {Phaser.Tilemaps.Tile[][]}
+         * @name Oyun.Tilemaps.LayerData#data
+         * @type {Oyun.Tilemaps.Tile[][]}
          * @since 3.0.0
          */
         this.data = GetFastValue(config, 'data', []);
@@ -30474,8 +30474,8 @@ var LayerData = new Class({
         /**
          * A reference to the Tilemap layer that owns this data.
          *
-         * @name Phaser.Tilemaps.LayerData#tilemapLayer
-         * @type {Phaser.Tilemaps.TilemapLayer}
+         * @name Oyun.Tilemaps.LayerData#tilemapLayer
+         * @type {Oyun.Tilemaps.TilemapLayer}
          * @since 3.0.0
          */
         this.tilemapLayer = GetFastValue(config, 'tilemapLayer', null);
@@ -30484,7 +30484,7 @@ var LayerData = new Class({
          * The length of the horizontal sides of the hexagon.
          * Only used for hexagonal orientation Tilemaps.
          *
-         * @name Phaser.Tilemaps.LayerData#hexSideLength
+         * @name Oyun.Tilemaps.LayerData#hexSideLength
          * @type {number}
          * @since 3.50.0
          */
@@ -30517,11 +30517,11 @@ var GetFastValue = __webpack_require__(2);
  * itself.
  *
  * @class MapData
- * @memberof Phaser.Tilemaps
+ * @memberof Oyun.Tilemaps
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Types.Tilemaps.MapDataConfig} [config] - The Map configuration object.
+ * @param {Oyun.Types.Tilemaps.MapDataConfig} [config] - The Map configuration object.
  */
 var MapData = new Class({
 
@@ -30532,9 +30532,9 @@ var MapData = new Class({
         if (config === undefined) { config = {}; }
 
         /**
-         * The key in the Phaser cache that corresponds to the loaded tilemap data.
+         * The key in the Oyun cache that corresponds to the loaded tilemap data.
          *
-         * @name Phaser.Tilemaps.MapData#name
+         * @name Oyun.Tilemaps.MapData#name
          * @type {string}
          * @since 3.0.0
          */
@@ -30543,7 +30543,7 @@ var MapData = new Class({
         /**
          * The width of the entire tilemap.
          *
-         * @name Phaser.Tilemaps.MapData#width
+         * @name Oyun.Tilemaps.MapData#width
          * @type {number}
          * @since 3.0.0
          */
@@ -30552,7 +30552,7 @@ var MapData = new Class({
         /**
          * The height of the entire tilemap.
          *
-         * @name Phaser.Tilemaps.MapData#height
+         * @name Oyun.Tilemaps.MapData#height
          * @type {number}
          * @since 3.0.0
          */
@@ -30561,7 +30561,7 @@ var MapData = new Class({
         /**
          * If the map is infinite or not.
          *
-         * @name Phaser.Tilemaps.MapData#infinite
+         * @name Oyun.Tilemaps.MapData#infinite
          * @type {boolean}
          * @since 3.17.0
          */
@@ -30570,7 +30570,7 @@ var MapData = new Class({
         /**
          * The width of the tiles.
          *
-         * @name Phaser.Tilemaps.MapData#tileWidth
+         * @name Oyun.Tilemaps.MapData#tileWidth
          * @type {number}
          * @since 3.0.0
          */
@@ -30579,7 +30579,7 @@ var MapData = new Class({
         /**
          * The height of the tiles.
          *
-         * @name Phaser.Tilemaps.MapData#tileHeight
+         * @name Oyun.Tilemaps.MapData#tileHeight
          * @type {number}
          * @since 3.0.0
          */
@@ -30588,7 +30588,7 @@ var MapData = new Class({
         /**
          * The width in pixels of the entire tilemap.
          *
-         * @name Phaser.Tilemaps.MapData#widthInPixels
+         * @name Oyun.Tilemaps.MapData#widthInPixels
          * @type {number}
          * @since 3.0.0
          */
@@ -30597,7 +30597,7 @@ var MapData = new Class({
         /**
          * The height in pixels of the entire tilemap.
          *
-         * @name Phaser.Tilemaps.MapData#heightInPixels
+         * @name Oyun.Tilemaps.MapData#heightInPixels
          * @type {number}
          * @since 3.0.0
          */
@@ -30606,7 +30606,7 @@ var MapData = new Class({
         /**
          * The format of the map data.
          *
-         * @name Phaser.Tilemaps.MapData#format
+         * @name Oyun.Tilemaps.MapData#format
          * @type {number}
          * @since 3.0.0
          */
@@ -30615,8 +30615,8 @@ var MapData = new Class({
         /**
          * The orientation of the map data (i.e. orthogonal, isometric, hexagonal), default 'orthogonal'.
          *
-         * @name Phaser.Tilemaps.MapData#orientation
-         * @type {Phaser.Tilemaps.OrientationType}
+         * @name Oyun.Tilemaps.MapData#orientation
+         * @type {Oyun.Tilemaps.OrientationType}
          * @since 3.50.0
          */
         this.orientation = GetFastValue(config, 'orientation', CONST.ORTHOGONAL);
@@ -30629,7 +30629,7 @@ var MapData = new Class({
          * 2, or 'right-up'
          * 3, or 'left-up'
          *
-         * @name Phaser.Tilemaps.MapData#renderOrder
+         * @name Oyun.Tilemaps.MapData#renderOrder
          * @type {string}
          * @since 3.12.0
          */
@@ -30638,7 +30638,7 @@ var MapData = new Class({
         /**
          * The version of the map data (as specified in Tiled).
          *
-         * @name Phaser.Tilemaps.MapData#version
+         * @name Oyun.Tilemaps.MapData#version
          * @type {string}
          * @since 3.0.0
          */
@@ -30647,7 +30647,7 @@ var MapData = new Class({
         /**
          * Map specific properties (can be specified in Tiled)
          *
-         * @name Phaser.Tilemaps.MapData#properties
+         * @name Oyun.Tilemaps.MapData#properties
          * @type {object}
          * @since 3.0.0
          */
@@ -30656,8 +30656,8 @@ var MapData = new Class({
         /**
          * An array with all the layers configured to the MapData.
          *
-         * @name Phaser.Tilemaps.MapData#layers
-         * @type {(Phaser.Tilemaps.LayerData[]|Phaser.Tilemaps.ObjectLayer)}
+         * @name Oyun.Tilemaps.MapData#layers
+         * @type {(Oyun.Tilemaps.LayerData[]|Oyun.Tilemaps.ObjectLayer)}
          * @since 3.0.0
          */
         this.layers = GetFastValue(config, 'layers', []);
@@ -30665,7 +30665,7 @@ var MapData = new Class({
         /**
          * An array of Tiled Image Layers.
          *
-         * @name Phaser.Tilemaps.MapData#images
+         * @name Oyun.Tilemaps.MapData#images
          * @type {array}
          * @since 3.0.0
          */
@@ -30674,7 +30674,7 @@ var MapData = new Class({
         /**
          * An object of Tiled Object Layers.
          *
-         * @name Phaser.Tilemaps.MapData#objects
+         * @name Oyun.Tilemaps.MapData#objects
          * @type {object}
          * @since 3.0.0
          */
@@ -30683,7 +30683,7 @@ var MapData = new Class({
         /**
           * An object of collision data. Must be created as physics object or will return undefined.
          *
-         * @name Phaser.Tilemaps.MapData#collision
+         * @name Oyun.Tilemaps.MapData#collision
          * @type {object}
          * @since 3.0.0
          */
@@ -30692,8 +30692,8 @@ var MapData = new Class({
         /**
          * An array of Tilesets.
          *
-         * @name Phaser.Tilemaps.MapData#tilesets
-         * @type {Phaser.Tilemaps.Tileset[]}
+         * @name Oyun.Tilemaps.MapData#tilesets
+         * @type {Oyun.Tilemaps.Tileset[]}
          * @since 3.0.0
          */
         this.tilesets = GetFastValue(config, 'tilesets', []);
@@ -30701,7 +30701,7 @@ var MapData = new Class({
         /**
          * The collection of images the map uses(specified in Tiled)
          *
-         * @name Phaser.Tilemaps.MapData#imageCollections
+         * @name Oyun.Tilemaps.MapData#imageCollections
          * @type {array}
          * @since 3.0.0
          */
@@ -30710,7 +30710,7 @@ var MapData = new Class({
         /**
          * An array of tile instances.
          *
-         * @name Phaser.Tilemaps.MapData#tiles
+         * @name Oyun.Tilemaps.MapData#tiles
          * @type {array}
          * @since 3.0.0
          */
@@ -30720,7 +30720,7 @@ var MapData = new Class({
          * The length of the horizontal sides of the hexagon.
          * Only used for hexagonal orientation Tilemaps.
          *
-         * @name Phaser.Tilemaps.MapData#hexSideLength
+         * @name Oyun.Tilemaps.MapData#hexSideLength
          * @type {number}
          * @since 3.50.0
          */
@@ -30750,7 +30750,7 @@ var Class = __webpack_require__(0);
  * each tile.
  *
  * @class Tileset
- * @memberof Phaser.Tilemaps
+ * @memberof Oyun.Tilemaps
  * @constructor
  * @since 3.0.0
  *
@@ -30781,7 +30781,7 @@ var Tileset = new Class({
         /**
          * The name of the Tileset.
          *
-         * @name Phaser.Tilemaps.Tileset#name
+         * @name Oyun.Tilemaps.Tileset#name
          * @type {string}
          * @since 3.0.0
          */
@@ -30790,7 +30790,7 @@ var Tileset = new Class({
         /**
          * The starting index of the first tile index this Tileset contains.
          *
-         * @name Phaser.Tilemaps.Tileset#firstgid
+         * @name Oyun.Tilemaps.Tileset#firstgid
          * @type {number}
          * @since 3.0.0
          */
@@ -30799,7 +30799,7 @@ var Tileset = new Class({
         /**
          * The width of each tile (in pixels). Use setTileSize to change.
          *
-         * @name Phaser.Tilemaps.Tileset#tileWidth
+         * @name Oyun.Tilemaps.Tileset#tileWidth
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -30809,7 +30809,7 @@ var Tileset = new Class({
         /**
          * The height of each tile (in pixels). Use setTileSize to change.
          *
-         * @name Phaser.Tilemaps.Tileset#tileHeight
+         * @name Oyun.Tilemaps.Tileset#tileHeight
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -30819,7 +30819,7 @@ var Tileset = new Class({
         /**
          * The margin around the tiles in the sheet (in pixels). Use `setSpacing` to change.
          *
-         * @name Phaser.Tilemaps.Tileset#tileMargin
+         * @name Oyun.Tilemaps.Tileset#tileMargin
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -30829,7 +30829,7 @@ var Tileset = new Class({
         /**
          * The spacing between each the tile in the sheet (in pixels). Use `setSpacing` to change.
          *
-         * @name Phaser.Tilemaps.Tileset#tileSpacing
+         * @name Oyun.Tilemaps.Tileset#tileSpacing
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -30840,7 +30840,7 @@ var Tileset = new Class({
          * Tileset-specific properties per tile that are typically defined in the Tiled editor in the
          * Tileset editor.
          *
-         * @name Phaser.Tilemaps.Tileset#tileProperties
+         * @name Oyun.Tilemaps.Tileset#tileProperties
          * @type {object}
          * @since 3.0.0
          */
@@ -30850,7 +30850,7 @@ var Tileset = new Class({
          * Tileset-specific data per tile that are typically defined in the Tiled editor, e.g. within
          * the Tileset collision editor. This is where collision objects and terrain are stored.
          *
-         * @name Phaser.Tilemaps.Tileset#tileData
+         * @name Oyun.Tilemaps.Tileset#tileData
          * @type {object}
          * @since 3.0.0
          */
@@ -30859,8 +30859,8 @@ var Tileset = new Class({
         /**
          * The cached image that contains the individual tiles. Use setImage to set.
          *
-         * @name Phaser.Tilemaps.Tileset#image
-         * @type {?Phaser.Textures.Texture}
+         * @name Oyun.Tilemaps.Tileset#image
+         * @type {?Oyun.Textures.Texture}
          * @readonly
          * @since 3.0.0
          */
@@ -30869,7 +30869,7 @@ var Tileset = new Class({
         /**
          * The gl texture used by the WebGL renderer.
          *
-         * @name Phaser.Tilemaps.Tileset#glTexture
+         * @name Oyun.Tilemaps.Tileset#glTexture
          * @type {?WebGLTexture}
          * @readonly
          * @since 3.11.0
@@ -30879,7 +30879,7 @@ var Tileset = new Class({
         /**
          * The number of tile rows in the the tileset.
          *
-         * @name Phaser.Tilemaps.Tileset#rows
+         * @name Oyun.Tilemaps.Tileset#rows
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -30889,7 +30889,7 @@ var Tileset = new Class({
         /**
          * The number of tile columns in the tileset.
          *
-         * @name Phaser.Tilemaps.Tileset#columns
+         * @name Oyun.Tilemaps.Tileset#columns
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -30899,7 +30899,7 @@ var Tileset = new Class({
         /**
          * The total number of tiles in the tileset.
          *
-         * @name Phaser.Tilemaps.Tileset#total
+         * @name Oyun.Tilemaps.Tileset#total
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -30910,7 +30910,7 @@ var Tileset = new Class({
          * The look-up table to specific tile image texture coordinates (UV in pixels). Each element
          * contains the coordinates for a tile in an object of the form {x, y}.
          *
-         * @name Phaser.Tilemaps.Tileset#texCoordinates
+         * @name Oyun.Tilemaps.Tileset#texCoordinates
          * @type {object[]}
          * @readonly
          * @since 3.0.0
@@ -30922,7 +30922,7 @@ var Tileset = new Class({
      * Get a tiles properties that are stored in the Tileset. Returns null if tile index is not
      * contained in this Tileset. This is typically defined in Tiled under the Tileset editor.
      *
-     * @method Phaser.Tilemaps.Tileset#getTileProperties
+     * @method Oyun.Tilemaps.Tileset#getTileProperties
      * @since 3.0.0
      *
      * @param {number} tileIndex - The unique id of the tile across all tilesets in the map.
@@ -30941,7 +30941,7 @@ var Tileset = new Class({
      * in this Tileset. This is typically defined in Tiled and will contain both Tileset collision
      * info and terrain mapping.
      *
-     * @method Phaser.Tilemaps.Tileset#getTileData
+     * @method Oyun.Tilemaps.Tileset#getTileData
      * @since 3.0.0
      *
      * @param {number} tileIndex - The unique id of the tile across all tilesets in the map.
@@ -30959,7 +30959,7 @@ var Tileset = new Class({
      * Get a tile's collision group that is stored in the Tileset. Returns null if tile index is not
      * contained in this Tileset. This is typically defined within Tiled's tileset collision editor.
      *
-     * @method Phaser.Tilemaps.Tileset#getTileCollisionGroup
+     * @method Oyun.Tilemaps.Tileset#getTileCollisionGroup
      * @since 3.0.0
      *
      * @param {number} tileIndex - The unique id of the tile across all tilesets in the map.
@@ -30976,7 +30976,7 @@ var Tileset = new Class({
     /**
      * Returns true if and only if this Tileset contains the given tile index.
      *
-     * @method Phaser.Tilemaps.Tileset#containsTileIndex
+     * @method Oyun.Tilemaps.Tileset#containsTileIndex
      * @since 3.0.0
      *
      * @param {number} tileIndex - The unique id of the tile across all tilesets in the map.
@@ -30995,7 +30995,7 @@ var Tileset = new Class({
      * Returns the texture coordinates (UV in pixels) in the Tileset image for the given tile index.
      * Returns null if tile index is not contained in this Tileset.
      *
-     * @method Phaser.Tilemaps.Tileset#getTileTextureCoordinates
+     * @method Oyun.Tilemaps.Tileset#getTileTextureCoordinates
      * @since 3.0.0
      *
      * @param {number} tileIndex - The unique id of the tile across all tilesets in the map.
@@ -31013,12 +31013,12 @@ var Tileset = new Class({
     /**
      * Sets the image associated with this Tileset and updates the tile data (rows, columns, etc.).
      *
-     * @method Phaser.Tilemaps.Tileset#setImage
+     * @method Oyun.Tilemaps.Tileset#setImage
      * @since 3.0.0
      *
-     * @param {Phaser.Textures.Texture} texture - The image that contains the tiles.
+     * @param {Oyun.Textures.Texture} texture - The image that contains the tiles.
      *
-     * @return {Phaser.Tilemaps.Tileset} This Tileset object.
+     * @return {Oyun.Tilemaps.Tileset} This Tileset object.
      */
     setImage: function (texture)
     {
@@ -31034,13 +31034,13 @@ var Tileset = new Class({
     /**
      * Sets the tile width & height and updates the tile data (rows, columns, etc.).
      *
-     * @method Phaser.Tilemaps.Tileset#setTileSize
+     * @method Oyun.Tilemaps.Tileset#setTileSize
      * @since 3.0.0
      *
      * @param {number} [tileWidth] - The width of a tile in pixels.
      * @param {number} [tileHeight] - The height of a tile in pixels.
      *
-     * @return {Phaser.Tilemaps.Tileset} This Tileset object.
+     * @return {Oyun.Tilemaps.Tileset} This Tileset object.
      */
     setTileSize: function (tileWidth, tileHeight)
     {
@@ -31058,13 +31058,13 @@ var Tileset = new Class({
     /**
      * Sets the tile margin & spacing and updates the tile data (rows, columns, etc.).
      *
-     * @method Phaser.Tilemaps.Tileset#setSpacing
+     * @method Oyun.Tilemaps.Tileset#setSpacing
      * @since 3.0.0
      *
      * @param {number} [margin] - The margin around the tiles in the sheet (in pixels).
      * @param {number} [spacing] - The spacing between the tiles in the sheet (in pixels).
      *
-     * @return {Phaser.Tilemaps.Tileset} This Tileset object.
+     * @return {Oyun.Tilemaps.Tileset} This Tileset object.
      */
     setSpacing: function (margin, spacing)
     {
@@ -31082,13 +31082,13 @@ var Tileset = new Class({
     /**
      * Updates tile texture coordinates and tileset data.
      *
-     * @method Phaser.Tilemaps.Tileset#updateTileData
+     * @method Oyun.Tilemaps.Tileset#updateTileData
      * @since 3.0.0
      *
      * @param {number} imageWidth - The (expected) width of the image to slice.
      * @param {number} imageHeight - The (expected) height of the image to slice.
      *
-     * @return {Phaser.Tilemaps.Tileset} This Tileset object.
+     * @return {Oyun.Tilemaps.Tileset} This Tileset object.
      */
     updateTileData: function (imageWidth, imageHeight)
     {
@@ -31151,7 +31151,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a top-left alignment or position.
     * @constant
-    * @name Phaser.Display.Align.TOP_LEFT
+    * @name Oyun.Display.Align.TOP_LEFT
     * @since 3.0.0
     * @type {number}
     */
@@ -31160,7 +31160,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a top-center alignment or position.
     * @constant
-    * @name Phaser.Display.Align.TOP_CENTER
+    * @name Oyun.Display.Align.TOP_CENTER
     * @since 3.0.0
     * @type {number}
     */
@@ -31169,7 +31169,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a top-right alignment or position.
     * @constant
-    * @name Phaser.Display.Align.TOP_RIGHT
+    * @name Oyun.Display.Align.TOP_RIGHT
     * @since 3.0.0
     * @type {number}
     */
@@ -31178,7 +31178,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a left-top alignment or position.
     * @constant
-    * @name Phaser.Display.Align.LEFT_TOP
+    * @name Oyun.Display.Align.LEFT_TOP
     * @since 3.0.0
     * @type {number}
     */
@@ -31187,7 +31187,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a left-center alignment or position.
     * @constant
-    * @name Phaser.Display.Align.LEFT_CENTER
+    * @name Oyun.Display.Align.LEFT_CENTER
     * @since 3.0.0
     * @type {number}
     */
@@ -31196,7 +31196,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a left-bottom alignment or position.
     * @constant
-    * @name Phaser.Display.Align.LEFT_BOTTOM
+    * @name Oyun.Display.Align.LEFT_BOTTOM
     * @since 3.0.0
     * @type {number}
     */
@@ -31205,7 +31205,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a center alignment or position.
     * @constant
-    * @name Phaser.Display.Align.CENTER
+    * @name Oyun.Display.Align.CENTER
     * @since 3.0.0
     * @type {number}
     */
@@ -31214,7 +31214,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a right-top alignment or position.
     * @constant
-    * @name Phaser.Display.Align.RIGHT_TOP
+    * @name Oyun.Display.Align.RIGHT_TOP
     * @since 3.0.0
     * @type {number}
     */
@@ -31223,7 +31223,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a right-center alignment or position.
     * @constant
-    * @name Phaser.Display.Align.RIGHT_CENTER
+    * @name Oyun.Display.Align.RIGHT_CENTER
     * @since 3.0.0
     * @type {number}
     */
@@ -31232,7 +31232,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a right-bottom alignment or position.
     * @constant
-    * @name Phaser.Display.Align.RIGHT_BOTTOM
+    * @name Oyun.Display.Align.RIGHT_BOTTOM
     * @since 3.0.0
     * @type {number}
     */
@@ -31241,7 +31241,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a bottom-left alignment or position.
     * @constant
-    * @name Phaser.Display.Align.BOTTOM_LEFT
+    * @name Oyun.Display.Align.BOTTOM_LEFT
     * @since 3.0.0
     * @type {number}
     */
@@ -31250,7 +31250,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a bottom-center alignment or position.
     * @constant
-    * @name Phaser.Display.Align.BOTTOM_CENTER
+    * @name Oyun.Display.Align.BOTTOM_CENTER
     * @since 3.0.0
     * @type {number}
     */
@@ -31259,7 +31259,7 @@ var ALIGN_CONST = {
     /**
     * A constant representing a bottom-right alignment or position.
     * @constant
-    * @name Phaser.Display.Align.BOTTOM_RIGHT
+    * @name Oyun.Display.Align.BOTTOM_RIGHT
     * @since 3.0.0
     * @type {number}
     */
@@ -31285,7 +31285,7 @@ module.exports = ALIGN_CONST;
  *
  * Two numbers are fuzzily equal if their difference is less than `epsilon`.
  *
- * @function Phaser.Math.Fuzzy.Equal
+ * @function Oyun.Math.Fuzzy.Equal
  * @since 3.0.0
  *
  * @param {number} a - The first value.
@@ -31329,30 +31329,30 @@ var ImageRender = __webpack_require__(1062);
  * Image and a Sprite is that you cannot animate an Image as they do not have the Animation component.
  *
  * @class Image
- * @extends Phaser.GameObjects.GameObject
- * @memberof Phaser.GameObjects
+ * @extends Oyun.GameObjects.GameObject
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.0.0
  *
- * @extends Phaser.GameObjects.Components.Alpha
- * @extends Phaser.GameObjects.Components.BlendMode
- * @extends Phaser.GameObjects.Components.Depth
- * @extends Phaser.GameObjects.Components.Flip
- * @extends Phaser.GameObjects.Components.GetBounds
- * @extends Phaser.GameObjects.Components.Mask
- * @extends Phaser.GameObjects.Components.Origin
- * @extends Phaser.GameObjects.Components.Pipeline
- * @extends Phaser.GameObjects.Components.ScrollFactor
- * @extends Phaser.GameObjects.Components.Size
- * @extends Phaser.GameObjects.Components.TextureCrop
- * @extends Phaser.GameObjects.Components.Tint
- * @extends Phaser.GameObjects.Components.Transform
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.GameObjects.Components.Alpha
+ * @extends Oyun.GameObjects.Components.BlendMode
+ * @extends Oyun.GameObjects.Components.Depth
+ * @extends Oyun.GameObjects.Components.Flip
+ * @extends Oyun.GameObjects.Components.GetBounds
+ * @extends Oyun.GameObjects.Components.Mask
+ * @extends Oyun.GameObjects.Components.Origin
+ * @extends Oyun.GameObjects.Components.Pipeline
+ * @extends Oyun.GameObjects.Components.ScrollFactor
+ * @extends Oyun.GameObjects.Components.Size
+ * @extends Oyun.GameObjects.Components.TextureCrop
+ * @extends Oyun.GameObjects.Components.Tint
+ * @extends Oyun.GameObjects.Components.Transform
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
  * @param {number} x - The horizontal position of this Game Object in the world.
  * @param {number} y - The vertical position of this Game Object in the world.
- * @param {(string|Phaser.Textures.Texture)} texture - The key, or instance of the Texture this Game Object will use to render with, as stored in the Texture Manager.
+ * @param {(string|Oyun.Textures.Texture)} texture - The key, or instance of the Texture this Game Object will use to render with, as stored in the Texture Manager.
  * @param {(string|number)} [frame] - An optional frame from the Texture this Game Object is rendering with.
  */
 var Image = new Class({
@@ -31386,7 +31386,7 @@ var Image = new Class({
         /**
          * The internal crop data object, as used by `setCrop` and passed to the `Frame.setCropUVs` method.
          *
-         * @name Phaser.GameObjects.Image#_crop
+         * @name Oyun.GameObjects.Image#_crop
          * @type {object}
          * @private
          * @since 3.11.0
@@ -31418,7 +31418,7 @@ module.exports = Image;
 /**
  * Determine whether the source object has a property with the specified key.
  *
- * @function Phaser.Utils.Objects.HasValue
+ * @function Oyun.Utils.Objects.HasValue
  * @since 3.0.0
  *
  * @param {object} source - The source object to be checked.
@@ -31826,19 +31826,19 @@ var RectangleContains = __webpack_require__(56);
  * The default origin is 0.5, the center of the Zone, the same as with Game Objects.
  *
  * @class Zone
- * @extends Phaser.GameObjects.GameObject
- * @memberof Phaser.GameObjects
+ * @extends Oyun.GameObjects.GameObject
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.0.0
  *
- * @extends Phaser.GameObjects.Components.Depth
- * @extends Phaser.GameObjects.Components.GetBounds
- * @extends Phaser.GameObjects.Components.Origin
- * @extends Phaser.GameObjects.Components.Transform
- * @extends Phaser.GameObjects.Components.ScrollFactor
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.GameObjects.Components.Depth
+ * @extends Oyun.GameObjects.Components.GetBounds
+ * @extends Oyun.GameObjects.Components.Origin
+ * @extends Oyun.GameObjects.Components.Transform
+ * @extends Oyun.GameObjects.Components.ScrollFactor
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object belongs.
  * @param {number} x - The horizontal position of this Game Object in the world.
  * @param {number} y - The vertical position of this Game Object in the world.
  * @param {number} [width=1] - The width of the Game Object.
@@ -31871,7 +31871,7 @@ var Zone = new Class({
         /**
          * The native (un-scaled) width of this Game Object.
          *
-         * @name Phaser.GameObjects.Zone#width
+         * @name Oyun.GameObjects.Zone#width
          * @type {number}
          * @since 3.0.0
          */
@@ -31880,7 +31880,7 @@ var Zone = new Class({
         /**
          * The native (un-scaled) height of this Game Object.
          *
-         * @name Phaser.GameObjects.Zone#height
+         * @name Oyun.GameObjects.Zone#height
          * @type {number}
          * @since 3.0.0
          */
@@ -31891,7 +31891,7 @@ var Zone = new Class({
          * Although a Zone never renders, it still has a blend mode to allow it to fit seamlessly into
          * display lists without causing a batch flush.
          *
-         * @name Phaser.GameObjects.Zone#blendMode
+         * @name Oyun.GameObjects.Zone#blendMode
          * @type {number}
          * @since 3.0.0
          */
@@ -31904,7 +31904,7 @@ var Zone = new Class({
      * The displayed width of this Game Object.
      * This value takes into account the scale factor.
      *
-     * @name Phaser.GameObjects.Zone#displayWidth
+     * @name Oyun.GameObjects.Zone#displayWidth
      * @type {number}
      * @since 3.0.0
      */
@@ -31926,7 +31926,7 @@ var Zone = new Class({
      * The displayed height of this Game Object.
      * This value takes into account the scale factor.
      *
-     * @name Phaser.GameObjects.Zone#displayHeight
+     * @name Oyun.GameObjects.Zone#displayHeight
      * @type {number}
      * @since 3.0.0
      */
@@ -31947,7 +31947,7 @@ var Zone = new Class({
     /**
      * Sets the size of this Game Object.
      *
-     * @method Phaser.GameObjects.Zone#setSize
+     * @method Oyun.GameObjects.Zone#setSize
      * @since 3.0.0
      *
      * @param {number} width - The width of this Game Object.
@@ -31980,7 +31980,7 @@ var Zone = new Class({
      * Sets the display size of this Game Object.
      * Calling this will adjust the scale.
      *
-     * @method Phaser.GameObjects.Zone#setDisplaySize
+     * @method Oyun.GameObjects.Zone#setDisplaySize
      * @since 3.0.0
      *
      * @param {number} width - The width of this Game Object.
@@ -32000,7 +32000,7 @@ var Zone = new Class({
      * Sets this Zone to be a Circular Drop Zone.
      * The circle is centered on this Zones `x` and `y` coordinates.
      *
-     * @method Phaser.GameObjects.Zone#setCircleDropZone
+     * @method Oyun.GameObjects.Zone#setCircleDropZone
      * @since 3.0.0
      *
      * @param {number} radius - The radius of the Circle that will form the Drop Zone.
@@ -32016,7 +32016,7 @@ var Zone = new Class({
      * Sets this Zone to be a Rectangle Drop Zone.
      * The rectangle is centered on this Zones `x` and `y` coordinates.
      *
-     * @method Phaser.GameObjects.Zone#setRectangleDropZone
+     * @method Oyun.GameObjects.Zone#setRectangleDropZone
      * @since 3.0.0
      *
      * @param {number} width - The width of the rectangle drop zone.
@@ -32032,11 +32032,11 @@ var Zone = new Class({
     /**
      * Allows you to define your own Geometry shape to be used as a Drop Zone.
      *
-     * @method Phaser.GameObjects.Zone#setDropZone
+     * @method Oyun.GameObjects.Zone#setDropZone
      * @since 3.0.0
      *
-     * @param {object} hitArea - A Geometry shape instance, such as Phaser.Geom.Ellipse, or your own custom shape.
-     * @param {Phaser.Types.Input.HitAreaCallback} hitAreaCallback - A function that will return `true` if the given x/y coords it is sent are within the shape.
+     * @param {object} hitArea - A Geometry shape instance, such as Oyun.Geom.Ellipse, or your own custom shape.
+     * @param {Oyun.Types.Input.HitAreaCallback} hitAreaCallback - A function that will return `true` if the given x/y coords it is sent are within the shape.
      *
      * @return {this} This Game Object.
      */
@@ -32058,7 +32058,7 @@ var Zone = new Class({
      * A NOOP method so you can pass a Zone to a Container.
      * Calling this method will do nothing. It is intentionally empty.
      *
-     * @method Phaser.GameObjects.Zone#setAlpha
+     * @method Oyun.GameObjects.Zone#setAlpha
      * @private
      * @since 3.11.0
      */
@@ -32070,7 +32070,7 @@ var Zone = new Class({
      * A NOOP method so you can pass a Zone to a Container in Canvas.
      * Calling this method will do nothing. It is intentionally empty.
      *
-     * @method Phaser.GameObjects.Zone#setBlendMode
+     * @method Oyun.GameObjects.Zone#setBlendMode
      * @private
      * @since 3.16.2
      */
@@ -32081,7 +32081,7 @@ var Zone = new Class({
     /**
      * A Zone does not render.
      *
-     * @method Phaser.GameObjects.Zone#renderCanvas
+     * @method Oyun.GameObjects.Zone#renderCanvas
      * @private
      * @since 3.0.0
      */
@@ -32092,7 +32092,7 @@ var Zone = new Class({
     /**
      * A Zone does not render.
      *
-     * @method Phaser.GameObjects.Zone#renderWebGL
+     * @method Oyun.GameObjects.Zone#renderWebGL
      * @private
      * @since 3.0.0
      */
@@ -32118,10 +32118,10 @@ module.exports = Zone;
 /**
  * Calculates the perimeter of a Rectangle.
  *
- * @function Phaser.Geom.Rectangle.Perimeter
+ * @function Oyun.Geom.Rectangle.Perimeter
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Rectangle} rect - The Rectangle to use.
+ * @param {Oyun.Geom.Rectangle} rect - The Rectangle to use.
  *
  * @return {number} The perimeter of the Rectangle, equal to `(width * 2) + (height * 2)`.
  */
@@ -32148,7 +32148,7 @@ module.exports = Perimeter;
  *
  * The original array is modified directly and returned.
  *
- * @function Phaser.Utils.Array.Shuffle
+ * @function Oyun.Utils.Array.Shuffle
  * @since 3.0.0
  *
  * @generic T
@@ -32185,7 +32185,7 @@ module.exports = Shuffle;
  */
 
 /**
- * @namespace Phaser.Animations.Events
+ * @namespace Oyun.Animations.Events
  */
 
 module.exports = {
@@ -32229,7 +32229,7 @@ var Vector2 = __webpack_require__(3);
  * @classdesc
  * A Base Camera class.
  *
- * The Camera is the way in which all games are rendered in Phaser. They provide a view into your game world,
+ * The Camera is the way in which all games are rendered in Oyun. They provide a view into your game world,
  * and can be positioned, rotated, zoomed and scrolled accordingly.
  *
  * A Camera consists of two elements: The viewport and the scroll values.
@@ -32249,18 +32249,18 @@ var Vector2 = __webpack_require__(3);
  * The Base Camera is extended by the Camera class, which adds in special effects including Fade,
  * Flash and Camera Shake, as well as the ability to follow Game Objects.
  *
- * The Base Camera was introduced in Phaser 3.12. It was split off from the Camera class, to allow
+ * The Base Camera was introduced in Oyun 3.12. It was split off from the Camera class, to allow
  * you to isolate special effects as needed. Therefore the 'since' values for properties of this class relate
  * to when they were added to the Camera class.
  *
  * @class BaseCamera
- * @memberof Phaser.Cameras.Scene2D
+ * @memberof Oyun.Cameras.Scene2D
  * @constructor
  * @since 3.12.0
  *
- * @extends Phaser.Events.EventEmitter
- * @extends Phaser.GameObjects.Components.Alpha
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.Events.EventEmitter
+ * @extends Oyun.GameObjects.Components.Alpha
+ * @extends Oyun.GameObjects.Components.Visible
  *
  * @param {number} x - The x position of the Camera, relative to the top-left of the game canvas.
  * @param {number} y - The y position of the Camera, relative to the top-left of the game canvas.
@@ -32290,8 +32290,8 @@ var BaseCamera = new Class({
         /**
          * A reference to the Scene this camera belongs to.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#scene
-         * @type {Phaser.Scene}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#scene
+         * @type {Oyun.Scene}
          * @since 3.0.0
          */
         this.scene;
@@ -32299,8 +32299,8 @@ var BaseCamera = new Class({
         /**
          * A reference to the Game Scene Manager.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#sceneManager
-         * @type {Phaser.Scenes.SceneManager}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#sceneManager
+         * @type {Oyun.Scenes.SceneManager}
          * @since 3.12.0
          */
         this.sceneManager;
@@ -32308,8 +32308,8 @@ var BaseCamera = new Class({
         /**
          * A reference to the Game Scale Manager.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#scaleManager
-         * @type {Phaser.Scale.ScaleManager}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#scaleManager
+         * @type {Oyun.Scale.ScaleManager}
          * @since 3.16.0
          */
         this.scaleManager;
@@ -32317,8 +32317,8 @@ var BaseCamera = new Class({
         /**
          * A reference to the Scene's Camera Manager to which this Camera belongs.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#cameraManager
-         * @type {Phaser.Cameras.Scene2D.CameraManager}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#cameraManager
+         * @type {Oyun.Cameras.Scene2D.CameraManager}
          * @since 3.17.0
          */
         this.cameraManager;
@@ -32327,7 +32327,7 @@ var BaseCamera = new Class({
          * The Camera ID. Assigned by the Camera Manager and used to handle camera exclusion.
          * This value is a bitmask.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#id
+         * @name Oyun.Cameras.Scene2D.BaseCamera#id
          * @type {number}
          * @readonly
          * @since 3.11.0
@@ -32337,7 +32337,7 @@ var BaseCamera = new Class({
         /**
          * The name of the Camera. This is left empty for your own use.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#name
+         * @name Oyun.Cameras.Scene2D.BaseCamera#name
          * @type {string}
          * @default ''
          * @since 3.0.0
@@ -32347,7 +32347,7 @@ var BaseCamera = new Class({
         /**
          * Should this camera round its pixel values to integers?
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#roundPixels
+         * @name Oyun.Cameras.Scene2D.BaseCamera#roundPixels
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -32360,7 +32360,7 @@ var BaseCamera = new Class({
          * A visible camera will render and perform input tests.
          * An invisible camera will not render anything and will skip input tests.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#visible
+         * @name Oyun.Cameras.Scene2D.BaseCamera#visible
          * @type {boolean}
          * @default true
          * @since 3.10.0
@@ -32371,7 +32371,7 @@ var BaseCamera = new Class({
          *
          * Set this property along with the bounds via `Camera.setBounds`.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#useBounds
+         * @name Oyun.Cameras.Scene2D.BaseCamera#useBounds
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -32384,8 +32384,8 @@ var BaseCamera = new Class({
          * If you have enabled Camera bounds the worldview will be clamped to those bounds accordingly.
          * You can use it for culling or intersection checks.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#worldView
-         * @type {Phaser.Geom.Rectangle}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#worldView
+         * @type {Oyun.Geom.Rectangle}
          * @readonly
          * @since 3.11.0
          */
@@ -32398,7 +32398,7 @@ var BaseCamera = new Class({
          *
          * This flag is cleared during the `postRenderCamera` method of the renderer.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#dirty
+         * @name Oyun.Cameras.Scene2D.BaseCamera#dirty
          * @type {boolean}
          * @default true
          * @since 3.11.0
@@ -32410,7 +32410,7 @@ var BaseCamera = new Class({
          * The viewport is the area into which the camera renders.
          * To adjust the position the camera is looking at in the game world, see the `scrollX` value.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_x
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_x
          * @type {number}
          * @private
          * @since 3.0.0
@@ -32422,7 +32422,7 @@ var BaseCamera = new Class({
          * The viewport is the area into which the camera renders.
          * To adjust the position the camera is looking at in the game world, see the `scrollY` value.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_y
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_y
          * @type {number}
          * @private
          * @since 3.0.0
@@ -32435,7 +32435,7 @@ var BaseCamera = new Class({
          * The viewport is the area into which the Camera renders. Setting the viewport does
          * not restrict where the Camera can scroll to.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_width
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_width
          * @type {number}
          * @private
          * @since 3.11.0
@@ -32448,7 +32448,7 @@ var BaseCamera = new Class({
          * The viewport is the area into which the Camera renders. Setting the viewport does
          * not restrict where the Camera can scroll to.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_height
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_height
          * @type {number}
          * @private
          * @since 3.11.0
@@ -32458,8 +32458,8 @@ var BaseCamera = new Class({
         /**
          * The bounds the camera is restrained to during scrolling.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_bounds
-         * @type {Phaser.Geom.Rectangle}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_bounds
+         * @type {Oyun.Geom.Rectangle}
          * @private
          * @since 3.0.0
          */
@@ -32475,7 +32475,7 @@ var BaseCamera = new Class({
          *
          * You can set the bounds within which the Camera can scroll via the `setBounds` method.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_scrollX
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_scrollX
          * @type {number}
          * @private
          * @default 0
@@ -32493,7 +32493,7 @@ var BaseCamera = new Class({
          *
          * You can set the bounds within which the Camera can scroll via the `setBounds` method.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_scrollY
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_scrollY
          * @type {number}
          * @private
          * @default 0
@@ -32512,7 +32512,7 @@ var BaseCamera = new Class({
          *
          * Be careful to never set this value to zero.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_zoomX
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_zoomX
          * @type {number}
          * @private
          * @default 1
@@ -32531,7 +32531,7 @@ var BaseCamera = new Class({
          *
          * Be careful to never set this value to zero.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_zoomY
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_zoomY
          * @type {number}
          * @private
          * @default 1
@@ -32548,7 +32548,7 @@ var BaseCamera = new Class({
          * Rotation influences the rendering of _all_ Game Objects visible by this Camera. However, it does not
          * rotate the Camera viewport itself, which always remains an axis-aligned rectangle.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_rotation
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_rotation
          * @type {number}
          * @private
          * @default 0
@@ -32559,8 +32559,8 @@ var BaseCamera = new Class({
         /**
          * A local transform matrix used for internal calculations.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#matrix
-         * @type {Phaser.GameObjects.Components.TransformMatrix}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#matrix
+         * @type {Oyun.GameObjects.Components.TransformMatrix}
          * @private
          * @since 3.0.0
          */
@@ -32569,7 +32569,7 @@ var BaseCamera = new Class({
         /**
          * Does this Camera have a transparent background?
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#transparent
+         * @name Oyun.Cameras.Scene2D.BaseCamera#transparent
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -32579,8 +32579,8 @@ var BaseCamera = new Class({
         /**
          * The background color of this Camera. Only used if `transparent` is `false`.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#backgroundColor
-         * @type {Phaser.Display.Color}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#backgroundColor
+         * @type {Oyun.Display.Color}
          * @since 3.0.0
          */
         this.backgroundColor = ValueToColor('rgba(0,0,0,0)');
@@ -32590,7 +32590,7 @@ var BaseCamera = new Class({
          * renders. You can either set the property directly, i.e. via a Tween, to fade a Camera in or out,
          * or via the chainable `setAlpha` method instead.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#alpha
+         * @name Oyun.Cameras.Scene2D.BaseCamera#alpha
          * @type {number}
          * @default 1
          * @since 3.11.0
@@ -32600,7 +32600,7 @@ var BaseCamera = new Class({
          * Should the camera cull Game Objects before checking them for input hit tests?
          * In some special cases it may be beneficial to disable this.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#disableCull
+         * @name Oyun.Cameras.Scene2D.BaseCamera#disableCull
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -32610,8 +32610,8 @@ var BaseCamera = new Class({
         /**
          * A temporary array of culled objects.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#culledObjects
-         * @type {Phaser.GameObjects.GameObject[]}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#culledObjects
+         * @type {Oyun.GameObjects.GameObject[]}
          * @default []
          * @private
          * @since 3.0.0
@@ -32626,8 +32626,8 @@ var BaseCamera = new Class({
          * This value is updated in the preRender method, after the scroll values and follower
          * have been processed.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#midPoint
-         * @type {Phaser.Math.Vector2}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#midPoint
+         * @type {Oyun.Math.Vector2}
          * @readonly
          * @since 3.11.0
          */
@@ -32643,7 +32643,7 @@ var BaseCamera = new Class({
          *
          * See `setOrigin` to set both origins in a single, chainable call.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#originX
+         * @name Oyun.Cameras.Scene2D.BaseCamera#originX
          * @type {number}
          * @default 0.5
          * @since 3.11.0
@@ -32660,7 +32660,7 @@ var BaseCamera = new Class({
          *
          * See `setOrigin` to set both origins in a single, chainable call.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#originY
+         * @name Oyun.Cameras.Scene2D.BaseCamera#originY
          * @type {number}
          * @default 0.5
          * @since 3.11.0
@@ -32670,7 +32670,7 @@ var BaseCamera = new Class({
         /**
          * Does this Camera have a custom viewport?
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_customViewport
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_customViewport
          * @type {boolean}
          * @private
          * @default false
@@ -32682,8 +32682,8 @@ var BaseCamera = new Class({
          * The Mask this Camera is using during render.
          * Set the mask using the `setMask` method. Remove the mask using the `clearMask` method.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#mask
-         * @type {?(Phaser.Display.Masks.BitmapMask|Phaser.Display.Masks.GeometryMask)}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#mask
+         * @type {?(Oyun.Display.Masks.BitmapMask|Oyun.Display.Masks.GeometryMask)}
          * @since 3.17.0
          */
         this.mask = null;
@@ -32695,8 +32695,8 @@ var BaseCamera = new Class({
          * the CameraManager.default instance. Otherwise, it'll be a reference
          * to itself.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#_maskCamera
-         * @type {?Phaser.Cameras.Scene2D.BaseCamera}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#_maskCamera
+         * @type {?Oyun.Cameras.Scene2D.BaseCamera}
          * @private
          * @since 3.17.0
          */
@@ -32712,8 +32712,8 @@ var BaseCamera = new Class({
          * however you can read it as required. Note that Game Objects may appear in this
          * list multiple times if they belong to multiple non-exclusive Containers.
          *
-         * @name Phaser.Cameras.Scene2D.BaseCamera#renderList
-         * @type {Phaser.GameObjects.GameObject[]}
+         * @name Oyun.Cameras.Scene2D.BaseCamera#renderList
+         * @type {Oyun.GameObjects.GameObject[]}
          * @since 3.52.0
          */
         this.renderList = [];
@@ -32725,10 +32725,10 @@ var BaseCamera = new Class({
      * This is invoked during the rendering stage. Only objects that are actually rendered
      * will appear in the render list.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#addToRenderList
+     * @method Oyun.Cameras.Scene2D.BaseCamera#addToRenderList
      * @since 3.52.0
      *
-     * @param {Phaser.GameObjects.GameObject} child - The Game Object to add to the render list.
+     * @param {Oyun.GameObjects.GameObject} child - The Game Object to add to the render list.
      */
     addToRenderList: function (child)
     {
@@ -32739,7 +32739,7 @@ var BaseCamera = new Class({
      * Set the Alpha level of this Camera. The alpha controls the opacity of the Camera as it renders.
      * Alpha values are provided as a float between 0, fully transparent, and 1, fully opaque.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setAlpha
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setAlpha
      * @since 3.11.0
      *
      * @param {number} [value=1] - The Camera alpha value.
@@ -32757,7 +32757,7 @@ var BaseCamera = new Class({
      * Changing the origin allows you to adjust the point in the viewport from which rotation happens.
      * A value of 0 would rotate from the top-left of the viewport. A value of 1 from the bottom right.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setOrigin
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setOrigin
      * @since 3.11.0
      *
      * @param {number} [x=0.5] - The horizontal origin value.
@@ -32781,14 +32781,14 @@ var BaseCamera = new Class({
      * the Camera so it is centered on the given x and y coordinates, without actually moving
      * the Camera there. The results are clamped based on the Camera bounds, if set.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#getScroll
+     * @method Oyun.Cameras.Scene2D.BaseCamera#getScroll
      * @since 3.11.0
      *
      * @param {number} x - The horizontal coordinate to center on.
      * @param {number} y - The vertical coordinate to center on.
-     * @param {Phaser.Math.Vector2} [out] - A Vector2 to store the values in. If not given a new Vector2 is created.
+     * @param {Oyun.Math.Vector2} [out] - A Vector2 to store the values in. If not given a new Vector2 is created.
      *
-     * @return {Phaser.Math.Vector2} The scroll coordinates stored in the `x` and `y` properties.
+     * @return {Oyun.Math.Vector2} The scroll coordinates stored in the `x` and `y` properties.
      */
     getScroll: function (x, y, out)
     {
@@ -32813,7 +32813,7 @@ var BaseCamera = new Class({
      * Moves the Camera horizontally so that it is centered on the given x coordinate, bounds allowing.
      * Calling this does not change the scrollY value.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#centerOnX
+     * @method Oyun.Cameras.Scene2D.BaseCamera#centerOnX
      * @since 3.16.0
      *
      * @param {number} x - The horizontal coordinate to center on.
@@ -32840,7 +32840,7 @@ var BaseCamera = new Class({
      * Moves the Camera vertically so that it is centered on the given y coordinate, bounds allowing.
      * Calling this does not change the scrollX value.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#centerOnY
+     * @method Oyun.Cameras.Scene2D.BaseCamera#centerOnY
      * @since 3.16.0
      *
      * @param {number} y - The vertical coordinate to center on.
@@ -32866,7 +32866,7 @@ var BaseCamera = new Class({
     /**
      * Moves the Camera so that it is centered on the given coordinates, bounds allowing.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#centerOn
+     * @method Oyun.Cameras.Scene2D.BaseCamera#centerOn
      * @since 3.11.0
      *
      * @param {number} x - The horizontal coordinate to center on.
@@ -32885,7 +32885,7 @@ var BaseCamera = new Class({
     /**
      * Moves the Camera so that it is looking at the center of the Camera Bounds, if enabled.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#centerToBounds
+     * @method Oyun.Cameras.Scene2D.BaseCamera#centerToBounds
      * @since 3.0.0
      *
      * @return {this} This Camera instance.
@@ -32910,7 +32910,7 @@ var BaseCamera = new Class({
     /**
      * Moves the Camera so that it is re-centered based on its viewport size.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#centerToSize
+     * @method Oyun.Cameras.Scene2D.BaseCamera#centerToSize
      * @since 3.0.0
      *
      * @return {this} This Camera instance.
@@ -32927,14 +32927,14 @@ var BaseCamera = new Class({
      * Takes an array of Game Objects and returns a new array featuring only those objects
      * visible by this camera.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#cull
+     * @method Oyun.Cameras.Scene2D.BaseCamera#cull
      * @since 3.0.0
      *
-     * @generic {Phaser.GameObjects.GameObject[]} G - [renderableObjects,$return]
+     * @generic {Oyun.GameObjects.GameObject[]} G - [renderableObjects,$return]
      *
-     * @param {Phaser.GameObjects.GameObject[]} renderableObjects - An array of Game Objects to cull.
+     * @param {Oyun.GameObjects.GameObject[]} renderableObjects - An array of Game Objects to cull.
      *
-     * @return {Phaser.GameObjects.GameObject[]} An array of Game Objects visible to this Camera.
+     * @return {Oyun.GameObjects.GameObject[]} An array of Game Objects visible to this Camera.
      */
     cull: function (renderableObjects)
     {
@@ -33008,16 +33008,16 @@ var BaseCamera = new Class({
      * Converts the given `x` and `y` coordinates into World space, based on this Cameras transform.
      * You can optionally provide a Vector2, or similar object, to store the results in.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#getWorldPoint
+     * @method Oyun.Cameras.Scene2D.BaseCamera#getWorldPoint
      * @since 3.0.0
      *
-     * @generic {Phaser.Math.Vector2} O - [output,$return]
+     * @generic {Oyun.Math.Vector2} O - [output,$return]
      *
      * @param {number} x - The x position to convert to world space.
      * @param {number} y - The y position to convert to world space.
-     * @param {(object|Phaser.Math.Vector2)} [output] - An optional object to store the results in. If not provided a new Vector2 will be created.
+     * @param {(object|Oyun.Math.Vector2)} [output] - An optional object to store the results in. If not provided a new Vector2 will be created.
      *
-     * @return {Phaser.Math.Vector2} An object holding the converted values in its `x` and `y` properties.
+     * @return {Oyun.Math.Vector2} An object holding the converted values in its `x` and `y` properties.
      */
     getWorldPoint: function (x, y, output)
     {
@@ -33075,10 +33075,10 @@ var BaseCamera = new Class({
      * Given a Game Object, or an array of Game Objects, it will update all of their camera filter settings
      * so that they are ignored by this Camera. This means they will not be rendered by this Camera.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#ignore
+     * @method Oyun.Cameras.Scene2D.BaseCamera#ignore
      * @since 3.0.0
      *
-     * @param {(Phaser.GameObjects.GameObject|Phaser.GameObjects.GameObject[]|Phaser.GameObjects.Group)} entries - The Game Object, or array of Game Objects, to be ignored by this Camera.
+     * @param {(Oyun.GameObjects.GameObject|Oyun.GameObjects.GameObject[]|Oyun.GameObjects.Group)} entries - The Game Object, or array of Game Objects, to be ignored by this Camera.
      *
      * @return {this} This Camera instance.
      */
@@ -33115,7 +33115,7 @@ var BaseCamera = new Class({
     /**
      * Internal preRender step.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#preRender
+     * @method Oyun.Cameras.Scene2D.BaseCamera#preRender
      * @protected
      * @since 3.0.0
      */
@@ -33180,7 +33180,7 @@ var BaseCamera = new Class({
      * Takes an x value and checks it's within the range of the Camera bounds, adjusting if required.
      * Do not call this method if you are not using camera bounds.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#clampX
+     * @method Oyun.Cameras.Scene2D.BaseCamera#clampX
      * @since 3.11.0
      *
      * @param {number} x - The value to horizontally scroll clamp.
@@ -33212,7 +33212,7 @@ var BaseCamera = new Class({
      * Takes a y value and checks it's within the range of the Camera bounds, adjusting if required.
      * Do not call this method if you are not using camera bounds.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#clampY
+     * @method Oyun.Cameras.Scene2D.BaseCamera#clampY
      * @since 3.11.0
      *
      * @param {number} y - The value to vertically scroll clamp.
@@ -33248,7 +33248,7 @@ var BaseCamera = new Class({
     /**
      * If this Camera has previously had movement bounds set on it, this will remove them.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#removeBounds
+     * @method Oyun.Cameras.Scene2D.BaseCamera#removeBounds
      * @since 3.0.0
      *
      * @return {this} This Camera instance.
@@ -33269,7 +33269,7 @@ var BaseCamera = new Class({
      *
      * Rotating a camera does not rotate the viewport itself, it is applied during rendering.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setAngle
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setAngle
      * @since 3.0.0
      *
      * @param {number} [value=0] - The cameras angle of rotation, given in degrees.
@@ -33293,10 +33293,10 @@ var BaseCamera = new Class({
      *
      * The color value can be specified using CSS color notation, hex or numbers.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setBackgroundColor
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setBackgroundColor
      * @since 3.0.0
      *
-     * @param {(string|number|Phaser.Types.Display.InputColorObject)} [color='rgba(0,0,0,0)'] - The color value. In CSS, hex or numeric color notation.
+     * @param {(string|number|Oyun.Types.Display.InputColorObject)} [color='rgba(0,0,0,0)'] - The color value. In CSS, hex or numeric color notation.
      *
      * @return {this} This Camera instance.
      */
@@ -33330,7 +33330,7 @@ var BaseCamera = new Class({
      * to be -1024, -1024, with a width and height of 2048. Depending on your game you may find
      * it easier for 0x0 to be the top-left of the bounds, or you may wish 0x0 to be the middle.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setBounds
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setBounds
      * @since 3.0.0
      *
      * @param {number} x - The top-left x coordinate of the bounds.
@@ -33370,12 +33370,12 @@ var BaseCamera = new Class({
      *
      * The rectangle is a copy of the bounds, so is safe to modify.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#getBounds
+     * @method Oyun.Cameras.Scene2D.BaseCamera#getBounds
      * @since 3.16.0
      *
-     * @param {Phaser.Geom.Rectangle} [out] - An optional Rectangle to store the bounds in. If not given, a new Rectangle will be created.
+     * @param {Oyun.Geom.Rectangle} [out] - An optional Rectangle to store the bounds in. If not given, a new Rectangle will be created.
      *
-     * @return {Phaser.Geom.Rectangle} A rectangle containing the bounds of this Camera.
+     * @return {Oyun.Geom.Rectangle} A rectangle containing the bounds of this Camera.
      */
     getBounds: function (out)
     {
@@ -33392,7 +33392,7 @@ var BaseCamera = new Class({
      * Sets the name of this Camera.
      * This value is for your own use and isn't used internally.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setName
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setName
      * @since 3.0.0
      *
      * @param {string} [value=''] - The name of the Camera.
@@ -33413,7 +33413,7 @@ var BaseCamera = new Class({
      *
      * This does not change where the camera is 'looking'. See `setScroll` to control that.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setPosition
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setPosition
      * @since 3.0.0
      *
      * @param {number} x - The top-left x coordinate of the Camera viewport.
@@ -33436,7 +33436,7 @@ var BaseCamera = new Class({
      *
      * Rotating a camera does not rotate the viewport itself, it is applied during rendering.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setRotation
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setRotation
      * @since 3.0.0
      *
      * @param {number} [value=0] - The rotation of the Camera, in radians.
@@ -33457,7 +33457,7 @@ var BaseCamera = new Class({
      *
      * In some types of game, especially with pixel art, this is required to prevent sub-pixel aliasing.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setRoundPixels
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setRoundPixels
      * @since 3.0.0
      *
      * @param {boolean} value - `true` to round Camera pixels, `false` to not.
@@ -33474,10 +33474,10 @@ var BaseCamera = new Class({
     /**
      * Sets the Scene the Camera is bound to.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setScene
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setScene
      * @since 3.0.0
      *
-     * @param {Phaser.Scene} scene - The Scene the camera is bound to.
+     * @param {Oyun.Scene} scene - The Scene the camera is bound to.
      *
      * @return {this} This Camera instance.
      */
@@ -33508,7 +33508,7 @@ var BaseCamera = new Class({
      *
      * This does not change where the camera viewport is placed. See `setPosition` to control that.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setScroll
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setScroll
      * @since 3.0.0
      *
      * @param {number} x - The x coordinate of the Camera in the game world.
@@ -33533,7 +33533,7 @@ var BaseCamera = new Class({
      * allowing you to create mini-cam style effects by creating and positioning a smaller Camera
      * viewport within your game.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setSize
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setSize
      * @since 3.0.0
      *
      * @param {number} width - The width of the Camera viewport.
@@ -33562,7 +33562,7 @@ var BaseCamera = new Class({
      * allowing you to create mini-cam style effects by creating and positioning a smaller Camera
      * viewport within your game.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setViewport
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setViewport
      * @since 3.0.0
      *
      * @param {number} x - The top-left x coordinate of the Camera viewport.
@@ -33592,9 +33592,9 @@ var BaseCamera = new Class({
      *
      * Changing the zoom does not impact the Camera viewport in any way, it is only applied during rendering.
      *
-     * As of Phaser 3.50 you can now set the horizontal and vertical zoom values independently.
+     * As of Oyun 3.50 you can now set the horizontal and vertical zoom values independently.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setZoom
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setZoom
      * @since 3.0.0
      *
      * @param {number} [x=1] - The horizontal zoom value of the Camera. The minimum it can be is 0.001.
@@ -33635,10 +33635,10 @@ var BaseCamera = new Class({
      * Masks have no impact on physics or input detection. They are purely a rendering component
      * that allows you to limit what is visible during the render pass.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setMask
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setMask
      * @since 3.17.0
      *
-     * @param {(Phaser.Display.Masks.BitmapMask|Phaser.Display.Masks.GeometryMask)} mask - The mask this Camera will use when rendering.
+     * @param {(Oyun.Display.Masks.BitmapMask|Oyun.Display.Masks.GeometryMask)} mask - The mask this Camera will use when rendering.
      * @param {boolean} [fixedPosition=true] - Should the mask translate along with the Camera, or be fixed in place and not impacted by the Cameras transform?
      *
      * @return {this} This Camera instance.
@@ -33657,7 +33657,7 @@ var BaseCamera = new Class({
     /**
      * Clears the mask that this Camera was using.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#clearMask
+     * @method Oyun.Cameras.Scene2D.BaseCamera#clearMask
      * @since 3.17.0
      *
      * @param {boolean} [destroyMask=false] - Destroy the mask before clearing it?
@@ -33683,7 +33683,7 @@ var BaseCamera = new Class({
      *
      * An invisible Camera will skip rendering and input tests of everything it can see.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#setVisible
+     * @method Oyun.Cameras.Scene2D.BaseCamera#setVisible
      * @since 3.10.0
      *
      * @param {boolean} value - The visible state of the Camera.
@@ -33694,10 +33694,10 @@ var BaseCamera = new Class({
     /**
      * Returns an Object suitable for JSON storage containing all of the Camera viewport and rendering properties.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#toJSON
+     * @method Oyun.Cameras.Scene2D.BaseCamera#toJSON
      * @since 3.0.0
      *
-     * @return {Phaser.Types.Cameras.Scene2D.JSONCamera} A well-formed object suitable for conversion to JSON.
+     * @return {Oyun.Types.Cameras.Scene2D.JSONCamera} A well-formed object suitable for conversion to JSON.
      */
     toJSON: function ()
     {
@@ -33731,7 +33731,7 @@ var BaseCamera = new Class({
     /**
      * Internal method called automatically by the Camera Manager.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#update
+     * @method Oyun.Cameras.Scene2D.BaseCamera#update
      * @protected
      * @since 3.0.0
      *
@@ -33746,7 +33746,7 @@ var BaseCamera = new Class({
     /**
      * Internal method called automatically when the viewport changes.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#updateSystem
+     * @method Oyun.Cameras.Scene2D.BaseCamera#updateSystem
      * @private
      * @since 3.12.0
      */
@@ -33785,8 +33785,8 @@ var BaseCamera = new Class({
      * Unless you have a specific reason otherwise, always use `CameraManager.remove` and allow it to handle the camera destruction,
      * rather than calling this method directly.
      *
-     * @method Phaser.Cameras.Scene2D.BaseCamera#destroy
-     * @fires Phaser.Cameras.Scene2D.Events#DESTROY
+     * @method Oyun.Cameras.Scene2D.BaseCamera#destroy
+     * @fires Oyun.Cameras.Scene2D.Events#DESTROY
      * @since 3.0.0
      */
     destroy: function ()
@@ -33820,7 +33820,7 @@ var BaseCamera = new Class({
      * The viewport is the area into which the camera renders.
      * To adjust the position the camera is looking at in the game world, see the `scrollX` value.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#x
+     * @name Oyun.Cameras.Scene2D.BaseCamera#x
      * @type {number}
      * @since 3.0.0
      */
@@ -33844,7 +33844,7 @@ var BaseCamera = new Class({
      * The viewport is the area into which the camera renders.
      * To adjust the position the camera is looking at in the game world, see the `scrollY` value.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#y
+     * @name Oyun.Cameras.Scene2D.BaseCamera#y
      * @type {number}
      * @since 3.0.0
      */
@@ -33869,7 +33869,7 @@ var BaseCamera = new Class({
      * The viewport is the area into which the Camera renders. Setting the viewport does
      * not restrict where the Camera can scroll to.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#width
+     * @name Oyun.Cameras.Scene2D.BaseCamera#width
      * @type {number}
      * @since 3.0.0
      */
@@ -33894,7 +33894,7 @@ var BaseCamera = new Class({
      * The viewport is the area into which the Camera renders. Setting the viewport does
      * not restrict where the Camera can scroll to.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#height
+     * @name Oyun.Cameras.Scene2D.BaseCamera#height
      * @type {number}
      * @since 3.0.0
      */
@@ -33923,7 +33923,7 @@ var BaseCamera = new Class({
      *
      * You can set the bounds within which the Camera can scroll via the `setBounds` method.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#scrollX
+     * @name Oyun.Cameras.Scene2D.BaseCamera#scrollX
      * @type {number}
      * @default 0
      * @since 3.0.0
@@ -33953,7 +33953,7 @@ var BaseCamera = new Class({
      *
      * You can set the bounds within which the Camera can scroll via the `setBounds` method.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#scrollY
+     * @name Oyun.Cameras.Scene2D.BaseCamera#scrollY
      * @type {number}
      * @default 0
      * @since 3.0.0
@@ -33984,7 +33984,7 @@ var BaseCamera = new Class({
      *
      * Be careful to never set this value to zero.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#zoom
+     * @name Oyun.Cameras.Scene2D.BaseCamera#zoom
      * @type {number}
      * @default 1
      * @since 3.0.0
@@ -34017,7 +34017,7 @@ var BaseCamera = new Class({
      *
      * Be careful to never set this value to zero.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#zoomX
+     * @name Oyun.Cameras.Scene2D.BaseCamera#zoomX
      * @type {number}
      * @default 1
      * @since 3.50.0
@@ -34048,7 +34048,7 @@ var BaseCamera = new Class({
      *
      * Be careful to never set this value to zero.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#zoomY
+     * @name Oyun.Cameras.Scene2D.BaseCamera#zoomY
      * @type {number}
      * @default 1
      * @since 3.50.0
@@ -34077,7 +34077,7 @@ var BaseCamera = new Class({
      * Rotation influences the rendering of _all_ Game Objects visible by this Camera. However, it does not
      * rotate the Camera viewport itself, which always remains an axis-aligned rectangle.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#rotation
+     * @name Oyun.Cameras.Scene2D.BaseCamera#rotation
      * @type {number}
      * @private
      * @default 0
@@ -34101,7 +34101,7 @@ var BaseCamera = new Class({
     /**
      * The horizontal position of the center of the Camera's viewport, relative to the left of the game canvas.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#centerX
+     * @name Oyun.Cameras.Scene2D.BaseCamera#centerX
      * @type {number}
      * @readonly
      * @since 3.10.0
@@ -34118,7 +34118,7 @@ var BaseCamera = new Class({
     /**
      * The vertical position of the center of the Camera's viewport, relative to the top of the game canvas.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#centerY
+     * @name Oyun.Cameras.Scene2D.BaseCamera#centerY
      * @type {number}
      * @readonly
      * @since 3.10.0
@@ -34141,7 +34141,7 @@ var BaseCamera = new Class({
      * Equally, a camera with a width of 800 and zoom of 2 would have a display width
      * of 400 pixels.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#displayWidth
+     * @name Oyun.Cameras.Scene2D.BaseCamera#displayWidth
      * @type {number}
      * @readonly
      * @since 3.11.0
@@ -34164,7 +34164,7 @@ var BaseCamera = new Class({
      * Equally, a camera with a height of 600 and zoom of 2 would have a display height
      * of 300 pixels.
      *
-     * @name Phaser.Cameras.Scene2D.BaseCamera#displayHeight
+     * @name Oyun.Cameras.Scene2D.BaseCamera#displayHeight
      * @type {number}
      * @readonly
      * @since 3.11.0
@@ -34277,7 +34277,7 @@ module.exports = {
 /**
  * Calculates a linear (interpolation) value over t.
  *
- * @function Phaser.Math.Linear
+ * @function Oyun.Math.Linear
  * @since 3.0.0
  *
  * @param {number} p0 - The first point.
@@ -34307,12 +34307,12 @@ module.exports = Linear;
 var OS = __webpack_require__(102);
 
 /**
- * Determines the browser type and version running this Phaser Game instance.
+ * Determines the browser type and version running this Oyun Game instance.
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.browser` from within any Scene.
  * 
- * @typedef {object} Phaser.Device.Browser
+ * @typedef {object} Oyun.Device.Browser
  * @since 3.0.0
  * 
  * @property {boolean} chrome - Set to true if running in Chrome.
@@ -34417,7 +34417,7 @@ module.exports = init();
 /**
  * Generate a random floating point number between the two given bounds, minimum inclusive, maximum exclusive.
  *
- * @function Phaser.Math.FloatBetween
+ * @function Oyun.Math.FloatBetween
  * @since 3.0.0
  *
  * @param {number} min - The lower bound for the float, inclusive.
@@ -34447,7 +34447,7 @@ module.exports = FloatBetween;
  * Checks if the given `width` and `height` are a power of two.
  * Useful for checking texture dimensions.
  *
- * @function Phaser.Math.Pow2.IsSize
+ * @function Oyun.Math.Pow2.IsSize
  * @since 3.0.0
  *
  * @param {number} width - The width.
@@ -34479,7 +34479,7 @@ module.exports = IsSizePowerOfTwo;
  * Example: if you have an interval gap of `5` and a position of `12`... you will snap to `15`.
  * As will `14` snap to `15`... but `16` will snap to `20`.
  *
- * @function Phaser.Math.Snap.Ceil
+ * @function Oyun.Math.Snap.Ceil
  * @since 3.0.0
  *
  * @param {number} value - The value to snap.
@@ -34529,7 +34529,7 @@ var Class = __webpack_require__(0);
  * A four-component vector.
  *
  * @class Vector4
- * @memberof Phaser.Math
+ * @memberof Oyun.Math
  * @constructor
  * @since 3.0.0
  *
@@ -34547,7 +34547,7 @@ var Vector4 = new Class({
         /**
          * The x component of this Vector.
          *
-         * @name Phaser.Math.Vector4#x
+         * @name Oyun.Math.Vector4#x
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -34557,7 +34557,7 @@ var Vector4 = new Class({
         /**
          * The y component of this Vector.
          *
-         * @name Phaser.Math.Vector4#y
+         * @name Oyun.Math.Vector4#y
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -34567,7 +34567,7 @@ var Vector4 = new Class({
         /**
          * The z component of this Vector.
          *
-         * @name Phaser.Math.Vector4#z
+         * @name Oyun.Math.Vector4#z
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -34577,7 +34577,7 @@ var Vector4 = new Class({
         /**
          * The w component of this Vector.
          *
-         * @name Phaser.Math.Vector4#w
+         * @name Oyun.Math.Vector4#w
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -34603,10 +34603,10 @@ var Vector4 = new Class({
     /**
      * Make a clone of this Vector4.
      *
-     * @method Phaser.Math.Vector4#clone
+     * @method Oyun.Math.Vector4#clone
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector4} A clone of this Vector4.
+     * @return {Oyun.Math.Vector4} A clone of this Vector4.
      */
     clone: function ()
     {
@@ -34616,12 +34616,12 @@ var Vector4 = new Class({
     /**
      * Copy the components of a given Vector into this Vector.
      *
-     * @method Phaser.Math.Vector4#copy
+     * @method Oyun.Math.Vector4#copy
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector4} src - The Vector to copy the components from.
+     * @param {Oyun.Math.Vector4} src - The Vector to copy the components from.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     copy: function (src)
     {
@@ -34638,10 +34638,10 @@ var Vector4 = new Class({
      *
      * Performs a strict quality check against each Vector's components.
      *
-     * @method Phaser.Math.Vector4#equals
+     * @method Oyun.Math.Vector4#equals
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector4} v - The vector to check equality with.
+     * @param {Oyun.Math.Vector4} v - The vector to check equality with.
      *
      * @return {boolean} A boolean indicating whether the two Vectors are equal or not.
      */
@@ -34653,7 +34653,7 @@ var Vector4 = new Class({
     /**
      * Set the `x`, `y`, `z` and `w` components of the this Vector to the given `x`, `y`, `z` and `w` values.
      *
-     * @method Phaser.Math.Vector4#set
+     * @method Oyun.Math.Vector4#set
      * @since 3.0.0
      *
      * @param {(number|object)} x - The x value to set for this Vector, or an object containing x, y, z and w components.
@@ -34661,7 +34661,7 @@ var Vector4 = new Class({
      * @param {number} z - The z value to set for this Vector.
      * @param {number} w - The z value to set for this Vector.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     set: function (x, y, z, w)
     {
@@ -34686,12 +34686,12 @@ var Vector4 = new Class({
     /**
      * Add a given Vector to this Vector. Addition is component-wise.
      *
-     * @method Phaser.Math.Vector4#add
+     * @method Oyun.Math.Vector4#add
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to add to this Vector.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to add to this Vector.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     add: function (v)
     {
@@ -34706,12 +34706,12 @@ var Vector4 = new Class({
     /**
      * Subtract the given Vector from this Vector. Subtraction is component-wise.
      *
-     * @method Phaser.Math.Vector4#subtract
+     * @method Oyun.Math.Vector4#subtract
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to subtract from this Vector.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to subtract from this Vector.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     subtract: function (v)
     {
@@ -34726,12 +34726,12 @@ var Vector4 = new Class({
     /**
      * Scale this Vector by the given value.
      *
-     * @method Phaser.Math.Vector4#scale
+     * @method Oyun.Math.Vector4#scale
      * @since 3.0.0
      *
      * @param {number} scale - The value to scale this Vector by.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     scale: function (scale)
     {
@@ -34746,7 +34746,7 @@ var Vector4 = new Class({
     /**
      * Calculate the length (or magnitude) of this Vector.
      *
-     * @method Phaser.Math.Vector4#length
+     * @method Oyun.Math.Vector4#length
      * @since 3.0.0
      *
      * @return {number} The length of this Vector.
@@ -34764,7 +34764,7 @@ var Vector4 = new Class({
     /**
      * Calculate the length of this Vector squared.
      *
-     * @method Phaser.Math.Vector4#lengthSq
+     * @method Oyun.Math.Vector4#lengthSq
      * @since 3.0.0
      *
      * @return {number} The length of this Vector, squared.
@@ -34784,10 +34784,10 @@ var Vector4 = new Class({
      *
      * Makes the vector a unit length vector (magnitude of 1) in the same direction.
      *
-     * @method Phaser.Math.Vector4#normalize
+     * @method Oyun.Math.Vector4#normalize
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     normalize: function ()
     {
@@ -34813,10 +34813,10 @@ var Vector4 = new Class({
     /**
      * Calculate the dot product of this Vector and the given Vector.
      *
-     * @method Phaser.Math.Vector4#dot
+     * @method Oyun.Math.Vector4#dot
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector4} v - The Vector4 to dot product with this Vector4.
+     * @param {Oyun.Math.Vector4} v - The Vector4 to dot product with this Vector4.
      *
      * @return {number} The dot product of this Vector and the given Vector.
      */
@@ -34830,13 +34830,13 @@ var Vector4 = new Class({
      *
      * Interpolates this Vector towards the given Vector.
      *
-     * @method Phaser.Math.Vector4#lerp
+     * @method Oyun.Math.Vector4#lerp
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Vector4} v - The Vector4 to interpolate towards.
+     * @param {Oyun.Math.Vector4} v - The Vector4 to interpolate towards.
      * @param {number} [t=0] - The interpolation percentage, between 0 and 1.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     lerp: function (v, t)
     {
@@ -34860,12 +34860,12 @@ var Vector4 = new Class({
      *
      * Multiplies this Vector by the given Vector.
      *
-     * @method Phaser.Math.Vector4#multiply
+     * @method Oyun.Math.Vector4#multiply
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to multiply this Vector by.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to multiply this Vector by.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     multiply: function (v)
     {
@@ -34882,12 +34882,12 @@ var Vector4 = new Class({
      *
      * Divides this Vector by the given Vector.
      *
-     * @method Phaser.Math.Vector4#divide
+     * @method Oyun.Math.Vector4#divide
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to divide this Vector by.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to divide this Vector by.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     divide: function (v)
     {
@@ -34902,10 +34902,10 @@ var Vector4 = new Class({
     /**
      * Calculate the distance between this Vector and the given Vector.
      *
-     * @method Phaser.Math.Vector4#distance
+     * @method Oyun.Math.Vector4#distance
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to calculate the distance to.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to calculate the distance to.
      *
      * @return {number} The distance from this Vector to the given Vector.
      */
@@ -34922,10 +34922,10 @@ var Vector4 = new Class({
     /**
      * Calculate the distance between this Vector and the given Vector, squared.
      *
-     * @method Phaser.Math.Vector4#distanceSq
+     * @method Oyun.Math.Vector4#distanceSq
      * @since 3.0.0
      *
-     * @param {(Phaser.Math.Vector2|Phaser.Math.Vector3|Phaser.Math.Vector4)} v - The Vector to calculate the distance to.
+     * @param {(Oyun.Math.Vector2|Oyun.Math.Vector3|Oyun.Math.Vector4)} v - The Vector to calculate the distance to.
      *
      * @return {number} The distance from this Vector to the given Vector, squared.
      */
@@ -34942,10 +34942,10 @@ var Vector4 = new Class({
     /**
      * Negate the `x`, `y`, `z` and `w` components of this Vector.
      *
-     * @method Phaser.Math.Vector4#negate
+     * @method Oyun.Math.Vector4#negate
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     negate: function ()
     {
@@ -34960,12 +34960,12 @@ var Vector4 = new Class({
     /**
      * Transform this Vector with the given Matrix.
      *
-     * @method Phaser.Math.Vector4#transformMat4
+     * @method Oyun.Math.Vector4#transformMat4
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Matrix4} mat - The Matrix4 to transform this Vector4 with.
+     * @param {Oyun.Math.Matrix4} mat - The Matrix4 to transform this Vector4 with.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     transformMat4: function (mat)
     {
@@ -34986,12 +34986,12 @@ var Vector4 = new Class({
     /**
      * Transform this Vector with the given Quaternion.
      *
-     * @method Phaser.Math.Vector4#transformQuat
+     * @method Oyun.Math.Vector4#transformQuat
      * @since 3.0.0
      *
-     * @param {Phaser.Math.Quaternion} q - The Quaternion to transform this Vector with.
+     * @param {Oyun.Math.Quaternion} q - The Quaternion to transform this Vector with.
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     transformQuat: function (q)
     {
@@ -35020,10 +35020,10 @@ var Vector4 = new Class({
     /**
      * Make this Vector the zero vector (0, 0, 0, 0).
      *
-     * @method Phaser.Math.Vector4#reset
+     * @method Oyun.Math.Vector4#reset
      * @since 3.0.0
      *
-     * @return {Phaser.Math.Vector4} This Vector4.
+     * @return {Oyun.Math.Vector4} This Vector4.
      */
     reset: function ()
     {
@@ -35069,11 +35069,11 @@ var Events = __webpack_require__(88);
  * other Game Objects and classes can take advantage of Render Targets as well.
  *
  * @class RenderTarget
- * @memberof Phaser.Renderer.WebGL
+ * @memberof Oyun.Renderer.WebGL
  * @constructor
  * @since 3.50.0
  *
- * @param {Phaser.Renderer.WebGL.WebGLRenderer} renderer - A reference to the WebGLRenderer.
+ * @param {Oyun.Renderer.WebGL.WebGLRenderer} renderer - A reference to the WebGLRenderer.
  * @param {number} width - The width of this Render Target.
  * @param {number} height - The height of this Render Target.
  * @param {number} [scale=1] - A value between 0 and 1. Controls the size of this Render Target in relation to the Renderer.
@@ -35095,8 +35095,8 @@ var RenderTarget = new Class({
         /**
          * A reference to the WebGLRenderer instance.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#renderer
-         * @type {Phaser.Renderer.WebGL.WebGLRenderer}
+         * @name Oyun.Renderer.WebGL.RenderTarget#renderer
+         * @type {Oyun.Renderer.WebGL.WebGLRenderer}
          * @since 3.50.0
          */
         this.renderer = renderer;
@@ -35106,7 +35106,7 @@ var RenderTarget = new Class({
          *
          * This is created in the `RenderTarget.resize` method.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#framebuffer
+         * @name Oyun.Renderer.WebGL.RenderTarget#framebuffer
          * @type {WebGLFramebuffer}
          * @since 3.50.0
          */
@@ -35117,7 +35117,7 @@ var RenderTarget = new Class({
          *
          * This is created in the `RenderTarget.resize` method.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#texture
+         * @name Oyun.Renderer.WebGL.RenderTarget#texture
          * @type {WebGLTexture}
          * @since 3.50.0
          */
@@ -35126,7 +35126,7 @@ var RenderTarget = new Class({
         /**
          * The width of the texture.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#width
+         * @name Oyun.Renderer.WebGL.RenderTarget#width
          * @type {number}
          * @readonly
          * @since 3.50.0
@@ -35136,7 +35136,7 @@ var RenderTarget = new Class({
         /**
          * The height of the texture.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#height
+         * @name Oyun.Renderer.WebGL.RenderTarget#height
          * @type {number}
          * @readonly
          * @since 3.50.0
@@ -35148,7 +35148,7 @@ var RenderTarget = new Class({
          *
          * A value of 1 matches it. 0.5 makes the Render Target half the size of the renderer, etc.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#scale
+         * @name Oyun.Renderer.WebGL.RenderTarget#scale
          * @type {number}
          * @since 3.50.0
          */
@@ -35157,7 +35157,7 @@ var RenderTarget = new Class({
         /**
          * The minFilter mode of the texture. 0 is `LINEAR`, 1 is `NEAREST`.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#minFilter
+         * @name Oyun.Renderer.WebGL.RenderTarget#minFilter
          * @type {number}
          * @since 3.50.0
          */
@@ -35170,7 +35170,7 @@ var RenderTarget = new Class({
          * If you need more control over how, or if, the target is cleared, you can disable
          * this via the config on creation, or even toggle it directly at runtime.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#autoClear
+         * @name Oyun.Renderer.WebGL.RenderTarget#autoClear
          * @type {boolean}
          * @since 3.50.0
          */
@@ -35181,7 +35181,7 @@ var RenderTarget = new Class({
          *
          * Modify this property via the `setAutoResize` method.
          *
-         * @name Phaser.Renderer.WebGL.RenderTarget#autoResize
+         * @name Oyun.Renderer.WebGL.RenderTarget#autoResize
          * @type {boolean}
          * @readonly
          * @since 3.50.0
@@ -35200,7 +35200,7 @@ var RenderTarget = new Class({
      * Sets if this Render Target should automatically resize when the WebGL Renderer
      * emits a resize event.
      *
-     * @method Phaser.Renderer.WebGL.RenderTarget#setAutoResize
+     * @method Oyun.Renderer.WebGL.RenderTarget#setAutoResize
      * @since 3.50.0
      *
      * @param {boolean} autoResize - Automatically resize this Render Target when the WebGL Renderer resizes?
@@ -35233,7 +35233,7 @@ var RenderTarget = new Class({
      *
      * This method is called automatically by the pipeline during its resize handler.
      *
-     * @method Phaser.Renderer.WebGL.RenderTarget#resize
+     * @method Oyun.Renderer.WebGL.RenderTarget#resize
      * @since 3.50.0
      *
      * @param {number} width - The new width of this Render Target.
@@ -35274,7 +35274,7 @@ var RenderTarget = new Class({
      *
      * If `adjustViewport` is `true` then it will flush the renderer and then adjust the GL viewport.
      *
-     * @method Phaser.Renderer.WebGL.RenderTarget#bind
+     * @method Oyun.Renderer.WebGL.RenderTarget#bind
      * @since 3.50.0
      *
      * @param {boolean} [adjustViewport=false] - Adjust the GL viewport by calling `RenderTarget.adjustViewport` ?
@@ -35317,7 +35317,7 @@ var RenderTarget = new Class({
      *
      * Also disables `SCISSOR_TEST`.
      *
-     * @method Phaser.Renderer.WebGL.RenderTarget#adjustViewport
+     * @method Oyun.Renderer.WebGL.RenderTarget#adjustViewport
      * @since 3.50.0
      */
     adjustViewport: function ()
@@ -35332,7 +35332,7 @@ var RenderTarget = new Class({
     /**
      * Clears this Render Target.
      *
-     * @method Phaser.Renderer.WebGL.RenderTarget#clear
+     * @method Oyun.Renderer.WebGL.RenderTarget#clear
      * @since 3.50.0
      */
     clear: function ()
@@ -35356,7 +35356,7 @@ var RenderTarget = new Class({
     /**
      * Unbinds this Render Target and optionally flushes the WebGL Renderer first.
      *
-     * @name Phaser.Renderer.WebGL.RenderTarget#unbind
+     * @name Oyun.Renderer.WebGL.RenderTarget#unbind
      * @since 3.50.0
      *
      * @param {boolean} [flush=false] - Flush the WebGL Renderer before unbinding?
@@ -35383,7 +35383,7 @@ var RenderTarget = new Class({
      *
      * Does not remove this Render Target from the parent pipeline.
      *
-     * @name Phaser.Renderer.WebGL.RenderTarget#destroy
+     * @name Oyun.Renderer.WebGL.RenderTarget#destroy
      * @since 3.50.0
      */
     destroy: function ()
@@ -35419,7 +35419,7 @@ module.exports = RenderTarget;
  * Adds the given element to the DOM. If a parent is provided the element is added as a child of the parent, providing it was able to access it.
  * If no parent was given it falls back to using `document.body`.
  *
- * @function Phaser.DOM.AddToDOM
+ * @function Oyun.DOM.AddToDOM
  * @since 3.0.0
  *
  * @param {HTMLElement} element - The element to be added to the DOM. Usually a Canvas object.
@@ -35476,8 +35476,8 @@ module.exports = AddToDOM;
 /**
  * Keyboard Codes.
  *
- * @namespace Phaser.Input.Keyboard.KeyCodes
- * @memberof Phaser.Input.Keyboard
+ * @namespace Oyun.Input.Keyboard.KeyCodes
+ * @memberof Oyun.Input.Keyboard
  * @since 3.0.0
  */
 
@@ -35486,7 +35486,7 @@ var KeyCodes = {
     /**
      * The BACKSPACE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.BACKSPACE
+     * @name Oyun.Input.Keyboard.KeyCodes.BACKSPACE
      * @type {number}
      * @since 3.0.0
      */
@@ -35495,7 +35495,7 @@ var KeyCodes = {
     /**
      * The TAB key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.TAB
+     * @name Oyun.Input.Keyboard.KeyCodes.TAB
      * @type {number}
      * @since 3.0.0
      */
@@ -35504,7 +35504,7 @@ var KeyCodes = {
     /**
      * The ENTER key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.ENTER
+     * @name Oyun.Input.Keyboard.KeyCodes.ENTER
      * @type {number}
      * @since 3.0.0
      */
@@ -35513,7 +35513,7 @@ var KeyCodes = {
     /**
      * The SHIFT key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.SHIFT
+     * @name Oyun.Input.Keyboard.KeyCodes.SHIFT
      * @type {number}
      * @since 3.0.0
      */
@@ -35522,7 +35522,7 @@ var KeyCodes = {
     /**
      * The CTRL key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.CTRL
+     * @name Oyun.Input.Keyboard.KeyCodes.CTRL
      * @type {number}
      * @since 3.0.0
      */
@@ -35531,7 +35531,7 @@ var KeyCodes = {
     /**
      * The ALT key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.ALT
+     * @name Oyun.Input.Keyboard.KeyCodes.ALT
      * @type {number}
      * @since 3.0.0
      */
@@ -35540,7 +35540,7 @@ var KeyCodes = {
     /**
      * The PAUSE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.PAUSE
+     * @name Oyun.Input.Keyboard.KeyCodes.PAUSE
      * @type {number}
      * @since 3.0.0
      */
@@ -35549,7 +35549,7 @@ var KeyCodes = {
     /**
      * The CAPS_LOCK key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.CAPS_LOCK
+     * @name Oyun.Input.Keyboard.KeyCodes.CAPS_LOCK
      * @type {number}
      * @since 3.0.0
      */
@@ -35558,7 +35558,7 @@ var KeyCodes = {
     /**
      * The ESC key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.ESC
+     * @name Oyun.Input.Keyboard.KeyCodes.ESC
      * @type {number}
      * @since 3.0.0
      */
@@ -35567,7 +35567,7 @@ var KeyCodes = {
     /**
      * The SPACE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.SPACE
+     * @name Oyun.Input.Keyboard.KeyCodes.SPACE
      * @type {number}
      * @since 3.0.0
      */
@@ -35576,7 +35576,7 @@ var KeyCodes = {
     /**
      * The PAGE_UP key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.PAGE_UP
+     * @name Oyun.Input.Keyboard.KeyCodes.PAGE_UP
      * @type {number}
      * @since 3.0.0
      */
@@ -35585,7 +35585,7 @@ var KeyCodes = {
     /**
      * The PAGE_DOWN key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.PAGE_DOWN
+     * @name Oyun.Input.Keyboard.KeyCodes.PAGE_DOWN
      * @type {number}
      * @since 3.0.0
      */
@@ -35594,7 +35594,7 @@ var KeyCodes = {
     /**
      * The END key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.END
+     * @name Oyun.Input.Keyboard.KeyCodes.END
      * @type {number}
      * @since 3.0.0
      */
@@ -35603,7 +35603,7 @@ var KeyCodes = {
     /**
      * The HOME key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.HOME
+     * @name Oyun.Input.Keyboard.KeyCodes.HOME
      * @type {number}
      * @since 3.0.0
      */
@@ -35612,7 +35612,7 @@ var KeyCodes = {
     /**
      * The LEFT key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.LEFT
+     * @name Oyun.Input.Keyboard.KeyCodes.LEFT
      * @type {number}
      * @since 3.0.0
      */
@@ -35621,7 +35621,7 @@ var KeyCodes = {
     /**
      * The UP key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.UP
+     * @name Oyun.Input.Keyboard.KeyCodes.UP
      * @type {number}
      * @since 3.0.0
      */
@@ -35630,7 +35630,7 @@ var KeyCodes = {
     /**
      * The RIGHT key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.RIGHT
+     * @name Oyun.Input.Keyboard.KeyCodes.RIGHT
      * @type {number}
      * @since 3.0.0
      */
@@ -35639,7 +35639,7 @@ var KeyCodes = {
     /**
      * The DOWN key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.DOWN
+     * @name Oyun.Input.Keyboard.KeyCodes.DOWN
      * @type {number}
      * @since 3.0.0
      */
@@ -35648,7 +35648,7 @@ var KeyCodes = {
     /**
      * The PRINT_SCREEN key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.PRINT_SCREEN
+     * @name Oyun.Input.Keyboard.KeyCodes.PRINT_SCREEN
      * @type {number}
      * @since 3.0.0
      */
@@ -35657,7 +35657,7 @@ var KeyCodes = {
     /**
      * The INSERT key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.INSERT
+     * @name Oyun.Input.Keyboard.KeyCodes.INSERT
      * @type {number}
      * @since 3.0.0
      */
@@ -35666,7 +35666,7 @@ var KeyCodes = {
     /**
      * The DELETE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.DELETE
+     * @name Oyun.Input.Keyboard.KeyCodes.DELETE
      * @type {number}
      * @since 3.0.0
      */
@@ -35675,7 +35675,7 @@ var KeyCodes = {
     /**
      * The ZERO key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.ZERO
+     * @name Oyun.Input.Keyboard.KeyCodes.ZERO
      * @type {number}
      * @since 3.0.0
      */
@@ -35684,7 +35684,7 @@ var KeyCodes = {
     /**
      * The ONE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.ONE
+     * @name Oyun.Input.Keyboard.KeyCodes.ONE
      * @type {number}
      * @since 3.0.0
      */
@@ -35693,7 +35693,7 @@ var KeyCodes = {
     /**
      * The TWO key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.TWO
+     * @name Oyun.Input.Keyboard.KeyCodes.TWO
      * @type {number}
      * @since 3.0.0
      */
@@ -35702,7 +35702,7 @@ var KeyCodes = {
     /**
      * The THREE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.THREE
+     * @name Oyun.Input.Keyboard.KeyCodes.THREE
      * @type {number}
      * @since 3.0.0
      */
@@ -35711,7 +35711,7 @@ var KeyCodes = {
     /**
      * The FOUR key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.FOUR
+     * @name Oyun.Input.Keyboard.KeyCodes.FOUR
      * @type {number}
      * @since 3.0.0
      */
@@ -35720,7 +35720,7 @@ var KeyCodes = {
     /**
      * The FIVE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.FIVE
+     * @name Oyun.Input.Keyboard.KeyCodes.FIVE
      * @type {number}
      * @since 3.0.0
      */
@@ -35729,7 +35729,7 @@ var KeyCodes = {
     /**
      * The SIX key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.SIX
+     * @name Oyun.Input.Keyboard.KeyCodes.SIX
      * @type {number}
      * @since 3.0.0
      */
@@ -35738,7 +35738,7 @@ var KeyCodes = {
     /**
      * The SEVEN key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.SEVEN
+     * @name Oyun.Input.Keyboard.KeyCodes.SEVEN
      * @type {number}
      * @since 3.0.0
      */
@@ -35747,7 +35747,7 @@ var KeyCodes = {
     /**
      * The EIGHT key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.EIGHT
+     * @name Oyun.Input.Keyboard.KeyCodes.EIGHT
      * @type {number}
      * @since 3.0.0
      */
@@ -35756,7 +35756,7 @@ var KeyCodes = {
     /**
      * The NINE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NINE
+     * @name Oyun.Input.Keyboard.KeyCodes.NINE
      * @type {number}
      * @since 3.0.0
      */
@@ -35765,7 +35765,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_ZERO key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_ZERO
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_ZERO
      * @type {number}
      * @since 3.0.0
      */
@@ -35774,7 +35774,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_ONE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_ONE
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_ONE
      * @type {number}
      * @since 3.0.0
      */
@@ -35783,7 +35783,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_TWO key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_TWO
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_TWO
      * @type {number}
      * @since 3.0.0
      */
@@ -35792,7 +35792,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_THREE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_THREE
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_THREE
      * @type {number}
      * @since 3.0.0
      */
@@ -35801,7 +35801,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_FOUR key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_FOUR
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_FOUR
      * @type {number}
      * @since 3.0.0
      */
@@ -35810,7 +35810,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_FIVE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_FIVE
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_FIVE
      * @type {number}
      * @since 3.0.0
      */
@@ -35819,7 +35819,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_SIX key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_SIX
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_SIX
      * @type {number}
      * @since 3.0.0
      */
@@ -35828,7 +35828,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_SEVEN key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_SEVEN
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_SEVEN
      * @type {number}
      * @since 3.0.0
      */
@@ -35837,7 +35837,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_EIGHT key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_EIGHT
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_EIGHT
      * @type {number}
      * @since 3.0.0
      */
@@ -35846,7 +35846,7 @@ var KeyCodes = {
     /**
      * The NUMPAD_NINE key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_NINE
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_NINE
      * @type {number}
      * @since 3.0.0
      */
@@ -35855,7 +35855,7 @@ var KeyCodes = {
     /**
      * The Numpad Addition (+) key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_ADD
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_ADD
      * @type {number}
      * @since 3.21.0
      */
@@ -35864,7 +35864,7 @@ var KeyCodes = {
     /**
      * The Numpad Subtraction (-) key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.NUMPAD_SUBTRACT
+     * @name Oyun.Input.Keyboard.KeyCodes.NUMPAD_SUBTRACT
      * @type {number}
      * @since 3.21.0
      */
@@ -35873,7 +35873,7 @@ var KeyCodes = {
     /**
      * The A key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.A
+     * @name Oyun.Input.Keyboard.KeyCodes.A
      * @type {number}
      * @since 3.0.0
      */
@@ -35882,7 +35882,7 @@ var KeyCodes = {
     /**
      * The B key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.B
+     * @name Oyun.Input.Keyboard.KeyCodes.B
      * @type {number}
      * @since 3.0.0
      */
@@ -35891,7 +35891,7 @@ var KeyCodes = {
     /**
      * The C key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.C
+     * @name Oyun.Input.Keyboard.KeyCodes.C
      * @type {number}
      * @since 3.0.0
      */
@@ -35900,7 +35900,7 @@ var KeyCodes = {
     /**
      * The D key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.D
+     * @name Oyun.Input.Keyboard.KeyCodes.D
      * @type {number}
      * @since 3.0.0
      */
@@ -35909,7 +35909,7 @@ var KeyCodes = {
     /**
      * The E key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.E
+     * @name Oyun.Input.Keyboard.KeyCodes.E
      * @type {number}
      * @since 3.0.0
      */
@@ -35918,7 +35918,7 @@ var KeyCodes = {
     /**
      * The F key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F
+     * @name Oyun.Input.Keyboard.KeyCodes.F
      * @type {number}
      * @since 3.0.0
      */
@@ -35927,7 +35927,7 @@ var KeyCodes = {
     /**
      * The G key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.G
+     * @name Oyun.Input.Keyboard.KeyCodes.G
      * @type {number}
      * @since 3.0.0
      */
@@ -35936,7 +35936,7 @@ var KeyCodes = {
     /**
      * The H key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.H
+     * @name Oyun.Input.Keyboard.KeyCodes.H
      * @type {number}
      * @since 3.0.0
      */
@@ -35945,7 +35945,7 @@ var KeyCodes = {
     /**
      * The I key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.I
+     * @name Oyun.Input.Keyboard.KeyCodes.I
      * @type {number}
      * @since 3.0.0
      */
@@ -35954,7 +35954,7 @@ var KeyCodes = {
     /**
      * The J key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.J
+     * @name Oyun.Input.Keyboard.KeyCodes.J
      * @type {number}
      * @since 3.0.0
      */
@@ -35963,7 +35963,7 @@ var KeyCodes = {
     /**
      * The K key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.K
+     * @name Oyun.Input.Keyboard.KeyCodes.K
      * @type {number}
      * @since 3.0.0
      */
@@ -35972,7 +35972,7 @@ var KeyCodes = {
     /**
      * The L key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.L
+     * @name Oyun.Input.Keyboard.KeyCodes.L
      * @type {number}
      * @since 3.0.0
      */
@@ -35981,7 +35981,7 @@ var KeyCodes = {
     /**
      * The M key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.M
+     * @name Oyun.Input.Keyboard.KeyCodes.M
      * @type {number}
      * @since 3.0.0
      */
@@ -35990,7 +35990,7 @@ var KeyCodes = {
     /**
      * The N key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.N
+     * @name Oyun.Input.Keyboard.KeyCodes.N
      * @type {number}
      * @since 3.0.0
      */
@@ -35999,7 +35999,7 @@ var KeyCodes = {
     /**
      * The O key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.O
+     * @name Oyun.Input.Keyboard.KeyCodes.O
      * @type {number}
      * @since 3.0.0
      */
@@ -36008,7 +36008,7 @@ var KeyCodes = {
     /**
      * The P key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.P
+     * @name Oyun.Input.Keyboard.KeyCodes.P
      * @type {number}
      * @since 3.0.0
      */
@@ -36017,7 +36017,7 @@ var KeyCodes = {
     /**
      * The Q key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.Q
+     * @name Oyun.Input.Keyboard.KeyCodes.Q
      * @type {number}
      * @since 3.0.0
      */
@@ -36026,7 +36026,7 @@ var KeyCodes = {
     /**
      * The R key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.R
+     * @name Oyun.Input.Keyboard.KeyCodes.R
      * @type {number}
      * @since 3.0.0
      */
@@ -36035,7 +36035,7 @@ var KeyCodes = {
     /**
      * The S key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.S
+     * @name Oyun.Input.Keyboard.KeyCodes.S
      * @type {number}
      * @since 3.0.0
      */
@@ -36044,7 +36044,7 @@ var KeyCodes = {
     /**
      * The T key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.T
+     * @name Oyun.Input.Keyboard.KeyCodes.T
      * @type {number}
      * @since 3.0.0
      */
@@ -36053,7 +36053,7 @@ var KeyCodes = {
     /**
      * The U key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.U
+     * @name Oyun.Input.Keyboard.KeyCodes.U
      * @type {number}
      * @since 3.0.0
      */
@@ -36062,7 +36062,7 @@ var KeyCodes = {
     /**
      * The V key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.V
+     * @name Oyun.Input.Keyboard.KeyCodes.V
      * @type {number}
      * @since 3.0.0
      */
@@ -36071,7 +36071,7 @@ var KeyCodes = {
     /**
      * The W key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.W
+     * @name Oyun.Input.Keyboard.KeyCodes.W
      * @type {number}
      * @since 3.0.0
      */
@@ -36080,7 +36080,7 @@ var KeyCodes = {
     /**
      * The X key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.X
+     * @name Oyun.Input.Keyboard.KeyCodes.X
      * @type {number}
      * @since 3.0.0
      */
@@ -36089,7 +36089,7 @@ var KeyCodes = {
     /**
      * The Y key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.Y
+     * @name Oyun.Input.Keyboard.KeyCodes.Y
      * @type {number}
      * @since 3.0.0
      */
@@ -36098,7 +36098,7 @@ var KeyCodes = {
     /**
      * The Z key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.Z
+     * @name Oyun.Input.Keyboard.KeyCodes.Z
      * @type {number}
      * @since 3.0.0
      */
@@ -36107,7 +36107,7 @@ var KeyCodes = {
     /**
      * The F1 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F1
+     * @name Oyun.Input.Keyboard.KeyCodes.F1
      * @type {number}
      * @since 3.0.0
      */
@@ -36116,7 +36116,7 @@ var KeyCodes = {
     /**
      * The F2 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F2
+     * @name Oyun.Input.Keyboard.KeyCodes.F2
      * @type {number}
      * @since 3.0.0
      */
@@ -36125,7 +36125,7 @@ var KeyCodes = {
     /**
      * The F3 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F3
+     * @name Oyun.Input.Keyboard.KeyCodes.F3
      * @type {number}
      * @since 3.0.0
      */
@@ -36134,7 +36134,7 @@ var KeyCodes = {
     /**
      * The F4 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F4
+     * @name Oyun.Input.Keyboard.KeyCodes.F4
      * @type {number}
      * @since 3.0.0
      */
@@ -36143,7 +36143,7 @@ var KeyCodes = {
     /**
      * The F5 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F5
+     * @name Oyun.Input.Keyboard.KeyCodes.F5
      * @type {number}
      * @since 3.0.0
      */
@@ -36152,7 +36152,7 @@ var KeyCodes = {
     /**
      * The F6 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F6
+     * @name Oyun.Input.Keyboard.KeyCodes.F6
      * @type {number}
      * @since 3.0.0
      */
@@ -36161,7 +36161,7 @@ var KeyCodes = {
     /**
      * The F7 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F7
+     * @name Oyun.Input.Keyboard.KeyCodes.F7
      * @type {number}
      * @since 3.0.0
      */
@@ -36170,7 +36170,7 @@ var KeyCodes = {
     /**
      * The F8 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F8
+     * @name Oyun.Input.Keyboard.KeyCodes.F8
      * @type {number}
      * @since 3.0.0
      */
@@ -36179,7 +36179,7 @@ var KeyCodes = {
     /**
      * The F9 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F9
+     * @name Oyun.Input.Keyboard.KeyCodes.F9
      * @type {number}
      * @since 3.0.0
      */
@@ -36188,7 +36188,7 @@ var KeyCodes = {
     /**
      * The F10 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F10
+     * @name Oyun.Input.Keyboard.KeyCodes.F10
      * @type {number}
      * @since 3.0.0
      */
@@ -36197,7 +36197,7 @@ var KeyCodes = {
     /**
      * The F11 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F11
+     * @name Oyun.Input.Keyboard.KeyCodes.F11
      * @type {number}
      * @since 3.0.0
      */
@@ -36206,7 +36206,7 @@ var KeyCodes = {
     /**
      * The F12 key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.F12
+     * @name Oyun.Input.Keyboard.KeyCodes.F12
      * @type {number}
      * @since 3.0.0
      */
@@ -36215,7 +36215,7 @@ var KeyCodes = {
     /**
      * The SEMICOLON key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.SEMICOLON
+     * @name Oyun.Input.Keyboard.KeyCodes.SEMICOLON
      * @type {number}
      * @since 3.0.0
      */
@@ -36224,7 +36224,7 @@ var KeyCodes = {
     /**
      * The PLUS key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.PLUS
+     * @name Oyun.Input.Keyboard.KeyCodes.PLUS
      * @type {number}
      * @since 3.0.0
      */
@@ -36233,7 +36233,7 @@ var KeyCodes = {
     /**
      * The COMMA key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.COMMA
+     * @name Oyun.Input.Keyboard.KeyCodes.COMMA
      * @type {number}
      * @since 3.0.0
      */
@@ -36242,7 +36242,7 @@ var KeyCodes = {
     /**
      * The MINUS key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.MINUS
+     * @name Oyun.Input.Keyboard.KeyCodes.MINUS
      * @type {number}
      * @since 3.0.0
      */
@@ -36251,7 +36251,7 @@ var KeyCodes = {
     /**
      * The PERIOD key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.PERIOD
+     * @name Oyun.Input.Keyboard.KeyCodes.PERIOD
      * @type {number}
      * @since 3.0.0
      */
@@ -36260,7 +36260,7 @@ var KeyCodes = {
     /**
      * The FORWARD_SLASH key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.FORWARD_SLASH
+     * @name Oyun.Input.Keyboard.KeyCodes.FORWARD_SLASH
      * @type {number}
      * @since 3.0.0
      */
@@ -36269,7 +36269,7 @@ var KeyCodes = {
     /**
      * The BACK_SLASH key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.BACK_SLASH
+     * @name Oyun.Input.Keyboard.KeyCodes.BACK_SLASH
      * @type {number}
      * @since 3.0.0
      */
@@ -36278,7 +36278,7 @@ var KeyCodes = {
     /**
      * The QUOTES key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.QUOTES
+     * @name Oyun.Input.Keyboard.KeyCodes.QUOTES
      * @type {number}
      * @since 3.0.0
      */
@@ -36287,7 +36287,7 @@ var KeyCodes = {
     /**
      * The BACKTICK key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.BACKTICK
+     * @name Oyun.Input.Keyboard.KeyCodes.BACKTICK
      * @type {number}
      * @since 3.0.0
      */
@@ -36296,7 +36296,7 @@ var KeyCodes = {
     /**
      * The OPEN_BRACKET key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.OPEN_BRACKET
+     * @name Oyun.Input.Keyboard.KeyCodes.OPEN_BRACKET
      * @type {number}
      * @since 3.0.0
      */
@@ -36305,7 +36305,7 @@ var KeyCodes = {
     /**
      * The CLOSED_BRACKET key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.CLOSED_BRACKET
+     * @name Oyun.Input.Keyboard.KeyCodes.CLOSED_BRACKET
      * @type {number}
      * @since 3.0.0
      */
@@ -36314,7 +36314,7 @@ var KeyCodes = {
     /**
      * The SEMICOLON_FIREFOX key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.SEMICOLON_FIREFOX
+     * @name Oyun.Input.Keyboard.KeyCodes.SEMICOLON_FIREFOX
      * @type {number}
      * @since 3.0.0
      */
@@ -36323,7 +36323,7 @@ var KeyCodes = {
     /**
      * The COLON key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.COLON
+     * @name Oyun.Input.Keyboard.KeyCodes.COLON
      * @type {number}
      * @since 3.0.0
      */
@@ -36332,7 +36332,7 @@ var KeyCodes = {
     /**
      * The COMMA_FIREFOX_WINDOWS key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.COMMA_FIREFOX_WINDOWS
+     * @name Oyun.Input.Keyboard.KeyCodes.COMMA_FIREFOX_WINDOWS
      * @type {number}
      * @since 3.0.0
      */
@@ -36341,7 +36341,7 @@ var KeyCodes = {
     /**
      * The COMMA_FIREFOX key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.COMMA_FIREFOX
+     * @name Oyun.Input.Keyboard.KeyCodes.COMMA_FIREFOX
      * @type {number}
      * @since 3.0.0
      */
@@ -36350,7 +36350,7 @@ var KeyCodes = {
     /**
      * The BRACKET_RIGHT_FIREFOX key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.BRACKET_RIGHT_FIREFOX
+     * @name Oyun.Input.Keyboard.KeyCodes.BRACKET_RIGHT_FIREFOX
      * @type {number}
      * @since 3.0.0
      */
@@ -36359,7 +36359,7 @@ var KeyCodes = {
     /**
      * The BRACKET_LEFT_FIREFOX key.
      * 
-     * @name Phaser.Input.Keyboard.KeyCodes.BRACKET_LEFT_FIREFOX
+     * @name Oyun.Input.Keyboard.KeyCodes.BRACKET_LEFT_FIREFOX
      * @type {number}
      * @since 3.0.0
      */
@@ -36390,7 +36390,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.PENDING
+     * @name Oyun.Scenes.PENDING
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36400,7 +36400,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.INIT
+     * @name Oyun.Scenes.INIT
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36410,7 +36410,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.START
+     * @name Oyun.Scenes.START
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36420,7 +36420,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.LOADING
+     * @name Oyun.Scenes.LOADING
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36430,7 +36430,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.CREATING
+     * @name Oyun.Scenes.CREATING
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36440,7 +36440,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.RUNNING
+     * @name Oyun.Scenes.RUNNING
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36450,7 +36450,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.PAUSED
+     * @name Oyun.Scenes.PAUSED
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36460,7 +36460,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.SLEEPING
+     * @name Oyun.Scenes.SLEEPING
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36470,7 +36470,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.SHUTDOWN
+     * @name Oyun.Scenes.SHUTDOWN
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36480,7 +36480,7 @@ var CONST = {
     /**
      * Scene state.
      * 
-     * @name Phaser.Scenes.DESTROYED
+     * @name Oyun.Scenes.DESTROYED
      * @readonly
      * @type {number}
      * @since 3.0.0
@@ -36511,7 +36511,7 @@ var Clone = __webpack_require__(77);
  * This is only a shallow copy. Deeply nested objects are not cloned, so be sure to only use this
  * function on shallow objects.
  *
- * @function Phaser.Utils.Objects.Merge
+ * @function Oyun.Utils.Objects.Merge
  * @since 3.0.0
  *
  * @param {object} obj1 - The first object.
@@ -36562,16 +36562,16 @@ var GetFirst = __webpack_require__(422);
  * Base class for other Sound Manager classes.
  *
  * @class BaseSoundManager
- * @extends Phaser.Events.EventEmitter
- * @memberof Phaser.Sound
+ * @extends Oyun.Events.EventEmitter
+ * @memberof Oyun.Sound
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Game} game - Reference to the current game instance.
+ * @param {Oyun.Game} game - Reference to the current game instance.
  *
- * @see Phaser.Sound.HTML5AudioSoundManager
- * @see Phaser.Sound.NoAudioSoundManager
- * @see Phaser.Sound.WebAudioSoundManager
+ * @see Oyun.Sound.HTML5AudioSoundManager
+ * @see Oyun.Sound.NoAudioSoundManager
+ * @see Oyun.Sound.WebAudioSoundManager
  */
 var BaseSoundManager = new Class({
 
@@ -36586,8 +36586,8 @@ var BaseSoundManager = new Class({
         /**
          * Local reference to game.
          *
-         * @name Phaser.Sound.BaseSoundManager#game
-         * @type {Phaser.Game}
+         * @name Oyun.Sound.BaseSoundManager#game
+         * @type {Oyun.Game}
          * @readonly
          * @since 3.0.0
          */
@@ -36596,8 +36596,8 @@ var BaseSoundManager = new Class({
         /**
          * Local reference to the JSON Cache, as used by Audio Sprites.
          *
-         * @name Phaser.Sound.BaseSoundManager#jsonCache
-         * @type {Phaser.Cache.BaseCache}
+         * @name Oyun.Sound.BaseSoundManager#jsonCache
+         * @type {Oyun.Cache.BaseCache}
          * @readonly
          * @since 3.7.0
          */
@@ -36606,8 +36606,8 @@ var BaseSoundManager = new Class({
         /**
          * An array containing all added sounds.
          *
-         * @name Phaser.Sound.BaseSoundManager#sounds
-         * @type {Phaser.Sound.BaseSound[]}
+         * @name Oyun.Sound.BaseSoundManager#sounds
+         * @type {Oyun.Sound.BaseSound[]}
          * @default []
          * @private
          * @since 3.0.0
@@ -36617,7 +36617,7 @@ var BaseSoundManager = new Class({
         /**
          * Global mute setting.
          *
-         * @name Phaser.Sound.BaseSoundManager#mute
+         * @name Oyun.Sound.BaseSoundManager#mute
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -36627,7 +36627,7 @@ var BaseSoundManager = new Class({
         /**
          * Global volume setting.
          *
-         * @name Phaser.Sound.BaseSoundManager#volume
+         * @name Oyun.Sound.BaseSoundManager#volume
          * @type {number}
          * @default 1
          * @since 3.0.0
@@ -36638,7 +36638,7 @@ var BaseSoundManager = new Class({
          * Flag indicating if sounds should be paused when game looses focus,
          * for instance when user switches to another tab/program/app.
          *
-         * @name Phaser.Sound.BaseSoundManager#pauseOnBlur
+         * @name Oyun.Sound.BaseSoundManager#pauseOnBlur
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -36648,7 +36648,7 @@ var BaseSoundManager = new Class({
         /**
          * Property that actually holds the value of global playback rate.
          *
-         * @name Phaser.Sound.BaseSoundManager#_rate
+         * @name Oyun.Sound.BaseSoundManager#_rate
          * @type {number}
          * @private
          * @default 1
@@ -36659,7 +36659,7 @@ var BaseSoundManager = new Class({
         /**
          * Property that actually holds the value of global detune.
          *
-         * @name Phaser.Sound.BaseSoundManager#_detune
+         * @name Oyun.Sound.BaseSoundManager#_detune
          * @type {number}
          * @private
          * @default 0
@@ -36672,7 +36672,7 @@ var BaseSoundManager = new Class({
          * such as a tap, before any sound can be loaded/played on a web page.
          * Set to true if the audio system is currently locked awaiting user interaction.
          *
-         * @name Phaser.Sound.BaseSoundManager#locked
+         * @name Oyun.Sound.BaseSoundManager#locked
          * @type {boolean}
          * @readonly
          * @since 3.0.0
@@ -36683,7 +36683,7 @@ var BaseSoundManager = new Class({
          * Flag used internally for handling when the audio system
          * has been unlocked, if there ever was a need for it.
          *
-         * @name Phaser.Sound.BaseSoundManager#unlocked
+         * @name Oyun.Sound.BaseSoundManager#unlocked
          * @type {boolean}
          * @default false
          * @private
@@ -36700,14 +36700,14 @@ var BaseSoundManager = new Class({
     /**
      * Adds a new sound into the sound manager.
      *
-     * @method Phaser.Sound.BaseSoundManager#add
+     * @method Oyun.Sound.BaseSoundManager#add
      * @override
      * @since 3.0.0
      *
      * @param {string} key - Asset key for the sound.
-     * @param {Phaser.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
+     * @param {Oyun.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
      *
-     * @return {Phaser.Sound.BaseSound} The new sound instance.
+     * @return {Oyun.Sound.BaseSound} The new sound instance.
      */
     add: NOOP,
 
@@ -36716,13 +36716,13 @@ var BaseSoundManager = new Class({
      * Audio Sprites are a combination of audio files and a JSON configuration.
      * The JSON follows the format of that created by https://github.com/tonistiigi/audiosprite
      *
-     * @method Phaser.Sound.BaseSoundManager#addAudioSprite
+     * @method Oyun.Sound.BaseSoundManager#addAudioSprite
      * @since 3.0.0
      *
      * @param {string} key - Asset key for the sound.
-     * @param {Phaser.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
+     * @param {Oyun.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
      *
-     * @return {(Phaser.Sound.HTML5AudioSound|Phaser.Sound.WebAudioSound)} The new audio sprite sound instance.
+     * @return {(Oyun.Sound.HTML5AudioSound|Oyun.Sound.WebAudioSound)} The new audio sprite sound instance.
      */
     addAudioSprite: function (key, config)
     {
@@ -36759,12 +36759,12 @@ var BaseSoundManager = new Class({
     /**
      * Gets the first sound in the manager matching the given key, if any.
      *
-     * @method Phaser.Sound.BaseSoundManager#get
+     * @method Oyun.Sound.BaseSoundManager#get
      * @since 3.23.0
      *
      * @param {string} key - Sound asset key.
      *
-     * @return {?Phaser.Sound.BaseSound} - The sound, or null.
+     * @return {?Oyun.Sound.BaseSound} - The sound, or null.
      */
     get: function (key)
     {
@@ -36774,12 +36774,12 @@ var BaseSoundManager = new Class({
     /**
      * Gets any sounds in the manager matching the given key.
      *
-     * @method Phaser.Sound.BaseSoundManager#getAll
+     * @method Oyun.Sound.BaseSoundManager#getAll
      * @since 3.23.0
      *
      * @param {string} key - Sound asset key.
      *
-     * @return {Phaser.Sound.BaseSound[]} - The sounds, or an empty array.
+     * @return {Oyun.Sound.BaseSound[]} - The sounds, or an empty array.
      */
     getAll: function (key)
     {
@@ -36791,12 +36791,12 @@ var BaseSoundManager = new Class({
      * The sound will be automatically removed (destroyed) once playback ends.
      * This lets you play a new sound on the fly without the need to keep a reference to it.
      *
-     * @method Phaser.Sound.BaseSoundManager#play
-     * @listens Phaser.Sound.Events#COMPLETE
+     * @method Oyun.Sound.BaseSoundManager#play
+     * @listens Oyun.Sound.Events#COMPLETE
      * @since 3.0.0
      *
      * @param {string} key - Asset key for the sound.
-     * @param {(Phaser.Types.Sound.SoundConfig|Phaser.Types.Sound.SoundMarker)} [extra] - An optional additional object containing settings to be applied to the sound. It could be either config or marker object.
+     * @param {(Oyun.Types.Sound.SoundConfig|Oyun.Types.Sound.SoundMarker)} [extra] - An optional additional object containing settings to be applied to the sound. It could be either config or marker object.
      *
      * @return {boolean} Whether the sound started playing successfully.
      */
@@ -36830,13 +36830,13 @@ var BaseSoundManager = new Class({
      * The sprite will be automatically removed (destroyed) once playback ends.
      * This lets you play a new sound on the fly without the need to keep a reference to it.
      *
-     * @method Phaser.Sound.BaseSoundManager#playAudioSprite
-     * @listens Phaser.Sound.Events#COMPLETE
+     * @method Oyun.Sound.BaseSoundManager#playAudioSprite
+     * @listens Oyun.Sound.Events#COMPLETE
      * @since 3.0.0
      *
      * @param {string} key - Asset key for the sound.
      * @param {string} spriteName - The name of the sound sprite to play.
-     * @param {Phaser.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
+     * @param {Oyun.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
      *
      * @return {boolean} Whether the audio sprite sound started playing successfully.
      */
@@ -36853,10 +36853,10 @@ var BaseSoundManager = new Class({
      * Removes a sound from the sound manager.
      * The removed sound is destroyed before removal.
      *
-     * @method Phaser.Sound.BaseSoundManager#remove
+     * @method Oyun.Sound.BaseSoundManager#remove
      * @since 3.0.0
      *
-     * @param {Phaser.Sound.BaseSound} sound - The sound object to remove.
+     * @param {Oyun.Sound.BaseSound} sound - The sound object to remove.
      *
      * @return {boolean} True if the sound was removed successfully, otherwise false.
      */
@@ -36880,7 +36880,7 @@ var BaseSoundManager = new Class({
     /**
      * Removes all sounds from the manager, destroying the sounds.
      *
-     * @method Phaser.Sound.BaseSoundManager#removeAll
+     * @method Oyun.Sound.BaseSoundManager#removeAll
      * @since 3.23.0
      */
     removeAll: function ()
@@ -36897,7 +36897,7 @@ var BaseSoundManager = new Class({
      * Removes all sounds from the sound manager that have an asset key matching the given value.
      * The removed sounds are destroyed before removal.
      *
-     * @method Phaser.Sound.BaseSoundManager#removeByKey
+     * @method Oyun.Sound.BaseSoundManager#removeByKey
      * @since 3.0.0
      *
      * @param {string} key - The key to match when removing sound objects.
@@ -36928,8 +36928,8 @@ var BaseSoundManager = new Class({
     /**
      * Pauses all the sounds in the game.
      *
-     * @method Phaser.Sound.BaseSoundManager#pauseAll
-     * @fires Phaser.Sound.Events#PAUSE_ALL
+     * @method Oyun.Sound.BaseSoundManager#pauseAll
+     * @fires Oyun.Sound.Events#PAUSE_ALL
      * @since 3.0.0
      */
     pauseAll: function ()
@@ -36945,8 +36945,8 @@ var BaseSoundManager = new Class({
     /**
      * Resumes all the sounds in the game.
      *
-     * @method Phaser.Sound.BaseSoundManager#resumeAll
-     * @fires Phaser.Sound.Events#RESUME_ALL
+     * @method Oyun.Sound.BaseSoundManager#resumeAll
+     * @fires Oyun.Sound.Events#RESUME_ALL
      * @since 3.0.0
      */
     resumeAll: function ()
@@ -36962,8 +36962,8 @@ var BaseSoundManager = new Class({
     /**
      * Stops all the sounds in the game.
      *
-     * @method Phaser.Sound.BaseSoundManager#stopAll
-     * @fires Phaser.Sound.Events#STOP_ALL
+     * @method Oyun.Sound.BaseSoundManager#stopAll
+     * @fires Oyun.Sound.Events#STOP_ALL
      * @since 3.0.0
      */
     stopAll: function ()
@@ -36980,7 +36980,7 @@ var BaseSoundManager = new Class({
     /**
      * Stops any sounds matching the given key.
      *
-     * @method Phaser.Sound.BaseSoundManager#stopByKey
+     * @method Oyun.Sound.BaseSoundManager#stopByKey
      * @since 3.23.0
      *
      * @param {string} key - Sound asset key.
@@ -37005,7 +37005,7 @@ var BaseSoundManager = new Class({
      *
      * Read more about how this issue is handled here in [this article](https://medium.com/@pgoloskokovic/unlocking-web-audio-the-smarter-way-8858218c0e09).
      *
-     * @method Phaser.Sound.BaseSoundManager#unlock
+     * @method Oyun.Sound.BaseSoundManager#unlock
      * @override
      * @protected
      * @since 3.0.0
@@ -37014,9 +37014,9 @@ var BaseSoundManager = new Class({
 
     /**
      * Method used internally for pausing sound manager if
-     * Phaser.Sound.BaseSoundManager#pauseOnBlur is set to true.
+     * Oyun.Sound.BaseSoundManager#pauseOnBlur is set to true.
      *
-     * @method Phaser.Sound.BaseSoundManager#onBlur
+     * @method Oyun.Sound.BaseSoundManager#onBlur
      * @override
      * @protected
      * @since 3.0.0
@@ -37025,9 +37025,9 @@ var BaseSoundManager = new Class({
 
     /**
      * Method used internally for resuming sound manager if
-     * Phaser.Sound.BaseSoundManager#pauseOnBlur is set to true.
+     * Oyun.Sound.BaseSoundManager#pauseOnBlur is set to true.
      *
-     * @method Phaser.Sound.BaseSoundManager#onFocus
+     * @method Oyun.Sound.BaseSoundManager#onFocus
      * @override
      * @protected
      * @since 3.0.0
@@ -37035,9 +37035,9 @@ var BaseSoundManager = new Class({
     onFocus: NOOP,
 
     /**
-     * Internal handler for Phaser.Core.Events#BLUR.
+     * Internal handler for Oyun.Core.Events#BLUR.
      *
-     * @method Phaser.Sound.BaseSoundManager#onGameBlur
+     * @method Oyun.Sound.BaseSoundManager#onGameBlur
      * @private
      * @since 3.23.0
      */
@@ -37050,9 +37050,9 @@ var BaseSoundManager = new Class({
     },
 
     /**
-     * Internal handler for Phaser.Core.Events#FOCUS.
+     * Internal handler for Oyun.Core.Events#FOCUS.
      *
-     * @method Phaser.Sound.BaseSoundManager#onGameFocus
+     * @method Oyun.Sound.BaseSoundManager#onGameFocus
      * @private
      * @since 3.23.0
      */
@@ -37068,9 +37068,9 @@ var BaseSoundManager = new Class({
      * Update method called on every game step.
      * Removes destroyed sounds and updates every active sound in the game.
      *
-     * @method Phaser.Sound.BaseSoundManager#update
+     * @method Oyun.Sound.BaseSoundManager#update
      * @protected
-     * @fires Phaser.Sound.Events#UNLOCKED
+     * @fires Oyun.Sound.Events#UNLOCKED
      * @since 3.0.0
      *
      * @param {number} time - The current timestamp as generated by the Request Animation Frame or SetTimeout.
@@ -37103,7 +37103,7 @@ var BaseSoundManager = new Class({
     /**
      * Destroys all the sounds in the game and all associated events.
      *
-     * @method Phaser.Sound.BaseSoundManager#destroy
+     * @method Oyun.Sound.BaseSoundManager#destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -37125,11 +37125,11 @@ var BaseSoundManager = new Class({
     /**
      * Method used internally for iterating only over active sounds and skipping sounds that are marked for removal.
      *
-     * @method Phaser.Sound.BaseSoundManager#forEachActiveSound
+     * @method Oyun.Sound.BaseSoundManager#forEachActiveSound
      * @private
      * @since 3.0.0
      *
-     * @param {Phaser.Types.Sound.EachActiveSoundCallback} callback - Callback function. (manager: Phaser.Sound.BaseSoundManager, sound: Phaser.Sound.BaseSound, index: number, sounds: Phaser.Manager.BaseSound[]) => void
+     * @param {Oyun.Types.Sound.EachActiveSoundCallback} callback - Callback function. (manager: Oyun.Sound.BaseSoundManager, sound: Oyun.Sound.BaseSound, index: number, sounds: Oyun.Manager.BaseSound[]) => void
      * @param {*} [scope] - Callback context.
      */
     forEachActiveSound: function (callback, scope)
@@ -37151,13 +37151,13 @@ var BaseSoundManager = new Class({
      * For example, a value of 1.0 plays the audio at full speed, 0.5 plays the audio at half speed
      * and 2.0 doubles the audios playback speed.
      *
-     * @method Phaser.Sound.BaseSoundManager#setRate
-     * @fires Phaser.Sound.Events#GLOBAL_RATE
+     * @method Oyun.Sound.BaseSoundManager#setRate
+     * @fires Oyun.Sound.Events#GLOBAL_RATE
      * @since 3.3.0
      *
      * @param {number} value - Global playback rate at which all the sounds will be played.
      *
-     * @return {Phaser.Sound.BaseSoundManager} This Sound Manager.
+     * @return {Oyun.Sound.BaseSoundManager} This Sound Manager.
      */
     setRate: function (value)
     {
@@ -37171,7 +37171,7 @@ var BaseSoundManager = new Class({
      * Value of 1.0 plays the audio at full speed, 0.5 plays the audio at half speed
      * and 2.0 doubles the audio's playback speed.
      *
-     * @name Phaser.Sound.BaseSoundManager#rate
+     * @name Oyun.Sound.BaseSoundManager#rate
      * @type {number}
      * @default 1
      * @since 3.0.0
@@ -37201,13 +37201,13 @@ var BaseSoundManager = new Class({
      * Sets the global detuning of all sounds in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
      * The range of the value is -1200 to 1200, but we recommend setting it to [50](https://en.wikipedia.org/wiki/50_Cent).
      *
-     * @method Phaser.Sound.BaseSoundManager#setDetune
-     * @fires Phaser.Sound.Events#GLOBAL_DETUNE
+     * @method Oyun.Sound.BaseSoundManager#setDetune
+     * @fires Oyun.Sound.Events#GLOBAL_DETUNE
      * @since 3.3.0
      *
      * @param {number} value - The range of the value is -1200 to 1200, but we recommend setting it to [50](https://en.wikipedia.org/wiki/50_Cent).
      *
-     * @return {Phaser.Sound.BaseSoundManager} This Sound Manager.
+     * @return {Oyun.Sound.BaseSoundManager} This Sound Manager.
      */
     setDetune: function (value)
     {
@@ -37220,7 +37220,7 @@ var BaseSoundManager = new Class({
      * Global detuning of all sounds in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
      * The range of the value is -1200 to 1200, but we recommend setting it to [50](https://en.wikipedia.org/wiki/50_Cent).
      *
-     * @name Phaser.Sound.BaseSoundManager#detune
+     * @name Oyun.Sound.BaseSoundManager#detune
      * @type {number}
      * @default 0
      * @since 3.0.0
@@ -37273,14 +37273,14 @@ var NOOP = __webpack_require__(1);
  * Class containing all the shared state and behavior of a sound object, independent of the implementation.
  *
  * @class BaseSound
- * @extends Phaser.Events.EventEmitter
- * @memberof Phaser.Sound
+ * @extends Oyun.Events.EventEmitter
+ * @memberof Oyun.Sound
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Sound.BaseSoundManager} manager - Reference to the current sound manager instance.
+ * @param {Oyun.Sound.BaseSoundManager} manager - Reference to the current sound manager instance.
  * @param {string} key - Asset key for the sound.
- * @param {Phaser.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
+ * @param {Oyun.Types.Sound.SoundConfig} [config] - An optional config object containing default sound settings.
  */
 var BaseSound = new Class({
 
@@ -37295,8 +37295,8 @@ var BaseSound = new Class({
         /**
          * Local reference to the sound manager.
          *
-         * @name Phaser.Sound.BaseSound#manager
-         * @type {Phaser.Sound.BaseSoundManager}
+         * @name Oyun.Sound.BaseSound#manager
+         * @type {Oyun.Sound.BaseSoundManager}
          * @private
          * @since 3.0.0
          */
@@ -37305,7 +37305,7 @@ var BaseSound = new Class({
         /**
          * Asset key for the sound.
          *
-         * @name Phaser.Sound.BaseSound#key
+         * @name Oyun.Sound.BaseSound#key
          * @type {string}
          * @readonly
          * @since 3.0.0
@@ -37315,7 +37315,7 @@ var BaseSound = new Class({
         /**
          * Flag indicating if sound is currently playing.
          *
-         * @name Phaser.Sound.BaseSound#isPlaying
+         * @name Oyun.Sound.BaseSound#isPlaying
          * @type {boolean}
          * @default false
          * @readonly
@@ -37326,7 +37326,7 @@ var BaseSound = new Class({
         /**
          * Flag indicating if sound is currently paused.
          *
-         * @name Phaser.Sound.BaseSound#isPaused
+         * @name Oyun.Sound.BaseSound#isPaused
          * @type {boolean}
          * @default false
          * @readonly
@@ -37339,7 +37339,7 @@ var BaseSound = new Class({
          * after its rate and detune values has been combined with global
          * rate and detune values.
          *
-         * @name Phaser.Sound.BaseSound#totalRate
+         * @name Oyun.Sound.BaseSound#totalRate
          * @type {number}
          * @default 1
          * @readonly
@@ -37351,7 +37351,7 @@ var BaseSound = new Class({
          * A value representing the duration, in seconds.
          * It could be total sound duration or a marker duration.
          *
-         * @name Phaser.Sound.BaseSound#duration
+         * @name Oyun.Sound.BaseSound#duration
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -37361,7 +37361,7 @@ var BaseSound = new Class({
         /**
          * The total duration of the sound in seconds.
          *
-         * @name Phaser.Sound.BaseSound#totalDuration
+         * @name Oyun.Sound.BaseSound#totalDuration
          * @type {number}
          * @readonly
          * @since 3.0.0
@@ -37372,8 +37372,8 @@ var BaseSound = new Class({
          * A config object used to store default sound settings' values.
          * Default values will be set by properties' setters.
          *
-         * @name Phaser.Sound.BaseSound#config
-         * @type {Phaser.Types.Sound.SoundConfig}
+         * @name Oyun.Sound.BaseSound#config
+         * @type {Oyun.Types.Sound.SoundConfig}
          * @private
          * @since 3.0.0
          */
@@ -37394,8 +37394,8 @@ var BaseSound = new Class({
          * Reference to the currently used config.
          * It could be default config or marker config.
          *
-         * @name Phaser.Sound.BaseSound#currentConfig
-         * @type {Phaser.Types.Sound.SoundConfig}
+         * @name Oyun.Sound.BaseSound#currentConfig
+         * @type {Oyun.Types.Sound.SoundConfig}
          * @private
          * @since 3.0.0
          */
@@ -37406,8 +37406,8 @@ var BaseSound = new Class({
         /**
          * Object containing markers definitions.
          *
-         * @name Phaser.Sound.BaseSound#markers
-         * @type {Object.<string, Phaser.Types.Sound.SoundMarker>}
+         * @name Oyun.Sound.BaseSound#markers
+         * @type {Object.<string, Oyun.Types.Sound.SoundMarker>}
          * @default {}
          * @readonly
          * @since 3.0.0
@@ -37418,8 +37418,8 @@ var BaseSound = new Class({
          * Currently playing marker.
          * 'null' if whole sound is playing.
          *
-         * @name Phaser.Sound.BaseSound#currentMarker
-         * @type {Phaser.Types.Sound.SoundMarker}
+         * @name Oyun.Sound.BaseSound#currentMarker
+         * @type {Oyun.Types.Sound.SoundMarker}
          * @default null
          * @readonly
          * @since 3.0.0
@@ -37429,7 +37429,7 @@ var BaseSound = new Class({
         /**
          * Flag indicating if destroy method was called on this sound.
          *
-         * @name Phaser.Sound.BaseSound#pendingRemove
+         * @name Oyun.Sound.BaseSound#pendingRemove
          * @type {boolean}
          * @private
          * @default false
@@ -37442,10 +37442,10 @@ var BaseSound = new Class({
      * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config object.
      * This allows you to bundle multiple sounds together into a single audio file and use markers to jump between them for playback.
      *
-     * @method Phaser.Sound.BaseSound#addMarker
+     * @method Oyun.Sound.BaseSound#addMarker
      * @since 3.0.0
      *
-     * @param {Phaser.Types.Sound.SoundMarker} marker - Marker object.
+     * @param {Oyun.Types.Sound.SoundMarker} marker - Marker object.
      *
      * @return {boolean} Whether the marker was added successfully.
      */
@@ -37488,10 +37488,10 @@ var BaseSound = new Class({
     /**
      * Updates previously added marker.
      *
-     * @method Phaser.Sound.BaseSound#updateMarker
+     * @method Oyun.Sound.BaseSound#updateMarker
      * @since 3.0.0
      *
-     * @param {Phaser.Types.Sound.SoundMarker} marker - Marker object with updated values.
+     * @param {Oyun.Types.Sound.SoundMarker} marker - Marker object with updated values.
      *
      * @return {boolean} Whether the marker was updated successfully.
      */
@@ -37518,12 +37518,12 @@ var BaseSound = new Class({
     /**
      * Removes a marker from the sound.
      *
-     * @method Phaser.Sound.BaseSound#removeMarker
+     * @method Oyun.Sound.BaseSound#removeMarker
      * @since 3.0.0
      *
      * @param {string} markerName - The name of the marker to remove.
      *
-     * @return {?Phaser.Types.Sound.SoundMarker} Removed marker object or 'null' if there was no marker with provided name.
+     * @return {?Oyun.Types.Sound.SoundMarker} Removed marker object or 'null' if there was no marker with provided name.
      */
     removeMarker: function (markerName)
     {
@@ -37544,11 +37544,11 @@ var BaseSound = new Class({
      * It always plays the sound from the start. If you want to start playback from a specific time
      * you can set 'seek' setting of the config object, provided to this call, to that value.
      *
-     * @method Phaser.Sound.BaseSound#play
+     * @method Oyun.Sound.BaseSound#play
      * @since 3.0.0
      *
-     * @param {(string|Phaser.Types.Sound.SoundConfig)} [markerName=''] - If you want to play a marker then provide the marker name here. Alternatively, this parameter can be a SoundConfig object.
-     * @param {Phaser.Types.Sound.SoundConfig} [config] - Optional sound config object to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
+     * @param {(string|Oyun.Types.Sound.SoundConfig)} [markerName=''] - If you want to play a marker then provide the marker name here. Alternatively, this parameter can be a SoundConfig object.
+     * @param {Oyun.Types.Sound.SoundConfig} [config] - Optional sound config object to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
      *
      * @return {boolean} Whether the sound started playing successfully.
      */
@@ -37601,7 +37601,7 @@ var BaseSound = new Class({
     /**
      * Pauses the sound.
      *
-     * @method Phaser.Sound.BaseSound#pause
+     * @method Oyun.Sound.BaseSound#pause
      * @since 3.0.0
      *
      * @return {boolean} Whether the sound was paused successfully.
@@ -37622,7 +37622,7 @@ var BaseSound = new Class({
     /**
      * Resumes the sound.
      *
-     * @method Phaser.Sound.BaseSound#resume
+     * @method Oyun.Sound.BaseSound#resume
      * @since 3.0.0
      *
      * @return {boolean} Whether the sound was resumed successfully.
@@ -37643,7 +37643,7 @@ var BaseSound = new Class({
     /**
      * Stop playing this sound.
      *
-     * @method Phaser.Sound.BaseSound#stop
+     * @method Oyun.Sound.BaseSound#stop
      * @since 3.0.0
      *
      * @return {boolean} Whether the sound was stopped successfully.
@@ -37666,7 +37666,7 @@ var BaseSound = new Class({
     /**
      * Method used internally for applying config values to some of the sound properties.
      *
-     * @method Phaser.Sound.BaseSound#applyConfig
+     * @method Oyun.Sound.BaseSound#applyConfig
      * @protected
      * @since 3.0.0
      */
@@ -37683,7 +37683,7 @@ var BaseSound = new Class({
     /**
      * Method used internally for resetting values of some of the config properties.
      *
-     * @method Phaser.Sound.BaseSound#resetConfig
+     * @method Oyun.Sound.BaseSound#resetConfig
      * @protected
      * @since 3.0.0
      */
@@ -37696,7 +37696,7 @@ var BaseSound = new Class({
     /**
      * Update method called automatically by sound manager on every game step.
      *
-     * @method Phaser.Sound.BaseSound#update
+     * @method Oyun.Sound.BaseSound#update
      * @override
      * @protected
      * @since 3.0.0
@@ -37709,7 +37709,7 @@ var BaseSound = new Class({
     /**
      * Method used internally to calculate total playback rate of the sound.
      *
-     * @method Phaser.Sound.BaseSound#calculateRate
+     * @method Oyun.Sound.BaseSound#calculateRate
      * @protected
      * @since 3.0.0
      */
@@ -37725,8 +37725,8 @@ var BaseSound = new Class({
     /**
      * Destroys this sound and all associated events and marks it for removal from the sound manager.
      *
-     * @method Phaser.Sound.BaseSound#destroy
-     * @fires Phaser.Sound.Events#DESTROY
+     * @method Oyun.Sound.BaseSound#destroy
+     * @fires Oyun.Sound.Events#DESTROY
      * @since 3.0.0
      */
     destroy: function ()
@@ -37789,7 +37789,7 @@ var TransposeMatrix = __webpack_require__(429);
  * ]
  * ```
  *
- * @function Phaser.Utils.Array.Matrix.RotateMatrix
+ * @function Oyun.Utils.Array.Matrix.RotateMatrix
  * @since 3.0.0
  *
  * @generic T
@@ -37883,24 +37883,24 @@ var Render = __webpack_require__(1039);
  * converting a valid XML file through the popular X2JS library. An online tool for conversion can be found here: {@link http://codebeautify.org/xmltojson|http://codebeautify.org/xmltojson}
  *
  * @class BitmapText
- * @extends Phaser.GameObjects.GameObject
- * @memberof Phaser.GameObjects
+ * @extends Oyun.GameObjects.GameObject
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.0.0
  *
- * @extends Phaser.GameObjects.Components.Alpha
- * @extends Phaser.GameObjects.Components.BlendMode
- * @extends Phaser.GameObjects.Components.Depth
- * @extends Phaser.GameObjects.Components.Mask
- * @extends Phaser.GameObjects.Components.Origin
- * @extends Phaser.GameObjects.Components.Pipeline
- * @extends Phaser.GameObjects.Components.ScrollFactor
- * @extends Phaser.GameObjects.Components.Texture
- * @extends Phaser.GameObjects.Components.Tint
- * @extends Phaser.GameObjects.Components.Transform
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.GameObjects.Components.Alpha
+ * @extends Oyun.GameObjects.Components.BlendMode
+ * @extends Oyun.GameObjects.Components.Depth
+ * @extends Oyun.GameObjects.Components.Mask
+ * @extends Oyun.GameObjects.Components.Origin
+ * @extends Oyun.GameObjects.Components.Pipeline
+ * @extends Oyun.GameObjects.Components.ScrollFactor
+ * @extends Oyun.GameObjects.Components.Texture
+ * @extends Oyun.GameObjects.Components.Tint
+ * @extends Oyun.GameObjects.Components.Transform
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs. It can only belong to one Scene at any given time.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object belongs. It can only belong to one Scene at any given time.
  * @param {number} x - The x coordinate of this Game Object in world space.
  * @param {number} y - The y coordinate of this Game Object in world space.
  * @param {string} font - The key of the font to use from the Bitmap Font cache.
@@ -37940,7 +37940,7 @@ var BitmapText = new Class({
          * The key of the Bitmap Font used by this Bitmap Text.
          * To change the font after creation please use `setFont`.
          *
-         * @name Phaser.GameObjects.BitmapText#font
+         * @name Oyun.GameObjects.BitmapText#font
          * @type {string}
          * @readonly
          * @since 3.0.0
@@ -37957,8 +37957,8 @@ var BitmapText = new Class({
         /**
          * The data of the Bitmap Font used by this Bitmap Text.
          *
-         * @name Phaser.GameObjects.BitmapText#fontData
-         * @type {Phaser.Types.GameObjects.BitmapText.BitmapFontData}
+         * @name Oyun.GameObjects.BitmapText#fontData
+         * @type {Oyun.Types.GameObjects.BitmapText.BitmapFontData}
          * @readonly
          * @since 3.0.0
          */
@@ -37967,7 +37967,7 @@ var BitmapText = new Class({
         /**
          * The text that this Bitmap Text object displays.
          *
-         * @name Phaser.GameObjects.BitmapText#_text
+         * @name Oyun.GameObjects.BitmapText#_text
          * @type {string}
          * @private
          * @since 3.0.0
@@ -37977,7 +37977,7 @@ var BitmapText = new Class({
         /**
          * The font size of this Bitmap Text.
          *
-         * @name Phaser.GameObjects.BitmapText#_fontSize
+         * @name Oyun.GameObjects.BitmapText#_fontSize
          * @type {number}
          * @private
          * @since 3.0.0
@@ -37989,7 +37989,7 @@ var BitmapText = new Class({
          *
          * Can be a negative or positive number.
          *
-         * @name Phaser.GameObjects.BitmapText#_letterSpacing
+         * @name Oyun.GameObjects.BitmapText#_letterSpacing
          * @type {number}
          * @private
          * @since 3.4.0
@@ -38009,7 +38009,7 @@ var BitmapText = new Class({
          *
          * The alignment position is based on the longest line of text.
          *
-         * @name Phaser.GameObjects.BitmapText#_align
+         * @name Oyun.GameObjects.BitmapText#_align
          * @type {number}
          * @private
          * @since 3.11.0
@@ -38019,8 +38019,8 @@ var BitmapText = new Class({
         /**
          * An object that describes the size of this Bitmap Text.
          *
-         * @name Phaser.GameObjects.BitmapText#_bounds
-         * @type {Phaser.Types.GameObjects.BitmapText.BitmapTextSize}
+         * @name Oyun.GameObjects.BitmapText#_bounds
+         * @type {Oyun.Types.GameObjects.BitmapText.BitmapTextSize}
          * @private
          * @since 3.0.0
          */
@@ -38029,7 +38029,7 @@ var BitmapText = new Class({
         /**
          * An internal dirty flag for bounds calculation.
          *
-         * @name Phaser.GameObjects.BitmapText#_dirty
+         * @name Oyun.GameObjects.BitmapText#_dirty
          * @type {boolean}
          * @private
          * @since 3.11.0
@@ -38039,7 +38039,7 @@ var BitmapText = new Class({
         /**
          * Internal cache var holding the maxWidth.
          *
-         * @name Phaser.GameObjects.BitmapText#_maxWidth
+         * @name Oyun.GameObjects.BitmapText#_maxWidth
          * @type {number}
          * @private
          * @since 3.21.0
@@ -38050,7 +38050,7 @@ var BitmapText = new Class({
          * The character code used to detect for word wrapping.
          * Defaults to 32 (a space character).
          *
-         * @name Phaser.GameObjects.BitmapText#wordWrapCharCode
+         * @name Oyun.GameObjects.BitmapText#wordWrapCharCode
          * @type {number}
          * @since 3.21.0
          */
@@ -38059,7 +38059,7 @@ var BitmapText = new Class({
         /**
          * Internal array holding the character tint color data.
          *
-         * @name Phaser.GameObjects.BitmapText#charColors
+         * @name Oyun.GameObjects.BitmapText#charColors
          * @type {array}
          * @private
          * @since 3.50.0
@@ -38069,9 +38069,9 @@ var BitmapText = new Class({
         /**
          * The horizontal offset of the drop shadow.
          *
-         * You can set this directly, or use `Phaser.GameObjects.BitmapText#setDropShadow`.
+         * You can set this directly, or use `Oyun.GameObjects.BitmapText#setDropShadow`.
          *
-         * @name Phaser.GameObjects.BitmapText#dropShadowX
+         * @name Oyun.GameObjects.BitmapText#dropShadowX
          * @type {number}
          * @since 3.50.0
          */
@@ -38080,9 +38080,9 @@ var BitmapText = new Class({
         /**
          * The vertical offset of the drop shadow.
          *
-         * You can set this directly, or use `Phaser.GameObjects.BitmapText#setDropShadow`.
+         * You can set this directly, or use `Oyun.GameObjects.BitmapText#setDropShadow`.
          *
-         * @name Phaser.GameObjects.BitmapText#dropShadowY
+         * @name Oyun.GameObjects.BitmapText#dropShadowY
          * @type {number}
          * @since 3.50.0
          */
@@ -38091,9 +38091,9 @@ var BitmapText = new Class({
         /**
          * The color of the drop shadow.
          *
-         * You can set this directly, or use `Phaser.GameObjects.BitmapText#setDropShadow`.
+         * You can set this directly, or use `Oyun.GameObjects.BitmapText#setDropShadow`.
          *
-         * @name Phaser.GameObjects.BitmapText#dropShadowColor
+         * @name Oyun.GameObjects.BitmapText#dropShadowColor
          * @type {number}
          * @since 3.50.0
          */
@@ -38102,9 +38102,9 @@ var BitmapText = new Class({
         /**
          * The alpha value of the drop shadow.
          *
-         * You can set this directly, or use `Phaser.GameObjects.BitmapText#setDropShadow`.
+         * You can set this directly, or use `Oyun.GameObjects.BitmapText#setDropShadow`.
          *
-         * @name Phaser.GameObjects.BitmapText#dropShadowAlpha
+         * @name Oyun.GameObjects.BitmapText#dropShadowAlpha
          * @type {number}
          * @since 3.50.0
          */
@@ -38122,7 +38122,7 @@ var BitmapText = new Class({
      * Set the lines of text in this BitmapText to be left-aligned.
      * This only has any effect if this BitmapText contains more than one line of text.
      *
-     * @method Phaser.GameObjects.BitmapText#setLeftAlign
+     * @method Oyun.GameObjects.BitmapText#setLeftAlign
      * @since 3.11.0
      *
      * @return {this} This BitmapText Object.
@@ -38140,7 +38140,7 @@ var BitmapText = new Class({
      * Set the lines of text in this BitmapText to be center-aligned.
      * This only has any effect if this BitmapText contains more than one line of text.
      *
-     * @method Phaser.GameObjects.BitmapText#setCenterAlign
+     * @method Oyun.GameObjects.BitmapText#setCenterAlign
      * @since 3.11.0
      *
      * @return {this} This BitmapText Object.
@@ -38158,7 +38158,7 @@ var BitmapText = new Class({
      * Set the lines of text in this BitmapText to be right-aligned.
      * This only has any effect if this BitmapText contains more than one line of text.
      *
-     * @method Phaser.GameObjects.BitmapText#setRightAlign
+     * @method Oyun.GameObjects.BitmapText#setRightAlign
      * @since 3.11.0
      *
      * @return {this} This BitmapText Object.
@@ -38175,7 +38175,7 @@ var BitmapText = new Class({
     /**
      * Set the font size of this Bitmap Text.
      *
-     * @method Phaser.GameObjects.BitmapText#setFontSize
+     * @method Oyun.GameObjects.BitmapText#setFontSize
      * @since 3.0.0
      *
      * @param {number} size - The font size to set.
@@ -38196,7 +38196,7 @@ var BitmapText = new Class({
      * Can be a positive value to increase the space, or negative to reduce it.
      * Spacing is applied after the kerning values have been set.
      *
-     * @method Phaser.GameObjects.BitmapText#setLetterSpacing
+     * @method Oyun.GameObjects.BitmapText#setLetterSpacing
      * @since 3.4.0
      *
      * @param {number} [spacing=0] - The amount of horizontal space to add between each character.
@@ -38219,7 +38219,7 @@ var BitmapText = new Class({
      *
      * An array of strings will be converted into multi-line text. Use the align methods to change multi-line alignment.
      *
-     * @method Phaser.GameObjects.BitmapText#setText
+     * @method Oyun.GameObjects.BitmapText#setText
      * @since 3.0.0
      *
      * @param {(string|string[])} value - The string, or array of strings, to be set as the content of this BitmapText.
@@ -38262,7 +38262,7 @@ var BitmapText = new Class({
      *
      * If you wish to clear the shadow, call this method with no parameters specified.
      *
-     * @method Phaser.GameObjects.BitmapText#setDropShadow
+     * @method Oyun.GameObjects.BitmapText#setDropShadow
      * @webglOnly
      * @since 3.50.0
      *
@@ -38315,7 +38315,7 @@ var BitmapText = new Class({
      *
      * To remove a tint call this method with just the `start`, and optionally, the `length` parameters defined.
      *
-     * @method Phaser.GameObjects.BitmapText#setCharacterTint
+     * @method Oyun.GameObjects.BitmapText#setCharacterTint
      * @webglOnly
      * @since 3.50.0
      *
@@ -38424,7 +38424,7 @@ var BitmapText = new Class({
      *
      * Using `setCharacterTint` can override tints set by this function, and vice versa.
      *
-     * @method Phaser.GameObjects.BitmapText#setWordTint
+     * @method Oyun.GameObjects.BitmapText#setWordTint
      * @webglOnly
      * @since 3.50.0
      *
@@ -38482,12 +38482,12 @@ var BitmapText = new Class({
      *
      * Also in the object is data regarding the length of each line, should this be a multi-line BitmapText.
      *
-     * @method Phaser.GameObjects.BitmapText#getTextBounds
+     * @method Oyun.GameObjects.BitmapText#getTextBounds
      * @since 3.0.0
      *
      * @param {boolean} [round=false] - Whether to round the results up to the nearest integer.
      *
-     * @return {Phaser.Types.GameObjects.BitmapText.BitmapTextSize} An object that describes the size of this Bitmap Text.
+     * @return {Oyun.Types.GameObjects.BitmapText.BitmapTextSize} An object that describes the size of this Bitmap Text.
      */
     getTextBounds: function (round)
     {
@@ -38522,14 +38522,14 @@ var BitmapText = new Class({
      * Note that this does not work for DynamicBitmapText if you have changed the
      * character positions during render. It will only scan characters in their un-translated state.
      *
-     * @method Phaser.GameObjects.BitmapText#getCharacterAt
+     * @method Oyun.GameObjects.BitmapText#getCharacterAt
      * @since 3.50.0
      *
      * @param {number} x - The x position to check.
      * @param {number} y - The y position to check.
-     * @param {Phaser.Cameras.Scene2D.Camera} [camera] - The Camera which is being tested against. If not given will use the Scene default camera.
+     * @param {Oyun.Cameras.Scene2D.Camera} [camera] - The Camera which is being tested against. If not given will use the Scene default camera.
      *
-     * @return {Phaser.Types.GameObjects.BitmapText.BitmapTextCharacter} The character object at the given position, or `null`.
+     * @return {Oyun.Types.GameObjects.BitmapText.BitmapTextCharacter} The character object at the given position, or `null`.
      */
     getCharacterAt: function (x, y, camera)
     {
@@ -38560,7 +38560,7 @@ var BitmapText = new Class({
      * Updates the Display Origin cached values internally stored on this Game Object.
      * You don't usually call this directly, but it is exposed for edge-cases where you may.
      *
-     * @method Phaser.GameObjects.BitmapText#updateDisplayOrigin
+     * @method Oyun.GameObjects.BitmapText#updateDisplayOrigin
      * @since 3.0.0
      *
      * @return {this} This Game Object instance.
@@ -38580,7 +38580,7 @@ var BitmapText = new Class({
      * The new texture is loaded and applied to the BitmapText. The existing test, size and alignment are preserved,
      * unless overridden via the arguments.
      *
-     * @method Phaser.GameObjects.BitmapText#setFont
+     * @method Oyun.GameObjects.BitmapText#setFont
      * @since 3.11.0
      *
      * @param {string} font - The key of the font to use from the Bitmap Font cache.
@@ -38626,7 +38626,7 @@ var BitmapText = new Class({
      *
      * You can set the whitespace character to be searched for by setting the `wordWrapCharCode` parameter or property.
      *
-     * @method Phaser.GameObjects.BitmapText#setMaxWidth
+     * @method Oyun.GameObjects.BitmapText#setMaxWidth
      * @since 3.21.0
      *
      * @param {number} value - The maximum display width of this BitmapText in pixels. Set to zero to disable.
@@ -38662,7 +38662,7 @@ var BitmapText = new Class({
      *
      * The alignment position is based on the longest line of text.
      *
-     * @name Phaser.GameObjects.BitmapText#align
+     * @name Oyun.GameObjects.BitmapText#align
      * @type {number}
      * @since 3.11.0
      */
@@ -38686,7 +38686,7 @@ var BitmapText = new Class({
      *
      * You can also use the method `setText` if you want a chainable way to change the text content.
      *
-     * @name Phaser.GameObjects.BitmapText#text
+     * @name Oyun.GameObjects.BitmapText#text
      * @type {string}
      * @since 3.0.0
      */
@@ -38709,7 +38709,7 @@ var BitmapText = new Class({
      *
      * You can also use the method `setFontSize` if you want a chainable way to change the font size.
      *
-     * @name Phaser.GameObjects.BitmapText#fontSize
+     * @name Oyun.GameObjects.BitmapText#fontSize
      * @type {number}
      * @since 3.0.0
      */
@@ -38735,7 +38735,7 @@ var BitmapText = new Class({
      *
      * You can also use the method `setLetterSpacing` if you want a chainable way to change the letter spacing.
      *
-     * @name Phaser.GameObjects.BitmapText#letterSpacing
+     * @name Oyun.GameObjects.BitmapText#letterSpacing
      * @type {number}
      * @since 3.0.0
      */
@@ -38764,7 +38764,7 @@ var BitmapText = new Class({
      *
      * Disable maxWidth by setting the value to 0.
      *
-     * @name Phaser.GameObjects.BitmapText#maxWidth
+     * @name Oyun.GameObjects.BitmapText#maxWidth
      * @type {number}
      * @since 3.21.0
      */
@@ -38786,7 +38786,7 @@ var BitmapText = new Class({
     /**
      * The width of this Bitmap Text.
      *
-     * @name Phaser.GameObjects.BitmapText#width
+     * @name Oyun.GameObjects.BitmapText#width
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -38805,7 +38805,7 @@ var BitmapText = new Class({
     /**
      * The height of this bitmap text.
      *
-     * @name Phaser.GameObjects.BitmapText#height
+     * @name Oyun.GameObjects.BitmapText#height
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -38824,10 +38824,10 @@ var BitmapText = new Class({
     /**
      * Build a JSON representation of this Bitmap Text.
      *
-     * @method Phaser.GameObjects.BitmapText#toJSON
+     * @method Oyun.GameObjects.BitmapText#toJSON
      * @since 3.0.0
      *
-     * @return {Phaser.Types.GameObjects.BitmapText.JSONBitmapText} A JSON representation of this Bitmap Text.
+     * @return {Oyun.Types.GameObjects.BitmapText.JSONBitmapText} A JSON representation of this Bitmap Text.
      */
     toJSON: function ()
     {
@@ -38851,7 +38851,7 @@ var BitmapText = new Class({
     /**
      * Internal destroy handler, called as part of the destroy process.
      *
-     * @method Phaser.GameObjects.BitmapText#preDestroy
+     * @method Oyun.GameObjects.BitmapText#preDestroy
      * @protected
      * @since 3.50.0
      */
@@ -38867,7 +38867,7 @@ var BitmapText = new Class({
 /**
  * Left align the text characters in a multi-line BitmapText object.
  *
- * @name Phaser.GameObjects.BitmapText.ALIGN_LEFT
+ * @name Oyun.GameObjects.BitmapText.ALIGN_LEFT
  * @type {number}
  * @since 3.11.0
  */
@@ -38876,7 +38876,7 @@ BitmapText.ALIGN_LEFT = 0;
 /**
  * Center align the text characters in a multi-line BitmapText object.
  *
- * @name Phaser.GameObjects.BitmapText.ALIGN_CENTER
+ * @name Oyun.GameObjects.BitmapText.ALIGN_CENTER
  * @type {number}
  * @since 3.11.0
  */
@@ -38885,7 +38885,7 @@ BitmapText.ALIGN_CENTER = 1;
 /**
  * Right align the text characters in a multi-line BitmapText object.
  *
- * @name Phaser.GameObjects.BitmapText.ALIGN_RIGHT
+ * @name Oyun.GameObjects.BitmapText.ALIGN_RIGHT
  * @type {number}
  * @since 3.11.0
  */
@@ -38896,10 +38896,10 @@ BitmapText.ALIGN_RIGHT = 2;
  *
  * Adds the parsed Bitmap Font data to the cache with the `fontName` key.
  *
- * @method Phaser.GameObjects.BitmapText.ParseFromAtlas
+ * @method Oyun.GameObjects.BitmapText.ParseFromAtlas
  * @since 3.0.0
  *
- * @param {Phaser.Scene} scene - The Scene to parse the Bitmap Font for.
+ * @param {Oyun.Scene} scene - The Scene to parse the Bitmap Font for.
  * @param {string} fontName - The key of the font to add to the Bitmap Font cache.
  * @param {string} textureKey - The key of the BitmapFont's texture.
  * @param {string} frameKey - The key of the BitmapFont texture's frame.
@@ -38914,15 +38914,15 @@ BitmapText.ParseFromAtlas = ParseFromAtlas;
 /**
  * Parse an XML font to Bitmap Font data for the Bitmap Font cache.
  *
- * @method Phaser.GameObjects.BitmapText.ParseXMLBitmapFont
+ * @method Oyun.GameObjects.BitmapText.ParseXMLBitmapFont
  * @since 3.17.0
  *
  * @param {XMLDocument} xml - The XML Document to parse the font from.
- * @param {Phaser.Textures.Frame} frame - The texture frame to take into account when creating the uv data.
+ * @param {Oyun.Textures.Frame} frame - The texture frame to take into account when creating the uv data.
  * @param {number} [xSpacing=0] - The x-axis spacing to add between each letter.
  * @param {number} [ySpacing=0] - The y-axis spacing to add to the line height.
  *
- * @return {Phaser.Types.GameObjects.BitmapText.BitmapFontData} The parsed Bitmap Font data.
+ * @return {Oyun.Types.GameObjects.BitmapText.BitmapFontData} The parsed Bitmap Font data.
  */
 BitmapText.ParseXMLBitmapFont = ParseXMLBitmapFont;
 
@@ -38955,7 +38955,7 @@ var Class = __webpack_require__(0);
  * A Set is a collection of unique elements.
  *
  * @class Set
- * @memberof Phaser.Structs
+ * @memberof Oyun.Structs
  * @constructor
  * @since 3.0.0
  *
@@ -38975,7 +38975,7 @@ var Set = new Class({
          *
          * @genericUse {T[]} - [$type]
          *
-         * @name Phaser.Structs.Set#entries
+         * @name Oyun.Structs.Set#entries
          * @type {Array.<*>}
          * @default []
          * @since 3.0.0
@@ -38994,15 +38994,15 @@ var Set = new Class({
     /**
      * Inserts the provided value into this Set. If the value is already contained in this Set this method will have no effect.
      *
-     * @method Phaser.Structs.Set#set
+     * @method Oyun.Structs.Set#set
      * @since 3.0.0
      *
      * @genericUse {T} - [value]
-     * @genericUse {Phaser.Structs.Set.<T>} - [$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [$return]
      *
      * @param {*} value - The value to insert into this Set.
      *
-     * @return {Phaser.Structs.Set} This Set object.
+     * @return {Oyun.Structs.Set} This Set object.
      */
     set: function (value)
     {
@@ -39018,7 +39018,7 @@ var Set = new Class({
      * Get an element of this Set which has a property of the specified name, if that property is equal to the specified value.
      * If no elements of this Set satisfy the condition then this method will return `null`.
      *
-     * @method Phaser.Structs.Set#get
+     * @method Oyun.Structs.Set#get
      * @since 3.0.0
      *
      * @genericUse {T} - [value,$return]
@@ -39044,7 +39044,7 @@ var Set = new Class({
     /**
      * Returns an array containing all the values in this Set.
      *
-     * @method Phaser.Structs.Set#getArray
+     * @method Oyun.Structs.Set#getArray
      * @since 3.0.0
      *
      * @genericUse {T[]} - [$return]
@@ -39059,15 +39059,15 @@ var Set = new Class({
     /**
      * Removes the given value from this Set if this Set contains that value.
      *
-     * @method Phaser.Structs.Set#delete
+     * @method Oyun.Structs.Set#delete
      * @since 3.0.0
      *
      * @genericUse {T} - [value]
-     * @genericUse {Phaser.Structs.Set.<T>} - [$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [$return]
      *
      * @param {*} value - The value to remove from the Set.
      *
-     * @return {Phaser.Structs.Set} This Set object.
+     * @return {Oyun.Structs.Set} This Set object.
      */
     delete: function (value)
     {
@@ -39084,7 +39084,7 @@ var Set = new Class({
     /**
      * Dumps the contents of this Set to the console via `console.group`.
      *
-     * @method Phaser.Structs.Set#dump
+     * @method Oyun.Structs.Set#dump
      * @since 3.0.0
      */
     dump: function ()
@@ -39106,16 +39106,16 @@ var Set = new Class({
      * Passes each value in this Set to the given callback.
      * Use this function when you know this Set will be modified during the iteration, otherwise use `iterate`.
      *
-     * @method Phaser.Structs.Set#each
+     * @method Oyun.Structs.Set#each
      * @since 3.0.0
      *
      * @genericUse {EachSetCallback.<T>} - [callback]
-     * @genericUse {Phaser.Structs.Set.<T>} - [$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [$return]
      *
      * @param {EachSetCallback} callback - The callback to be invoked and passed each value this Set contains.
      * @param {*} [callbackScope] - The scope of the callback.
      *
-     * @return {Phaser.Structs.Set} This Set object.
+     * @return {Oyun.Structs.Set} This Set object.
      */
     each: function (callback, callbackScope)
     {
@@ -39151,16 +39151,16 @@ var Set = new Class({
      * Passes each value in this Set to the given callback.
      * For when you absolutely know this Set won't be modified during the iteration.
      *
-     * @method Phaser.Structs.Set#iterate
+     * @method Oyun.Structs.Set#iterate
      * @since 3.0.0
      *
      * @genericUse {EachSetCallback.<T>} - [callback]
-     * @genericUse {Phaser.Structs.Set.<T>} - [$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [$return]
      *
      * @param {EachSetCallback} callback - The callback to be invoked and passed each value this Set contains.
      * @param {*} [callbackScope] - The scope of the callback.
      *
-     * @return {Phaser.Structs.Set} This Set object.
+     * @return {Oyun.Structs.Set} This Set object.
      */
     iterate: function (callback, callbackScope)
     {
@@ -39194,15 +39194,15 @@ var Set = new Class({
     /**
      * Goes through each entry in this Set and invokes the given function on them, passing in the arguments.
      *
-     * @method Phaser.Structs.Set#iterateLocal
+     * @method Oyun.Structs.Set#iterateLocal
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.Set.<T>} - [$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [$return]
      *
      * @param {string} callbackKey - The key of the function to be invoked on each Set entry.
      * @param {...*} [args] - Additional arguments that will be passed to the callback, after the child.
      *
-     * @return {Phaser.Structs.Set} This Set object.
+     * @return {Oyun.Structs.Set} This Set object.
      */
     iterateLocal: function (callbackKey)
     {
@@ -39229,12 +39229,12 @@ var Set = new Class({
     /**
      * Clears this Set so that it no longer contains any values.
      *
-     * @method Phaser.Structs.Set#clear
+     * @method Oyun.Structs.Set#clear
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.Set.<T>} - [$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [$return]
      *
-     * @return {Phaser.Structs.Set} This Set object.
+     * @return {Oyun.Structs.Set} This Set object.
      */
     clear: function ()
     {
@@ -39246,7 +39246,7 @@ var Set = new Class({
     /**
      * Returns `true` if this Set contains the given value, otherwise returns `false`.
      *
-     * @method Phaser.Structs.Set#contains
+     * @method Oyun.Structs.Set#contains
      * @since 3.0.0
      *
      * @genericUse {T} - [value]
@@ -39263,14 +39263,14 @@ var Set = new Class({
     /**
      * Returns a new Set containing all values that are either in this Set or in the Set provided as an argument.
      *
-     * @method Phaser.Structs.Set#union
+     * @method Oyun.Structs.Set#union
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.Set.<T>} - [set,$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [set,$return]
      *
-     * @param {Phaser.Structs.Set} set - The Set to perform the union with.
+     * @param {Oyun.Structs.Set} set - The Set to perform the union with.
      *
-     * @return {Phaser.Structs.Set} A new Set containing all the values in this Set and the Set provided as an argument.
+     * @return {Oyun.Structs.Set} A new Set containing all the values in this Set and the Set provided as an argument.
      */
     union: function (set)
     {
@@ -39292,14 +39292,14 @@ var Set = new Class({
     /**
      * Returns a new Set that contains only the values which are in this Set and that are also in the given Set.
      *
-     * @method Phaser.Structs.Set#intersect
+     * @method Oyun.Structs.Set#intersect
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.Set.<T>} - [set,$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [set,$return]
      *
-     * @param {Phaser.Structs.Set} set - The Set to intersect this set with.
+     * @param {Oyun.Structs.Set} set - The Set to intersect this set with.
      *
-     * @return {Phaser.Structs.Set} The result of the intersection, as a new Set.
+     * @return {Oyun.Structs.Set} The result of the intersection, as a new Set.
      */
     intersect: function (set)
     {
@@ -39319,14 +39319,14 @@ var Set = new Class({
     /**
      * Returns a new Set containing all the values in this Set which are *not* also in the given Set.
      *
-     * @method Phaser.Structs.Set#difference
+     * @method Oyun.Structs.Set#difference
      * @since 3.0.0
      *
-     * @genericUse {Phaser.Structs.Set.<T>} - [set,$return]
+     * @genericUse {Oyun.Structs.Set.<T>} - [set,$return]
      *
-     * @param {Phaser.Structs.Set} set - The Set to perform the difference with.
+     * @param {Oyun.Structs.Set} set - The Set to perform the difference with.
      *
-     * @return {Phaser.Structs.Set} A new Set containing all the values in this Set that are not also in the Set provided as an argument to this method.
+     * @return {Oyun.Structs.Set} A new Set containing all the values in this Set that are not also in the Set provided as an argument to this method.
      */
     difference: function (set)
     {
@@ -39348,7 +39348,7 @@ var Set = new Class({
      * Changing the size will truncate the Set if the given value is smaller than the current size.
      * Increasing the size larger than the current size has no effect.
      *
-     * @name Phaser.Structs.Set#size
+     * @name Oyun.Structs.Set#size
      * @type {number}
      * @since 3.0.0
      */
@@ -39422,22 +39422,22 @@ var Render = __webpack_require__(1176);
  * Point Lights are a WebGL only feature and do not have a Canvas counterpart.
  *
  * @class PointLight
- * @extends Phaser.GameObjects.GameObject
- * @memberof Phaser.GameObjects
+ * @extends Oyun.GameObjects.GameObject
+ * @memberof Oyun.GameObjects
  * @constructor
  * @since 3.50.0
  *
- * @extends Phaser.GameObjects.Components.AlphaSingle
- * @extends Phaser.GameObjects.Components.BlendMode
- * @extends Phaser.GameObjects.Components.Depth
- * @extends Phaser.GameObjects.Components.GetBounds
- * @extends Phaser.GameObjects.Components.Mask
- * @extends Phaser.GameObjects.Components.Pipeline
- * @extends Phaser.GameObjects.Components.ScrollFactor
- * @extends Phaser.GameObjects.Components.Transform
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.GameObjects.Components.AlphaSingle
+ * @extends Oyun.GameObjects.Components.BlendMode
+ * @extends Oyun.GameObjects.Components.Depth
+ * @extends Oyun.GameObjects.Components.GetBounds
+ * @extends Oyun.GameObjects.Components.Mask
+ * @extends Oyun.GameObjects.Components.Pipeline
+ * @extends Oyun.GameObjects.Components.ScrollFactor
+ * @extends Oyun.GameObjects.Components.Transform
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Scene} scene - The Scene to which this Point Light belongs. A Point Light can only belong to one Scene at a time.
+ * @param {Oyun.Scene} scene - The Scene to which this Point Light belongs. A Point Light can only belong to one Scene at a time.
  * @param {number} x - The horizontal position of this Point Light in the world.
  * @param {number} y - The vertical position of this Point Light in the world.
  * @param {number} [color=0xffffff] - The color of the Point Light, given as a hex value.
@@ -39482,8 +39482,8 @@ var PointLight = new Class({
          * Color object, so you can use the methods within it, such as `setTo(r, g, b)`
          * to change the color value.
          *
-         * @name Phaser.GameObjects.PointLight#color
-         * @type {Phaser.Display.Color}
+         * @name Oyun.GameObjects.PointLight#color
+         * @type {Oyun.Display.Color}
          * @since 3.50.0
          */
         this.color = IntegerToColor(color);
@@ -39493,7 +39493,7 @@ var PointLight = new Class({
          *
          * The colors of the light are multiplied by this value during rendering.
          *
-         * @name Phaser.GameObjects.PointLight#intensity
+         * @name Oyun.GameObjects.PointLight#intensity
          * @type {number}
          * @since 3.50.0
          */
@@ -39506,7 +39506,7 @@ var PointLight = new Class({
          *
          * Use small float-based values, i.e. 0.1.
          *
-         * @name Phaser.GameObjects.PointLight#attenuation
+         * @name Oyun.GameObjects.PointLight#attenuation
          * @type {number}
          * @since 3.50.0
          */
@@ -39522,7 +39522,7 @@ var PointLight = new Class({
     /**
      * The radius of the Point Light.
      *
-     * @name Phaser.GameObjects.PointLight#radius
+     * @name Oyun.GameObjects.PointLight#radius
      * @type {number}
      * @since 3.50.0
      */
@@ -39596,11 +39596,11 @@ module.exports = PointLight;
 /**
  * Checks for intersection between a circle and a rectangle.
  *
- * @function Phaser.Geom.Intersects.CircleToRectangle
+ * @function Oyun.Geom.Intersects.CircleToRectangle
  * @since 3.0.0
  *
- * @param {Phaser.Geom.Circle} circle - The circle to be checked.
- * @param {Phaser.Geom.Rectangle} rect - The rectangle to be checked.
+ * @param {Oyun.Geom.Circle} circle - The circle to be checked.
+ * @param {Oyun.Geom.Rectangle} rect - The rectangle to be checked.
  *
  * @return {boolean} `true` if the two objects intersect, otherwise `false`.
  */
@@ -39649,12 +39649,12 @@ module.exports = CircleToRectangle;
 
 var GetValue = __webpack_require__(6);
 
-//  Contains the plugins that Phaser uses globally and locally.
+//  Contains the plugins that Oyun uses globally and locally.
 //  These are the source objects, not instantiated.
 var inputPlugins = {};
 
 /**
- * @namespace Phaser.Input.InputPluginCache
+ * @namespace Oyun.Input.InputPluginCache
  */
 
 var InputPluginCache = {};
@@ -39665,7 +39665,7 @@ var InputPluginCache = {};
  * Plugin is the object to instantiate to create the plugin
  * Mapping is what the plugin is injected into the Scene.Systems as (i.e. input)
  *
- * @function Phaser.Input.InputPluginCache.register
+ * @function Oyun.Input.InputPluginCache.register
  * @static
  * @since 3.10.0
  *
@@ -39683,13 +39683,13 @@ InputPluginCache.register = function (key, plugin, mapping, settingsKey, configK
 /**
  * Returns the input plugin object from the cache based on the given key.
  *
- * @function Phaser.Input.InputPluginCache.getPlugin
+ * @function Oyun.Input.InputPluginCache.getPlugin
  * @static
  * @since 3.10.0
  *
  * @param {string} key - The key of the input plugin to get.
  *
- * @return {Phaser.Types.Input.InputPluginContainer} The input plugin object.
+ * @return {Oyun.Types.Input.InputPluginContainer} The input plugin object.
  */
 InputPluginCache.getPlugin = function (key)
 {
@@ -39699,11 +39699,11 @@ InputPluginCache.getPlugin = function (key)
 /**
  * Installs all of the registered Input Plugins into the given target.
  *
- * @function Phaser.Input.InputPluginCache.install
+ * @function Oyun.Input.InputPluginCache.install
  * @static
  * @since 3.10.0
  *
- * @param {Phaser.Input.InputPlugin} target - The target InputPlugin to install the plugins into.
+ * @param {Oyun.Input.InputPlugin} target - The target InputPlugin to install the plugins into.
  */
 InputPluginCache.install = function (target)
 {
@@ -39728,7 +39728,7 @@ InputPluginCache.install = function (target)
 /**
  * Removes an input plugin based on the given key.
  *
- * @function Phaser.Input.InputPluginCache.remove
+ * @function Oyun.Input.InputPluginCache.remove
  * @static
  * @since 3.10.0
  *
@@ -39756,7 +39756,7 @@ module.exports = InputPluginCache;
  */
 
 /**
- * @namespace Phaser.Input.Keyboard.Events
+ * @namespace Oyun.Input.Keyboard.Events
  */
 
 module.exports = {
@@ -39785,10 +39785,10 @@ module.exports = {
 /**
  * Given a File and a baseURL value this returns the URL the File will use to download from.
  *
- * @function Phaser.Loader.GetURL
+ * @function Oyun.Loader.GetURL
  * @since 3.0.0
  *
- * @param {Phaser.Loader.File} file - The File object.
+ * @param {Oyun.Loader.File} file - The File object.
  * @param {string} baseURL - A default base URL.
  *
  * @return {string} The URL the File will use.
@@ -39826,7 +39826,7 @@ module.exports = GetURL;
 /**
  * Creates an XHRSettings Object with default values.
  *
- * @function Phaser.Loader.XHRSettings
+ * @function Oyun.Loader.XHRSettings
  * @since 3.0.0
  *
  * @param {XMLHttpRequestResponseType} [responseType=''] - The responseType, such as 'text'.
@@ -39836,7 +39836,7 @@ module.exports = GetURL;
  * @param {number} [timeout=0] - Optional XHR timeout value.
  * @param {boolean} [withCredentials=false] - Optional XHR withCredentials value.
  *
- * @return {Phaser.Types.Loader.XHRSettingsObject} The XHRSettings object as used by the Loader.
+ * @return {Oyun.Types.Loader.XHRSettingsObject} The XHRSettings object as used by the Loader.
  */
 var XHRSettings = function (responseType, async, user, password, timeout, withCredentials)
 {
@@ -39906,42 +39906,42 @@ var Sprite = __webpack_require__(73);
  * If you do not require animation then you can safely use Arcade Images instead of Arcade Sprites.
  *
  * @class Sprite
- * @extends Phaser.GameObjects.Sprite
- * @memberof Phaser.Physics.Arcade
+ * @extends Oyun.GameObjects.Sprite
+ * @memberof Oyun.Physics.Arcade
  * @constructor
  * @since 3.0.0
  *
- * @extends Phaser.Physics.Arcade.Components.Acceleration
- * @extends Phaser.Physics.Arcade.Components.Angular
- * @extends Phaser.Physics.Arcade.Components.Bounce
- * @extends Phaser.Physics.Arcade.Components.Debug
- * @extends Phaser.Physics.Arcade.Components.Drag
- * @extends Phaser.Physics.Arcade.Components.Enable
- * @extends Phaser.Physics.Arcade.Components.Friction
- * @extends Phaser.Physics.Arcade.Components.Gravity
- * @extends Phaser.Physics.Arcade.Components.Immovable
- * @extends Phaser.Physics.Arcade.Components.Mass
- * @extends Phaser.Physics.Arcade.Components.Pushable
- * @extends Phaser.Physics.Arcade.Components.Size
- * @extends Phaser.Physics.Arcade.Components.Velocity
- * @extends Phaser.GameObjects.Components.Alpha
- * @extends Phaser.GameObjects.Components.BlendMode
- * @extends Phaser.GameObjects.Components.Depth
- * @extends Phaser.GameObjects.Components.Flip
- * @extends Phaser.GameObjects.Components.GetBounds
- * @extends Phaser.GameObjects.Components.Origin
- * @extends Phaser.GameObjects.Components.Pipeline
- * @extends Phaser.GameObjects.Components.ScrollFactor
- * @extends Phaser.GameObjects.Components.Size
- * @extends Phaser.GameObjects.Components.Texture
- * @extends Phaser.GameObjects.Components.Tint
- * @extends Phaser.GameObjects.Components.Transform
- * @extends Phaser.GameObjects.Components.Visible
+ * @extends Oyun.Physics.Arcade.Components.Acceleration
+ * @extends Oyun.Physics.Arcade.Components.Angular
+ * @extends Oyun.Physics.Arcade.Components.Bounce
+ * @extends Oyun.Physics.Arcade.Components.Debug
+ * @extends Oyun.Physics.Arcade.Components.Drag
+ * @extends Oyun.Physics.Arcade.Components.Enable
+ * @extends Oyun.Physics.Arcade.Components.Friction
+ * @extends Oyun.Physics.Arcade.Components.Gravity
+ * @extends Oyun.Physics.Arcade.Components.Immovable
+ * @extends Oyun.Physics.Arcade.Components.Mass
+ * @extends Oyun.Physics.Arcade.Components.Pushable
+ * @extends Oyun.Physics.Arcade.Components.Size
+ * @extends Oyun.Physics.Arcade.Components.Velocity
+ * @extends Oyun.GameObjects.Components.Alpha
+ * @extends Oyun.GameObjects.Components.BlendMode
+ * @extends Oyun.GameObjects.Components.Depth
+ * @extends Oyun.GameObjects.Components.Flip
+ * @extends Oyun.GameObjects.Components.GetBounds
+ * @extends Oyun.GameObjects.Components.Origin
+ * @extends Oyun.GameObjects.Components.Pipeline
+ * @extends Oyun.GameObjects.Components.ScrollFactor
+ * @extends Oyun.GameObjects.Components.Size
+ * @extends Oyun.GameObjects.Components.Texture
+ * @extends Oyun.GameObjects.Components.Tint
+ * @extends Oyun.GameObjects.Components.Transform
+ * @extends Oyun.GameObjects.Components.Visible
  *
- * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
+ * @param {Oyun.Scene} scene - The Scene to which this Game Object belongs. A Game Object can only belong to one Scene at a time.
  * @param {number} x - The horizontal position of this Game Object in the world.
  * @param {number} y - The vertical position of this Game Object in the world.
- * @param {(string|Phaser.Textures.Texture)} texture - The key, or instance of the Texture this Game Object will use to render with, as stored in the Texture Manager.
+ * @param {(string|Oyun.Textures.Texture)} texture - The key, or instance of the Texture this Game Object will use to render with, as stored in the Texture Manager.
  * @param {(string|number)} [frame] - An optional frame from the Texture this Game Object is rendering with.
  */
 var ArcadeSprite = new Class({
@@ -39973,8 +39973,8 @@ var ArcadeSprite = new Class({
         /**
          * This Game Object's Physics Body.
          *
-         * @name Phaser.Physics.Arcade.Sprite#body
-         * @type {?(Phaser.Physics.Arcade.Body|Phaser.Physics.Arcade.StaticBody)}
+         * @name Oyun.Physics.Arcade.Sprite#body
+         * @type {?(Oyun.Physics.Arcade.Body|Oyun.Physics.Arcade.StaticBody)}
          * @default null
          * @since 3.0.0
          */
@@ -40001,15 +40001,15 @@ var IsInLayerBounds = __webpack_require__(118);
 /**
  * Gets a tile at the given tile coordinates from the given layer.
  *
- * @function Phaser.Tilemaps.Components.GetTileAt
+ * @function Oyun.Tilemaps.Components.GetTileAt
  * @since 3.0.0
  *
  * @param {number} tileX - X position to get the tile from (given in tile units, not pixels).
  * @param {number} tileY - Y position to get the tile from (given in tile units, not pixels).
  * @param {boolean} nonNull - If true getTile won't return null for empty tiles, but a Tile object with an index of -1.
- * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
+ * @param {Oyun.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
  *
- * @return {Phaser.Tilemaps.Tile} The tile at the given coordinates or null if no tile was found or the coordinates were invalid.
+ * @return {Oyun.Tilemaps.Tile} The tile at the given coordinates or null if no tile was found or the coordinates were invalid.
  */
 var GetTileAt = function (tileX, tileY, nonNull, layer)
 {
@@ -40054,15 +40054,15 @@ module.exports = GetTileAt;
 /**
  * Returns the tiles in the given layer that are within the cameras viewport. This is used internally.
  *
- * @function Phaser.Tilemaps.Components.RunCull
+ * @function Oyun.Tilemaps.Components.RunCull
  * @since 3.50.0
  *
- * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
+ * @param {Oyun.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
  * @param {object} bounds - An object containing the `left`, `right`, `top` and `bottom` bounds.
  * @param {number} renderOrder - The rendering order constant.
  * @param {array} outputArray - The array to store the Tile objects within.
  *
- * @return {Phaser.Tilemaps.Tile[]} An array of Tile objects.
+ * @return {Oyun.Tilemaps.Tile[]} An array of Tile objects.
  */
 var RunCull = function (layer, bounds, renderOrder, outputArray)
 {
@@ -40181,12 +40181,12 @@ module.exports = RunCull;
  * Internally used method to keep track of the tile indexes that collide within a layer. This
  * updates LayerData.collideIndexes to either contain or not contain the given `tileIndex`.
  *
- * @function Phaser.Tilemaps.Components.SetLayerCollisionIndex
+ * @function Oyun.Tilemaps.Components.SetLayerCollisionIndex
  * @since 3.0.0
  *
  * @param {number} tileIndex - The tile index to set the collision boolean for.
  * @param {boolean} collides - Should the tile index collide or not?
- * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
+ * @param {Oyun.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
  */
 var SetLayerCollisionIndex = function (tileIndex, collides, layer)
 {
@@ -40220,7 +40220,7 @@ var GetFastValue = __webpack_require__(2);
 /**
  * Parse a Tiled group layer and create a state object for inheriting.
  *
- * @function Phaser.Tilemaps.Parsers.Tiled.CreateGroupLayer
+ * @function Oyun.Tilemaps.Parsers.Tiled.CreateGroupLayer
  * @since 3.21.0
  *
  * @param {object} json - The Tiled JSON object.
@@ -40280,7 +40280,7 @@ module.exports = CreateGroupLayer;
  * Internal function used by the Tween Builder to create a function that will return
  * the given value from the source.
  *
- * @function Phaser.Tweens.Builders.GetNewValue
+ * @function Oyun.Tweens.Builders.GetNewValue
  * @since 3.0.0
  *
  * @param {any} source - The source object to get the value from.
@@ -40355,14 +40355,14 @@ var TweenData = __webpack_require__(264);
 /**
  * Creates a new Tween.
  *
- * @function Phaser.Tweens.Builders.TweenBuilder
+ * @function Oyun.Tweens.Builders.TweenBuilder
  * @since 3.0.0
  *
- * @param {(Phaser.Tweens.TweenManager|Phaser.Tweens.Timeline)} parent - The owner of the new Tween.
- * @param {Phaser.Types.Tweens.TweenBuilderConfig|object} config - Configuration for the new Tween.
- * @param {Phaser.Types.Tweens.TweenConfigDefaults} defaults - Tween configuration defaults.
+ * @param {(Oyun.Tweens.TweenManager|Oyun.Tweens.Timeline)} parent - The owner of the new Tween.
+ * @param {Oyun.Types.Tweens.TweenBuilderConfig|object} config - Configuration for the new Tween.
+ * @param {Oyun.Types.Tweens.TweenConfigDefaults} defaults - Tween configuration defaults.
  *
- * @return {Phaser.Tweens.Tween} The new tween.
+ * @return {Oyun.Tweens.Tween} The new tween.
  */
 var TweenBuilder = function (parent, config, defaults)
 {
@@ -40495,16 +40495,16 @@ var Animation = __webpack_require__(182);
  * can also create animations that are stored locally within it. See the `create` method
  * for more details.
  *
- * Prior to Phaser 3.50 this component was called just `Animation` and lived in the
- * `Phaser.GameObjects.Components` namespace. It was renamed to `AnimationState`
+ * Prior to Oyun 3.50 this component was called just `Animation` and lived in the
+ * `Oyun.GameObjects.Components` namespace. It was renamed to `AnimationState`
  * in 3.50 to help better identify its true purpose when browsing the documentation.
  *
  * @class AnimationState
- * @memberof Phaser.Animations
+ * @memberof Oyun.Animations
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} parent - The Game Object to which this animation component belongs.
+ * @param {Oyun.GameObjects.GameObject} parent - The Game Object to which this animation component belongs.
  */
 var AnimationState = new Class({
 
@@ -40518,8 +40518,8 @@ var AnimationState = new Class({
          * You can typically access this component from the Game Object
          * via the `this.anims` property.
          *
-         * @name Phaser.Animations.AnimationState#parent
-         * @type {Phaser.GameObjects.GameObject}
+         * @name Oyun.Animations.AnimationState#parent
+         * @type {Oyun.GameObjects.GameObject}
          * @since 3.0.0
          */
         this.parent = parent;
@@ -40527,8 +40527,8 @@ var AnimationState = new Class({
         /**
          * A reference to the global Animation Manager.
          *
-         * @name Phaser.Animations.AnimationState#animationManager
-         * @type {Phaser.Animations.AnimationManager}
+         * @name Oyun.Animations.AnimationState#animationManager
+         * @type {Oyun.Animations.AnimationManager}
          * @since 3.0.0
          */
         this.animationManager = parent.scene.sys.anims;
@@ -40538,8 +40538,8 @@ var AnimationState = new Class({
         /**
          * A reference to the Texture Manager.
          *
-         * @name Phaser.Animations.AnimationState#textureManager
-         * @type {Phaser.Textures.TextureManager}
+         * @name Oyun.Animations.AnimationState#textureManager
+         * @type {Oyun.Textures.TextureManager}
          * @protected
          * @since 3.50.0
          */
@@ -40551,8 +40551,8 @@ var AnimationState = new Class({
          * Do not modify the contents of this Map directly, instead use the
          * `add`, `create` and `remove` methods of this class instead.
          *
-         * @name Phaser.Animations.AnimationState#anims
-         * @type {Phaser.Structs.Map.<string, Phaser.Animations.Animation>}
+         * @name Oyun.Animations.AnimationState#anims
+         * @type {Oyun.Structs.Map.<string, Oyun.Animations.Animation>}
          * @protected
          * @since 3.50.0
          */
@@ -40561,7 +40561,7 @@ var AnimationState = new Class({
         /**
          * Is an animation currently playing or not?
          *
-         * @name Phaser.Animations.AnimationState#isPlaying
+         * @name Oyun.Animations.AnimationState#isPlaying
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -40571,7 +40571,7 @@ var AnimationState = new Class({
         /**
          * Has the current animation started playing, or is it waiting for a delay to expire?
          *
-         * @name Phaser.Animations.AnimationState#hasStarted
+         * @name Oyun.Animations.AnimationState#hasStarted
          * @type {boolean}
          * @default false
          * @since 3.50.0
@@ -40583,8 +40583,8 @@ var AnimationState = new Class({
          *
          * Will by `null` if no animation is yet loaded.
          *
-         * @name Phaser.Animations.AnimationState#currentAnim
-         * @type {?Phaser.Animations.Animation}
+         * @name Oyun.Animations.AnimationState#currentAnim
+         * @type {?Oyun.Animations.Animation}
          * @default null
          * @since 3.0.0
          */
@@ -40595,8 +40595,8 @@ var AnimationState = new Class({
          *
          * Will by `null` if no animation is yet loaded.
          *
-         * @name Phaser.Animations.AnimationState#currentFrame
-         * @type {?Phaser.Animations.AnimationFrame}
+         * @name Oyun.Animations.AnimationState#currentFrame
+         * @type {?Oyun.Animations.AnimationFrame}
          * @default null
          * @since 3.0.0
          */
@@ -40608,8 +40608,8 @@ var AnimationState = new Class({
          *
          * Will by `null` if no animation has been queued.
          *
-         * @name Phaser.Animations.AnimationState#nextAnim
-         * @type {?(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)}
+         * @name Oyun.Animations.AnimationState#nextAnim
+         * @type {?(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)}
          * @default null
          * @since 3.16.0
          */
@@ -40620,7 +40620,7 @@ var AnimationState = new Class({
          *
          * Populate this queue via the `chain` method.
          *
-         * @name Phaser.Animations.AnimationState#nextAnimsQueue
+         * @name Oyun.Animations.AnimationState#nextAnimsQueue
          * @type {array}
          * @since 3.24.0
          */
@@ -40635,9 +40635,9 @@ var AnimationState = new Class({
          *
          * You can change this value at run-time, or set it via the `PlayAnimationConfig`.
          *
-         * Prior to Phaser 3.50 this property was private and called `_timeScale`.
+         * Prior to Oyun 3.50 this property was private and called `_timeScale`.
          *
-         * @name Phaser.Animations.AnimationState#timeScale
+         * @name Oyun.Animations.AnimationState#timeScale
          * @type {number}
          * @default 1
          * @since 3.50.0
@@ -40651,7 +40651,7 @@ var AnimationState = new Class({
          * be treated as read-only, as changing it once playback has started will not alter
          * the animation. To change the frame rate, provide a new value in the `PlayAnimationConfig` object.
          *
-         * @name Phaser.Animations.AnimationState#frameRate
+         * @name Oyun.Animations.AnimationState#frameRate
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -40665,7 +40665,7 @@ var AnimationState = new Class({
          * be treated as read-only, as changing it once playback has started will not alter
          * the animation. To change the duration, provide a new value in the `PlayAnimationConfig` object.
          *
-         * @name Phaser.Animations.AnimationState#duration
+         * @name Oyun.Animations.AnimationState#duration
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -40679,7 +40679,7 @@ var AnimationState = new Class({
          * This value is calculated when a new animation is loaded into this component and should
          * be treated as read-only. Changing it will not alter playback speed.
          *
-         * @name Phaser.Animations.AnimationState#msPerFrame
+         * @name Oyun.Animations.AnimationState#msPerFrame
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -40689,7 +40689,7 @@ var AnimationState = new Class({
         /**
          * Skip frames if the time lags, or always advanced anyway?
          *
-         * @name Phaser.Animations.AnimationState#skipMissedFrames
+         * @name Oyun.Animations.AnimationState#skipMissedFrames
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -40703,9 +40703,9 @@ var AnimationState = new Class({
          * be treated as read-only, as changing it once playback has started will not alter
          * the animation. To change the delay, provide a new value in the `PlayAnimationConfig` object.
          *
-         * Prior to Phaser 3.50 this property was private and called `_delay`.
+         * Prior to Oyun 3.50 this property was private and called `_delay`.
          *
-         * @name Phaser.Animations.AnimationState#delay
+         * @name Oyun.Animations.AnimationState#delay
          * @type {number}
          * @default 0
          * @since 3.50.0
@@ -40721,9 +40721,9 @@ var AnimationState = new Class({
          * be treated as read-only, as changing it once playback has started will not alter
          * the animation. To change the number of repeats, provide a new value in the `PlayAnimationConfig` object.
          *
-         * Prior to Phaser 3.50 this property was private and called `_repeat`.
+         * Prior to Oyun 3.50 this property was private and called `_repeat`.
          *
-         * @name Phaser.Animations.AnimationState#repeat
+         * @name Oyun.Animations.AnimationState#repeat
          * @type {number}
          * @default 0
          * @since 3.50.0
@@ -40738,9 +40738,9 @@ var AnimationState = new Class({
          *
          * You can change the repeat delay by providing a new value in the `PlayAnimationConfig` object.
          *
-         * Prior to Phaser 3.50 this property was private and called `_repeatDelay`.
+         * Prior to Oyun 3.50 this property was private and called `_repeatDelay`.
          *
-         * @name Phaser.Animations.AnimationState#repeatDelay
+         * @name Oyun.Animations.AnimationState#repeatDelay
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -40757,9 +40757,9 @@ var AnimationState = new Class({
          *
          * You can change the yoyo by providing a new value in the `PlayAnimationConfig` object.
          *
-         * Prior to Phaser 3.50 this property was private and called `_yoyo`.
+         * Prior to Oyun 3.50 this property was private and called `_yoyo`.
          *
-         * @name Phaser.Animations.AnimationState#yoyo
+         * @name Oyun.Animations.AnimationState#yoyo
          * @type {boolean}
          * @default false
          * @since 3.50.0
@@ -40774,7 +40774,7 @@ var AnimationState = new Class({
          * This value is set when a new animation is loaded into this component, but can also be modified
          * at run-time, assuming the animation is currently delayed.
          *
-         * @name Phaser.Animations.AnimationState#showOnStart
+         * @name Oyun.Animations.AnimationState#showOnStart
          * @type {boolean}
          * @since 3.50.0
          */
@@ -40786,7 +40786,7 @@ var AnimationState = new Class({
          * This value is set when a new animation is loaded into this component, but can also be modified
          * at run-time, assuming the animation is still actively playing.
          *
-         * @name Phaser.Animations.AnimationState#hideOnComplete
+         * @name Oyun.Animations.AnimationState#hideOnComplete
          * @type {boolean}
          * @since 3.50.0
          */
@@ -40795,7 +40795,7 @@ var AnimationState = new Class({
         /**
          * Is the playhead moving forwards (`true`) or in reverse (`false`) ?
          *
-         * @name Phaser.Animations.AnimationState#forward
+         * @name Oyun.Animations.AnimationState#forward
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -40807,9 +40807,9 @@ var AnimationState = new Class({
          * in reverse mode ('true') or not ('false'). This is used because `forward` can
          * be changed by the `yoyo` feature.
          *
-         * Prior to Phaser 3.50 this property was private and called `_reverse`.
+         * Prior to Oyun 3.50 this property was private and called `_reverse`.
          *
-         * @name Phaser.Animations.AnimationState#inReverse
+         * @name Oyun.Animations.AnimationState#inReverse
          * @type {boolean}
          * @default false
          * @since 3.50.0
@@ -40821,7 +40821,7 @@ var AnimationState = new Class({
          *
          * This has the `delta` time added to it as part of the `update` step.
          *
-         * @name Phaser.Animations.AnimationState#accumulator
+         * @name Oyun.Animations.AnimationState#accumulator
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -40833,7 +40833,7 @@ var AnimationState = new Class({
          *
          * This value is compared against the `accumulator` as part of the `update` step.
          *
-         * @name Phaser.Animations.AnimationState#nextTick
+         * @name Oyun.Animations.AnimationState#nextTick
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -40846,7 +40846,7 @@ var AnimationState = new Class({
          * This is set via the `playAfterDelay` method, although it can be modified at run-time
          * if required, as long as the animation has not already started playing.
          *
-         * @name Phaser.Animations.AnimationState#delayCounter
+         * @name Oyun.Animations.AnimationState#delayCounter
          * @type {number}
          * @default 0
          * @since 3.50.0
@@ -40859,7 +40859,7 @@ var AnimationState = new Class({
          * This value is set when a new animation is loaded into this component, but can also be modified
          * at run-time.
          *
-         * @name Phaser.Animations.AnimationState#repeatCounter
+         * @name Oyun.Animations.AnimationState#repeatCounter
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -40869,7 +40869,7 @@ var AnimationState = new Class({
         /**
          * An internal flag keeping track of pending repeats.
          *
-         * @name Phaser.Animations.AnimationState#pendingRepeat
+         * @name Oyun.Animations.AnimationState#pendingRepeat
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -40879,7 +40879,7 @@ var AnimationState = new Class({
         /**
          * Is the Animation paused?
          *
-         * @name Phaser.Animations.AnimationState#_paused
+         * @name Oyun.Animations.AnimationState#_paused
          * @type {boolean}
          * @private
          * @default false
@@ -40890,7 +40890,7 @@ var AnimationState = new Class({
         /**
          * Was the animation previously playing before being paused?
          *
-         * @name Phaser.Animations.AnimationState#_wasPlaying
+         * @name Oyun.Animations.AnimationState#_wasPlaying
          * @type {boolean}
          * @private
          * @default false
@@ -40906,7 +40906,7 @@ var AnimationState = new Class({
          * 2 = Waiting for repeat
          * 3 = Waiting for specific frame
          *
-         * @name Phaser.Animations.AnimationState#_pendingStop
+         * @name Oyun.Animations.AnimationState#_pendingStop
          * @type {number}
          * @private
          * @since 3.4.0
@@ -40916,7 +40916,7 @@ var AnimationState = new Class({
         /**
          * Internal property used by _pendingStop.
          *
-         * @name Phaser.Animations.AnimationState#_pendingStopValue
+         * @name Oyun.Animations.AnimationState#_pendingStopValue
          * @type {any}
          * @private
          * @since 3.4.0
@@ -40938,12 +40938,12 @@ var AnimationState = new Class({
      *
      * Call this method with no arguments to reset all currently chained animations.
      *
-     * @method Phaser.Animations.AnimationState#chain
+     * @method Oyun.Animations.AnimationState#chain
      * @since 3.16.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig|string[]|Phaser.Animations.Animation[]|Phaser.Types.Animations.PlayAnimationConfig[])} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object, or an array of them.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig|string[]|Oyun.Animations.Animation[]|Oyun.Types.Animations.PlayAnimationConfig[])} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object, or an array of them.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     chain: function (key)
     {
@@ -40982,9 +40982,9 @@ var AnimationState = new Class({
     /**
      * Returns the key of the animation currently loaded into this component.
      *
-     * Prior to Phaser 3.50 this method was called `getCurrentKey`.
+     * Prior to Oyun 3.50 this method was called `getCurrentKey`.
      *
-     * @method Phaser.Animations.AnimationState#getName
+     * @method Oyun.Animations.AnimationState#getName
      * @since 3.50.0
      *
      * @return {string} The key of the Animation currently loaded into this component, or an empty string if none loaded.
@@ -40997,7 +40997,7 @@ var AnimationState = new Class({
     /**
      * Returns the key of the animation frame currently displayed by this component.
      *
-     * @method Phaser.Animations.AnimationState#getFrameName
+     * @method Oyun.Animations.AnimationState#getFrameName
      * @since 3.50.0
      *
      * @return {string} The key of the Animation Frame currently displayed by this component, or an empty string if no animation has been loaded.
@@ -41010,13 +41010,13 @@ var AnimationState = new Class({
     /**
      * Internal method used to load an animation into this component.
      *
-     * @method Phaser.Animations.AnimationState#load
+     * @method Oyun.Animations.AnimationState#load
      * @protected
      * @since 3.0.0
      *
-     * @param {(string|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or a `PlayAnimationConfig` object.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     load: function (key)
     {
@@ -41081,12 +41081,12 @@ var AnimationState = new Class({
      * Pause the current animation and set the `isPlaying` property to `false`.
      * You can optionally pause it at a specific frame.
      *
-     * @method Phaser.Animations.AnimationState#pause
+     * @method Oyun.Animations.AnimationState#pause
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationFrame} [atFrame] - An optional frame to set after pausing the animation.
+     * @param {Oyun.Animations.AnimationFrame} [atFrame] - An optional frame to set after pausing the animation.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     pause: function (atFrame)
     {
@@ -41109,12 +41109,12 @@ var AnimationState = new Class({
      * Resumes playback of a paused animation and sets the `isPlaying` property to `true`.
      * You can optionally tell it to start playback from a specific frame.
      *
-     * @method Phaser.Animations.AnimationState#resume
+     * @method Oyun.Animations.AnimationState#resume
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationFrame} [fromFrame] - An optional frame to set before restarting playback.
+     * @param {Oyun.Animations.AnimationFrame} [fromFrame] - An optional frame to set before restarting playback.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     resume: function (fromFrame)
     {
@@ -41142,16 +41142,16 @@ var AnimationState = new Class({
      *
      * If no animation is currently running, the given one begins after the delay.
      *
-     * Prior to Phaser 3.50 this method was called 'delayedPlay' and the parameters were in the reverse order.
+     * Prior to Oyun 3.50 this method was called 'delayedPlay' and the parameters were in the reverse order.
      *
-     * @method Phaser.Animations.AnimationState#playAfterDelay
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.Animations.AnimationState#playAfterDelay
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.50.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {number} delay - The delay, in milliseconds, to wait before starting the animation playing.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     playAfterDelay: function (key, delay)
     {
@@ -41190,14 +41190,14 @@ var AnimationState = new Class({
      *
      * If no animation is currently running, the given one will start immediately.
      *
-     * @method Phaser.Animations.AnimationState#playAfterRepeat
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.Animations.AnimationState#playAfterRepeat
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.50.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {number} [repeatCount=1] - How many times should the animation repeat before the next one starts?
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     playAfterRepeat: function (key, repeatCount)
     {
@@ -41235,7 +41235,7 @@ var AnimationState = new Class({
     /**
      * Start playing the given animation on this Sprite.
      *
-     * Animations in Phaser can either belong to the global Animation Manager, or specifically to this Sprite.
+     * Animations in Oyun can either belong to the global Animation Manager, or specifically to this Sprite.
      *
      * The benefit of a global animation is that multiple Sprites can all play the same animation, without
      * having to duplicate the data. You can just create it once and then play it on any Sprite.
@@ -41283,14 +41283,14 @@ var AnimationState = new Class({
      *
      * Also, see the documentation in the Animation Manager for further details on creating animations.
      *
-     * @method Phaser.Animations.AnimationState#play
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.Animations.AnimationState#play
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.0.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {boolean} [ignoreIfPlaying=false] - If this animation is already playing then ignore this call.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     play: function (key, ignoreIfPlaying)
     {
@@ -41330,7 +41330,7 @@ var AnimationState = new Class({
     /**
      * Start playing the given animation on this Sprite, in reverse.
      *
-     * Animations in Phaser can either belong to the global Animation Manager, or specifically to this Sprite.
+     * Animations in Oyun can either belong to the global Animation Manager, or specifically to this Sprite.
      *
      * The benefit of a global animation is that multiple Sprites can all play the same animation, without
      * having to duplicate the data. You can just create it once and then play it on any Sprite.
@@ -41378,14 +41378,14 @@ var AnimationState = new Class({
      *
      * Also, see the documentation in the Animation Manager for further details on creating animations.
      *
-     * @method Phaser.Animations.AnimationState#playReverse
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.Animations.AnimationState#playReverse
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.12.0
      *
-     * @param {(string|Phaser.Animations.Animation|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Animations.Animation|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or an Animation instance, or a `PlayAnimationConfig` object.
      * @param {boolean} [ignoreIfPlaying=false] - If an animation is already playing then ignore this call.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     playReverse: function (key, ignoreIfPlaying)
     {
@@ -41412,13 +41412,13 @@ var AnimationState = new Class({
      * Load the animation based on the key and set-up all of the internal values
      * needed for playback to start. If there is no delay, it will also fire the start events.
      *
-     * @method Phaser.Animations.AnimationState#startAnimation
-     * @fires Phaser.Animations.Events#ANIMATION_START
+     * @method Oyun.Animations.AnimationState#startAnimation
+     * @fires Oyun.Animations.Events#ANIMATION_START
      * @since 3.50.0
      *
-     * @param {(string|Phaser.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or a `PlayAnimationConfig` object.
+     * @param {(string|Oyun.Types.Animations.PlayAnimationConfig)} key - The string-based key of the animation to play, or a `PlayAnimationConfig` object.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     startAnimation: function (key)
     {
@@ -41459,7 +41459,7 @@ var AnimationState = new Class({
     /**
      * Handles the start of an animation playback.
      *
-     * @method Phaser.Animations.AnimationState#handleStart
+     * @method Oyun.Animations.AnimationState#handleStart
      * @private
      * @since 3.50.0
      */
@@ -41480,7 +41480,7 @@ var AnimationState = new Class({
     /**
      * Handles the repeat of an animation.
      *
-     * @method Phaser.Animations.AnimationState#handleRepeat
+     * @method Oyun.Animations.AnimationState#handleRepeat
      * @private
      * @since 3.50.0
      */
@@ -41494,7 +41494,7 @@ var AnimationState = new Class({
     /**
      * Handles the stop of an animation playback.
      *
-     * @method Phaser.Animations.AnimationState#handleStop
+     * @method Oyun.Animations.AnimationState#handleStop
      * @private
      * @since 3.50.0
      */
@@ -41510,7 +41510,7 @@ var AnimationState = new Class({
     /**
      * Handles the completion of an animation playback.
      *
-     * @method Phaser.Animations.AnimationState#handleComplete
+     * @method Oyun.Animations.AnimationState#handleComplete
      * @private
      * @since 3.50.0
      */
@@ -41531,7 +41531,7 @@ var AnimationState = new Class({
     /**
      * Fires the given animation event.
      *
-     * @method Phaser.Animations.AnimationState#emitEvents
+     * @method Oyun.Animations.AnimationState#emitEvents
      * @private
      * @since 3.50.0
      *
@@ -41556,10 +41556,10 @@ var AnimationState = new Class({
     /**
      * Reverse the Animation that is already playing on the Game Object.
      *
-     * @method Phaser.Animations.AnimationState#reverse
+     * @method Oyun.Animations.AnimationState#reverse
      * @since 3.12.0
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     reverse: function ()
     {
@@ -41579,7 +41579,7 @@ var AnimationState = new Class({
      * The value is based on the current frame and how far that is in the animation, it is not based on
      * the duration of the animation.
      *
-     * @method Phaser.Animations.AnimationState#getProgress
+     * @method Oyun.Animations.AnimationState#getProgress
      * @since 3.4.0
      *
      * @return {number} The progress of the current animation in frames, between 0 and 1.
@@ -41611,12 +41611,12 @@ var AnimationState = new Class({
      * The value is based on the current frame and how far that is in the animation, it is not based on
      * the duration of the animation.
      *
-     * @method Phaser.Animations.AnimationState#setProgress
+     * @method Oyun.Animations.AnimationState#setProgress
      * @since 3.4.0
      *
      * @param {number} [value=0] - The progress value, between 0 and 1.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     setProgress: function (value)
     {
@@ -41641,12 +41641,12 @@ var AnimationState = new Class({
      * value specified here will be overwritten when the next animation loads in. To avoid this,
      * use the `repeat` property of the `PlayAnimationConfig` object instead.
      *
-     * @method Phaser.Animations.AnimationState#setRepeat
+     * @method Oyun.Animations.AnimationState#setRepeat
      * @since 3.4.0
      *
      * @param {number} value - The number of times that the animation should repeat.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     setRepeat: function (value)
     {
@@ -41658,11 +41658,11 @@ var AnimationState = new Class({
     /**
      * Handle the removal of an animation from the Animation Manager.
      *
-     * @method Phaser.Animations.AnimationState#globalRemove
+     * @method Oyun.Animations.AnimationState#globalRemove
      * @since 3.50.0
      *
      * @param {string} [key] - The key of the removed Animation.
-     * @param {Phaser.Animations.Animation} [animation] - The removed Animation.
+     * @param {Oyun.Animations.Animation} [animation] - The removed Animation.
      */
     globalRemove: function (key, animation)
     {
@@ -41686,14 +41686,14 @@ var AnimationState = new Class({
      * If you `includeDelay` then it will also fire the `ANIMATION_START` event once
      * the delay has expired, otherwise, playback will just begin immediately.
      *
-     * @method Phaser.Animations.AnimationState#restart
-     * @fires Phaser.Animations.Events#ANIMATION_RESTART
+     * @method Oyun.Animations.AnimationState#restart
+     * @fires Oyun.Animations.Events#ANIMATION_RESTART
      * @since 3.0.0
      *
      * @param {boolean} [includeDelay=false] - Whether to include the delay value of the animation when restarting.
      * @param {boolean} [resetRepeats=false] - Whether to reset the repeat counter or not?
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     restart: function (includeDelay, resetRepeats)
     {
@@ -41741,11 +41741,11 @@ var AnimationState = new Class({
      *
      * If another animation has been queued for playback, it will be started after the events fire.
      *
-     * @method Phaser.Animations.AnimationState#complete
-     * @fires Phaser.Animations.Events#ANIMATION_COMPLETE
+     * @method Oyun.Animations.AnimationState#complete
+     * @fires Oyun.Animations.Events#ANIMATION_COMPLETE
      * @since 3.50.0
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     complete: function ()
     {
@@ -41777,11 +41777,11 @@ var AnimationState = new Class({
      *
      * If there is another animation in the queue (set via the `chain` method) then it will start playing.
      *
-     * @method Phaser.Animations.AnimationState#stop
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.Animations.AnimationState#stop
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.0.0
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     stop: function ()
     {
@@ -41816,13 +41816,13 @@ var AnimationState = new Class({
      * If there is another animation in the queue (set via the `chain` method) then it will start playing,
      * when the current one stops.
      *
-     * @method Phaser.Animations.AnimationState#stopAfterDelay
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.Animations.AnimationState#stopAfterDelay
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.4.0
      *
      * @param {number} delay - The number of milliseconds to wait before stopping this animation.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     stopAfterDelay: function (delay)
     {
@@ -41842,15 +41842,15 @@ var AnimationState = new Class({
      * If there is another animation in the queue (set via the `chain` method) then it will start playing,
      * when the current one stops.
      *
-     * Prior to Phaser 3.50 this method was called `stopOnRepeat` and had no parameters.
+     * Prior to Oyun 3.50 this method was called `stopOnRepeat` and had no parameters.
      *
-     * @method Phaser.Animations.AnimationState#stopAfterRepeat
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.Animations.AnimationState#stopAfterRepeat
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.50.0
      *
      * @param {number} [repeatCount=1] - How many times should the animation repeat before stopping?
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     stopAfterRepeat: function (repeatCount)
     {
@@ -41878,13 +41878,13 @@ var AnimationState = new Class({
      * If there is another animation in the queue (set via the `chain` method) then it will start playing,
      * when the current one stops.
      *
-     * @method Phaser.Animations.AnimationState#stopOnFrame
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.Animations.AnimationState#stopOnFrame
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.4.0
      *
-     * @param {Phaser.Animations.AnimationFrame} frame - The frame to check before stopping this animation.
+     * @param {Oyun.Animations.AnimationFrame} frame - The frame to check before stopping this animation.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object that owns this Animation Component.
+     * @return {Oyun.GameObjects.GameObject} The Game Object that owns this Animation Component.
      */
     stopOnFrame: function (frame)
     {
@@ -41898,7 +41898,7 @@ var AnimationState = new Class({
      * Returns the total number of frames in this animation, or returns zero if no
      * animation has been loaded.
      *
-     * @method Phaser.Animations.AnimationState#getTotalFrames
+     * @method Oyun.Animations.AnimationState#getTotalFrames
      * @since 3.4.0
      *
      * @return {number} The total number of frames in the current animation, or zero if no animation has been loaded.
@@ -41913,7 +41913,7 @@ var AnimationState = new Class({
      *
      * This is called automatically by the `Sprite.preUpdate` method.
      *
-     * @method Phaser.Animations.AnimationState#update
+     * @method Oyun.Animations.AnimationState#update
      * @since 3.0.0
      *
      * @param {number} time - The current timestamp.
@@ -41989,14 +41989,14 @@ var AnimationState = new Class({
      * Sets the given Animation Frame as being the current frame
      * and applies it to the parent Game Object, adjusting size and origin as needed.
      *
-     * @method Phaser.Animations.AnimationState#setCurrentFrame
-     * @fires Phaser.Animations.Events#ANIMATION_UPDATE
-     * @fires Phaser.Animations.Events#ANIMATION_STOP
+     * @method Oyun.Animations.AnimationState#setCurrentFrame
+     * @fires Oyun.Animations.Events#ANIMATION_UPDATE
+     * @fires Oyun.Animations.Events#ANIMATION_STOP
      * @since 3.4.0
      *
-     * @param {Phaser.Animations.AnimationFrame} animationFrame - The animation frame to change to.
+     * @param {Oyun.Animations.AnimationFrame} animationFrame - The animation frame to change to.
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object this Animation Component belongs to.
+     * @return {Oyun.GameObjects.GameObject} The Game Object this Animation Component belongs to.
      */
     setCurrentFrame: function (animationFrame)
     {
@@ -42051,10 +42051,10 @@ var AnimationState = new Class({
      * Calling this does not change the direction of the animation. I.e. if it was currently
      * playing in reverse, calling this method doesn't then change the direction to forwards.
      *
-     * @method Phaser.Animations.AnimationState#nextFrame
+     * @method Oyun.Animations.AnimationState#nextFrame
      * @since 3.16.0
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object this Animation Component belongs to.
+     * @return {Oyun.GameObjects.GameObject} The Game Object this Animation Component belongs to.
      */
     nextFrame: function ()
     {
@@ -42073,10 +42073,10 @@ var AnimationState = new Class({
      * Calling this does not change the direction of the animation. I.e. if it was currently
      * playing in forwards, calling this method doesn't then change the direction to backwards.
      *
-     * @method Phaser.Animations.AnimationState#previousFrame
+     * @method Oyun.Animations.AnimationState#previousFrame
      * @since 3.16.0
      *
-     * @return {Phaser.GameObjects.GameObject} The Game Object this Animation Component belongs to.
+     * @return {Oyun.GameObjects.GameObject} The Game Object this Animation Component belongs to.
      */
     previousFrame: function ()
     {
@@ -42093,12 +42093,12 @@ var AnimationState = new Class({
      *
      * See the `create` method for more details.
      *
-     * @method Phaser.Animations.AnimationState#get
+     * @method Oyun.Animations.AnimationState#get
      * @since 3.50.0
      *
      * @param {string} key - The key of the Animation to retrieve.
      *
-     * @return {Phaser.Animations.Animation} The Animation, or `null` if the key is invalid.
+     * @return {Oyun.Animations.Animation} The Animation, or `null` if the key is invalid.
      */
     get: function (key)
     {
@@ -42108,7 +42108,7 @@ var AnimationState = new Class({
     /**
      * Checks to see if the given key is already used locally within the animations stored on this Sprite.
      *
-     * @method Phaser.Animations.AnimationState#exists
+     * @method Oyun.Animations.AnimationState#exists
      * @since 3.50.0
      *
      * @param {string} key - The key of the Animation to check.
@@ -42137,12 +42137,12 @@ var AnimationState = new Class({
      *
      * If you wish to re-use an existing key, call the `remove` method first, then this method.
      *
-     * @method Phaser.Animations.AnimationState#create
+     * @method Oyun.Animations.AnimationState#create
      * @since 3.50.0
      *
-     * @param {Phaser.Types.Animations.Animation} config - The configuration settings for the Animation.
+     * @param {Oyun.Types.Animations.Animation} config - The configuration settings for the Animation.
      *
-     * @return {(Phaser.Animations.Animation|false)} The Animation that was created, or `false` if the key is already in use.
+     * @return {(Oyun.Animations.Animation|false)} The Animation that was created, or `false` if the key is already in use.
      */
     create: function (config)
     {
@@ -42171,9 +42171,9 @@ var AnimationState = new Class({
     },
 
     /**
-     * Generate an array of {@link Phaser.Types.Animations.AnimationFrame} objects from a texture key and configuration object.
+     * Generate an array of {@link Oyun.Types.Animations.AnimationFrame} objects from a texture key and configuration object.
      *
-     * Generates objects with string based frame names, as configured by the given {@link Phaser.Types.Animations.GenerateFrameNames}.
+     * Generates objects with string based frame names, as configured by the given {@link Oyun.Types.Animations.GenerateFrameNames}.
      *
      * It's a helper method, designed to make it easier for you to extract all of the frame names from texture atlases.
      * If you're working with a sprite sheet, see the `generateFrameNumbers` method instead.
@@ -42200,13 +42200,13 @@ var AnimationState = new Class({
      *
      * Please see the animation examples for further details.
      *
-     * @method Phaser.Animations.AnimationState#generateFrameNames
+     * @method Oyun.Animations.AnimationState#generateFrameNames
      * @since 3.50.0
      *
      * @param {string} key - The key for the texture containing the animation frames.
-     * @param {Phaser.Types.Animations.GenerateFrameNames} [config] - The configuration object for the animation frame names.
+     * @param {Oyun.Types.Animations.GenerateFrameNames} [config] - The configuration object for the animation frame names.
      *
-     * @return {Phaser.Types.Animations.AnimationFrame[]} The array of {@link Phaser.Types.Animations.AnimationFrame} objects.
+     * @return {Oyun.Types.Animations.AnimationFrame[]} The array of {@link Oyun.Types.Animations.AnimationFrame} objects.
      */
     generateFrameNames: function (key, config)
     {
@@ -42214,9 +42214,9 @@ var AnimationState = new Class({
     },
 
     /**
-     * Generate an array of {@link Phaser.Types.Animations.AnimationFrame} objects from a texture key and configuration object.
+     * Generate an array of {@link Oyun.Types.Animations.AnimationFrame} objects from a texture key and configuration object.
      *
-     * Generates objects with numbered frame names, as configured by the given {@link Phaser.Types.Animations.GenerateFrameNumbers}.
+     * Generates objects with numbered frame names, as configured by the given {@link Oyun.Types.Animations.GenerateFrameNumbers}.
      *
      * If you're working with a texture atlas, see the `generateFrameNames` method instead.
      *
@@ -42250,13 +42250,13 @@ var AnimationState = new Class({
      *
      * Please see the animation examples and `GenerateFrameNumbers` config docs for further details.
      *
-     * @method Phaser.Animations.AnimationState#generateFrameNumbers
+     * @method Oyun.Animations.AnimationState#generateFrameNumbers
      * @since 3.50.0
      *
      * @param {string} key - The key for the texture containing the animation frames.
-     * @param {Phaser.Types.Animations.GenerateFrameNumbers} config - The configuration object for the animation frames.
+     * @param {Oyun.Types.Animations.GenerateFrameNumbers} config - The configuration object for the animation frames.
      *
-     * @return {Phaser.Types.Animations.AnimationFrame[]} The array of {@link Phaser.Types.Animations.AnimationFrame} objects.
+     * @return {Oyun.Types.Animations.AnimationFrame[]} The array of {@link Oyun.Types.Animations.AnimationFrame} objects.
      */
     generateFrameNumbers: function (key, config)
     {
@@ -42268,12 +42268,12 @@ var AnimationState = new Class({
      *
      * Once an Animation has been removed, this Sprite cannot play it again without re-creating it.
      *
-     * @method Phaser.Animations.AnimationState#remove
+     * @method Oyun.Animations.AnimationState#remove
      * @since 3.50.0
      *
      * @param {string} key - The key of the animation to remove.
      *
-     * @return {Phaser.Animations.Animation} The Animation instance that was removed from this Sprite, if the key was valid.
+     * @return {Oyun.Animations.Animation} The Animation instance that was removed from this Sprite, if the key was valid.
      */
     remove: function (key)
     {
@@ -42297,7 +42297,7 @@ var AnimationState = new Class({
      *
      * Unregisters event listeners and cleans up its references.
      *
-     * @method Phaser.Animations.AnimationState#destroy
+     * @method Oyun.Animations.AnimationState#destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -42321,7 +42321,7 @@ var AnimationState = new Class({
     /**
      * `true` if the current animation is paused, otherwise `false`.
      *
-     * @name Phaser.Animations.AnimationState#isPaused
+     * @name Oyun.Animations.AnimationState#isPaused
      * @readonly
      * @type {boolean}
      * @since 3.4.0
@@ -43045,9 +43045,9 @@ var Body = __webpack_require__(71);
  */
 
 /**
- * Phaser Scale Modes.
+ * Oyun Scale Modes.
  * 
- * @namespace Phaser.ScaleModes
+ * @namespace Oyun.ScaleModes
  * @since 3.0.0
  */
 
@@ -43056,7 +43056,7 @@ var ScaleModes = {
     /**
      * Default Scale Mode (Linear).
      * 
-     * @name Phaser.ScaleModes.DEFAULT
+     * @name Oyun.ScaleModes.DEFAULT
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -43066,7 +43066,7 @@ var ScaleModes = {
     /**
      * Linear Scale Mode.
      * 
-     * @name Phaser.ScaleModes.LINEAR
+     * @name Oyun.ScaleModes.LINEAR
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -43076,7 +43076,7 @@ var ScaleModes = {
     /**
      * Nearest Scale Mode.
      * 
-     * @name Phaser.ScaleModes.NEAREST
+     * @name Oyun.ScaleModes.NEAREST
      * @type {number}
      * @readonly
      * @since 3.0.0
@@ -43103,16 +43103,16 @@ var Point = __webpack_require__(4);
 /**
  * Returns a Point object containing the coordinates of a point on the circumference of the Circle based on the given angle.
  *
- * @function Phaser.Geom.Circle.CircumferencePoint
+ * @function Oyun.Geom.Circle.CircumferencePoint
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point} O - [out,$return]
+ * @generic {Oyun.Geom.Point} O - [out,$return]
  *
- * @param {Phaser.Geom.Circle} circle - The Circle to get the circumference point on.
+ * @param {Oyun.Geom.Circle} circle - The Circle to get the circumference point on.
  * @param {number} angle - The angle from the center of the Circle to the circumference to return the point from. Given in radians.
- * @param {(Phaser.Geom.Point|object)} [out] - A Point, or point-like object, to store the results in. If not given a Point will be created.
+ * @param {(Oyun.Geom.Point|object)} [out] - A Point, or point-like object, to store the results in. If not given a Point will be created.
  *
- * @return {(Phaser.Geom.Point|object)} A Point object where the `x` and `y` properties are the point on the circumference.
+ * @return {(Oyun.Geom.Point|object)} A Point object where the `x` and `y` properties are the point on the circumference.
  */
 var CircumferencePoint = function (circle, angle, out)
 {
@@ -43142,15 +43142,15 @@ var Point = __webpack_require__(4);
 /**
  * Returns a uniformly distributed random point from anywhere within the given Circle.
  *
- * @function Phaser.Geom.Circle.Random
+ * @function Oyun.Geom.Circle.Random
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point} O - [out,$return]
+ * @generic {Oyun.Geom.Point} O - [out,$return]
  *
- * @param {Phaser.Geom.Circle} circle - The Circle to get a random point from.
- * @param {(Phaser.Geom.Point|object)} [out] - A Point or point-like object to set the random `x` and `y` values in.
+ * @param {Oyun.Geom.Circle} circle - The Circle to get a random point from.
+ * @param {(Oyun.Geom.Point|object)} [out] - A Point or point-like object to set the random `x` and `y` values in.
  *
- * @return {(Phaser.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
+ * @return {(Oyun.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
  */
 var Random = function (circle, out)
 {
@@ -43191,16 +43191,16 @@ var Point = __webpack_require__(4);
  * 
  * A value of 0 or 1 returns the point at the top left corner of the rectangle, while a value of 0.5 returns the point at the bottom right corner of the rectangle. Values between 0 and 0.5 are on the top or the right side and values between 0.5 and 1 are on the bottom or the left side.
  *
- * @function Phaser.Geom.Rectangle.GetPoint
+ * @function Oyun.Geom.Rectangle.GetPoint
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point} O - [out,$return]
+ * @generic {Oyun.Geom.Point} O - [out,$return]
  *
- * @param {Phaser.Geom.Rectangle} rectangle - The Rectangle to get the perimeter point from.
+ * @param {Oyun.Geom.Rectangle} rectangle - The Rectangle to get the perimeter point from.
  * @param {number} position - The normalized distance into the Rectangle's perimeter to return.
- * @param {(Phaser.Geom.Point|object)} [out] - An object to update with the `x` and `y` coordinates of the point.
+ * @param {(Oyun.Geom.Point|object)} [out] - An object to update with the `x` and `y` coordinates of the point.
  *
- * @return {Phaser.Geom.Point} The updated `output` object, or a new Point if no `output` object was given.
+ * @return {Oyun.Geom.Point} The updated `output` object, or a new Point if no `output` object was given.
  */
 var GetPoint = function (rectangle, position, out)
 {
@@ -43273,17 +43273,17 @@ var Point = __webpack_require__(4);
  * Provide a `stepRate` to ensure a specific distance between each point on the line. Set `quantity` to `0` when
  * providing a `stepRate`.
  *
- * @function Phaser.Geom.Line.GetPoints
+ * @function Oyun.Geom.Line.GetPoints
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point[]} O - [out,$return]
+ * @generic {Oyun.Geom.Point[]} O - [out,$return]
  *
- * @param {Phaser.Geom.Line} line - The line.
+ * @param {Oyun.Geom.Line} line - The line.
  * @param {number} quantity - The number of points to place on the line. Set to `0` to use `stepRate` instead.
  * @param {number} [stepRate] - The distance between each point on the line. When set, `quantity` is implied and should be set to `0`.
- * @param {(array|Phaser.Geom.Point[])} [out] - An optional array of Points, or point-like objects, to store the coordinates of the points on the line.
+ * @param {(array|Oyun.Geom.Point[])} [out] - An optional array of Points, or point-like objects, to store the coordinates of the points on the line.
  *
- * @return {(array|Phaser.Geom.Point[])} An array of Points, or point-like objects, containing the coordinates of the points on the line.
+ * @return {(array|Oyun.Geom.Point[])} An array of Points, or point-like objects, containing the coordinates of the points on the line.
  */
 var GetPoints = function (line, quantity, stepRate, out)
 {
@@ -43332,15 +43332,15 @@ var Point = __webpack_require__(4);
 /**
  * Returns a random point on a given Line.
  *
- * @function Phaser.Geom.Line.Random
+ * @function Oyun.Geom.Line.Random
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point} O - [out,$return]
+ * @generic {Oyun.Geom.Point} O - [out,$return]
  *
- * @param {Phaser.Geom.Line} line - The Line to calculate the random Point on.
- * @param {(Phaser.Geom.Point|object)} [out] - An instance of a Point to be modified.
+ * @param {Oyun.Geom.Line} line - The Line to calculate the random Point on.
+ * @param {(Oyun.Geom.Point|object)} [out] - An instance of a Point to be modified.
  *
- * @return {(Phaser.Geom.Point|object)} A random Point on the Line.
+ * @return {(Oyun.Geom.Point|object)} A random Point on the Line.
  */
 var Random = function (line, out)
 {
@@ -43372,15 +43372,15 @@ var Point = __webpack_require__(4);
 /**
  * Returns a random point within a Rectangle.
  *
- * @function Phaser.Geom.Rectangle.Random
+ * @function Oyun.Geom.Rectangle.Random
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point} O - [out,$return]
+ * @generic {Oyun.Geom.Point} O - [out,$return]
  *
- * @param {Phaser.Geom.Rectangle} rect - The Rectangle to return a point from.
- * @param {Phaser.Geom.Point} out - The object to update with the point's coordinates.
+ * @param {Oyun.Geom.Rectangle} rect - The Rectangle to return a point from.
+ * @param {Oyun.Geom.Point} out - The object to update with the point's coordinates.
  *
- * @return {Phaser.Geom.Point} The modified `out` object, or a new Point if none was provided.
+ * @return {Oyun.Geom.Point} The modified `out` object, or a new Point if none was provided.
  */
 var Random = function (rect, out)
 {
@@ -43412,7 +43412,7 @@ var SpliceOne = __webpack_require__(74);
 /**
  * Provides methods used for setting the WebGL rendering pipeline of a Game Object.
  *
- * @namespace Phaser.GameObjects.Components.Pipeline
+ * @namespace Oyun.GameObjects.Components.Pipeline
  * @webglOnly
  * @since 3.0.0
  */
@@ -43424,8 +43424,8 @@ var Pipeline = {
      *
      * If you call `resetPipeline` on this Game Object, the pipeline is reset to this default.
      *
-     * @name Phaser.GameObjects.Components.Pipeline#defaultPipeline
-     * @type {Phaser.Renderer.WebGL.WebGLPipeline}
+     * @name Oyun.GameObjects.Components.Pipeline#defaultPipeline
+     * @type {Oyun.Renderer.WebGL.WebGLPipeline}
      * @default null
      * @webglOnly
      * @since 3.0.0
@@ -43435,8 +43435,8 @@ var Pipeline = {
     /**
      * The current WebGL pipeline of this Game Object.
      *
-     * @name Phaser.GameObjects.Components.Pipeline#pipeline
-     * @type {Phaser.Renderer.WebGL.WebGLPipeline}
+     * @name Oyun.GameObjects.Components.Pipeline#pipeline
+     * @type {Oyun.Renderer.WebGL.WebGLPipeline}
      * @default null
      * @webglOnly
      * @since 3.0.0
@@ -43446,7 +43446,7 @@ var Pipeline = {
     /**
      * Does this Game Object have any Post Pipelines set?
      *
-     * @name Phaser.GameObjects.Components.Pipeline#hasPostPipeline
+     * @name Oyun.GameObjects.Components.Pipeline#hasPostPipeline
      * @type {boolean}
      * @webglOnly
      * @since 3.50.0
@@ -43461,8 +43461,8 @@ var Pipeline = {
      * If you modify this array directly, be sure to set the
      * `hasPostPipeline` property accordingly.
      *
-     * @name Phaser.GameObjects.Components.Pipeline#postPipeline
-     * @type {Phaser.Renderer.WebGL.Pipelines.PostFXPipeline[]}
+     * @name Oyun.GameObjects.Components.Pipeline#postPipeline
+     * @type {Oyun.Renderer.WebGL.Pipelines.PostFXPipeline[]}
      * @webglOnly
      * @since 3.50.0
      */
@@ -43471,7 +43471,7 @@ var Pipeline = {
     /**
      * An object to store pipeline specific data in, to be read by the pipelines this Game Object uses.
      *
-     * @name Phaser.GameObjects.Components.Pipeline#pipelineData
+     * @name Oyun.GameObjects.Components.Pipeline#pipelineData
      * @type {object}
      * @webglOnly
      * @since 3.50.0
@@ -43483,11 +43483,11 @@ var Pipeline = {
      *
      * This should only be called during the instantiation of the Game Object. After that, use `setPipeline`.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#initPipeline
+     * @method Oyun.GameObjects.Components.Pipeline#initPipeline
      * @webglOnly
      * @since 3.0.0
      *
-     * @param {(string|Phaser.Renderer.WebGL.WebGLPipeline)} pipeline - Either the string-based name of the pipeline, or a pipeline instance to set.
+     * @param {(string|Oyun.Renderer.WebGL.WebGLPipeline)} pipeline - Either the string-based name of the pipeline, or a pipeline instance to set.
      *
      * @return {boolean} `true` if the pipeline was set successfully, otherwise `false`.
      */
@@ -43530,11 +43530,11 @@ var Pipeline = {
      *
      * Both the pipeline and post pipelines share the same pipeline data object.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#setPipeline
+     * @method Oyun.GameObjects.Components.Pipeline#setPipeline
      * @webglOnly
      * @since 3.0.0
      *
-     * @param {(string|Phaser.Renderer.WebGL.WebGLPipeline)} pipeline - Either the string-based name of the pipeline, or a pipeline instance to set.
+     * @param {(string|Oyun.Renderer.WebGL.WebGLPipeline)} pipeline - Either the string-based name of the pipeline, or a pipeline instance to set.
      * @param {object} [pipelineData] - Optional pipeline data object that is _deep copied_ into the `pipelineData` property of this Game Object.
      * @param {boolean} [copyData=true] - Should the pipeline data object be _deep copied_ into the `pipelineData` property of this Game Object? If `false` it will be set by reference instead.
      *
@@ -43587,11 +43587,11 @@ var Pipeline = {
      *
      * Both the pipeline and post pipelines share the pipeline data object together.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#setPostPipeline
+     * @method Oyun.GameObjects.Components.Pipeline#setPostPipeline
      * @webglOnly
      * @since 3.50.0
      *
-     * @param {(string|string[]|function|function[]|Phaser.Renderer.WebGL.Pipelines.PostFXPipeline|Phaser.Renderer.WebGL.Pipelines.PostFXPipeline[])} pipelines - Either the string-based name of the pipeline, or a pipeline instance, or class, or an array of them.
+     * @param {(string|string[]|function|function[]|Oyun.Renderer.WebGL.Pipelines.PostFXPipeline|Oyun.Renderer.WebGL.Pipelines.PostFXPipeline[])} pipelines - Either the string-based name of the pipeline, or a pipeline instance, or class, or an array of them.
      * @param {object} [pipelineData] - Optional pipeline data object that is _deep copied_ into the `pipelineData` property of this Game Object.
      * @param {boolean} [copyData=true] - Should the pipeline data object be _deep copied_ into the `pipelineData` property of this Game Object? If `false` it will be set by reference instead.
      *
@@ -43645,7 +43645,7 @@ var Pipeline = {
      *
      * Both the pipeline and post pipelines share the pipeline data object together.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#setPipelineData
+     * @method Oyun.GameObjects.Components.Pipeline#setPipelineData
      * @webglOnly
      * @since 3.50.0
      *
@@ -43673,13 +43673,13 @@ var Pipeline = {
     /**
      * Gets a Post Pipeline instance from this Game Object, based on the given name, and returns it.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#getPostPipeline
+     * @method Oyun.GameObjects.Components.Pipeline#getPostPipeline
      * @webglOnly
      * @since 3.50.0
      *
-     * @param {(string|function|Phaser.Renderer.WebGL.Pipelines.PostFXPipeline)} pipeline - The string-based name of the pipeline, or a pipeline class.
+     * @param {(string|function|Oyun.Renderer.WebGL.Pipelines.PostFXPipeline)} pipeline - The string-based name of the pipeline, or a pipeline class.
      *
-     * @return {(Phaser.Renderer.WebGL.Pipelines.PostFXPipeline|Phaser.Renderer.WebGL.Pipelines.PostFXPipeline[])} The Post Pipeline/s matching the name, or undefined if no match. If more than one match they are returned in an array.
+     * @return {(Oyun.Renderer.WebGL.Pipelines.PostFXPipeline|Oyun.Renderer.WebGL.Pipelines.PostFXPipeline[])} The Post Pipeline/s matching the name, or undefined if no match. If more than one match they are returned in an array.
      */
     getPostPipeline: function (pipeline)
     {
@@ -43703,7 +43703,7 @@ var Pipeline = {
     /**
      * Resets the WebGL Pipeline of this Game Object back to the default it was created with.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#resetPipeline
+     * @method Oyun.GameObjects.Components.Pipeline#resetPipeline
      * @webglOnly
      * @since 3.0.0
      *
@@ -43737,7 +43737,7 @@ var Pipeline = {
      * Resets the WebGL Post Pipelines of this Game Object. It does this by calling
      * the `destroy` method on each post pipeline and then clearing the local array.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#resetPostPipeline
+     * @method Oyun.GameObjects.Components.Pipeline#resetPostPipeline
      * @webglOnly
      * @since 3.50.0
      *
@@ -43768,11 +43768,11 @@ var Pipeline = {
      *
      * If you wish to remove all Post Pipelines use the `resetPostPipeline` method instead.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#removePostPipeline
+     * @method Oyun.GameObjects.Components.Pipeline#removePostPipeline
      * @webglOnly
      * @since 3.50.0
      *
-     * @param {string|Phaser.Renderer.WebGL.Pipelines.PostFXPipeline} pipeline - The string-based name of the pipeline, or a pipeline class.
+     * @param {string|Oyun.Renderer.WebGL.Pipelines.PostFXPipeline} pipeline - The string-based name of the pipeline, or a pipeline class.
      *
      * @return {this} This Game Object.
      */
@@ -43802,7 +43802,7 @@ var Pipeline = {
     /**
      * Gets the name of the WebGL Pipeline this Game Object is currently using.
      *
-     * @method Phaser.GameObjects.Components.Pipeline#getPipelineName
+     * @method Oyun.GameObjects.Components.Pipeline#getPipelineName
      * @webglOnly
      * @since 3.0.0
      *
@@ -43831,7 +43831,7 @@ module.exports = Pipeline;
 /**
  * Deep Copy the given object or array.
  *
- * @function Phaser.Utils.Objects.DeepCopy
+ * @function Oyun.Utils.Objects.DeepCopy
  * @since 3.50.0
  *
  * @param {object} obj - The object to deep copy.
@@ -43882,12 +43882,12 @@ module.exports = DeepCopy;
  *
  * This is typically extended further by Game Object specific implementations.
  *
- * @method Phaser.GameObjects.Components.ToJSON
+ * @method Oyun.GameObjects.Components.ToJSON
  * @since 3.0.0
  *
- * @param {Phaser.GameObjects.GameObject} gameObject - The Game Object to export as JSON.
+ * @param {Oyun.GameObjects.GameObject} gameObject - The Game Object to export as JSON.
  *
- * @return {Phaser.Types.GameObjects.JSONGameObject} A JSON representation of the Game Object.
+ * @return {Oyun.Types.GameObjects.JSONGameObject} A JSON representation of the Game Object.
  */
 var ToJSON = function (gameObject)
 {
@@ -43944,7 +43944,7 @@ var Vector2 = __webpack_require__(3);
  * Takes the `x` and `y` coordinates and transforms them into the same space as
  * defined by the position, rotation and scale values.
  *
- * @function Phaser.Math.TransformXY
+ * @function Oyun.Math.TransformXY
  * @since 3.0.0
  *
  * @param {number} x - The x coordinate to be transformed.
@@ -43954,9 +43954,9 @@ var Vector2 = __webpack_require__(3);
  * @param {number} rotation - Rotation of the transform point, in radians.
  * @param {number} scaleX - Horizontal scale of the transform point.
  * @param {number} scaleY - Vertical scale of the transform point.
- * @param {(Phaser.Math.Vector2|Phaser.Geom.Point|object)} [output] - The output vector, point or object for the translated coordinates.
+ * @param {(Oyun.Math.Vector2|Oyun.Geom.Point|object)} [output] - The output vector, point or object for the translated coordinates.
  *
- * @return {(Phaser.Math.Vector2|Phaser.Geom.Point|object)} The translated point.
+ * @return {(Oyun.Math.Vector2|Oyun.Geom.Point|object)} The translated point.
  */
 var TransformXY = function (x, y, positionX, positionY, rotation, scaleX, scaleY, output)
 {
@@ -43997,7 +43997,7 @@ module.exports = TransformXY;
  * Moves the element at the start of the array to the end, shifting all items in the process.
  * The "rotation" happens to the left.
  *
- * @function Phaser.Utils.Array.RotateLeft
+ * @function Oyun.Utils.Array.RotateLeft
  * @since 3.0.0
  *
  * @param {array} array - The array to shift to the left. This array is modified in place.
@@ -44037,7 +44037,7 @@ module.exports = RotateLeft;
  * Moves the element at the end of the array to the start, shifting all items in the process.
  * The "rotation" happens to the right.
  *
- * @function Phaser.Utils.Array.RotateRight
+ * @function Oyun.Utils.Array.RotateRight
  * @since 3.0.0
  *
  * @param {array} array - The array to shift to the right. This array is modified in place.
@@ -44078,15 +44078,15 @@ var Point = __webpack_require__(4);
 /**
  * Returns a uniformly distributed random point from anywhere within the given Ellipse.
  *
- * @function Phaser.Geom.Ellipse.Random
+ * @function Oyun.Geom.Ellipse.Random
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point} O - [out,$return]
+ * @generic {Oyun.Geom.Point} O - [out,$return]
  *
- * @param {Phaser.Geom.Ellipse} ellipse - The Ellipse to get a random point from.
- * @param {(Phaser.Geom.Point|object)} [out] - A Point or point-like object to set the random `x` and `y` values in.
+ * @param {Oyun.Geom.Ellipse} ellipse - The Ellipse to get a random point from.
+ * @param {(Oyun.Geom.Point|object)} [out] - A Point or point-like object to set the random `x` and `y` values in.
  *
- * @return {(Phaser.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
+ * @return {(Oyun.Geom.Point|object)} A Point object with the random values set in the `x` and `y` properties.
  */
 var Random = function (ellipse, out)
 {
@@ -44119,15 +44119,15 @@ var Point = __webpack_require__(4);
 /**
  * Returns a random Point from within the area of the given Triangle.
  *
- * @function Phaser.Geom.Triangle.Random
+ * @function Oyun.Geom.Triangle.Random
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Point} O - [out,$return]
+ * @generic {Oyun.Geom.Point} O - [out,$return]
  *
- * @param {Phaser.Geom.Triangle} triangle - The Triangle to get a random point from.
- * @param {Phaser.Geom.Point} [out] - The Point object to store the position in. If not given, a new Point instance is created.
+ * @param {Oyun.Geom.Triangle} triangle - The Triangle to get a random point from.
+ * @param {Oyun.Geom.Point} [out] - The Point object to store the position in. If not given, a new Point instance is created.
  *
- * @return {Phaser.Geom.Point} A Point object holding the coordinates of a random position within the Triangle.
+ * @return {Oyun.Geom.Point} A Point object holding the coordinates of a random position within the Triangle.
  */
 var Random = function (triangle, out)
 {
@@ -44175,18 +44175,18 @@ module.exports = Random;
  *
  * In polar notation, this maps a point from (r, t) to (distance, t + angle), vs. the origin (x, y).
  *
- * @function Phaser.Math.RotateAroundDistance
+ * @function Oyun.Math.RotateAroundDistance
  * @since 3.0.0
  *
- * @generic {Phaser.Types.Math.Vector2Like} T - [point,$return]
+ * @generic {Oyun.Types.Math.Vector2Like} T - [point,$return]
  *
- * @param {(Phaser.Geom.Point|object)} point - The point to be rotated.
+ * @param {(Oyun.Geom.Point|object)} point - The point to be rotated.
  * @param {number} x - The horizontal coordinate to rotate around.
  * @param {number} y - The vertical coordinate to rotate around.
  * @param {number} angle - The angle of rotation in radians.
  * @param {number} distance - The distance from (x, y) to place the point at.
  *
- * @return {Phaser.Types.Math.Vector2Like} The given point.
+ * @return {Oyun.Types.Math.Vector2Like} The given point.
  */
 var RotateAroundDistance = function (point, x, y, angle, distance)
 {
@@ -44218,9 +44218,9 @@ module.exports = RotateAroundDistance;
  * 1 if `x` is greater than or equal to the right edge, and smoothly interpolates, using a Hermite polynomial,
  * between 0 and 1 otherwise.
  *
- * Produces an even smoother interpolation than {@link Phaser.Math.SmoothStep}.
+ * Produces an even smoother interpolation than {@link Oyun.Math.SmoothStep}.
  *
- * @function Phaser.Math.SmootherStep
+ * @function Oyun.Math.SmootherStep
  * @since 3.0.0
  * @see {@link https://en.wikipedia.org/wiki/Smoothstep#Variations}
  *
@@ -44257,7 +44257,7 @@ module.exports = SmootherStep;
  * 1 if `x` is greater than or equal to the right edge, and smoothly interpolates, using a Hermite polynomial,
  * between 0 and 1 otherwise.
  *
- * @function Phaser.Math.SmoothStep
+ * @function Oyun.Math.SmoothStep
  * @since 3.0.0
  * @see {@link https://en.wikipedia.org/wiki/Smoothstep}
  *
@@ -44309,7 +44309,7 @@ var SortByDigits = __webpack_require__(314);
  * @classdesc
  * A Frame based Animation.
  *
- * Animations in Phaser consist of a sequence of `AnimationFrame` objects, which are managed by
+ * Animations in Oyun consist of a sequence of `AnimationFrame` objects, which are managed by
  * this class, along with properties that impact playback, such as the animations frame rate
  * or delay.
  *
@@ -44321,13 +44321,13 @@ var SortByDigits = __webpack_require__(314);
  * depending on if you need a global animation, or local to a specific Sprite.
  *
  * @class Animation
- * @memberof Phaser.Animations
+ * @memberof Oyun.Animations
  * @constructor
  * @since 3.0.0
  *
- * @param {Phaser.Animations.AnimationManager} manager - A reference to the global Animation Manager
+ * @param {Oyun.Animations.AnimationManager} manager - A reference to the global Animation Manager
  * @param {string} key - The unique identifying string for this animation.
- * @param {Phaser.Types.Animations.Animation} config - The Animation configuration.
+ * @param {Oyun.Types.Animations.Animation} config - The Animation configuration.
  */
 var Animation = new Class({
 
@@ -44338,8 +44338,8 @@ var Animation = new Class({
         /**
          * A reference to the global Animation Manager.
          *
-         * @name Phaser.Animations.Animation#manager
-         * @type {Phaser.Animations.AnimationManager}
+         * @name Oyun.Animations.Animation#manager
+         * @type {Oyun.Animations.AnimationManager}
          * @since 3.0.0
          */
         this.manager = manager;
@@ -44347,7 +44347,7 @@ var Animation = new Class({
         /**
          * The unique identifying string for this animation.
          *
-         * @name Phaser.Animations.Animation#key
+         * @name Oyun.Animations.Animation#key
          * @type {string}
          * @since 3.0.0
          */
@@ -44356,7 +44356,7 @@ var Animation = new Class({
         /**
          * A frame based animation (as opposed to a bone based animation)
          *
-         * @name Phaser.Animations.Animation#type
+         * @name Oyun.Animations.Animation#type
          * @type {string}
          * @default frame
          * @since 3.0.0
@@ -44366,8 +44366,8 @@ var Animation = new Class({
         /**
          * Extract all the frame data into the frames array.
          *
-         * @name Phaser.Animations.Animation#frames
-         * @type {Phaser.Animations.AnimationFrame[]}
+         * @name Oyun.Animations.Animation#frames
+         * @type {Oyun.Animations.AnimationFrame[]}
          * @since 3.0.0
          */
         this.frames = this.getFrames(
@@ -44380,7 +44380,7 @@ var Animation = new Class({
         /**
          * The frame rate of playback in frames per second (default 24 if duration is null)
          *
-         * @name Phaser.Animations.Animation#frameRate
+         * @name Oyun.Animations.Animation#frameRate
          * @type {number}
          * @default 24
          * @since 3.0.0
@@ -44392,7 +44392,7 @@ var Animation = new Class({
          * If the `frameRate` property has been set then it overrides this value,
          * otherwise the `frameRate` is derived from `duration`.
          *
-         * @name Phaser.Animations.Animation#duration
+         * @name Oyun.Animations.Animation#duration
          * @type {number}
          * @since 3.0.0
          */
@@ -44401,7 +44401,7 @@ var Animation = new Class({
         /**
          * How many ms per frame, not including frame specific modifiers.
          *
-         * @name Phaser.Animations.Animation#msPerFrame
+         * @name Oyun.Animations.Animation#msPerFrame
          * @type {number}
          * @since 3.0.0
          */
@@ -44410,7 +44410,7 @@ var Animation = new Class({
         /**
          * Skip frames if the time lags, or always advanced anyway?
          *
-         * @name Phaser.Animations.Animation#skipMissedFrames
+         * @name Oyun.Animations.Animation#skipMissedFrames
          * @type {boolean}
          * @default true
          * @since 3.0.0
@@ -44420,7 +44420,7 @@ var Animation = new Class({
         /**
          * The delay in ms before the playback will begin.
          *
-         * @name Phaser.Animations.Animation#delay
+         * @name Oyun.Animations.Animation#delay
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -44430,7 +44430,7 @@ var Animation = new Class({
         /**
          * Number of times to repeat the animation. Set to -1 to repeat forever.
          *
-         * @name Phaser.Animations.Animation#repeat
+         * @name Oyun.Animations.Animation#repeat
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -44440,7 +44440,7 @@ var Animation = new Class({
         /**
          * The delay in ms before the a repeat play starts.
          *
-         * @name Phaser.Animations.Animation#repeatDelay
+         * @name Oyun.Animations.Animation#repeatDelay
          * @type {number}
          * @default 0
          * @since 3.0.0
@@ -44450,7 +44450,7 @@ var Animation = new Class({
         /**
          * Should the animation yoyo (reverse back down to the start) before repeating?
          *
-         * @name Phaser.Animations.Animation#yoyo
+         * @name Oyun.Animations.Animation#yoyo
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -44460,7 +44460,7 @@ var Animation = new Class({
         /**
          * Should the GameObject's `visible` property be set to `true` when the animation starts to play?
          *
-         * @name Phaser.Animations.Animation#showOnStart
+         * @name Oyun.Animations.Animation#showOnStart
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -44470,7 +44470,7 @@ var Animation = new Class({
         /**
          * Should the GameObject's `visible` property be set to `false` when the animation finishes?
          *
-         * @name Phaser.Animations.Animation#hideOnComplete
+         * @name Oyun.Animations.Animation#hideOnComplete
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -44480,7 +44480,7 @@ var Animation = new Class({
         /**
          * Global pause. All Game Objects using this Animation instance are impacted by this property.
          *
-         * @name Phaser.Animations.Animation#paused
+         * @name Oyun.Animations.Animation#paused
          * @type {boolean}
          * @default false
          * @since 3.0.0
@@ -44499,7 +44499,7 @@ var Animation = new Class({
     /**
      * Gets the total number of frames in this animation.
      *
-     * @method Phaser.Animations.Animation#getTotalFrames
+     * @method Oyun.Animations.Animation#getTotalFrames
      * @since 3.50.0
      *
      * @return {number} The total number of frames in this animation.
@@ -44512,10 +44512,10 @@ var Animation = new Class({
     /**
      * Calculates the duration, frame rate and msPerFrame values.
      *
-     * @method Phaser.Animations.Animation#calculateDuration
+     * @method Oyun.Animations.Animation#calculateDuration
      * @since 3.50.0
      *
-     * @param {Phaser.Animations.Animation} target - The target to set the values on.
+     * @param {Oyun.Animations.Animation} target - The target to set the values on.
      * @param {number} totalFrames - The total number of frames in the animation.
      * @param {number} duration - The duration to calculate the frame rate from.
      * @param {number} frameRate - The frame ate to calculate the duration from.
@@ -44551,10 +44551,10 @@ var Animation = new Class({
     /**
      * Add frames to the end of the animation.
      *
-     * @method Phaser.Animations.Animation#addFrame
+     * @method Oyun.Animations.Animation#addFrame
      * @since 3.0.0
      *
-     * @param {(string|Phaser.Types.Animations.AnimationFrame[])} config - Either a string, in which case it will use all frames from a texture with the matching key, or an array of Animation Frame configuration objects.
+     * @param {(string|Oyun.Types.Animations.AnimationFrame[])} config - Either a string, in which case it will use all frames from a texture with the matching key, or an array of Animation Frame configuration objects.
      *
      * @return {this} This Animation object.
      */
@@ -44566,11 +44566,11 @@ var Animation = new Class({
     /**
      * Add frame/s into the animation.
      *
-     * @method Phaser.Animations.Animation#addFrameAt
+     * @method Oyun.Animations.Animation#addFrameAt
      * @since 3.0.0
      *
      * @param {number} index - The index to insert the frame at within the animation.
-     * @param {(string|Phaser.Types.Animations.AnimationFrame[])} config - Either a string, in which case it will use all frames from a texture with the matching key, or an array of Animation Frame configuration objects.
+     * @param {(string|Oyun.Types.Animations.AnimationFrame[])} config - Either a string, in which case it will use all frames from a texture with the matching key, or an array of Animation Frame configuration objects.
      *
      * @return {this} This Animation object.
      */
@@ -44605,7 +44605,7 @@ var Animation = new Class({
     /**
      * Check if the given frame index is valid.
      *
-     * @method Phaser.Animations.Animation#checkFrame
+     * @method Oyun.Animations.Animation#checkFrame
      * @since 3.0.0
      *
      * @param {number} index - The index to be checked.
@@ -44621,11 +44621,11 @@ var Animation = new Class({
      * Called internally when this Animation first starts to play.
      * Sets the accumulator and nextTick properties.
      *
-     * @method Phaser.Animations.Animation#getFirstTick
+     * @method Oyun.Animations.Animation#getFirstTick
      * @protected
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
+     * @param {Oyun.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
      */
     getFirstTick: function (state)
     {
@@ -44638,13 +44638,13 @@ var Animation = new Class({
     /**
      * Returns the AnimationFrame at the provided index
      *
-     * @method Phaser.Animations.Animation#getFrameAt
+     * @method Oyun.Animations.Animation#getFrameAt
      * @protected
      * @since 3.0.0
      *
      * @param {number} index - The index in the AnimationFrame array
      *
-     * @return {Phaser.Animations.AnimationFrame} The frame at the index provided from the animation sequence
+     * @return {Oyun.Animations.AnimationFrame} The frame at the index provided from the animation sequence
      */
     getFrameAt: function (index)
     {
@@ -44654,14 +44654,14 @@ var Animation = new Class({
     /**
      * Creates AnimationFrame instances based on the given frame data.
      *
-     * @method Phaser.Animations.Animation#getFrames
+     * @method Oyun.Animations.Animation#getFrames
      * @since 3.0.0
      *
-     * @param {Phaser.Textures.TextureManager} textureManager - A reference to the global Texture Manager.
-     * @param {(string|Phaser.Types.Animations.AnimationFrame[])} frames - Either a string, in which case it will use all frames from a texture with the matching key, or an array of Animation Frame configuration objects.
+     * @param {Oyun.Textures.TextureManager} textureManager - A reference to the global Texture Manager.
+     * @param {(string|Oyun.Types.Animations.AnimationFrame[])} frames - Either a string, in which case it will use all frames from a texture with the matching key, or an array of Animation Frame configuration objects.
      * @param {string} [defaultTextureKey] - The key to use if no key is set in the frame configuration object.
      *
-     * @return {Phaser.Animations.AnimationFrame[]} An array of newly created AnimationFrame instances.
+     * @return {Oyun.Animations.AnimationFrame[]} An array of newly created AnimationFrame instances.
      */
     getFrames: function (textureManager, frames, defaultTextureKey, sortFrames)
     {
@@ -44763,10 +44763,10 @@ var Animation = new Class({
     /**
      * Called internally. Sets the accumulator and nextTick values of the current Animation.
      *
-     * @method Phaser.Animations.Animation#getNextTick
+     * @method Oyun.Animations.Animation#getNextTick
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
+     * @param {Oyun.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
      */
     getNextTick: function (state)
     {
@@ -44778,12 +44778,12 @@ var Animation = new Class({
     /**
      * Returns the frame closest to the given progress value between 0 and 1.
      *
-     * @method Phaser.Animations.Animation#getFrameByProgress
+     * @method Oyun.Animations.Animation#getFrameByProgress
      * @since 3.4.0
      *
      * @param {number} value - A value between 0 and 1.
      *
-     * @return {Phaser.Animations.AnimationFrame} The frame closest to the given progress value.
+     * @return {Oyun.Animations.AnimationFrame} The frame closest to the given progress value.
      */
     getFrameByProgress: function (value)
     {
@@ -44795,10 +44795,10 @@ var Animation = new Class({
     /**
      * Advance the animation frame.
      *
-     * @method Phaser.Animations.Animation#nextFrame
+     * @method Oyun.Animations.Animation#nextFrame
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationState} state - The Animation State to advance.
+     * @param {Oyun.Animations.AnimationState} state - The Animation State to advance.
      */
     nextFrame: function (state)
     {
@@ -44840,11 +44840,11 @@ var Animation = new Class({
     /**
      * Handle the yoyo functionality in nextFrame and previousFrame methods.
      *
-     * @method Phaser.Animations.Animation#handleYoyoFrame
+     * @method Oyun.Animations.Animation#handleYoyoFrame
      * @private
      * @since 3.12.0
      *
-     * @param {Phaser.Animations.AnimationState} state - The Animation State to advance.
+     * @param {Oyun.Animations.AnimationState} state - The Animation State to advance.
      * @param {boolean} isReverse - Is animation in reverse mode? (Default: false)
      */
     handleYoyoFrame: function (state, isReverse)
@@ -44880,10 +44880,10 @@ var Animation = new Class({
     /**
      * Returns the animation last frame.
      *
-     * @method Phaser.Animations.Animation#getLastFrame
+     * @method Oyun.Animations.Animation#getLastFrame
      * @since 3.12.0
      *
-     * @return {Phaser.Animations.AnimationFrame} The last Animation Frame.
+     * @return {Oyun.Animations.AnimationFrame} The last Animation Frame.
      */
     getLastFrame: function ()
     {
@@ -44894,10 +44894,10 @@ var Animation = new Class({
      * Called internally when the Animation is playing backwards.
      * Sets the previous frame, causing a yoyo, repeat, complete or update, accordingly.
      *
-     * @method Phaser.Animations.Animation#previousFrame
+     * @method Oyun.Animations.Animation#previousFrame
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
+     * @param {Oyun.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
      */
     previousFrame: function (state)
     {
@@ -44938,12 +44938,12 @@ var Animation = new Class({
     /**
      * Update Frame and Wait next tick.
      *
-     * @method Phaser.Animations.Animation#updateAndGetNextTick
+     * @method Oyun.Animations.Animation#updateAndGetNextTick
      * @private
      * @since 3.12.0
      *
-     * @param {Phaser.Animations.AnimationState} state - The Animation State.
-     * @param {Phaser.Animations.AnimationFrame} frame - An Animation frame.
+     * @param {Oyun.Animations.AnimationState} state - The Animation State.
+     * @param {Oyun.Animations.AnimationFrame} frame - An Animation frame.
      */
     updateAndGetNextTick: function (state, frame)
     {
@@ -44956,10 +44956,10 @@ var Animation = new Class({
      * Removes the given AnimationFrame from this Animation instance.
      * This is a global action. Any Game Object using this Animation will be impacted by this change.
      *
-     * @method Phaser.Animations.Animation#removeFrame
+     * @method Oyun.Animations.Animation#removeFrame
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationFrame} frame - The AnimationFrame to be removed.
+     * @param {Oyun.Animations.AnimationFrame} frame - The AnimationFrame to be removed.
      *
      * @return {this} This Animation object.
      */
@@ -44979,7 +44979,7 @@ var Animation = new Class({
      * Removes a frame from the AnimationFrame array at the provided index
      * and updates the animation accordingly.
      *
-     * @method Phaser.Animations.Animation#removeFrameAt
+     * @method Oyun.Animations.Animation#removeFrameAt
      * @since 3.0.0
      *
      * @param {number} index - The index in the AnimationFrame array
@@ -44999,13 +44999,13 @@ var Animation = new Class({
      * Called internally during playback. Forces the animation to repeat, providing there are enough counts left
      * in the repeat counter.
      *
-     * @method Phaser.Animations.Animation#repeatAnimation
-     * @fires Phaser.Animations.Events#ANIMATION_REPEAT
-     * @fires Phaser.Animations.Events#SPRITE_ANIMATION_REPEAT
-     * @fires Phaser.Animations.Events#SPRITE_ANIMATION_KEY_REPEAT
+     * @method Oyun.Animations.Animation#repeatAnimation
+     * @fires Oyun.Animations.Events#ANIMATION_REPEAT
+     * @fires Oyun.Animations.Events#SPRITE_ANIMATION_REPEAT
+     * @fires Oyun.Animations.Events#SPRITE_ANIMATION_KEY_REPEAT
      * @since 3.0.0
      *
-     * @param {Phaser.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
+     * @param {Oyun.Animations.AnimationState} state - The Animation State belonging to the Game Object invoking this call.
      */
     repeatAnimation: function (state)
     {
@@ -45052,10 +45052,10 @@ var Animation = new Class({
     /**
      * Converts the animation data to JSON.
      *
-     * @method Phaser.Animations.Animation#toJSON
+     * @method Oyun.Animations.Animation#toJSON
      * @since 3.0.0
      *
-     * @return {Phaser.Types.Animations.JSONAnimation} The resulting JSONAnimation formatted object.
+     * @return {Oyun.Types.Animations.JSONAnimation} The resulting JSONAnimation formatted object.
      */
     toJSON: function ()
     {
@@ -45085,7 +45085,7 @@ var Animation = new Class({
     /**
      * Called internally whenever frames are added to, or removed from, this Animation.
      *
-     * @method Phaser.Animations.Animation#updateFrameSequence
+     * @method Oyun.Animations.Animation#updateFrameSequence
      * @since 3.0.0
      *
      * @return {this} This Animation object.
@@ -45142,7 +45142,7 @@ var Animation = new Class({
     /**
      * Pauses playback of this Animation. The paused state is set immediately.
      *
-     * @method Phaser.Animations.Animation#pause
+     * @method Oyun.Animations.Animation#pause
      * @since 3.0.0
      *
      * @return {this} This Animation object.
@@ -45157,7 +45157,7 @@ var Animation = new Class({
     /**
      * Resumes playback of this Animation. The paused state is reset immediately.
      *
-     * @method Phaser.Animations.Animation#resume
+     * @method Oyun.Animations.Animation#resume
      * @since 3.0.0
      *
      * @return {this} This Animation object.
@@ -45174,7 +45174,7 @@ var Animation = new Class({
      * remove this animation and its key from the global Animation Manager,
      * and then destroy all Animation Frames in turn.
      *
-     * @method Phaser.Animations.Animation#destroy
+     * @method Oyun.Animations.Animation#destroy
      * @since 3.0.0
      */
     destroy: function ()
@@ -45232,7 +45232,7 @@ module.exports = Animation;
  *
  * Would return: `**c64**`
  *
- * @function Phaser.Utils.String.Pad
+ * @function Oyun.Utils.String.Pad
  * @since 3.0.0
  *
  * @param {string|number|object} str - The target string. `toString()` will be called on the string, which means you can also pass in common data types like numbers.
@@ -45297,12 +45297,12 @@ var RGBStringToColor = __webpack_require__(326);
  * Converts the given source color value into an instance of a Color class.
  * The value can be either a string, prefixed with `rgb` or a hex string, a number or an Object.
  *
- * @function Phaser.Display.Color.ValueToColor
+ * @function Oyun.Display.Color.ValueToColor
  * @since 3.0.0
  *
- * @param {(string|number|Phaser.Types.Display.InputColorObject)} input - The source color value to convert.
+ * @param {(string|number|Oyun.Types.Display.InputColorObject)} input - The source color value to convert.
  *
- * @return {Phaser.Display.Color} A Color object.
+ * @return {Oyun.Display.Color} A Color object.
  */
 var ValueToColor = function (input)
 {
@@ -45374,15 +45374,15 @@ function ConvertValue (n, h, s, v)
  *
  * Assumes HSV values are contained in the set [0, 1].
  *
- * @function Phaser.Display.Color.HSVToRGB
+ * @function Oyun.Display.Color.HSVToRGB
  * @since 3.0.0
  *
  * @param {number} h - The hue, in the range 0 - 1. This is the base color.
  * @param {number} s - The saturation, in the range 0 - 1. This controls how much of the hue will be in the final color, where 1 is fully saturated and 0 will give you white.
  * @param {number} v - The value, in the range 0 - 1. This controls how dark the color is. Where 1 is as bright as possible and 0 is black.
- * @param {(Phaser.Types.Display.ColorObject|Phaser.Display.Color)} [out] - A Color object to store the results in. If not given a new ColorObject will be created.
+ * @param {(Oyun.Types.Display.ColorObject|Oyun.Display.Color)} [out] - A Color object to store the results in. If not given a new ColorObject will be created.
  *
- * @return {(Phaser.Types.Display.ColorObject|Phaser.Display.Color)} An object with the red, green and blue values set in the r, g and b properties.
+ * @return {(Oyun.Types.Display.ColorObject|Oyun.Display.Color)} An object with the red, green and blue values set in the r, g and b properties.
  */
 var HSVToRGB = function (h, s, v, out)
 {
@@ -45431,12 +45431,12 @@ var IntegerToRGB = __webpack_require__(324);
 /**
  * Converts the given color value into an instance of a Color object.
  *
- * @function Phaser.Display.Color.IntegerToColor
+ * @function Oyun.Display.Color.IntegerToColor
  * @since 3.0.0
  *
  * @param {number} input - The color value to convert into a Color object.
  *
- * @return {Phaser.Display.Color} A Color object.
+ * @return {Oyun.Display.Color} A Color object.
  */
 var IntegerToColor = function (input)
 {
@@ -45463,16 +45463,16 @@ module.exports = IntegerToColor;
 /**
  * Moves the top-left corner of a Rectangle so that its center is at the given coordinates.
  *
- * @function Phaser.Geom.Rectangle.CenterOn
+ * @function Oyun.Geom.Rectangle.CenterOn
  * @since 3.0.0
  *
- * @generic {Phaser.Geom.Rectangle} O - [rect,$return]
+ * @generic {Oyun.Geom.Rectangle} O - [rect,$return]
  *
- * @param {Phaser.Geom.Rectangle} rect - The Rectangle to be centered.
+ * @param {Oyun.Geom.Rectangle} rect - The Rectangle to be centered.
  * @param {number} x - The X coordinate of the Rectangle's center.
  * @param {number} y - The Y coordinate of the Rectangle's center.
  *
- * @return {Phaser.Geom.Rectangle} The centered rectangle.
+ * @return {Oyun.Geom.Rectangle} The centered rectangle.
  */
 var CenterOn = function (rect, x, y)
 {
@@ -45500,12 +45500,12 @@ var Browser = __webpack_require__(134);
 var CanvasPool = __webpack_require__(31);
 
 /**
- * Determines the features of the browser running this Phaser Game instance.
+ * Determines the features of the browser running this Oyun Game instance.
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.features` from within any Scene.
  * 
- * @typedef {object} Phaser.Device.Features
+ * @typedef {object} Oyun.Device.Features
  * @since 3.0.0
  * 
  * @property {?boolean} canvasBitBltShift - True if canvas supports a 'copy' bitblt onto itself 
