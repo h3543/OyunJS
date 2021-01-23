@@ -1,5 +1,5 @@
 {
-  "name": "@html5oyun/oyunjs",
+  "name": "oyunjs",
   "version": "3.5.0",
   "description": "HTML5 Game Development Library",
   "main": "oyun.js",
@@ -16,6 +16,7 @@
     "url": "https://github.com/h3543/OyunJS/issues"
   },
   "homepage": "https://oyunjs.com",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
-
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com//@html5oyun"
+  }
 }
