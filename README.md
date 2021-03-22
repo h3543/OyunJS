@@ -6,7 +6,7 @@
 <script src="https://cdn.jsdelivr.net/gh/h3543/OyunJS@1/oyun.js"></script>
 ```
 
-- [Bilmeceler](https://bilmece-bulmaca.com/)
+- [Bilmeceler](https://bilbul.net/)
 - [Funtoma](https://funtoma.com/)
 - [JavaScript](https://js.web.tr/)
 - [Oyun Oyna](https://teleoyun.com/)
